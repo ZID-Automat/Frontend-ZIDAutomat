@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ApiModule } from 'AutomatApi';
-import { TestComponentsComponent } from './components/test-components/test-components.component';
 
 @NgModule({
   declarations: [
