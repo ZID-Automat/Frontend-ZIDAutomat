@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "genApi": "ng-swagger-gen --input http://localhost:5000/swagger/v1/swagger.json --output ./src/app/api"
+    "generate-api-client-File": "ng-openapi-gen --input openapi/swagger.json -o projects/automat-api/src/API",
+    "generate-api-client-Swagger": "curl.exe --output openApi/swagger.json --url http://localhost:5141/swagger/v1/swagger.json | npm run generate-api-client-File"
   },
   "private": true,
   "dependencies": {
