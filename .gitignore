@@ -1,6 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
+
+/projects/automat-api/src/API
 /dist
 /tmp
 /out-tsc
@@ -244,20 +246,3 @@ testem.log
 .DS_Store
 Thumbs.db
 
-
-# Husky
-.husky/_
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About

@@ -100,6 +100,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 4201
+          },
           "configurations": {
             "production": {
               "browserTarget": "UserFrontend:build:production"
@@ -229,6 +232,37 @@
               "projects/admin-frontend/src/styles.css"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "AutomatApi": {
+      "projectType": "library",
+      "root": "projects/automat-api",
+      "sourceRoot": "projects/automat-api/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/automat-api/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/automat-api/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/automat-api/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/automat-api/src/test.ts",
+            "tsConfig": "projects/automat-api/tsconfig.spec.json",
+            "karmaConfig": "projects/automat-api/karma.conf.js"
           }
         }
       }
