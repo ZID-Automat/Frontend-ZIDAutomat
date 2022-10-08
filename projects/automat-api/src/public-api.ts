@@ -2,6 +2,6 @@
  * Public API Surface of automat-api
  */
 
-export * from './lib/automat-api.service';
-export * from './lib/automat-api.component';
-export * from './lib/automat-api.module';
+export * from "./API/api.module";
+export * from "./API/services";
+export * from "./API/models";

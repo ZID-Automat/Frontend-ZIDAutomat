@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AccountService } from 'AutomatApi';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'UserFrontend';
+
+aasd:AccountService = {} as AccountService;
 }
