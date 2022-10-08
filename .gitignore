@@ -1,6 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
+
+/projects/automat-api/src/API
 /dist
 /tmp
 /out-tsc
@@ -244,4 +246,3 @@ testem.log
 .DS_Store
 Thumbs.db
 
-/projects\automat-api\src\API
