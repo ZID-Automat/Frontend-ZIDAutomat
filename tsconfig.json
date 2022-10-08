@@ -3,6 +3,10 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
+      "AutomatApi": [
+        "dist/automat-api/automat-api",
+        "dist/automat-api"
+      ],
       "AutomatShared": [
         "dist/automat-shared/automat-shared",
         "dist/automat-shared"
