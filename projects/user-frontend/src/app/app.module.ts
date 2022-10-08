@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ApiModule } from 'AutomatApi';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
+    ApiModule.forRoot({ rootUrl: "https://localhost:7141" }),
     BrowserModule,
     AppRoutingModule,
     AutomatSharedModule
