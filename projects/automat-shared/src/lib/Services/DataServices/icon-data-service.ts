@@ -14,7 +14,7 @@ export class IconDataService {
   }
 
   getIcon(Icon:string):IconDefinition {
-    const Ic = this.Icons.get(Icon);
+    const Ic = this.Icons.get(Icon)
     if(!Ic){
       console.error("Icon "+Icon+" not Found")
     }

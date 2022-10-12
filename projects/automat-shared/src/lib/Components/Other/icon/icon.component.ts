@@ -1,4 +1,3 @@
-import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { Component, Input, OnInit } from '@angular/core';
 import { IconDataService } from '../../../Services/DataServices/icon-data-service';
 
