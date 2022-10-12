@@ -61,7 +61,9 @@
               "projects/user-frontend/src/assets"
             ],
             "styles": [
-              "projects/user-frontend/src/styles.css"
+              "projects/user-frontend/src/Styles/Styles.scss",
+              "projects/user-frontend/src/Styles/Tailwind.scss",
+              "projects/user-frontend/src/Styles/Theme.scss"
             ],
             "scripts": []
           },
@@ -131,7 +133,9 @@
               "projects/user-frontend/src/assets"
             ],
             "styles": [
-              "projects/user-frontend/src/styles.css"
+              "projects/user-frontend/src/Styles/Styles.scss",
+              "projects/user-frontend/src/Styles/Tailwind.scss",
+              "projects/user-frontend/src/Styles/Theme.scss"
             ],
             "scripts": []
           }
@@ -162,7 +166,9 @@
               "projects/admin-frontend/src/assets"
             ],
             "styles": [
-              "projects/admin-frontend/src/styles.css"
+              "projects/admin-frontend/src/Styles/Styles.scss",
+              "projects/admin-frontend/src/Styles/Tailwind.scss",
+              "projects/admin-frontend/src/Styles/Theme.scss"
             ],
             "scripts": []
           },
@@ -229,7 +235,9 @@
               "projects/admin-frontend/src/assets"
             ],
             "styles": [
-              "projects/admin-frontend/src/styles.css"
+              "projects/admin-frontend/src/Styles/Styles.scss",
+              "projects/admin-frontend/src/Styles/Tailwind.scss",
+              "projects/admin-frontend/src/Styles/Theme.scss"
             ],
             "scripts": []
           }
@@ -266,6 +274,11 @@
           }
         }
       }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
     }
   },
   "defaultProject": "AutomatShared"
