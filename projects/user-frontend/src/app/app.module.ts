@@ -1,4 +1,4 @@
-import { AutomatSharedModule } from 'AutomatShared';
+import { AutomatSharedModule, MaterialModule } from 'AutomatShared';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,10 +11,11 @@ import { ApiModule } from 'AutomatApi';
     AppComponent,
   ],
   imports: [
+    AutomatSharedModule,
     ApiModule.forRoot({ rootUrl: "https://localhost:7141" }),
     BrowserModule,
     AppRoutingModule,
-    AutomatSharedModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
