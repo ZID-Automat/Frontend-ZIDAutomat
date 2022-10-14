@@ -61,9 +61,7 @@
               "projects/user-frontend/src/assets"
             ],
             "styles": [
-              "projects/user-frontend/src/Styles/Styles.scss",
-              "projects/user-frontend/src/Styles/Tailwind.scss",
-              "projects/user-frontend/src/Styles/Theme.scss"
+              "projects/user-frontend/src/Styles/Styles.scss" 
             ],
             "scripts": []
           },
@@ -114,6 +112,7 @@
             }
           },
           "defaultConfiguration": "development"
+          
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -133,9 +132,7 @@
               "projects/user-frontend/src/assets"
             ],
             "styles": [
-              "projects/user-frontend/src/Styles/Styles.scss",
-              "projects/user-frontend/src/Styles/Tailwind.scss",
-              "projects/user-frontend/src/Styles/Theme.scss"
+              "projects/user-frontend/src/Styles/Styles.scss"
             ],
             "scripts": []
           }
@@ -166,9 +163,7 @@
               "projects/admin-frontend/src/assets"
             ],
             "styles": [
-              "projects/admin-frontend/src/Styles/Styles.scss",
-              "projects/admin-frontend/src/Styles/Tailwind.scss",
-              "projects/admin-frontend/src/Styles/Theme.scss"
+              "projects/admin-frontend/src/Styles/Styles.scss"
             ],
             "scripts": []
           },
@@ -235,9 +230,7 @@
               "projects/admin-frontend/src/assets"
             ],
             "styles": [
-              "projects/admin-frontend/src/Styles/Styles.scss",
-              "projects/admin-frontend/src/Styles/Tailwind.scss",
-              "projects/admin-frontend/src/Styles/Theme.scss"
+              "projects/admin-frontend/src/Styles/Styles.scss"
             ],
             "scripts": []
           }
@@ -273,6 +266,9 @@
             "karmaConfig": "projects/automat-api/karma.conf.js"
           }
         }
+     
+     
+     
       }
     }
   },

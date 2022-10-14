@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private themeDataService:ThemeDataService) { }
 
   ngOnInit(): void {
   }
