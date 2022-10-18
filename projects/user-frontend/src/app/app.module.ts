@@ -1,3 +1,4 @@
+import { LoginFormComponent } from './Components/Pages/login-page/login-form/login-form.component';
 import { AutomatSharedModule, MaterialModule } from 'AutomatShared';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -5,14 +6,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ApiModule } from 'AutomatApi';
-import { LoginComponent } from './Components/Pages/login/login.component';
 import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
+import { LoginPageComponent } from './Components/Pages/login-page/login-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     NavBarComponent,
+    LoginPageComponent,
+    LoginFormComponent
   ],
   imports: [
     AutomatSharedModule,

@@ -10,7 +10,7 @@
       "projectType": "library",
       "root": "projects/automat-shared",
       "sourceRoot": "projects/automat-shared/src",
-      "prefix": "lib",
+      "prefix": "shared",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -46,7 +46,7 @@
       },
       "root": "projects/user-frontend",
       "sourceRoot": "projects/user-frontend/src",
-      "prefix": "app",
+      "prefix": "user",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -148,7 +148,7 @@
       },
       "root": "projects/admin-frontend",
       "sourceRoot": "projects/admin-frontend/src",
-      "prefix": "app",
+      "prefix": "admin",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

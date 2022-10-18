@@ -1,0 +1,27 @@
+<form
+  [formGroup]="LoginInfoForm"
+  class="bg-white  rounded pt-2 pl-4 pb-3 pr-4 text-black drop-shadow-2xl shadow-2xl"
+  (ngSubmit)="Login()"
+>
+    <p class="text-ms font-thin">Um den ZID-Automaten Service nutzen zu können, musst du dich mit deinem Schulaccount anmelden.</p>
+
+  <mat-form-field class="input">
+    <mat-label>Username</mat-label>
+    <input matInput formControlName="username" required />
+    <mat-error *ngIf="!LoginInfoForm.get('username')?.valid">
+      {{ getErrorMessage(LoginInfoForm?.get("username"), "Username") }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="input mb-1">
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password" required />
+    <mat-error *ngIf="!LoginInfoForm.get('username')?.valid">
+      {{ getErrorMessage(LoginInfoForm?.get("username"), "Password") }}
+    </mat-error>
+  </mat-form-field>
+
+  <button type="submit" class="input" mat-raised-button color="accent">
+    Login
+  </button>
+</form>

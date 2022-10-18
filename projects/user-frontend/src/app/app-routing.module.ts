@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './Components/Pages/login/login.component';
+import { LoginPageComponent } from './Components/Pages/login-page/login-page.component';
 
 export enum UserFrontendRoutes {
   Login = 'login',
@@ -8,7 +8,7 @@ export enum UserFrontendRoutes {
 
 const routes: Routes = [
   { path: '', redirectTo: UserFrontendRoutes.Login, pathMatch: 'full' },
-  { path: UserFrontendRoutes.Login, component: LoginComponent },
+  { path: UserFrontendRoutes.Login, component: LoginPageComponent },
 ];
 
 @NgModule({
