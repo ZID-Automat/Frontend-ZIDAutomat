@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThemeDataService } from 'AutomatShared';
 
 @Component({
   selector: 'app-nav-bar',
