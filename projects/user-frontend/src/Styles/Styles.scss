@@ -251,3 +251,7 @@ $altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
     font-family: 'Roboto';
   }
 }
+
+.mat-form-field-appearance-legacy .mat-form-field-wrapper{
+  padding-bottom: 1rem;
+}
