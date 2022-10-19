@@ -1,5 +1,4 @@
 import { take } from 'rxjs';
-import { UserService } from './../../../../Services/user-service.service';
 import { Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
@@ -10,6 +9,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { UserLogin } from 'AutomatApi';
+import { UserService } from 'projects/user-frontend/src/app/Services/user.service';
 
 @Component({
   selector: 'user-login-form',
@@ -20,12 +20,12 @@ export class LoginFormComponent implements OnInit {
   public LoginInfoForm: FormGroup = new FormGroup({
     username: new FormControl('', [
       Validators.required,
-      Validators.maxLength(10),
+      Validators.maxLength(50),
       Validators.minLength(4),
     ]),
     password: new FormControl('', [
       Validators.required,
-      Validators.maxLength(10),
+      Validators.maxLength(50),
       Validators.minLength(4),
     ]),
     AGB: new FormControl(false, [Validators.requiredTrue]),
@@ -38,7 +38,6 @@ export class LoginFormComponent implements OnInit {
   Login() {
     if (this.LoginInfoForm.valid) {
       const loginData: UserLogin = this.LoginInfoForm.getRawValue();
-    console.log(loginData)
       this.userService
         .login(loginData)
         .pipe(take(1))
@@ -50,11 +49,14 @@ export class LoginFormComponent implements OnInit {
 
   getErrorMessage(
     formControl: AbstractControl | null | undefined,
-    fieldname: string,isCheckbox:boolean = false
+    fieldname: string,
+    isCheckbox: boolean = false
   ): string {
     if (formControl) {
       if (formControl.hasError('required')) {
-        return (!isCheckbox)?fieldname + ' ist ein Pflichfeld':fieldname + ' müssen aktzeptiert werden';
+        return !isCheckbox
+          ? fieldname + ' ist ein Pflichfeld'
+          : fieldname + ' müssen aktzeptiert werden';
       }
       if (formControl.hasError('maxlength')) {
         return fieldname + ' ist zu lang.';

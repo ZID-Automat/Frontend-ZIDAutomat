@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeDataService } from 'AutomatShared';
 import { take } from 'rxjs';
-import { UserService } from '../../../Services/user-service.service';
 
 @Component({
   selector: 'user-login-page',
@@ -10,7 +9,7 @@ import { UserService } from '../../../Services/user-service.service';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor(public themeDataService:ThemeDataService, private userService:UserService) { }
+  constructor(public themeDataService:ThemeDataService) { }
 
   ngOnInit(): void {
   }

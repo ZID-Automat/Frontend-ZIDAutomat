@@ -15,7 +15,7 @@
 
     <mat-form-field class="input ">
         <mat-label  class="font-thin">Password</mat-label>
-        <input matInput formControlName="password" required />
+        <input type="password" matInput formControlName="password" required />
         <mat-error *ngIf="!LoginInfoForm.get('password')?.valid">
             {{ getErrorMessage(LoginInfoForm.get("password"), "Password") }}
         </mat-error>
@@ -23,7 +23,7 @@
 
 
     <mat-form-field class="input mat-form-field--no-underline mb-2">
-        <input matInput formControlName="AGB" class="hidden"  />
+        <input matInput  formControlName="AGB" class="hidden"  />
         <mat-error *ngIf="!LoginInfoForm.get('AGB')?.valid">
             {{ getErrorMessage(LoginInfoForm.get("AGB"), "AGBs",true) }}
         </mat-error>
