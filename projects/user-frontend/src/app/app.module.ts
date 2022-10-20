@@ -14,7 +14,7 @@ import { LoginPageComponent } from './Components/Pages/login-page/login-page.com
     AppComponent,
     NavBarComponent,
     LoginPageComponent,
-    LoginFormComponent
+    LoginFormComponent,
   ],
   imports: [
     AutomatSharedModule,

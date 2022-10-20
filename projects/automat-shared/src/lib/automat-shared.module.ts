@@ -6,7 +6,7 @@ import { IconComponent } from './Components/Other/icon/icon.component';
 
 @NgModule({
   declarations: [
-    IconComponent
+    IconComponent,
   ],
   imports: [
     HttpClientModule,

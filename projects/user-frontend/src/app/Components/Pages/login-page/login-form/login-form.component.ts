@@ -29,6 +29,9 @@ export enum LoginErrors{
     ])]
 })
 export class LoginFormComponent implements OnInit {
+
+  public showPassword:boolean = true;
+
   public LoginInfoForm: FormGroup = new FormGroup({
     username: new FormControl('', [
       Validators.required,
@@ -81,5 +84,9 @@ export class LoginFormComponent implements OnInit {
       }
     }
     throw new Error("Formcontrol is null can't Validate content");
+  }
+
+  triggerShowPassword(){
+    this.showPassword = !this.showPassword;
   }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { faCoffee, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { faEye } from '@fortawesome/free-regular-svg-icons';
+import { faCoffee, faEyeSlash, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { ReplaySubject, Subject } from 'rxjs';
 
 @Injectable({
@@ -10,7 +11,8 @@ export class IconDataService {
   Icons: Map<string,IconDefinition> = new Map<string, IconDefinition>()
 
   constructor() { 
-    this.Icons.set("Coffee",faCoffee)
+    this.Icons.set("eye",faEye);
+    this.Icons.set("eyeslash",faEyeSlash);
   }
 
   getIcon(Icon:string):IconDefinition {
