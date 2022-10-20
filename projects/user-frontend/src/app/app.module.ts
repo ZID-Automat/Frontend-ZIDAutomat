@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { ApiModule } from 'AutomatApi';
 import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { LoginPageComponent } from './Components/Pages/login-page/login-page.component';
+import { HomePageComponent } from './Components/Pages/home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     LoginPageComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    HomePageComponent
   ],
   imports: [
     AutomatSharedModule,
