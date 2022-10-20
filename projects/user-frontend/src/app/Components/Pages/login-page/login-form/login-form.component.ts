@@ -1,4 +1,4 @@
-import { take } from 'rxjs';
+import { BehaviorSubject, take } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
@@ -10,11 +10,23 @@ import {
 } from '@angular/forms';
 import { UserLogin } from 'AutomatApi';
 import { UserService } from 'projects/user-frontend/src/app/Services/user.service';
+import { state, style, transition, trigger } from '@angular/animations';
 
+export enum LoginErrors{
+  PassUserWrong="Das Passwort oder der Username ist falsch"
+}
 @Component({
   selector: 'user-login-form',
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss'],
+  animations: [
+    trigger('transitionMessages', [
+        
+        state('enter', style({ opacity: 1, transform: 'translateY(0%)' })),
+        transition('void => enter', [
+            style({ opacity: 0, transform: 'translateY(-100%)' }),
+        ]),
+    ])]
 })
 export class LoginFormComponent implements OnInit {
   public LoginInfoForm: FormGroup = new FormGroup({
@@ -31,6 +43,8 @@ export class LoginFormComponent implements OnInit {
     AGB: new FormControl(false, [Validators.requiredTrue]),
   });
 
+  public LoginError:BehaviorSubject<string | null> = new BehaviorSubject<string | null>(null);
+
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {}
@@ -43,6 +57,7 @@ export class LoginFormComponent implements OnInit {
         .pipe(take(1))
         .subscribe((res) => {
           console.log(res);
+          this.LoginError.next(res?"":LoginErrors.PassUserWrong)
         });
     }
   }

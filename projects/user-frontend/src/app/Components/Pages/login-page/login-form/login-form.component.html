@@ -37,5 +37,7 @@
       <p class="font-thin">Login</p>
     </button>
 
-
+    <mat-error *ngIf="(LoginError | async) as Error" [@transitionMessages]="Error ? 'enter' : 'closed'">
+        {{Error}}
+    </mat-error>
 </form>

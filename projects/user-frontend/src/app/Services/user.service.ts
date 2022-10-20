@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { AccountService,AdUser, UserLogin } from 'AutomatApi';
+import { AccountService, UserLogin } from 'AutomatApi';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class UserService {
   constructor(private AccountService: AccountService) {}
 
-  login(LoginData:UserLogin) :Observable<AdUser>{
+  login(LoginData:UserLogin) :Observable<boolean>{
     const UserLognOb: UserLogin = { username: LoginData.username, password: LoginData.password };
     return this.AccountService.accountLoginPost$Json({body:UserLognOb});
   }
