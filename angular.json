@@ -10,7 +10,7 @@
       "projectType": "library",
       "root": "projects/automat-shared",
       "sourceRoot": "projects/automat-shared/src",
-      "prefix": "lib",
+      "prefix": "shared",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -46,7 +46,7 @@
       },
       "root": "projects/user-frontend",
       "sourceRoot": "projects/user-frontend/src",
-      "prefix": "app",
+      "prefix": "user",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -61,9 +61,7 @@
               "projects/user-frontend/src/assets"
             ],
             "styles": [
-              "projects/user-frontend/src/Styles/Styles.scss",
-              "projects/user-frontend/src/Styles/Tailwind.scss",
-              "projects/user-frontend/src/Styles/Theme.scss"
+              "projects/user-frontend/src/Styles/Styles.scss" 
             ],
             "scripts": []
           },
@@ -114,6 +112,7 @@
             }
           },
           "defaultConfiguration": "development"
+          
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -133,9 +132,7 @@
               "projects/user-frontend/src/assets"
             ],
             "styles": [
-              "projects/user-frontend/src/Styles/Styles.scss",
-              "projects/user-frontend/src/Styles/Tailwind.scss",
-              "projects/user-frontend/src/Styles/Theme.scss"
+              "projects/user-frontend/src/Styles/Styles.scss"
             ],
             "scripts": []
           }
@@ -151,7 +148,7 @@
       },
       "root": "projects/admin-frontend",
       "sourceRoot": "projects/admin-frontend/src",
-      "prefix": "app",
+      "prefix": "admin",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -166,9 +163,7 @@
               "projects/admin-frontend/src/assets"
             ],
             "styles": [
-              "projects/admin-frontend/src/Styles/Styles.scss",
-              "projects/admin-frontend/src/Styles/Tailwind.scss",
-              "projects/admin-frontend/src/Styles/Theme.scss"
+              "projects/admin-frontend/src/Styles/Styles.scss"
             ],
             "scripts": []
           },
@@ -235,9 +230,7 @@
               "projects/admin-frontend/src/assets"
             ],
             "styles": [
-              "projects/admin-frontend/src/Styles/Styles.scss",
-              "projects/admin-frontend/src/Styles/Tailwind.scss",
-              "projects/admin-frontend/src/Styles/Theme.scss"
+              "projects/admin-frontend/src/Styles/Styles.scss"
             ],
             "scripts": []
           }
@@ -273,6 +266,9 @@
             "karmaConfig": "projects/automat-api/karma.conf.js"
           }
         }
+     
+     
+     
       }
     }
   },

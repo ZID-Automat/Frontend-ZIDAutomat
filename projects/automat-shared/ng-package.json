@@ -3,5 +3,6 @@
   "dest": "../../dist/automat-shared",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": ["./assets"]
 }
