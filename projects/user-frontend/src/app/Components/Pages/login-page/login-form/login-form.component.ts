@@ -1,5 +1,5 @@
 import { BehaviorSubject, take } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -29,6 +29,9 @@ export enum LoginErrors{
     ])]
 })
 export class LoginFormComponent implements OnInit {
+
+  @Output() LoginEvent:EventEmitter<boolean>= new EventEmitter();
+
   public LoginInfoForm: FormGroup = new FormGroup({
     username: new FormControl('', [
       Validators.required,
@@ -56,7 +59,7 @@ export class LoginFormComponent implements OnInit {
         .login(loginData)
         .pipe(take(1))
         .subscribe((res) => {
-          console.log(res);
+          this.LoginEvent.emit(res);
           this.LoginError.next(res?"":LoginErrors.PassUserWrong)
         });
     }
