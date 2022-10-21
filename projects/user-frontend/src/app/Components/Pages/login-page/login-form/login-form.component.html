@@ -6,7 +6,7 @@
     
     <mat-form-field class="input">
         <mat-label class="font-thin" >Username</mat-label>
-        <input matInput class="font-thin" formControlName="username" required />
+        <input autocomplete  matInput class="font-thin" formControlName="username" required />
         <mat-error *ngIf="!LoginInfoForm.get('username')?.valid">
             {{ getErrorMessage(LoginInfoForm.get("username"), "Username") }}
         </mat-error>
@@ -15,7 +15,7 @@
 
     <mat-form-field class="input ">
         <mat-label  class="font-thin">Password</mat-label>
-        <input type="password" matInput formControlName="password" required />
+        <input autocomplete  type="password" matInput formControlName="password" required />
         <mat-error *ngIf="!LoginInfoForm.get('password')?.valid">
             {{ getErrorMessage(LoginInfoForm.get("password"), "Password") }}
         </mat-error>
