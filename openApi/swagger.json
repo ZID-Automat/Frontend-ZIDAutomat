@@ -5,10 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/Account/Login": {
+    "/Authentification/Login": {
       "post": {
         "tags": [
-          "Account"
+          "Authentification"
         ],
         "requestBody": {
           "content": {
@@ -29,6 +29,35 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/User/Borrow": {
+      "post": {
+        "tags": [
+          "User"
+        ],
         "responses": {
           "200": {
             "description": "Success",

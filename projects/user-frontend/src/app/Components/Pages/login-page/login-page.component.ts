@@ -16,8 +16,8 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public Login(loginWorked:boolean){
-    if(loginWorked){
+  public Login(jwt:string){
+    if(jwt){
       this.router.navigate([UserFrontendRoutes.Home])
     }
   }
