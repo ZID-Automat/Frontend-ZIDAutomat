@@ -30,6 +30,7 @@ import { JwtModule } from '@auth0/angular-jwt';
       config: {
         tokenGetter:()=>localStorage.getItem("jwt"),
         allowedDomains: ["localhost:7141"],
+        disallowedRoutes: ["https://localhost:7141/Authentification/"],
         throwNoTokenError: true,
         skipWhenExpired: true
       },
