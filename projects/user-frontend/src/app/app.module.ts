@@ -5,10 +5,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ApiModule } from 'AutomatApi';
 import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { LoginPageComponent } from './Components/Pages/login-page/login-page.component';
 import { HomePageComponent } from './Components/Pages/home-page/home-page.component';
+import { ApiModule } from 'AutomatApi';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -23,9 +24,19 @@ import { HomePageComponent } from './Components/Pages/home-page/home-page.compon
     ApiModule.forRoot({ rootUrl: "https://localhost:7141" }),
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+
+    JwtModule.forRoot({
+      config: {
+        tokenGetter:()=>localStorage.getItem("jwt"),
+        allowedDomains: ["localhost:7141"],
+        throwNoTokenError: true,
+        skipWhenExpired: true
+      },
+    }),
   ],
-  providers: [],
+  providers: [   
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
