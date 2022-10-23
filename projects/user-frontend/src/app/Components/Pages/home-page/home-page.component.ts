@@ -1,3 +1,5 @@
+import { take } from 'rxjs';
+import { UserService } from './../../../Services/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
+  }
+
+  test(){
+    this.userService.borrow().pipe(take(1)).subscribe(res=>{
+      console.log(res)
+    });
   }
 
 }
