@@ -1,5 +1,6 @@
-import { BehaviorSubject, take } from 'rxjs';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { BehaviorSubject, take, takeWhile } from 'rxjs';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -28,9 +29,9 @@ export enum LoginErrors{
         ]),
     ])]
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent implements OnInit,OnDestroy {
 
-  @Output() LoginEvent:EventEmitter<boolean>= new EventEmitter();
+  @Output() LoginEvent:EventEmitter<string>= new EventEmitter();
 
   public LoginInfoForm: FormGroup = new FormGroup({
     username: new FormControl('', [
@@ -46,11 +47,27 @@ export class LoginFormComponent implements OnInit {
     AGB: new FormControl(false, [Validators.requiredTrue]),
   });
 
+  alive = true;
+
   public LoginError:BehaviorSubject<string | null> = new BehaviorSubject<string | null>(null);
 
   constructor(private userService: UserService) {}
 
-  ngOnInit(): void {}
+  ngOnDestroy(): void {
+    this.alive = false;
+  }
+
+  ngOnInit(): void {
+    this.LoginEvent.pipe(takeWhile(()=>this.alive)).subscribe((res)=>{
+      this.LoginInfoForm.reset();
+      if(res){
+        localStorage.setItem("jwt",res);
+      }
+      else{
+        this.LoginError.next(LoginErrors.PassUserWrong)
+      }
+    });
+  }
 
   Login() {
     if (this.LoginInfoForm.valid) {
@@ -60,7 +77,6 @@ export class LoginFormComponent implements OnInit {
         .pipe(take(1))
         .subscribe((res) => {
           this.LoginEvent.emit(res);
-          this.LoginError.next(res?"":LoginErrors.PassUserWrong)
         });
     }
   }

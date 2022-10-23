@@ -1,5 +1,4 @@
   import { Component, OnInit } from '@angular/core';
-import { AccountService } from 'AutomatApi';
 
 @Component({
   selector: 'app-root',
