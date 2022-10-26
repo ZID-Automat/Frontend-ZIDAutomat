@@ -1,0 +1,47 @@
+.imgMaxWisth{
+    max-width: 12rem !important; 
+    max-height:  13rem;
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+    margin:auto;
+}
+
+.float_center {
+    float: right;
+  
+    position: relative;
+    left: -50%; /* or right 50% */
+    text-align: left;
+  }
+  .float_center > .child {
+    position: relative;
+    left: 50%;
+  }
+
+  .mat-card-header{
+    padding:5px ;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+  
+   .mat-card{
+    padding:0 ;
+  }
+  
+  .mat-card-content{
+    padding:5px ;
+  }
+
+  .c{
+    margin: auto !important;
+  }
+
+  .div12 {
+    display: flex !important;
+    justify-content: center !important;
+  }
+  
+  .title{
+    font-weight: 400;
+  }

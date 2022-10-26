@@ -1,0 +1,15 @@
+<div class="shadow-2xl m-10 child w-80 inline-block ">
+    <mat-card class="h-96 flex-auto p-10 font-normal">
+        <mat-card-header class="" [style.background-color]="ThemeDataService.accentColor">
+            <mat-card-title class="title" [style.color]="ThemeDataService.textPrimaryColor"> {{Item?.Name}} </mat-card-title>
+            <mat-card-subtitle [style.color]="ThemeDataService.textSecondaryColor">{{Item?.SubName}}</mat-card-subtitle>
+        </mat-card-header>
+       <div class="h-52 div12">
+            <img  class="m-auto c imgMaxWisth " [src]="Item?.Image" alt="Photo of a Shiba Inu">
+       </div>
+       <mat-divider inset class=""></mat-divider>
+        <div class="p-5">
+            {{Item?.Description}}
+        </div>
+    </mat-card>
+</div>
