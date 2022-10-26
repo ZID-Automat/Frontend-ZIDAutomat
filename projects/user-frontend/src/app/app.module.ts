@@ -10,6 +10,7 @@ import { LoginPageComponent } from './Components/Pages/login-page/login-page.com
 import { HomePageComponent } from './Components/Pages/home-page/home-page.component';
 import { ApiModule } from 'AutomatApi';
 import { JwtModule } from '@auth0/angular-jwt';
+import { ItemCardComponent } from './Components/Pages/home-page/item-card/item-card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { JwtModule } from '@auth0/angular-jwt';
     NavBarComponent,
     LoginPageComponent,
     LoginFormComponent,
-    HomePageComponent
+    HomePageComponent,
+    ItemCardComponent
   ],
   imports: [
     AutomatSharedModule,

@@ -7,6 +7,14 @@ export class ThemeDataService {
 
   constructor() { }
 
+  get textPrimaryColor():string{
+    return "#ffffff"
+  }
+
+  get textSecondaryColor():string{
+    return "#ffffff"
+  }
+
   get primaryColor():string
   {
     return "#e20039";

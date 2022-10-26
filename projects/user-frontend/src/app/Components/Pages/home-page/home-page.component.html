@@ -1,2 +1,3 @@
-<p>home-page works!</p>
-<button mat-raised-button color="primary" (click)="test()">Test</button>
+<div *ngFor="let item of Items">
+    <user-item-card class="w-1/12" [Item]="item"></user-item-card>
+</div>
