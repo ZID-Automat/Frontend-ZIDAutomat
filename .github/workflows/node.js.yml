@@ -28,8 +28,7 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run : npm install -g ng-openapi-gen
-    - run: npm run generate-api-client-File
+    - run: cd /home/runner/work/Frontend-ZIDAutomat/Frontend-ZIDAutomat | npm run generate-api-client-File
     - run: ng build AutomatShared
     - run: ng build UserFrontend
     - run: ng build AdminFrontend
-    - run: npm test
