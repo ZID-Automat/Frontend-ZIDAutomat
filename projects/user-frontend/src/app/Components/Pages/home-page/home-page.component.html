@@ -1,2 +1,19 @@
-<p>home-page works!</p>
-<button mat-raised-button color="primary" (click)="test()">Test</button>
+<h1 class="text-center block  font-light text-3xl m-10 mt-5">Artikel</h1>
+
+<div class="w-11/12 ml-auto mr-auto">
+    <div>
+        <h2 class="font-light text-2xl">Letztens Ausgeborgt</h2>
+        <user-item-card-deck [Items]="Items"></user-item-card-deck>
+    </div>
+
+    <div>
+        <h2 class="font-light text-2xl">Könnte dir auch Gefallen</h2>
+        <user-item-card-deck [Items]="Items"></user-item-card-deck>
+    </div>
+
+    <div>
+        <h2 class="font-light text-2xl">Aktuell beliebt</h2>
+        <user-item-card-deck [Items]="Items"></user-item-card-deck>
+    </div>
+
+</div>
