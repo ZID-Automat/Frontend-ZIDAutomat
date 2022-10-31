@@ -28,7 +28,7 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm install -g @angular/cli@latest
-    - run: ng build AutomatAPI
+    - run: ng build AutomatApi
     - run: ng build AutomatShared
     - run: ng build UserFrontend
     - run: ng build AdminFrontend
