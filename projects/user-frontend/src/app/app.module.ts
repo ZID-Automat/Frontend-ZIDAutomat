@@ -10,7 +10,8 @@ import { LoginPageComponent } from './Components/Pages/login-page/login-page.com
 import { HomePageComponent } from './Components/Pages/home-page/home-page.component';
 import { ApiModule } from 'AutomatApi';
 import { JwtModule } from '@auth0/angular-jwt';
-import { ItemCardComponent } from './Components/Pages/home-page/item-card/item-card.component';
+import { ItemCardComponent } from './Components/Pages/home-page/item-card-deck/item-card/item-card.component';
+import { ItemCardDeckComponent } from './Components/Pages/home-page/item-card-deck/item-card-deck.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ItemCardComponent } from './Components/Pages/home-page/item-card/item-c
     LoginPageComponent,
     LoginFormComponent,
     HomePageComponent,
-    ItemCardComponent
+    ItemCardComponent,
+    ItemCardDeckComponent
   ],
   imports: [
     AutomatSharedModule,
