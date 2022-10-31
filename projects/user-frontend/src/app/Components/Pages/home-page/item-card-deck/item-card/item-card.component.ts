@@ -1,5 +1,5 @@
-import { ThemeDataService } from './../../../../../../../automat-shared/src/lib/Services/DataServices/theme-data.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { ThemeDataService } from '../../../../../../../../automat-shared/src/lib/Services/DataServices/theme-data.service';
+import { Component, Input, OnInit, ElementRef } from '@angular/core';
 import { Item, ItemService } from 'projects/user-frontend/src/app/Services/DataServices/item.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class ItemCardComponent implements OnInit {
 
   @Input()Item?:Item ;
 
-  constructor(public ThemeDataService:ThemeDataService) { }
+  constructor(public ThemeDataService:ThemeDataService, public elementRef:ElementRef) { }
 
   ngOnInit(): void {
   }
