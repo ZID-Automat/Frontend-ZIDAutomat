@@ -26,7 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
+    - run: npm install
     - run: npm install -g @angular/cli@latest
     - run : npm install -g ng-openapi-gen
     - run: ng build AutomatShared
