@@ -29,6 +29,7 @@ jobs:
     - run: npm install
     - run: npm install -g @angular/cli@latest
     - run : npm install -g ng-openapi-gen
+    - run: cd /home/runner/work/Frontend-ZIDAutomat | npm run generate-api-client-File
     - run: ng build AutomatShared
     - run: ng build UserFrontend
     - run: ng build AdminFrontend
