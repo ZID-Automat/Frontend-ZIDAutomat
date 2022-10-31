@@ -26,11 +26,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: sudo apt-get install tree
+    - run: tree
     - run: npm install
     - run: npm install -g @angular/cli@latest
     - run : npm install -g ng-openapi-gen
     - run: dir
-    - run: cd Frontend-ZIDAutomat | npm run generate-api-client-File
+    - run: ng-openapi-gen --input openapi/swagger.json -o projects/automat-api/src/API | ng build AutomatApie
     - run: ng build AutomatShared
     - run: ng build UserFrontend
     - run: ng build AdminFrontend
