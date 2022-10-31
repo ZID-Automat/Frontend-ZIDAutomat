@@ -2,7 +2,7 @@
 
 # Compiled output
 
-/projects/automat-api/src/API
+#/projects/automat-api/src/API
 /dist
 /tmp
 /out-tsc
