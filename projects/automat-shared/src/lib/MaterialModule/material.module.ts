@@ -36,6 +36,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule( {
     imports: [
@@ -73,8 +74,8 @@ import { ReactiveFormsModule } from '@angular/forms';
         MatTableModule,
         MatSortModule,
         MatPaginatorModule,
-        ReactiveFormsModule
-
+        ReactiveFormsModule,
+        MatRippleModule
     ],
     exports: [
       CommonModule,
@@ -111,7 +112,8 @@ import { ReactiveFormsModule } from '@angular/forms';
       MatTableModule,
       MatSortModule,
       MatPaginatorModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      MatRippleModule
     ],
     providers: [
         MatDatepickerModule,
