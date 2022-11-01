@@ -12,6 +12,10 @@ import { ApiModule } from 'AutomatApi';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ItemCardComponent } from './Components/Pages/home-page/item-card-deck/item-card/item-card.component';
 import { ItemCardDeckComponent } from './Components/Pages/home-page/item-card-deck/item-card-deck.component';
+import { AdmonitionPageComponent } from './Components/Pages/admonition-page/admonition-page.component';
+import { HistoryPageComponent } from './Components/Pages/history-page/history-page.component';
+import { ActiveQrCodePageComponent } from './Components/Pages/active-qr-code-page/active-qr-code-page.component';
+import { HelpPageComponent } from './Components/Pages/help-page/help-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { ItemCardDeckComponent } from './Components/Pages/home-page/item-card-de
     LoginFormComponent,
     HomePageComponent,
     ItemCardComponent,
-    ItemCardDeckComponent
+    ItemCardDeckComponent,
+    AdmonitionPageComponent,
+    HistoryPageComponent,
+    ActiveQrCodePageComponent,
+    HelpPageComponent
   ],
   imports: [
     AutomatSharedModule,
