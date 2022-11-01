@@ -75,7 +75,8 @@ import { MatRippleModule } from '@angular/material/core';
         MatSortModule,
         MatPaginatorModule,
         ReactiveFormsModule,
-        MatRippleModule
+        MatRippleModule,
+        MatTooltipModule,
     ],
     exports: [
       CommonModule,
@@ -113,7 +114,8 @@ import { MatRippleModule } from '@angular/material/core';
       MatSortModule,
       MatPaginatorModule,
       ReactiveFormsModule,
-      MatRippleModule
+      MatRippleModule,
+      MatTooltipModule,
     ],
     providers: [
         MatDatepickerModule,
