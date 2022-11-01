@@ -5,7 +5,11 @@ import { LoginPageComponent } from './Components/Pages/login-page/login-page.com
 
 export enum UserFrontendRoutes {
   Login = 'login',
-  Home='home'
+  Home='home',
+  Admonition = 'admonition',
+  History='history',
+  ActiveQrCodes='activeQrCodes',
+  Help = "help"
 }
 
 const routes: Routes = [
