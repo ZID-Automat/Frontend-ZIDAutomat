@@ -9,7 +9,7 @@ at
 Installs all node packages
 #### `npm install`
 #### `npm install -g ng-openapi-gen`
-#### `npm run npm run generate-api-client-File`
+#### `npm run generate-api-client-File`
 
 ## Start Developing
 
