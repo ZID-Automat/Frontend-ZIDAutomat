@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
 import { AuthentificationService } from './services/authentification.service';
-import { UserService } from './services/user.service';
+import { DebugService } from './services/debug.service';
+import { UItemService } from './services/u-item.service';
 
 /**
  * Module that provides all services and configuration.
@@ -16,7 +17,8 @@ import { UserService } from './services/user.service';
   declarations: [],
   providers: [
     AuthentificationService,
-    UserService,
+    DebugService,
+    UItemService,
     ApiConfiguration
   ],
 })

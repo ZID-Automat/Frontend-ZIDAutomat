@@ -9,7 +9,7 @@ import { RequestBuilder } from '../request-builder';
 import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 
-import { UserLogin } from '../models/user-login';
+import { UserLoginDto } from '../models/user-login-dto';
 
 @Injectable({
   providedIn: 'root',
@@ -35,7 +35,7 @@ export class AuthentificationService extends BaseService {
    */
   authentificationLoginPost$Plain$Response(params?: {
     context?: HttpContext
-    body?: UserLogin
+    body?: UserLoginDto
   }
 ): Observable<StrictHttpResponse<string>> {
 
@@ -64,7 +64,7 @@ export class AuthentificationService extends BaseService {
    */
   authentificationLoginPost$Plain(params?: {
     context?: HttpContext
-    body?: UserLogin
+    body?: UserLoginDto
   }
 ): Observable<string> {
 
@@ -81,7 +81,7 @@ export class AuthentificationService extends BaseService {
    */
   authentificationLoginPost$Json$Response(params?: {
     context?: HttpContext
-    body?: UserLogin
+    body?: UserLoginDto
   }
 ): Observable<StrictHttpResponse<string>> {
 
@@ -110,7 +110,7 @@ export class AuthentificationService extends BaseService {
    */
   authentificationLoginPost$Json(params?: {
     context?: HttpContext
-    body?: UserLogin
+    body?: UserLoginDto
   }
 ): Observable<string> {
 
