@@ -1,7 +1,7 @@
-import { ThemeDataService } from './../../../../../../../automat-shared/src/lib/Services/DataServices/theme-data.service';
+import { ItemDisplayDto } from 'AutomatApi'
+import { ThemeDataService } from 'AutomatShared';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { Component, ElementRef, Input, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { Item } from 'projects/user-frontend/src/app/Services/DataServices/item.service';
 import { ItemCardComponent } from './item-card/item-card.component';
 
 @Component({
@@ -11,7 +11,7 @@ import { ItemCardComponent } from './item-card/item-card.component';
 })
 export class ItemCardDeckComponent implements OnInit {
 
-  @Input()Items?:Item[] 
+  @Input()Items?:ItemDisplayDto[] 
 
   @ViewChildren('ItemCards') ItemCards!: QueryList<ItemCardComponent>;
   
