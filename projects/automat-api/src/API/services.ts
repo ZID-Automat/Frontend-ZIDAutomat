@@ -1,2 +1,3 @@
 export { AuthentificationService } from './services/authentification.service';
-export { UserService } from './services/user.service';
+export { DebugService } from './services/debug.service';
+export { UItemService } from './services/u-item.service';

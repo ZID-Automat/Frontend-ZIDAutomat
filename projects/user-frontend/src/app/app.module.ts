@@ -43,7 +43,7 @@ import { HelpPageComponent } from './Components/Pages/help-page/help-page.compon
         tokenGetter:()=>localStorage.getItem("jwt"),
         allowedDomains: ["localhost:7141"],
         disallowedRoutes: ["https://localhost:7141/Authentification/"],
-        throwNoTokenError: true,
+        throwNoTokenError: false,
         skipWhenExpired: true
       },
     }),
