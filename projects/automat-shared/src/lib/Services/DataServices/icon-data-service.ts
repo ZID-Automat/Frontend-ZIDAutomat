@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { faChevronLeft,faChevronRight, faXmark, IconDefinition,faQrcode, faTriangleExclamation, faHistory, faBarsStaggered, faQuestion } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft,faChevronRight, faXmark, IconDefinition,faQrcode, faTriangleExclamation, faHistory, faBarsStaggered, faQuestion, faEye } from '@fortawesome/free-solid-svg-icons';
 import { ReplaySubject, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,8 @@ export class IconDataService {
     this.Icons.set("TriangleExclamation",faTriangleExclamation)
     this.Icons.set("History",faBarsStaggered)
     this.Icons.set("Help",faQuestion)
+    this.Icons.set("Eye",faEye)
+    
   }
 
   getIcon(Icon:string):IconDefinition {
