@@ -1,6 +1,7 @@
-import { ThemeDataService } from '../../../../../../../../automat-shared/src/lib/Services/DataServices/theme-data.service';
+import { ThemeDataService } from 'AutomatShared';
 import { Component, Input, OnInit, ElementRef } from '@angular/core';
-import { Item, ItemService } from 'projects/user-frontend/src/app/Services/DataServices/item.service';
+import { ItemDisplayDto } from 'AutomatApi';
+import { ItemService } from 'projects/user-frontend/src/app/Services/DataServices/item.service';
 
 @Component({
   selector: 'user-item-card',
@@ -9,7 +10,7 @@ import { Item, ItemService } from 'projects/user-frontend/src/app/Services/DataS
 })
 export class ItemCardComponent implements OnInit {
 
-  @Input()Item?:Item ;
+  @Input()Item?:ItemDisplayDto ;
 
   constructor(public ThemeDataService:ThemeDataService, public elementRef:ElementRef) { }
 

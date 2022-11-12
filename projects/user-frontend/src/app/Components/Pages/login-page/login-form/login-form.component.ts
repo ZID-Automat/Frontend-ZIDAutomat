@@ -9,7 +9,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { UserLogin } from 'AutomatApi';
+import { UserLoginDto } from 'AutomatApi';
 import { UserService } from 'projects/user-frontend/src/app/Services/user.service';
 import { state, style, transition, trigger } from '@angular/animations';
 
@@ -71,7 +71,7 @@ export class LoginFormComponent implements OnInit,OnDestroy {
 
   Login() {
     if (this.LoginInfoForm.valid) {
-      const loginData: UserLogin = this.LoginInfoForm.getRawValue();
+      const loginData: UserLoginDto = this.LoginInfoForm.getRawValue();
       this.userService
         .login(loginData)
         .pipe(take(1))
