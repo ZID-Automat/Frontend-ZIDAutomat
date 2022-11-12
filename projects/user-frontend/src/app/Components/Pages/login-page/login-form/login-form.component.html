@@ -12,14 +12,19 @@
         </mat-error>
     </mat-form-field>
 
-
-    <mat-form-field class="input ">
+      <mat-form-field class="input ">
         <mat-label  class="font-thin">Password</mat-label>
-        <input type="password" matInput formControlName="password" required />
+       <!-- <input type="password" matInput formControlName="password" required />-->
+
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          
         <mat-error *ngIf="!LoginInfoForm.get('password')?.valid">
             {{ getErrorMessage(LoginInfoForm.get("password"), "Password") }}
         </mat-error>
-    </mat-form-field>
+       </mat-form-field> 
 
 
     <mat-form-field class="input mat-form-field--no-underline mb-2">
