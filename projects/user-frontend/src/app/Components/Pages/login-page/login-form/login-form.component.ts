@@ -29,6 +29,7 @@ export enum LoginErrors{
         ]),
     ])]
 })
+
 export class LoginFormComponent implements OnInit,OnDestroy {
 
   @Output() LoginEvent:EventEmitter<string>= new EventEmitter();
@@ -101,4 +102,6 @@ export class LoginFormComponent implements OnInit,OnDestroy {
     }
     throw new Error("Formcontrol is null can't Validate content");
   }
+
+  hide=true;
 }
