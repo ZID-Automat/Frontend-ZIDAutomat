@@ -17,3 +17,26 @@ div::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
 }
+
+/*Media Query for cont */
+@media only screen and (max-width: 640px) {
+  // reset everything
+  .ele {
+    overflow-x: scroll;
+    overflow-y: scroll  ;
+    -ms-overflow-style: inherit; /* Edge, Internet Explorer */
+    scrollbar-width: inherit; /* Firefox */
+    height: 34rem;
+    padding-top: 1.5rem;
+
+    width: 100% !important;
+  }
+
+  div::-webkit-scrollbar {
+    display: inherit; /* Chrome, Safari, Opera */
+  }
+
+  .item-card-deck-icon {
+    display: none;
+  }
+}
