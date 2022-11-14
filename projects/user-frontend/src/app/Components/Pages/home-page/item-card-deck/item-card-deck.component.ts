@@ -31,11 +31,15 @@ export class ItemCardDeckComponent implements OnInit {
 
   calcStuff(scroll:boolean = false){
     let cardWidth = convertRemToPixels(25);
-    let abzug = convertRemToPixels(3.75*2);
+    let offset = convertRemToPixels(3.75*2);
 
-    this.PageSize = Math.floor((this.ElementRef.nativeElement.offsetWidth-abzug)/cardWidth);
+    this.PageSize = Math.floor((this.ElementRef.nativeElement.offsetWidth-offset)/cardWidth)
+    if(this.PageSize < 1){
+      this.PageSize = 1; //Override for now, because else it would not even show on mobile.
+    }
     this.contWidth = this.PageSize*cardWidth;
-    this.FakeItems = new Array(this.PageSize); 
+
+    this.FakeItems = new Array(this.PageSize);
     
     if(scroll){
       this.scroll(false);
