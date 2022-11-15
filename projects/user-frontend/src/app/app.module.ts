@@ -16,6 +16,10 @@ import { AdmonitionPageComponent } from './Components/Pages/admonition-page/admo
 import { HistoryPageComponent } from './Components/Pages/history-page/history-page.component';
 import { ActiveQrCodePageComponent } from './Components/Pages/active-qr-code-page/active-qr-code-page.component';
 import { HelpPageComponent } from './Components/Pages/help-page/help-page.component';
+import { ItemDetailedPageComponent } from './Components/Pages/item-detailed-page/item-detailed-page.component';
+import { ItemDetailedComponent } from './Components/Pages/item-detailed-page/item-detailed/item-detailed.component';
+import { ItemDetailedFormComponent } from './Components/Pages/item-detailed-page/item-detailed/item-detailed-form/item-detailed-form.component';
+import { ItemImageComponent } from './Components/Pages/item-detailed-page/item-detailed/item-image/item-image.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { HelpPageComponent } from './Components/Pages/help-page/help-page.compon
     AdmonitionPageComponent,
     HistoryPageComponent,
     ActiveQrCodePageComponent,
-    HelpPageComponent
+    HelpPageComponent,
+    ItemDetailedPageComponent,
+    ItemDetailedComponent,
+    ItemDetailedFormComponent,
+    ItemImageComponent
   ],
   imports: [
     AutomatSharedModule,
