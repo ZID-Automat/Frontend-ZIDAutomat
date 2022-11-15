@@ -1,0 +1,29 @@
+<form [formGroup]="BorrowForm" class="mt-10 shadow-1xl">
+  <mat-form-field class="w-full p-0" appearance="fill">
+    <mat-label>Bis wann möchtest du den Artikel ausborgen</mat-label>
+    <input matInput [matDatepickerFilter]="filterDates" [matDatepicker]="picker" />
+    <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="input mat-form-field--no-underline w-full bw mb-4">
+    <input matInput formControlName="AGB" class="hidden" />
+    <mat-error> Error </mat-error>
+    <div class="flex mt-0 pt-0">
+      <mat-checkbox
+        matInput
+        formControlName="AGB"
+        class="ml-1 mr-1"
+      ></mat-checkbox>
+      <p class="whitespace-normal font-thin text-xs">
+        Hiermit bestätige ich, dass ich mir bewusst bin, dass ich gleich einen
+        Artikel ausborge und bei fehlender Rückgabe oder Beschädigung daür
+        aufkommen muss.
+      </p>
+    </div>
+  </mat-form-field>
+
+  <button type="submit" [disabled]="!ItemDetailed?.available" class="input w-full  mt-2" mat-raised-button color="accent">
+    <p class="font-thin text-xl m-2">Ausborgen</p>
+  </button>
+</form>

@@ -36,7 +36,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatRippleModule } from '@angular/material/core';
+import { MatNativeDateModule, MatRippleModule, MAT_DATE_LOCALE } from '@angular/material/core';
 
 @NgModule( {
     imports: [
@@ -77,6 +77,8 @@ import { MatRippleModule } from '@angular/material/core';
         ReactiveFormsModule,
         MatRippleModule,
         MatTooltipModule,
+        MatDatepickerModule,
+        MatNativeDateModule
     ],
     exports: [
       CommonModule,
@@ -116,9 +118,12 @@ import { MatRippleModule } from '@angular/material/core';
       ReactiveFormsModule,
       MatRippleModule,
       MatTooltipModule,
+      MatDatepickerModule,
+      MatNativeDateModule
     ],
     providers: [
         MatDatepickerModule,
+        { provide: MAT_DATE_LOCALE, useValue: 'de-AT' }
     ]
 } )
 export class MaterialModule { }
