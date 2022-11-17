@@ -6,7 +6,7 @@
                 <user-item-card #ItemCards [Item]="item"></user-item-card>
                 <div *ngIf="!((i+1) % PageSize)" class="m-96"></div>
             </div>
-            <div *ngFor="let it of FakeItems" class="sm:hidden sm:m-80 m-0"></div>
+            <div *ngFor="let it of FakeItems" class="sm:block sm:m-80 m-0 hidden"></div>
         </div>  
         <lib-icon (click)="click(1)" matRipple [style.color]="ThemeDataService.primaryColor" [matRippleUnbounded]="true" [matRippleRadius]="30" [matRippleCentered]="true" class="text-6xl font-thin text-gray-600 item-card-deck-icon" IconName="ArrowRight"></lib-icon>
 </div>
