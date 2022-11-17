@@ -34,6 +34,9 @@ export class LoginFormComponent implements OnInit,OnDestroy {
 
   @Output() LoginEvent:EventEmitter<string>= new EventEmitter();
 
+  hide:boolean=true;
+
+
   public LoginInfoForm: FormGroup = new FormGroup({
     username: new FormControl('', [
       Validators.required,
@@ -103,5 +106,11 @@ export class LoginFormComponent implements OnInit,OnDestroy {
     throw new Error("Formcontrol is null can't Validate content");
   }
 
-  hide=true;
+
+  toggleHide(){
+    this.hide = !this.hide;
+
+  }
+
+
 }

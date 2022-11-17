@@ -52,6 +52,7 @@ import { ItemImageComponent } from './Components/Pages/item-detailed-page/item-d
         allowedDomains: ["localhost:7141"],
         disallowedRoutes: ["https://localhost:7141/Authentification/"],
         throwNoTokenError: false,
+
         skipWhenExpired: true
       },
     }),
