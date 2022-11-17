@@ -1,6 +1,4 @@
-import {
-  ItemService,
-} from 'projects/user-frontend/src/app/Services/DataServices/item.service';
+import { ItemDataService } from './../../../Services/DataServices/itemData.service';
 import { take } from 'rxjs';
 import { UserService } from './../../../Services/user.service';
 import { Component, OnInit } from '@angular/core';
@@ -15,17 +13,17 @@ export class HomePageComponent implements OnInit {
   AllItems: ItemDisplayDto[] = [];
   AllPrevItems: ItemDisplayDto[] = [];
 
-  constructor(private itemService: ItemService) {}
+  constructor(private itemDataService: ItemDataService) {}
 
   ngOnInit(): void {
-    this.itemService
+    this.itemDataService
       .LoadAllItems()
       .pipe(take(1))
       .subscribe((res) => {
         this.AllItems = res;
       });
 
-    this.itemService
+    this.itemDataService
       .LoadAllPrevItems()
       .pipe(take(1))
       .subscribe((res) => {
