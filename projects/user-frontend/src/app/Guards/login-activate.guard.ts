@@ -19,8 +19,9 @@ export class LoginActivateGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    if(this.jwtHelperService.isTokenExpired())
+    const tokenValid = !this.jwtHelperService.isTokenExpired();
+    if(!tokenValid)
       this.router.navigate([UserFrontendRoutes.Login]);
-    return !this.jwtHelperService.isTokenExpired();
+    return tokenValid;
   }
 }
