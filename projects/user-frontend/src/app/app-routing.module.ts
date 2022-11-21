@@ -3,6 +3,7 @@ import { HomePageComponent } from './Components/Pages/home-page/home-page.compon
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './Components/Pages/login-page/login-page.component';
+import { LoginActivateGuard } from './Guards/login-activate.guard';
 
 export enum UserFrontendRoutes {
   Login = 'login',
@@ -17,8 +18,8 @@ export enum UserFrontendRoutes {
 const routes: Routes = [
   { path: '', redirectTo: UserFrontendRoutes.Login, pathMatch: 'full' },
   { path: UserFrontendRoutes.Login, component: LoginPageComponent },
-  { path: UserFrontendRoutes.Home, component: HomePageComponent },
-  { path: UserFrontendRoutes.ItemDetailed+"/:id", component: ItemDetailedPageComponent}
+  { path: UserFrontendRoutes.Home, component: HomePageComponent, canActivate:[LoginActivateGuard] },
+  { path: UserFrontendRoutes.ItemDetailed+"/:id", component: ItemDetailedPageComponent, canActivate:[LoginActivateGuard]}
 
 ];
 
