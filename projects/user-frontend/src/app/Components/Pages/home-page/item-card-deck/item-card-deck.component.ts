@@ -1,8 +1,11 @@
+import { map } from 'rxjs/operators';
 import { ItemDisplayDto } from 'AutomatApi'
 import { ThemeDataService } from 'AutomatShared';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { Component, ElementRef, Input, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ItemCardComponent } from './item-card/item-card.component';
+import { MatDialog } from '@angular/material/dialog';
+import { DetItemDialogData, ItemDetailedDialogComponent } from '../../../Dialogs/item-detailed-dialog/item-detailed-dialog.component';
 
 @Component({
   selector: 'user-item-card-deck',
@@ -22,7 +25,7 @@ export class ItemCardDeckComponent implements OnInit {
 
   contWidth = 0
 
-  constructor(private ElementRef:ElementRef, public ThemeDataService:ThemeDataService) {
+  constructor(private ElementRef:ElementRef, public ThemeDataService:ThemeDataService, public dialog: MatDialog) {
    }
 
   ngOnInit(): void {
@@ -53,6 +56,14 @@ export class ItemCardDeckComponent implements OnInit {
       this.PagePos -= dir;
     }
     this.scroll()
+  }
+
+  clickItemCard(i:number){
+    this.dialog.open(ItemDetailedDialogComponent, {
+      data:{index:i,allIds:this.Items?.map(i=>i.id)} as DetItemDialogData,
+      width:"80rem",
+      height:"45rem"
+    });
   }
 }
 
