@@ -1,3 +1,4 @@
+import { ItemDetailedDialogComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed-dialog.component';
 import { LoginFormComponent } from './Components/Pages/login-page/login-form/login-form.component';
 import { AutomatSharedModule, MaterialModule } from 'AutomatShared';
 import { NgModule } from '@angular/core';
@@ -16,10 +17,9 @@ import { AdmonitionPageComponent } from './Components/Pages/admonition-page/admo
 import { HistoryPageComponent } from './Components/Pages/history-page/history-page.component';
 import { ActiveQrCodePageComponent } from './Components/Pages/active-qr-code-page/active-qr-code-page.component';
 import { HelpPageComponent } from './Components/Pages/help-page/help-page.component';
-import { ItemDetailedPageComponent } from './Components/Pages/item-detailed-page/item-detailed-page.component';
-import { ItemDetailedComponent } from './Components/Pages/item-detailed-page/item-detailed/item-detailed.component';
-import { ItemDetailedFormComponent } from './Components/Pages/item-detailed-page/item-detailed/item-detailed-form/item-detailed-form.component';
-import { ItemImageComponent } from './Components/Pages/item-detailed-page/item-detailed/item-image/item-image.component';
+import { ItemDetailedComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed/item-detailed.component';
+import { ItemDetailedFormComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed/item-detailed-form/item-detailed-form.component';
+import { ItemImageComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed/item-image/item-image.component';
 import { AddNDaysPipe } from './Pipes/DataPipes/DatePipes/add-ndays.pipe';
 
 @NgModule({
@@ -35,7 +35,7 @@ import { AddNDaysPipe } from './Pipes/DataPipes/DatePipes/add-ndays.pipe';
     HistoryPageComponent,
     ActiveQrCodePageComponent,
     HelpPageComponent,
-    ItemDetailedPageComponent,
+  ItemDetailedDialogComponent,
     ItemDetailedComponent,
     ItemDetailedFormComponent,
     ItemImageComponent,
