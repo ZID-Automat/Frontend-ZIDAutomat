@@ -1,6 +1,9 @@
-import { ItemDetailedDto } from 'AutomatApi';
-import { Component, OnInit, Input } from '@angular/core';
+import { FormButtonComponent } from './../../../../../../../../automat-shared/src/lib/Components/Form/form-button/form-button.component';
+import { BorrowOperationService } from './../../../../../Services/OperationServices/borrow-operation.service';
+import { BorrowDataDto, ItemDetailedDto, UBorrowService } from 'AutomatApi';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'user-item-detailed-form',
@@ -10,23 +13,37 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ItemDetailedFormComponent implements OnInit {
 
   @Input()ItemDetailed:ItemDetailedDto = {}
+  @Input()today:Date = new Date()
+
+  @ViewChild('SubmitButton') SubmitButton!:FormButtonComponent;
 
   public BorrowForm: FormGroup = new FormGroup({
-    BorrowDate: new FormControl('', [
+    dueTime: new FormControl('', [
       Validators.required,
     ]),
-    AGB: new FormControl(false, [Validators.requiredTrue]),
+    Zustimmung: new FormControl(false, [Validators.requiredTrue]),
   });
 
-  filterDates = (d: Date|null): boolean => {
-    if(null){
-      return false;
+  constructor(private BorrowService: BorrowOperationService) { }
+
+  Borrow() {
+    if (this.BorrowForm.valid) {
+      this.SubmitButton.startFetch();
+      const BorrowData: BorrowDataDto = this.BorrowForm.getRawValue();
+      BorrowData.itemId = this.ItemDetailed.id;
+      this.BorrowService
+        .Borrow(BorrowData)
+        .pipe(take(1))
+        .subscribe((res) => {
+          this.SubmitButton.finsihFetch();
+          setTimeout(()=>this.openQRCodeDialog(res.qrCode??""),1100)
+        });
     }
+  }
 
-    return false;
-  };
-
-  constructor() { }
+  private openQRCodeDialog(qrCode:string){
+    alert("Open QR Code Dialog")
+  }
 
   ngOnInit(): void {
   }

@@ -65,6 +65,54 @@
         }
       }
     },
+    "/UBorrow/Borrow": {
+      "post": {
+        "tags": [
+          "UBorrow"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BorrowDataDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BorrowDataDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BorrowDataDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BorrowResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BorrowResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BorrowResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/UItem/getAllItems": {
       "get": {
         "tags": [
@@ -183,9 +231,37 @@
   },
   "components": {
     "schemas": {
+      "BorrowDataDto": {
+        "type": "object",
+        "properties": {
+          "dueTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "itemId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BorrowResponse": {
+        "type": "object",
+        "properties": {
+          "qrCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ItemDetailedDto": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
           "name": {
             "type": "string",
             "nullable": true
@@ -219,6 +295,10 @@
       "ItemDisplayDto": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
           "name": {
             "type": "string",
             "nullable": true
