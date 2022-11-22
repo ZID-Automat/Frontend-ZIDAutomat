@@ -10,12 +10,8 @@ export class IconComponent implements OnInit {
 
   @Input()IconName:string = "";
 
-  public IconD:any;
-
-  constructor(private iconDataService:IconDataService) { }
+  constructor(public iconDataService:IconDataService) { }
 
   ngOnInit(): void {
-    this.IconD = this.iconDataService.getIcon(this.IconName)
   }
-
 }
