@@ -1,40 +1,46 @@
-<div class="flex" *ngIf="Item">
+<div class="flex hover:" *ngIf="Item">
   <div class="w-1/2">
     <user-item-image
       [src]="Item.image"
-      [available]="Item?.available??false"
+      [available]="Item?.available ?? false"
       alt="Item 1Image"
-      class=" block m-4"
-    > </user-item-image>
+      class="m-auto block mr-4"
+    >
+    </user-item-image>
+    <mat-error *ngIf="!Item.available" class="mt-4 text-2xl text-justify">
+      Dieser Artikel ist aktuell nicht verfügbar. Versuche es später noch
+      einmal!
+    </mat-error>
   </div>
   <div class="w-1/2">
-    <div class="m-4">
-      <p class="ml-1 font-medium text-4xl">{{ Item?.name }}</p>
-      <div class="ml-1 font-normal text-2xl text-gray-800">
-        {{ Item?.subName }}
+    <div class="ml-4">
+      <div class="h-24 mb-2">
+        <p class="ml-1 font-medium text-4xl">{{ Item?.name }}</p>
+        <div class="ml-1 font-normal text-2xl text-gray-800">
+          {{ Item?.subName }}
+        </div>
+        <p class="ml-1 text-xl font-normal text-gray-700">
+          {{ Item?.categorie ?? "Kategorie" }}
+        </p>
       </div>
-      <p class="ml-1 mt-1 text-xl font-normal text-gray-700">{{ Item?.categorie ??"Kategorie"}}</p>
-
       <div class="flex mt-8 mb-4">
         <div class="ml-1 text-3xl">
-          <h2 class="font-medium ">Wert:</h2>
+          <h2 class="font-medium">Wert:</h2>
         </div>
         <div class="ml-3 text-3xl">
           <p class="font-light">{{ Item?.price | currency }}</p>
         </div>
       </div>
 
-      <div class="ml-1 font-light text-xl text-justify">
+      <div class="ml-1 font-light text-xl text-justify h-14">
         {{ Item?.description }}
       </div>
-     
-
-      <mat-error *ngIf="!Item.available" class="mt-8 text-2xl text-justify">
-        Dieser Artikel ist aktuell nicht verfügbar. Versuche es später noch einmal!
-      </mat-error>
 
       <h2 class="font-medium ml-1 text-3xl mt-10 mb-3">Ausborgen:</h2>
-     <user-item-detailed-form [ItemDetailed]="Item" class="mt-96"></user-item-detailed-form>
+      <user-item-detailed-form
+        [ItemDetailed]="Item"
+        class="mt-96"
+      ></user-item-detailed-form>
     </div>
   </div>
 </div>

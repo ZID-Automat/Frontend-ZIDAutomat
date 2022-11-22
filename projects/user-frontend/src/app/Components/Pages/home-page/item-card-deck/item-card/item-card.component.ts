@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { ThemeDataService } from 'AutomatShared';
 import { Component, Input, OnInit, ElementRef } from '@angular/core';
 import { ItemDisplayDto } from 'AutomatApi';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'user-item-card',
@@ -14,13 +13,12 @@ export class ItemCardComponent implements OnInit {
 
   @Input()Item?:ItemDisplayDto ;
 
-  constructor(public ThemeDataService:ThemeDataService, public elementRef:ElementRef, public dialog: MatDialog) { }
+  constructor(public ThemeDataService:ThemeDataService, public elementRef:ElementRef) { }
 
   ngOnInit(): void {
   }
 
   click(){
-    this.dialog.open(ItemDetailedDialogComponent, {
-    });
+  
   }
 }
