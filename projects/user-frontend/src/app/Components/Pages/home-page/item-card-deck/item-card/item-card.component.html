@@ -4,12 +4,8 @@
             <mat-card-title class="" [style.color]="ThemeDataService.textPrimaryColor"> {{Item?.name}} </mat-card-title>
             <mat-card-subtitle [style.color]="ThemeDataService.textSecondaryColor">{{Item?.subName}}</mat-card-subtitle>
         </mat-card-header>
-       <div class="h-52 div12">
-            <img  class="m-auto c imgMaxWisth " [src]="Item?.image" alt="Photo of a Shiba Inu">
+       <div class="h-72 div12">
+           <user-item-image [src]="Item?.image" [available]="Item?.available??true" class="m-auto c imgMaxWisth " ></user-item-image>
        </div>
-       <mat-divider inset class=""></mat-divider>
-        <div class="p-5">
-            {{Item?.description}}
-        </div>
     </mat-card>
 </div>
