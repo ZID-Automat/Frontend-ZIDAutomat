@@ -1,3 +1,4 @@
+import { UserFrontendRoutes } from './../../../../../app-routing.module';
 import { Router } from '@angular/router';
 import { ThemeDataService } from 'AutomatShared';
 import { Component, Input, OnInit, ElementRef } from '@angular/core';
@@ -18,5 +19,6 @@ export class ItemCardComponent implements OnInit {
   }
 
   click(){
+    this.router.navigate([UserFrontendRoutes.ItemDetailed,this.Item?.id])
   }
 }
