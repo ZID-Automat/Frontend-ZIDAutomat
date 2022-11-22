@@ -1,4 +1,3 @@
-import { ItemDetailedPageComponent } from './Components/Pages/item-detailed-page/item-detailed-page.component';
 import { HomePageComponent } from './Components/Pages/home-page/home-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -19,11 +18,11 @@ const routes: Routes = [
   { path: '', redirectTo: UserFrontendRoutes.Login, pathMatch: 'full' },
   { path: UserFrontendRoutes.Login, component: LoginPageComponent },
   { path: UserFrontendRoutes.Home, component: HomePageComponent, canActivate:[LoginActivateGuard] },
-  { path: UserFrontendRoutes.ItemDetailed+"/:id", component: ItemDetailedPageComponent, canActivate:[LoginActivateGuard]}
 
 ];
 
 @NgModule({
+    
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
