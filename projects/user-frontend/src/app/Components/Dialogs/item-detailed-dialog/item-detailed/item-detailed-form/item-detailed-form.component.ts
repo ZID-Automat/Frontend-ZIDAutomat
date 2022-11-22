@@ -1,7 +1,7 @@
-import { FormButtonComponent } from './../../../../../../../../automat-shared/src/lib/Components/Form/form-button/form-button.component';
+import { FormButtonComponent } from 'AutomatShared';
 import { BorrowOperationService } from './../../../../../Services/OperationServices/borrow-operation.service';
 import { BorrowDataDto, ItemDetailedDto, UBorrowService } from 'AutomatApi';
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { take } from 'rxjs';
 

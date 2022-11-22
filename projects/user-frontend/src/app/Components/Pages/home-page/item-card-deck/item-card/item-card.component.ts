@@ -13,12 +13,11 @@ export class ItemCardComponent implements OnInit {
 
   @Input()Item?:ItemDisplayDto ;
 
-  constructor(public ThemeDataService:ThemeDataService, public elementRef:ElementRef, private router:Router) { }
+  constructor(public ThemeDataService:ThemeDataService, public elementRef:ElementRef) { }
 
   ngOnInit(): void {
   }
 
   click(){
-    this.router.navigate([UserFrontendRoutes.ItemDetailed,this.Item?.id])
   }
 }

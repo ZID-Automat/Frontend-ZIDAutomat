@@ -29,4 +29,8 @@ export class ThemeDataService {
   {
     return "#ff0000";
   }
+
+  get dissabledColor():string{
+    return "#e8e4e4"
+  }
 }
