@@ -1,18 +1,19 @@
-<form [formGroup]="BorrowForm" class="mt-10 shadow-1xl">
+<form [formGroup]="BorrowForm" class="mt-1 shadow-1xl br rounded" (ngSubmit)="Borrow()">
   <mat-form-field class="w-full p-0" appearance="fill">
     <mat-label>Bis wann möchtest du den Artikel ausborgen</mat-label>
-    <input matInput [matDatepickerFilter]="filterDates" [matDatepicker]="picker" />
+    <input matInput  formControlName="dueTime" [min]="today | addNDays:1" [max]="today | addNDays:7" [matDatepicker]="picker"  />
     <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
+    <mat-error> Rückgabedatum ist ungültig</mat-error>
   </mat-form-field>
 
   <mat-form-field class="input mat-form-field--no-underline w-full bw mb-4">
-    <input matInput formControlName="AGB" class="hidden" />
-    <mat-error> Error </mat-error>
+    <input matInput formControlName="Zustimmung" class="hidden" />
+    <mat-error class="ml-3"> BItte bestätige, dass Sie sich bewusst sind, was sie im Begriff sind zu tun </mat-error>
     <div class="flex mt-0 pt-0">
       <mat-checkbox
         matInput
-        formControlName="AGB"
+        formControlName="Zustimmung"
         class="ml-1 mr-1"
       ></mat-checkbox>
       <p class="whitespace-normal font-thin text-xs">
@@ -23,7 +24,5 @@
     </div>
   </mat-form-field>
 
-  <button type="submit" [disabled]="!ItemDetailed?.available" class="input w-full  mt-2" mat-raised-button color="accent">
-    <p class="font-thin text-xl m-2">Ausborgen</p>
-  </button>
+ <shared-form-button class="" #SubmitButton [dis]="!ItemDetailed?.available" label="Ausborgen"></shared-form-button>
 </form>

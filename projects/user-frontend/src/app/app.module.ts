@@ -20,6 +20,7 @@ import { ItemDetailedPageComponent } from './Components/Pages/item-detailed-page
 import { ItemDetailedComponent } from './Components/Pages/item-detailed-page/item-detailed/item-detailed.component';
 import { ItemDetailedFormComponent } from './Components/Pages/item-detailed-page/item-detailed/item-detailed-form/item-detailed-form.component';
 import { ItemImageComponent } from './Components/Pages/item-detailed-page/item-detailed/item-image/item-image.component';
+import { AddNDaysPipe } from './Pipes/DataPipes/DatePipes/add-ndays.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ItemImageComponent } from './Components/Pages/item-detailed-page/item-d
     ItemDetailedPageComponent,
     ItemDetailedComponent,
     ItemDetailedFormComponent,
-    ItemImageComponent
+    ItemImageComponent,
+    AddNDaysPipe
   ],
   imports: [
     AutomatSharedModule,

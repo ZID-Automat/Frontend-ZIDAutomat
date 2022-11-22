@@ -1,5 +1,4 @@
-import { ItemDetailedDto } from 'AutomatApi';
-import { UItemService,ItemDisplayDto } from 'AutomatApi';
+import { UItemService,ItemDisplayDto ,ItemDetailedDto} from 'AutomatApi';
 import { Subject, BehaviorSubject, take, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
