@@ -1,4 +1,3 @@
-import { ItemDetailedDialogComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed-dialog.component';
 import { LoginFormComponent } from './Components/Pages/login-page/login-form/login-form.component';
 import { AutomatSharedModule, MaterialModule } from 'AutomatShared';
 import { NgModule } from '@angular/core';
@@ -21,6 +20,7 @@ import { ItemDetailedComponent } from './Components/Dialogs/item-detailed-dialog
 import { ItemDetailedFormComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed/item-detailed-form/item-detailed-form.component';
 import { ItemImageComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed/item-image/item-image.component';
 import { AddNDaysPipe } from './Pipes/DataPipes/DatePipes/add-ndays.pipe';
+import { ItemDetailedDialogComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed.dialog';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { AddNDaysPipe } from './Pipes/DataPipes/DatePipes/add-ndays.pipe';
     HistoryPageComponent,
     ActiveQrCodePageComponent,
     HelpPageComponent,
-  ItemDetailedDialogComponent,
+    ItemDetailedDialogComponent,
     ItemDetailedComponent,
     ItemDetailedFormComponent,
     ItemImageComponent,

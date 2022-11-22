@@ -8,8 +8,8 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'user-item-detailed-dialog',
-  templateUrl: './item-detailed-dialog.component.html',
-  styleUrls: ['./item-detailed-dialog.component.scss'],
+  templateUrl: './item-detailed.dialog.html',
+  styleUrls: ['./item-detailed.dialog.scss'],
 })
 export class ItemDetailedDialogComponent implements OnInit {
   item: ItemDetailedDto | undefined;

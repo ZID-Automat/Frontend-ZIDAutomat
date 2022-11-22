@@ -1,4 +1,3 @@
-import { ItemDetailedDialogComponent } from './../../../../Dialogs/item-detailed-dialog/item-detailed-dialog.component';
 import { Router } from '@angular/router';
 import { ThemeDataService } from 'AutomatShared';
 import { Component, Input, OnInit, ElementRef } from '@angular/core';
