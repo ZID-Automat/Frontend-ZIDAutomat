@@ -16,10 +16,9 @@
 
     <mat-form-field class="input ">
         <mat-label class="font-thin">Password</mat-label>
-        <input type="password" matInput formControlName="password" required />
+        <input [type]="hide?'password':''" matInput formControlName="password" required />
         <div matSuffix (click)='toggleHide()'>
-            <lib-icon *ngIf="hide" [IconName]="'EyeSlash'"></lib-icon>
-            <lib-icon *ngIf="!hide" [IconName]="'Eye'"></lib-icon>
+            <lib-icon  [IconName]="hide ? 'EyeSlash' :'Eye'"></lib-icon>
         </div>
 
         <mat-error *ngIf="!LoginInfoForm.get('password')?.valid">
