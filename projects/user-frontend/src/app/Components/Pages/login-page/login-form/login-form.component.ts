@@ -29,9 +29,13 @@ export enum LoginErrors{
         ]),
     ])]
 })
+
 export class LoginFormComponent implements OnInit,OnDestroy {
 
   @Output() LoginEvent:EventEmitter<string>= new EventEmitter();
+
+  hide:boolean=true;
+
 
   public LoginInfoForm: FormGroup = new FormGroup({
     username: new FormControl('', [
@@ -101,4 +105,12 @@ export class LoginFormComponent implements OnInit,OnDestroy {
     }
     throw new Error("Formcontrol is null can't Validate content");
   }
+
+
+  toggleHide(){
+    this.hide = !this.hide;
+
+  }
+
+
 }

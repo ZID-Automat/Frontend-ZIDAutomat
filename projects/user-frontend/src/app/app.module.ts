@@ -54,6 +54,7 @@ import { ItemDetailedDialogComponent } from './Components/Dialogs/item-detailed-
         allowedDomains: ["localhost:7141"],
         disallowedRoutes: ["https://localhost:7141/Authentification/"],
         throwNoTokenError: false,
+
         skipWhenExpired: true
       },
     }),
