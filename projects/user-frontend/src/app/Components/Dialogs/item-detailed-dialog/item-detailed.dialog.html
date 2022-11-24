@@ -2,7 +2,7 @@
     <div class="w-full h1 ml-auto mr-auto flex">
         <user-item-detailed class="w-full h1" *ngIf="item" [Item]="item"></user-item-detailed>
     </div>
-    <div class="text-3xl ml-5 block mt-auto " >
+    <div class="text-3xl ml-5 block mt-3 " >
         <!-----Niemand darf diesen Code sehen. Der wird später noch geändert. Ist gerade sehr spät und es muss für jetzt nur mal funktionieren-->
             <lib-icon *ngIf="bActive(false)" (click)="loadNextID(false)" class=" shadow-2xl text-4xl p-1 pl-4 pr-4 rounded-full text-white" matRipple [style.background-color]="ThemeDataService.accentColor" [matRippleUnbounded]="true" [matRippleRadius]="43" IconName="ArrowLeft"></lib-icon>
             <lib-icon *ngIf="!bActive(false)"class=" shadow-2xl text-4xl p-1 pl-4 pr-4 rounded-full text-white" [style.background-color]="ThemeDataService.dissabledColor" IconName="ArrowLeft"></lib-icon>

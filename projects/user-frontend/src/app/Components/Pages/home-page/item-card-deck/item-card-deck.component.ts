@@ -62,7 +62,7 @@ export class ItemCardDeckComponent implements OnInit {
     this.dialog.open(ItemDetailedDialogComponent, {
       data:{index:i,allIds:this.Items?.map(i=>i.id)} as DetItemDialogData,
       width:"80rem",
-      height:"45rem"
+      height: "80vh",
     });
   }
 }
