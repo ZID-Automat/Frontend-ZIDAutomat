@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ThemeDataService } from 'AutomatShared';
 import { UserFrontendRoutes } from '../../../app-routing.module';
 
 @Component({
@@ -9,6 +10,7 @@ import { UserFrontendRoutes } from '../../../app-routing.module';
 })
 export class LoginPageComponent implements OnInit {
   constructor(
+    public themeDataService: ThemeDataService,
     private router: Router
   ) {}
 
