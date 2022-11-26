@@ -19,11 +19,12 @@ export class LoginPageComponent implements OnInit {
   public Login(jwt: string) {
     if (jwt) {
       //Check if there is a return url in the query params
-      const previousNavigation =
-        this.router.getCurrentNavigation()?.previousNavigation;
-      if (previousNavigation != null && previousNavigation != undefined)
-        this.router.navigate([previousNavigation]);
-      else this.router.navigate([UserFrontendRoutes.Home]);
+      const returnUrl = this.router.parseUrl(this.router.url).queryParams[
+        'returnUrl'
+      ];
+      if (returnUrl) {
+        this.router.navigateByUrl(returnUrl);
+      } else this.router.navigate([UserFrontendRoutes.Home]);
     }
   }
 }
