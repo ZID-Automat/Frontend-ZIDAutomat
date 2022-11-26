@@ -1,9 +1,13 @@
 <div class="w-full  text-white flex " [style.background-color]="themeDataService.primaryColor">
     <div class="p-2 m-auto w-11/12 flex ">
-        <div class="text-xl ">ZID Automat</div>
+        <a [routerLink]="[UserFrontendRoutes.Home]">
+            <div class="text-xl ">ZID Automat</div>
+          </a>
 
         <div class="flex ml-auto">
-            <shared-icon-button Tooltip="Active QRCodes" (Clicked)="route(UserFrontendRoutes.ActiveQrCodes)" IconName="QrCode"></shared-icon-button>
+            <shared-icon-button *ngIf="count != 0" Tooltip="Active QRCodes" matBadgeSize="medium"  matBadgePosition="before" [matBadge]="count" matBadgeColor="accent" (Clicked)="route(UserFrontendRoutes.ActiveQrCodes)" IconName="QrCode"></shared-icon-button>
+            <shared-icon-button *ngIf="count==0" Tooltip="Active QRCodes" (Clicked)="route(UserFrontendRoutes.ActiveQrCodes)" IconName="QrCode"></shared-icon-button>
+           
             <shared-icon-button Tooltip="Borrows" (Clicked)="route(UserFrontendRoutes.History)" IconName="History"></shared-icon-button>
             <shared-icon-button Tooltip="Admonitions" (Clicked)="route(UserFrontendRoutes.Admonition)" IconName="TriangleExclamation"></shared-icon-button>
             <shared-icon-button Tooltip="Help" (Clicked)="route(UserFrontendRoutes.Help)" IconName="Help"></shared-icon-button>

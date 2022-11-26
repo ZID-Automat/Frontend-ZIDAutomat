@@ -1,6 +1,6 @@
 import { LoginFormComponent } from './Components/Pages/login-page/login-form/login-form.component';
 import { AutomatSharedModule, MaterialModule } from 'AutomatShared';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,10 +16,12 @@ import { AdmonitionPageComponent } from './Components/Pages/admonition-page/admo
 import { HistoryPageComponent } from './Components/Pages/history-page/history-page.component';
 import { ActiveQrCodePageComponent } from './Components/Pages/active-qr-code-page/active-qr-code-page.component';
 import { HelpPageComponent } from './Components/Pages/help-page/help-page.component';
-import { ItemDetailedPageComponent } from './Components/Pages/item-detailed-page/item-detailed-page.component';
-import { ItemDetailedComponent } from './Components/Pages/item-detailed-page/item-detailed/item-detailed.component';
-import { ItemDetailedFormComponent } from './Components/Pages/item-detailed-page/item-detailed/item-detailed-form/item-detailed-form.component';
-import { ItemImageComponent } from './Components/Pages/item-detailed-page/item-detailed/item-image/item-image.component';
+import { ItemDetailedComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed/item-detailed.component';
+import { ItemDetailedFormComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed/item-detailed-form/item-detailed-form.component';
+import { ItemImageComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed/item-image/item-image.component';
+import { AddNDaysPipe } from './Pipes/DataPipes/DatePipes/add-ndays.pipe';
+import { ItemDetailedDialogComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed.dialog';
+import { BorrowDisplayComponent } from './Components/Dummy/borrow-display/borrow-display.component';
 
 @NgModule({
   declarations: [
@@ -34,10 +36,12 @@ import { ItemImageComponent } from './Components/Pages/item-detailed-page/item-d
     HistoryPageComponent,
     ActiveQrCodePageComponent,
     HelpPageComponent,
-    ItemDetailedPageComponent,
+    ItemDetailedDialogComponent,
     ItemDetailedComponent,
     ItemDetailedFormComponent,
-    ItemImageComponent
+    ItemImageComponent,
+    AddNDaysPipe,
+    BorrowDisplayComponent
   ],
   imports: [
     AutomatSharedModule,
@@ -52,6 +56,7 @@ import { ItemImageComponent } from './Components/Pages/item-detailed-page/item-d
         allowedDomains: ["localhost:7141"],
         disallowedRoutes: ["https://localhost:7141/Authentification/"],
         throwNoTokenError: false,
+
         skipWhenExpired: true
       },
     }),

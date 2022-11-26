@@ -11,3 +11,5 @@ export * from './lib/Components/Other/icon/icon.component'
 export * from './lib/Services/DataServices/theme-data.service';
 
 export * from './lib/Components/Form/icon-button/icon-button.component'
+
+export * from './lib/Components/Form/form-button/form-button.component';

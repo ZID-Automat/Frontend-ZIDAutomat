@@ -45,7 +45,7 @@ The first one uses the local Swagger.json file
 #### `npm run generate-api-client-File`
 
 The second one downloads the Swagger.json file from the local Swagger instance and runs then the generate api-client-File Command.
-
+    
 #### `npm run generate-api-client-Swagger`
 
 ## Generate Component, Pipes, Services, Directives ...

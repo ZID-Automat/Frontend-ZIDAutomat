@@ -5,11 +5,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconComponent } from './Components/Other/icon/icon.component';
 import { IconButtonComponent } from './Components/Form/icon-button/icon-button.component';
 import { MaterialModule } from './MaterialModule/material.module';
+import { FormButtonComponent } from './Components/Form/form-button/form-button.component';
 
 @NgModule({
   declarations: [
     IconComponent,
-    IconButtonComponent
+    IconButtonComponent,
+    FormButtonComponent,
+    FormButtonComponent
   ],
   imports: [
     HttpClientModule,
@@ -19,7 +22,8 @@ import { MaterialModule } from './MaterialModule/material.module';
   exports: [
     IconComponent,
     FontAwesomeModule,
-    IconButtonComponent
+    IconButtonComponent,
+    FormButtonComponent
   ],
   providers: [
     HttpContext,
