@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import { LOCALE_ID, NgModule } from '@angular/core';
+import { CommonModule, registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
 
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,8 +36,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatNativeDateModule, MatRippleModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatNativeDateModule, MatRippleModule, MAT_DATE_LOCALE,MAT_DATE_FORMATS } from '@angular/material/core';
 
+
+registerLocaleData(localeDe, 'de');
 @NgModule( {
     imports: [
         CommonModule,
@@ -123,7 +125,8 @@ import { MatNativeDateModule, MatRippleModule, MAT_DATE_LOCALE } from '@angular/
     ],
     providers: [
         MatDatepickerModule,
-        { provide: MAT_DATE_LOCALE, useValue: 'de-AT' }
+        { provide: LOCALE_ID, useValue: 'de' }
+
     ]
 } )
 export class MaterialModule { }
