@@ -1,6 +1,6 @@
 import { LoginFormComponent } from './Components/Pages/login-page/login-form/login-form.component';
 import { AutomatSharedModule, MaterialModule } from 'AutomatShared';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,7 @@ import { ItemDetailedFormComponent } from './Components/Dialogs/item-detailed-di
 import { ItemImageComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed/item-image/item-image.component';
 import { AddNDaysPipe } from './Pipes/DataPipes/DatePipes/add-ndays.pipe';
 import { ItemDetailedDialogComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed.dialog';
+import { BorrowDisplayComponent } from './Components/Dummy/borrow-display/borrow-display.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ItemDetailedDialogComponent } from './Components/Dialogs/item-detailed-
     ItemDetailedComponent,
     ItemDetailedFormComponent,
     ItemImageComponent,
-    AddNDaysPipe
+    AddNDaysPipe,
+    BorrowDisplayComponent
   ],
   imports: [
     AutomatSharedModule,

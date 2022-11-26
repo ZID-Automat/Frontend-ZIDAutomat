@@ -95,17 +95,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BorrowResponse"
+                  "$ref": "#/components/schemas/BorrowResponseDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BorrowResponse"
+                  "$ref": "#/components/schemas/BorrowResponseDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BorrowResponse"
+                  "$ref": "#/components/schemas/BorrowResponseDto"
                 }
               }
             }
@@ -227,6 +227,44 @@
           }
         }
       }
+    },
+    "/UQrCode/ActiveQrCodes": {
+      "get": {
+        "tags": [
+          "UQrCode"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BorrowDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BorrowDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BorrowDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -245,7 +283,43 @@
         },
         "additionalProperties": false
       },
-      "BorrowResponse": {
+      "BorrowDto": {
+        "type": "object",
+        "properties": {
+          "itemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "itemInstanceId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "borrowDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dueDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "returnDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "collectDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "itemName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BorrowResponseDto": {
         "type": "object",
         "properties": {
           "qrCode": {

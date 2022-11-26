@@ -1,0 +1,77 @@
+<div
+  class="w-full px-4 md:w-11/12 md:mx-auto lg:w-8/12 xl:w-full  p-4 rounded-lg pb-1 text-lg maxwidth"
+>
+  <div class="bg-white m-1 shadow-2xl rounded mt-1 mb-4 p-5">
+    <div class="xl:flex">
+      <div class="xl:w-1/2">
+        <h1 class="text-3xl font-semibold">
+          {{ borrow.itemName }}
+        </h1>
+        <div class="flex">
+          <div class="font-medium text-gray-800">
+            <p class="my-2 mb-2">ArtikelNummer:</p>
+            <p class="my-2 mb-2">ArtikelInstanz:</p>
+          </div>
+          <div class=" ml-auto xl:mr-14 text-right">
+            <p class="my-2 mb-2">{{ borrow.itemId }}</p>
+            <p class="my-2 mb-2">{{ borrow.itemInstanceId }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="xl:w-1/2">
+        <div class="flex">
+          <div class="font-medium text-gray-800">
+            <p class="my-2">Ausborgedatum:</p>
+            <p class="my-2">Abholdatum:</p>
+            <p class="my-2">Soll Rückgabe:</p>
+            <p class="my-2">Rückgabedatum:</p>
+          </div>
+          <div class="ml-auto xl:mr-14 text-right">
+            <p class="my-2">
+              {{
+                (borrow.borrowDate | date: "short") ??
+                  "Fehler Kein AusborgeDatum"
+              }}
+            </p>
+            <p class="my-2">
+              {{
+                (borrow.collectDate | date: "short") ?? "Noch nicht ausgeborgt"
+              }}
+            </p>
+            <p class="my-2">
+              {{ (borrow.dueDate | date: "short") ?? "Soll Rückgabe" }}
+            </p>
+            <p class="my-2">
+              {{
+                (borrow.returnDate | date: "short") ??
+                  "Artikel nicht Zurückgegeben"
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="block xl:w-1/4 my-auto">
+        <button
+          mat-raised-button
+          color="primary"
+          class="shadow-2xl w-full !mt-3 !p-3 !my-1 !text-lg"      >
+          Show QR Code
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          class="shadow-2xl w-full !mt-3 !p-3 !my-1 !text-lg"
+        >
+          Zum Artikel
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          class="shadow-2xl w-full !mt-3 !p-3 !my-1 !text-lg "
+        >
+          Zur ArtikelInstanz
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
