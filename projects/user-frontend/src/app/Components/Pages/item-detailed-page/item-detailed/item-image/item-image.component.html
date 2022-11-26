@@ -1,0 +1,7 @@
+<div *ngIf="!available">
+    <svg class="absolute z-10 border-gray-300 border-2 rounded" *ngIf="xMark | async as data" [attr.width] = "image.offsetWidth" [attr.height] = "image.offsetHeight">
+        <line [attr.x1]="0" [attr.y1]="0" [attr.x2]="image.offsetWidth" [attr.y2]="image.offsetHeight" style="stroke-width:2px" class="stroke-gray-300" />
+        <line [attr.x1]="0" [attr.y2]="0" [attr.x2]="image.offsetWidth" [attr.y1]="image.offsetHeight" style="stroke-width:2px" class="stroke-gray-300" />
+    </svg>
+</div>
+    <img [src]="src" #image [alt]="alt" class=" rounded w-full " [class.gray] ="!available" (load)="load()">
