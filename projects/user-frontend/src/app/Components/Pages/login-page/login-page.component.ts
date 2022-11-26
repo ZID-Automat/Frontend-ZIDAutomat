@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ThemeDataService } from 'AutomatShared';
-import { take } from 'rxjs';
 import { UserFrontendRoutes } from '../../../app-routing.module';
 
 @Component({
@@ -11,7 +9,6 @@ import { UserFrontendRoutes } from '../../../app-routing.module';
 })
 export class LoginPageComponent implements OnInit {
   constructor(
-    public themeDataService: ThemeDataService,
     private router: Router
   ) {}
 
@@ -20,11 +17,11 @@ export class LoginPageComponent implements OnInit {
   public Login(jwt: string) {
     if (jwt) {
       //Check if there is a return url in the query params
-      if (this.router.getCurrentNavigation()?.previousNavigation != null) {
-        const returnUrl =
-          this.router.getCurrentNavigation()?.previousNavigation;
-        this.router.navigate([returnUrl]);
-      } else this.router.navigate([UserFrontendRoutes.Home]);
+      const previousNavigation =
+        this.router.getCurrentNavigation()?.previousNavigation;
+      if (previousNavigation != null && previousNavigation != undefined)
+        this.router.navigate([previousNavigation]);
+      else this.router.navigate([UserFrontendRoutes.Home]);
     }
   }
 }
