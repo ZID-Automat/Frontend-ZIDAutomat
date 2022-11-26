@@ -6,7 +6,9 @@ import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
 import { AuthentificationService } from './services/authentification.service';
 import { DebugService } from './services/debug.service';
+import { UBorrowService } from './services/u-borrow.service';
 import { UItemService } from './services/u-item.service';
+import { UQrCodeService } from './services/u-qr-code.service';
 
 /**
  * Module that provides all services and configuration.
@@ -18,7 +20,9 @@ import { UItemService } from './services/u-item.service';
   providers: [
     AuthentificationService,
     DebugService,
+    UBorrowService,
     UItemService,
+    UQrCodeService,
     ApiConfiguration
   ],
 })

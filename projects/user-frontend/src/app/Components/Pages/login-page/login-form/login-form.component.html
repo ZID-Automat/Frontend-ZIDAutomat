@@ -1,21 +1,26 @@
-<form [formGroup]="LoginInfoForm" class="bg-white rounded-lg pt-2 pl-4 pb-3 pr-4 text-black drop-shadow-2xl shadow-2xl" (ngSubmit)="Login()">
-    
-    
-    <p class="text-ms font-thin">Um den ZID-Automaten Service nutzen zu können, musst du dich mit deinem Schulaccount anmelden.</p>
+<form [formGroup]="LoginInfoForm" class="bg-white rounded-lg pt-2 pl-4 pb-3 pr-4 text-black drop-shadow-2xl shadow-2xl"
+    (ngSubmit)="Login()">
 
-    
+
+    <p class="text-ms font-thin">Um den ZID-Automaten Service nutzen zu können, musst du dich mit deinem Schulaccount
+        anmelden.</p>
+
+
     <mat-form-field class="input">
-        <mat-label class="font-thin" >Username</mat-label>
+        <mat-label class="font-thin">Username</mat-label>
         <input matInput class="font-thin" formControlName="username" required />
         <mat-error *ngIf="!LoginInfoForm.get('username')?.valid">
             {{ getErrorMessage(LoginInfoForm.get("username"), "Username") }}
         </mat-error>
     </mat-form-field>
 
-
     <mat-form-field class="input ">
-        <mat-label  class="font-thin">Password</mat-label>
-        <input type="password" matInput formControlName="password" required />
+        <mat-label class="font-thin">Password</mat-label>
+        <input [type]="hide?'password':''" matInput formControlName="password" required />
+        <div matSuffix (click)='toggleHide()'>
+            <lib-icon  [IconName]="hide ? 'EyeSlash' :'Eye'"></lib-icon>
+        </div>
+
         <mat-error *ngIf="!LoginInfoForm.get('password')?.valid">
             {{ getErrorMessage(LoginInfoForm.get("password"), "Password") }}
         </mat-error>
@@ -23,18 +28,19 @@
 
 
     <mat-form-field class="input mat-form-field--no-underline mb-2">
-        <input matInput  formControlName="AGB" class="hidden"  />
+        <input matInput formControlName="AGB" class="hidden" />
         <mat-error *ngIf="!LoginInfoForm.get('AGB')?.valid">
             {{ getErrorMessage(LoginInfoForm.get("AGB"), "AGBs",true) }}
         </mat-error>
         <mat-checkbox matInput formControlName="AGB" class="font-thin text-xs w-full">
-            <p class="">Ich akzeptiere die folgenden AGBs, siehe <a href="hier" class="bg-blue-200 rounded-sm p-.5">hier</a></p> 
+            <p class="">Ich akzeptiere die folgenden AGBs, siehe <a href="hier"
+                    class="bg-blue-200 rounded-sm p-.5">hier</a></p>
         </mat-checkbox>
     </mat-form-field>
 
 
     <button type="submit" class="input " mat-raised-button color="accent">
-      <p class="font-thin">Login</p>
+        <p class="font-thin">Login</p>
     </button>
 
     <mat-error *ngIf="(LoginError | async) as Error" [@transitionMessages]="Error ? 'enter' : 'closed'">
