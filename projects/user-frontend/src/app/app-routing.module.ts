@@ -18,11 +18,10 @@ const routes: Routes = [
   { path: '', redirectTo: UserFrontendRoutes.Login, pathMatch: 'full' },
   { path: UserFrontendRoutes.Login, component: LoginPageComponent },
   { path: UserFrontendRoutes.Home, component: HomePageComponent, canActivate:[LoginActivateGuard] },
-
+  // { path: "testroute", component: HomePageComponent, canActivate:[LoginActivateGuard] }, // To test the return url  
 ];
 
 @NgModule({
-    
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
