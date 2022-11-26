@@ -255,3 +255,7 @@ $altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
 .mat-form-field-appearance-legacy .mat-form-field-wrapper{
   padding-bottom: 1rem;
 }
+
+.mat-form-field-infix{
+  border-width: 0px;
+}
