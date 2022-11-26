@@ -184,9 +184,9 @@ body {
   --text-accent-darker-color: #{$light-primary-text};
 }   
 $mat-accent: (
-  main: #fb003f,
-  lighter: #feb3c5,
-  darker: #f90029,
+  main: #e63333,
+  lighter: #da5656,
+  darker: #a01d1d,
   200: #fb003f, // For slide toggle,
   contrast : (
     main: $light-primary-text,
@@ -259,3 +259,4 @@ $altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
 .mat-form-field-infix{
   border-width: 0px;
 }
+
