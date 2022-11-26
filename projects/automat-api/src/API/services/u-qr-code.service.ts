@@ -113,4 +113,95 @@ export class UQrCodeService extends BaseService {
     );
   }
 
+  /**
+   * Path part for operation uQrCodeActiveQrCodesCountGet
+   */
+  static readonly UQrCodeActiveQrCodesCountGetPath = '/UQrCode/ActiveQrCodesCount';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `uQrCodeActiveQrCodesCountGet$Plain()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  uQrCodeActiveQrCodesCountGet$Plain$Response(params?: {
+    context?: HttpContext
+  }
+): Observable<StrictHttpResponse<number>> {
+
+    const rb = new RequestBuilder(this.rootUrl, UQrCodeService.UQrCodeActiveQrCodesCountGetPath, 'get');
+    if (params) {
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'text',
+      accept: 'text/plain',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return (r as HttpResponse<any>).clone({ body: parseFloat(String((r as HttpResponse<any>).body)) }) as StrictHttpResponse<number>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `uQrCodeActiveQrCodesCountGet$Plain$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  uQrCodeActiveQrCodesCountGet$Plain(params?: {
+    context?: HttpContext
+  }
+): Observable<number> {
+
+    return this.uQrCodeActiveQrCodesCountGet$Plain$Response(params).pipe(
+      map((r: StrictHttpResponse<number>) => r.body as number)
+    );
+  }
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `uQrCodeActiveQrCodesCountGet$Json()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  uQrCodeActiveQrCodesCountGet$Json$Response(params?: {
+    context?: HttpContext
+  }
+): Observable<StrictHttpResponse<number>> {
+
+    const rb = new RequestBuilder(this.rootUrl, UQrCodeService.UQrCodeActiveQrCodesCountGetPath, 'get');
+    if (params) {
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'json',
+      accept: 'text/json',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return (r as HttpResponse<any>).clone({ body: parseFloat(String((r as HttpResponse<any>).body)) }) as StrictHttpResponse<number>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `uQrCodeActiveQrCodesCountGet$Json$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  uQrCodeActiveQrCodesCountGet$Json(params?: {
+    context?: HttpContext
+  }
+): Observable<number> {
+
+    return this.uQrCodeActiveQrCodesCountGet$Json$Response(params).pipe(
+      map((r: StrictHttpResponse<number>) => r.body as number)
+    );
+  }
+
 }

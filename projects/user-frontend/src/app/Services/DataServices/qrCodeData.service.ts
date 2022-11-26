@@ -12,4 +12,8 @@ export class QrCodeDataService {
   activeQrCodes():Observable<BorrowDto[]>{
     return this.UQrCodeService.uQrCodeActiveQrCodesGet$Json()
   }
+
+  activeQrCodesCount():Observable<number>{
+    return this.UQrCodeService.uQrCodeActiveQrCodesCountGet$Json()
+  }
 }
