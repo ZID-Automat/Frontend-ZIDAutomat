@@ -20,8 +20,10 @@ export class LoginActivateGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
     const tokenValid = !this.jwtHelperService.isTokenExpired();
-    if(!tokenValid)
-      this.router.navigate([UserFrontendRoutes.Login]);
+    if(!tokenValid){
+      // Navigate to login page and adds the current url as a query parameter
+      this.router.navigate([UserFrontendRoutes.Login], { queryParams: { returnUrl: state.url } });
+    }
     return tokenValid;
   }
 }
