@@ -114,6 +114,97 @@ export class UQrCodeService extends BaseService {
   }
 
   /**
+   * Path part for operation uQrCodeAllQrCodesGet
+   */
+  static readonly UQrCodeAllQrCodesGetPath = '/UQrCode/AllQrCodes';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `uQrCodeAllQrCodesGet$Plain()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  uQrCodeAllQrCodesGet$Plain$Response(params?: {
+    context?: HttpContext
+  }
+): Observable<StrictHttpResponse<Array<BorrowDto>>> {
+
+    const rb = new RequestBuilder(this.rootUrl, UQrCodeService.UQrCodeAllQrCodesGetPath, 'get');
+    if (params) {
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'text',
+      accept: 'text/plain',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return r as StrictHttpResponse<Array<BorrowDto>>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `uQrCodeAllQrCodesGet$Plain$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  uQrCodeAllQrCodesGet$Plain(params?: {
+    context?: HttpContext
+  }
+): Observable<Array<BorrowDto>> {
+
+    return this.uQrCodeAllQrCodesGet$Plain$Response(params).pipe(
+      map((r: StrictHttpResponse<Array<BorrowDto>>) => r.body as Array<BorrowDto>)
+    );
+  }
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `uQrCodeAllQrCodesGet$Json()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  uQrCodeAllQrCodesGet$Json$Response(params?: {
+    context?: HttpContext
+  }
+): Observable<StrictHttpResponse<Array<BorrowDto>>> {
+
+    const rb = new RequestBuilder(this.rootUrl, UQrCodeService.UQrCodeAllQrCodesGetPath, 'get');
+    if (params) {
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'json',
+      accept: 'text/json',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return r as StrictHttpResponse<Array<BorrowDto>>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `uQrCodeAllQrCodesGet$Json$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  uQrCodeAllQrCodesGet$Json(params?: {
+    context?: HttpContext
+  }
+): Observable<Array<BorrowDto>> {
+
+    return this.uQrCodeAllQrCodesGet$Json$Response(params).pipe(
+      map((r: StrictHttpResponse<Array<BorrowDto>>) => r.body as Array<BorrowDto>)
+    );
+  }
+
+  /**
    * Path part for operation uQrCodeActiveQrCodesCountGet
    */
   static readonly UQrCodeActiveQrCodesCountGetPath = '/UQrCode/ActiveQrCodesCount';

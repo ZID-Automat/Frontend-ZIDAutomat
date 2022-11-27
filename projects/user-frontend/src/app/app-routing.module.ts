@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './Components/Pages/login-page/login-page.component';
 import { LoginActivateGuard } from './Guards/login-activate.guard';
 import { ActiveQrCodePageComponent } from './Components/Pages/active-qr-code-page/active-qr-code-page.component';
+import { HistoryPageComponent } from './Components/Pages/history-page/history-page.component';
 
 export enum UserFrontendRoutes {
   Login = 'login',
@@ -17,8 +18,10 @@ export enum UserFrontendRoutes {
 const routes: Routes = [
   { path: '', redirectTo: UserFrontendRoutes.Login, pathMatch: 'full' },
   { path: UserFrontendRoutes.Login, component: LoginPageComponent },
+  { path: UserFrontendRoutes.Home +"/:id", component: HomePageComponent, canActivate:[LoginActivateGuard] },
   { path: UserFrontendRoutes.Home, component: HomePageComponent, canActivate:[LoginActivateGuard] },
   { path: UserFrontendRoutes.ActiveQrCodes, component: ActiveQrCodePageComponent, canActivate:[LoginActivateGuard] },
+  { path: UserFrontendRoutes.History, component: HistoryPageComponent, canActivate:[LoginActivateGuard] },
 ];
 
 @NgModule({
