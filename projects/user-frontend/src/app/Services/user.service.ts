@@ -10,6 +10,6 @@ export class UserService {
 
   login(LoginData:UserLoginDto) :Observable<string>{
     const UserLognOb: UserLoginDto = { username: LoginData.username, password: LoginData.password };
-    return this.authentificationService.authentificationLoginPost$Json({body:UserLognOb});
+    return this.authentificationService.authentificationUserLoginPost$Json({body:UserLognOb});
   }
 }
