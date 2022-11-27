@@ -1,3 +1,4 @@
+import { QRCodeModule } from 'angularx-qrcode';
 import { LoginFormComponent } from './Components/Pages/login-page/login-form/login-form.component';
 import { AutomatSharedModule, MaterialModule } from 'AutomatShared';
 import { LOCALE_ID, NgModule } from '@angular/core';
@@ -22,6 +23,7 @@ import { ItemImageComponent } from './Components/Dialogs/item-detailed-dialog/it
 import { AddNDaysPipe } from './Pipes/DataPipes/DatePipes/add-ndays.pipe';
 import { ItemDetailedDialogComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed.dialog';
 import { BorrowDisplayComponent } from './Components/Dummy/borrow-display/borrow-display.component';
+import { QrcodeDialogComponent } from './Components/Dummy/qrcode-dialog/qrcode-dialog.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { BorrowDisplayComponent } from './Components/Dummy/borrow-display/borrow
     ItemDetailedFormComponent,
     ItemImageComponent,
     AddNDaysPipe,
-    BorrowDisplayComponent
+    BorrowDisplayComponent,
+    QrcodeDialogComponent,
   ],
   imports: [
     AutomatSharedModule,
@@ -60,6 +63,8 @@ import { BorrowDisplayComponent } from './Components/Dummy/borrow-display/borrow
         skipWhenExpired: true
       },
     }),
+
+    QRCodeModule,
   ],
   providers: [   
   ],
