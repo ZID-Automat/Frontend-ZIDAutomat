@@ -22,12 +22,9 @@ const routes: Routes = [
   { path: UserFrontendRoutes.Home, component: HomePageComponent, canActivate:[LoginActivateGuard] },
   { path: UserFrontendRoutes.ActiveQrCodes, component: ActiveQrCodePageComponent, canActivate:[LoginActivateGuard] },
   { path: UserFrontendRoutes.History, component: HistoryPageComponent, canActivate:[LoginActivateGuard] },
-
-
 ];
 
 @NgModule({
-    
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
