@@ -266,6 +266,44 @@
         }
       }
     },
+    "/UQrCode/AllQrCodes": {
+      "get": {
+        "tags": [
+          "UQrCode"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BorrowDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BorrowDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BorrowDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/UQrCode/ActiveQrCodesCount": {
       "get": {
         "tags": [
