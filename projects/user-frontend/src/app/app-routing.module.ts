@@ -18,6 +18,7 @@ export enum UserFrontendRoutes {
 const routes: Routes = [
   { path: '', redirectTo: UserFrontendRoutes.Login, pathMatch: 'full' },
   { path: UserFrontendRoutes.Login, component: LoginPageComponent },
+  { path: UserFrontendRoutes.Home +"/:id", component: HomePageComponent, canActivate:[LoginActivateGuard] },
   { path: UserFrontendRoutes.Home, component: HomePageComponent, canActivate:[LoginActivateGuard] },
   { path: UserFrontendRoutes.ActiveQrCodes, component: ActiveQrCodePageComponent, canActivate:[LoginActivateGuard] },
   { path: UserFrontendRoutes.History, component: HistoryPageComponent, canActivate:[LoginActivateGuard] },
