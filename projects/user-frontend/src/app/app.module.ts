@@ -23,7 +23,7 @@ import { ItemImageComponent } from './Components/Dialogs/item-detailed-dialog/it
 import { AddNDaysPipe } from './Pipes/DataPipes/DatePipes/add-ndays.pipe';
 import { ItemDetailedDialogComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed.dialog';
 import { BorrowDisplayComponent } from './Components/Dummy/borrow-display/borrow-display.component';
-import { QrcodeDialogComponent } from './Components/Dummy/qrcode-dialog/qrcode-dialog.component';
+import { QrcodeDialogComponent } from './Components/Dialogs/qrcode-dialog/qrcode-dialog.component';
 
 @NgModule({
   declarations: [
