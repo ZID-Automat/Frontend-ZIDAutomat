@@ -24,6 +24,7 @@ import { AddNDaysPipe } from './Pipes/DataPipes/DatePipes/add-ndays.pipe';
 import { ItemDetailedDialogComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed.dialog';
 import { BorrowDisplayComponent } from './Components/Dummy/borrow-display/borrow-display.component';
 import { QrcodeDialogComponent } from './Components/Dialogs/qrcode-dialog/qrcode-dialog.component';
+import { QrcodeComponent } from './Components/Dialogs/qrcode-dialog/qrcode/qrcode.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { QrcodeDialogComponent } from './Components/Dialogs/qrcode-dialog/qrcode
     AddNDaysPipe,
     BorrowDisplayComponent,
     QrcodeDialogComponent,
+    QrcodeComponent,
   ],
   imports: [
     AutomatSharedModule,
