@@ -1,3 +1,4 @@
-<div class="flex justify-center align-middle">
-    <qrcode [qrdata]="qrcode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+<div class="flex flex-col justify-center align-middle">
+    <div>Hier ist dein QR Code</div>
+    <user-qrcode [qrcode]="data.qrcode"></user-qrcode>
 </div>
