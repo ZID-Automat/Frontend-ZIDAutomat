@@ -1,3 +1,17 @@
-<div class="flex justify-center align-middle">
-    <qrcode [qrdata]="qrcode" class="w-auto" [errorCorrectionLevel]="'M'"></qrcode>
+<div class="flex flex-col justify-center align-middle">
+  <qrcode
+    class="flex justify-center"
+    [qrdata]="qrcode"
+    [width]="width"
+    [errorCorrectionLevel]="'M'"
+  ></qrcode>
+  <div>
+    <p class="text-center text-sm text-gray-600">
+      Scan den QR code am Automaten!
+    </p>
+    <p class="text-center text-sm text-gray-600">
+      Du kannst den QR code screenshoten und/oder später unter Historie noch
+      einmal aufrufen.
+    </p>
+  </div>
 </div>
