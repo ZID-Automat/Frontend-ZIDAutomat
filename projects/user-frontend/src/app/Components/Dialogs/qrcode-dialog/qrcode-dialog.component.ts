@@ -15,8 +15,9 @@ export class QrcodeDialogComponent implements OnInit {
   public static openDialog(qrcode: IQRCodeDialogData, dialog: MatDialog) {
     dialog.open(QrcodeDialogComponent, {
       data: { qrcode: qrcode.qrcode },
-      width: '80vw',
-      height: '80vh',
+      width: '80%',
+      height: 'fit-content',
+      maxWidth: '400px',
     });
   }
 }
