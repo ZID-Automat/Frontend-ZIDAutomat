@@ -1,9 +1,4 @@
-import {
-  Component,
-  Input,
-  OnInit,
-  HostListener,
-} from '@angular/core';
+import { Component, Input, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'user-qrcode',
@@ -14,11 +9,11 @@ export class QrcodeComponent implements OnInit {
   @Input() qrcode: string = undefined!;
   width: number = 400;
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit(): void {
     this.updateDays();
   }
-
-  ngOnInit(): void {}
 
   @HostListener('window:resize', []) updateDays() {
     // lg (for laptops and desktops - screens equal to or greater than 1200px wide)
@@ -35,6 +30,9 @@ export class QrcodeComponent implements OnInit {
     // } else if (window.innerWidth < 768) {
     //   this.width = 300;//xs
     // }
-    this.width = window.innerWidth * 0.6;
+    //Get parent width
+    this.width =
+      document.getElementById('qr-code-dialog')?.offsetWidth ?? 400 * 0.2;
+    // this.width = window.innerWidth * 0.6;
   }
 }
