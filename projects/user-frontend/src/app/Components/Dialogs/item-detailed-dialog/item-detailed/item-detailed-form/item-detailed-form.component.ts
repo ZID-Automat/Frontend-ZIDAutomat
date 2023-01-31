@@ -1,9 +1,11 @@
+import { MatDialog } from '@angular/material/dialog';
 import { FormButtonComponent } from 'AutomatShared';
 import { BorrowOperationService } from './../../../../../Services/OperationServices/borrow-operation.service';
 import { BorrowDataDto, ItemDetailedDto, UBorrowService } from 'AutomatApi';
 import { Component, OnInit, Input, ViewChild, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { take } from 'rxjs';
+import { QrcodeDialogComponent } from '../../../qrcode-dialog/qrcode-dialog.component';
 
 @Component({
   selector: 'user-item-detailed-form',
@@ -24,7 +26,7 @@ export class ItemDetailedFormComponent implements OnInit {
     Zustimmung: new FormControl(false, [Validators.requiredTrue]),
   });
 
-  constructor(private BorrowService: BorrowOperationService) { }
+  constructor(private BorrowService: BorrowOperationService, private matDialog: MatDialog) { }
 
   Borrow() {
     if (this.BorrowForm.valid) {
@@ -42,7 +44,7 @@ export class ItemDetailedFormComponent implements OnInit {
   }
 
   private openQRCodeDialog(qrCode:string){
-    alert("Open QR Code Dialog")
+    QrcodeDialogComponent.openDialog({qrcode:qrCode},this.matDialog)
   }
 
   ngOnInit(): void {
