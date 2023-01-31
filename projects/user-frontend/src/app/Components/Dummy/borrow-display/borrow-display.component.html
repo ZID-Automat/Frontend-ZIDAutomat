@@ -52,25 +52,29 @@
       </div>
       <div class="block xl:w-1/4 my-auto">
         <button
+          (click)="openQrCodeDialog()"
           mat-raised-button
-          color="primary"
-          class="shadow-2xl w-full !mt-3 !p-3 !my-1 !text-lg"      >
+          color="accent"
+          class="shadow-2xl w-full !mt-3 !p-3 !my-1 !text-lg" [disabled]="this.borrow.collectDate != undefined">
           Show QR Code
         </button>
         <button
+          (click)="openZumArtikel()"
           mat-raised-button
-          color="primary"
+          color="accent"
           class="shadow-2xl w-full !mt-3 !p-3 !my-1 !text-lg"
         >
           Zum Artikel
         </button>
+        <!---
         <button
           mat-raised-button
-          color="primary"
+          color="accent"
           class="shadow-2xl w-full !mt-3 !p-3 !my-1 !text-lg "
         >
           Zur ArtikelInstanz
         </button>
+        -->
       </div>
     </div>
   </div>

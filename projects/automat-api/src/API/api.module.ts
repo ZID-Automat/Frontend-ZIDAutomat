@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
 import { AuthentificationService } from './services/authentification.service';
+import { CBorrowService } from './services/c-borrow.service';
 import { DebugService } from './services/debug.service';
 import { UBorrowService } from './services/u-borrow.service';
 import { UItemService } from './services/u-item.service';
@@ -19,6 +20,7 @@ import { UQrCodeService } from './services/u-qr-code.service';
   declarations: [],
   providers: [
     AuthentificationService,
+    CBorrowService,
     DebugService,
     UBorrowService,
     UItemService,
