@@ -4,7 +4,7 @@ import { ItemDataService } from './../../../Services/DataServices/itemData.servi
 import { Component, Inject, OnInit } from '@angular/core';
 import { switchMap, take } from 'rxjs/operators';
 import { ThemeDataService } from 'AutomatShared';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'user-item-detailed-dialog',
@@ -45,6 +45,22 @@ export class ItemDetailedDialogComponent implements OnInit {
           this.item = res;
         });
     }
+  }
+
+  public static openDialog(MatDialog: MatDialog, indi: number, Items:any[]){
+    MatDialog.open(ItemDetailedDialogComponent, {
+      data:{index:indi,allIds:Items?.map(i=>i.id)},
+      width:"80rem",
+      height: "80vh",
+    });
+  }
+
+  public static openSingleDialog(MatDialog: MatDialog, ItemId:number){
+    MatDialog.open(ItemDetailedDialogComponent, {
+      data:{index:0,allIds:[ItemId]},
+      width:"80rem",
+      height: "80vh",
+    });
   }
 
   bActive(forward: boolean) :boolean{

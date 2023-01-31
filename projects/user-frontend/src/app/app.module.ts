@@ -20,7 +20,6 @@ import { HelpPageComponent } from './Components/Pages/help-page/help-page.compon
 import { ItemDetailedComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed/item-detailed.component';
 import { ItemDetailedFormComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed/item-detailed-form/item-detailed-form.component';
 import { ItemImageComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed/item-image/item-image.component';
-import { AddNDaysPipe } from './Pipes/DataPipes/DatePipes/add-ndays.pipe';
 import { ItemDetailedDialogComponent } from './Components/Dialogs/item-detailed-dialog/item-detailed.dialog';
 import { BorrowDisplayComponent } from './Components/Dummy/borrow-display/borrow-display.component';
 import { QrcodeDialogComponent } from './Components/Dialogs/qrcode-dialog/qrcode-dialog.component';
@@ -43,10 +42,9 @@ import { QrcodeComponent } from './Components/Dialogs/qrcode-dialog/qrcode/qrcod
     ItemDetailedComponent,
     ItemDetailedFormComponent,
     ItemImageComponent,
-    AddNDaysPipe,
     BorrowDisplayComponent,
     QrcodeDialogComponent,
-    QrcodeComponent,
+    QrcodeComponent
   ],
   imports: [
     AutomatSharedModule,
