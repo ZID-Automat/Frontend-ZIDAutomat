@@ -3,11 +3,11 @@
 <div class="w-11/12 ml-auto mr-auto">
     <div *ngIf="AllPrevItems.length > 0">
         <h2 class="font-light text-2xl">Letztens Ausgeborgt</h2>
-        <user-item-card-deck [Items]="AllPrevItems"></user-item-card-deck>
+        <user-item-card-deck  [ChangeSubStatei]="changeSubState"  [Items]="AllPrevItems"></user-item-card-deck>
     </div>
 
     <div>
         <h2 class="font-light text-2xl">Alle Artikel</h2>
-        <user-item-card-deck [Items]="AllItems"></user-item-card-deck>
+        <user-item-card-deck [ChangeSubStatei]="changeSubState" [Items]="AllItems"></user-item-card-deck>
     </div>
 </div>

@@ -47,9 +47,9 @@ export class ItemDetailedDialogComponent implements OnInit {
     }
   }
 
-  public static openDialog(MatDialog: MatDialog, indi: number, Items:any[]){
+  public static openDialog(MatDialog: MatDialog, indi: number, Items:number[]){
     MatDialog.open(ItemDetailedDialogComponent, {
-      data:{index:indi,allIds:Items?.map(i=>i.id)},
+      data:{index:indi,allIds:Items},
       width:"80rem",
       height: "80vh",
     });
@@ -65,7 +65,7 @@ export class ItemDetailedDialogComponent implements OnInit {
 
   bActive(forward: boolean) :boolean{
     let dir = forward ? 1 : -1;
-    return !(this.data.index +dir > this.data.allIds.length || this.data.index +dir < 0)
+    return !(this.data.index +dir > (this.data.allIds.length-1) || this.data.index +dir < 0)
   }
 }
 
