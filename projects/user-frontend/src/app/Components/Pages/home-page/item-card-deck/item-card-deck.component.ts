@@ -1,5 +1,5 @@
 import { UserFrontendRoutes } from './../../../../app-routing.module';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 import { ItemDisplayDto } from 'AutomatApi'
 import { ThemeDataService } from 'AutomatShared';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -32,7 +32,6 @@ export class ItemCardDeckComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log("hallo")
   }
 
   calcStuff(scroll:boolean = false){
@@ -64,7 +63,9 @@ export class ItemCardDeckComponent implements OnInit {
   clickItemCard(i:number){
     this.ChangeSubStatei(false)
     this.router.navigate([UserFrontendRoutes.Home,this?.Items[i].id??""])
-    ItemDetailedDialogComponent.openDialog(this.dialog,i,this.Items?.map(x=>x.id??0)??[]);
+    ItemDetailedDialogComponent.openDialog(this.dialog,i,this.Items?.map(x=>x.id??0)??[]).afterClosed().pipe(take(1)).subscribe(()=>{
+      this.router.navigate([UserFrontendRoutes.Home,""]);
+    });
   }
 }
 

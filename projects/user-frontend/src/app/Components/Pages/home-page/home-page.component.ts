@@ -26,7 +26,7 @@ export class HomePageComponent implements OnInit {
     this.route.params.subscribe(params => {
       let id = params['id']
       if(id && this.SubState){
-        ItemDetailedDialogComponent.openDialog(this.dialog,0,[id])
+        ItemDetailedDialogComponent.openSingleDialog(this.dialog,id)
       }
      this.changeSubState(false)
     });
