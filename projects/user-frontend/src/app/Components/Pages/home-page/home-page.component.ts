@@ -1,7 +1,7 @@
 import { ItemDataService } from './../../../Services/DataServices/itemData.service';
 import { take } from 'rxjs';
 import { UserService } from './../../../Services/user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {ItemDisplayDto} from 'AutomatApi'
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
@@ -16,19 +16,19 @@ export class HomePageComponent implements OnInit {
   AllItems: ItemDisplayDto[] = [];
   AllPrevItems: ItemDisplayDto[] = [];
 
+  private SubState = true;
+
   constructor(private itemDataService: ItemDataService,private route: ActivatedRoute, public dialog: MatDialog) {}
 
   ngOnInit(): void {
 
+
     this.route.params.subscribe(params => {
       let id = params['id']
-      if(id){
-        this.dialog.open(ItemDetailedDialogComponent, {
-          data:{index:0,allIds:[id]} as DetItemDialogData,
-          width:"80rem",
-          height:"45rem"
-        });
+      if(id && this.SubState){
+        ItemDetailedDialogComponent.openDialog(this.dialog,0,[id])
       }
+     this.changeSubState(false)
     });
 
     this.itemDataService
@@ -44,5 +44,9 @@ export class HomePageComponent implements OnInit {
       .subscribe((res) => {
         this.AllPrevItems = res;
       });
+  }
+
+  public changeSubState(state: boolean) {
+    this.SubState = state;
   }
 }
