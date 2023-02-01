@@ -62,11 +62,6 @@ export class ItemCardDeckComponent implements OnInit {
 
   clickItemCard(i:number){
     this.router.navigate([UserFrontendRoutes.Home,this?.Items[i].id??""])
-    this.dialog.open(ItemDetailedDialogComponent, {
-      data:{index:i,allIds:this.Items?.map(i=>i.id)},
-      width:"80rem",
-      height: "80vh",
-    });
   }
 }
 
