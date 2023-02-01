@@ -1,10 +1,10 @@
 import { ItemDetailedDto } from 'AutomatApi';
 import { ActivatedRoute } from '@angular/router';
 import { ItemDataService } from './../../../Services/DataServices/itemData.service';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, EventEmitter } from '@angular/core';
 import { switchMap, take } from 'rxjs/operators';
 import { ThemeDataService } from 'AutomatShared';
-import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'user-item-detailed-dialog',
@@ -47,20 +47,17 @@ export class ItemDetailedDialogComponent implements OnInit {
     }
   }
 
-  public static openDialog(MatDialog: MatDialog, indi: number, Items:number[]){
-    MatDialog.open(ItemDetailedDialogComponent, {
+  public static openDialog(MatDialog: MatDialog, indi: number, Items:number[]):MatDialogRef<ItemDetailedDialogComponent>{
+    let ref = MatDialog.open(ItemDetailedDialogComponent, {
       data:{index:indi,allIds:Items},
       width:"80rem",
       height: "80vh",
     });
+    return ref;
   }
 
-  public static openSingleDialog(MatDialog: MatDialog, ItemId:number){
-    MatDialog.open(ItemDetailedDialogComponent, {
-      data:{index:0,allIds:[ItemId]},
-      width:"80rem",
-      height: "80vh",
-    });
+  public static openSingleDialog(MatDialog: MatDialog, ItemId:number):MatDialogRef<ItemDetailedDialogComponent>{
+    return this.openDialog(MatDialog,0,[ItemId])
   }
 
   bActive(forward: boolean) :boolean{
@@ -72,5 +69,6 @@ export class ItemDetailedDialogComponent implements OnInit {
  export interface DetItemDialogData {
   index: number;
   allIds: number[];
+  ClosedEvent:EventEmitter<void>
 }
  
