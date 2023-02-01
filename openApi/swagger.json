@@ -101,6 +101,124 @@
         }
       }
     },
+    "/CBorrow/ValidateQrCode": {
+      "post": {
+        "tags": [
+          "CBorrow"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QrCodeDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QrCodeDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/QrCodeDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidQrCodeDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidQrCodeDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidQrCodeDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/CBorrow/LoadItemData": {
+      "get": {
+        "tags": [
+          "CBorrow"
+        ],
+        "parameters": [
+          {
+            "name": "item",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemDetailedDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemDetailedDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemDetailedDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/CBorrow/InvalidateQrCode": {
+      "put": {
+        "tags": [
+          "CBorrow"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvalidateQrCodeDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvalidateQrCodeDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvalidateQrCodeDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/Debug/Seed": {
       "post": {
         "tags": [
@@ -143,17 +261,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/BorrowResponseDto"
+                  "$ref": "#/components/schemas/QrCodeDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BorrowResponseDto"
+                  "$ref": "#/components/schemas/QrCodeDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BorrowResponseDto"
+                  "$ref": "#/components/schemas/QrCodeDto"
                 }
               }
             }
@@ -433,14 +551,8 @@
           "itemName": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "BorrowResponseDto": {
-        "type": "object",
-        "properties": {
-          "qrCode": {
+          },
+          "uuid": {
             "type": "string",
             "nullable": true
           }
@@ -453,6 +565,20 @@
           "controllerPassword": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "InvalidateQrCodeDto": {
+        "type": "object",
+        "properties": {
+          "qrCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "itemInstanceId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -523,6 +649,16 @@
         },
         "additionalProperties": false
       },
+      "QrCodeDto": {
+        "type": "object",
+        "properties": {
+          "qrCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "UserLoginDto": {
         "type": "object",
         "properties": {
@@ -533,6 +669,19 @@
           "password": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ValidQrCodeDto": {
+        "type": "object",
+        "properties": {
+          "valid": {
+            "type": "boolean"
+          },
+          "itemId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

@@ -1,3 +1,5 @@
+import { AddNDaysPipe } from './Pipes/DataPipes/add-ndays.pipe';
+import { IsExpiredPipe } from './Pipes/DataPipes/is-expired.pipe';
 import { IconDataService } from './Services/DataServices/icon-data-service';
 import { HttpClientModule, HttpContext } from '@angular/common/http';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
@@ -12,18 +14,21 @@ import { FormButtonComponent } from './Components/Form/form-button/form-button.c
     IconComponent,
     IconButtonComponent,
     FormButtonComponent,
-    FormButtonComponent
+    IsExpiredPipe,
+    AddNDaysPipe,
   ],
   imports: [
     HttpClientModule,
     FontAwesomeModule,
-    MaterialModule
+    MaterialModule,
   ],
   exports: [
     IconComponent,
     FontAwesomeModule,
     IconButtonComponent,
-    FormButtonComponent
+    FormButtonComponent,
+    IsExpiredPipe,
+    AddNDaysPipe,
   ],
   providers: [
     HttpContext,
