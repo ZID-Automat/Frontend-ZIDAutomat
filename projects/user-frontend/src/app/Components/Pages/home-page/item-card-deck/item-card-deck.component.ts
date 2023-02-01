@@ -3,7 +3,7 @@ import { map } from 'rxjs/operators';
 import { ItemDisplayDto } from 'AutomatApi'
 import { ThemeDataService } from 'AutomatShared';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { Component, ElementRef, Input, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ItemCardComponent } from './item-card/item-card.component';
 import { MatDialog } from '@angular/material/dialog';
 import { DetItemDialogData, ItemDetailedDialogComponent } from '../../../Dialogs/item-detailed-dialog/item-detailed.dialog';
@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 export class ItemCardDeckComponent implements OnInit {
 
   @Input()Items:ItemDisplayDto[] = undefined!
+  @Input()ChangeSubStatei:(state:boolean)=>void = (b)=>{}  
 
   @ViewChildren('ItemCards') ItemCards!: QueryList<ItemCardComponent>;
   
@@ -31,7 +32,7 @@ export class ItemCardDeckComponent implements OnInit {
    }
 
   ngOnInit(): void {
-   
+    console.log("hallo")
   }
 
   calcStuff(scroll:boolean = false){
@@ -61,7 +62,9 @@ export class ItemCardDeckComponent implements OnInit {
   }
 
   clickItemCard(i:number){
+    this.ChangeSubStatei(false)
     this.router.navigate([UserFrontendRoutes.Home,this?.Items[i].id??""])
+    ItemDetailedDialogComponent.openDialog(this.dialog,i,this.Items?.map(x=>x.id??0)??[]);
   }
 }
 
