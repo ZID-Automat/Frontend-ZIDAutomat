@@ -1,5 +1,5 @@
 /* tslint:disable */
 /* eslint-disable */
-export interface BorrowResponseDto {
+export interface QrCodeDto {
   qrCode?: null | string;
 }

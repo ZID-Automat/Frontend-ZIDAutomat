@@ -8,4 +8,5 @@ export interface BorrowDto {
   itemInstanceId?: number;
   itemName?: null | string;
   returnDate?: null | string;
+  uuid?: null | string;
 }
