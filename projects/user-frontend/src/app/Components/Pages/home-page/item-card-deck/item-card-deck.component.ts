@@ -1,11 +1,13 @@
-import { map } from 'rxjs/operators';
+import { UserFrontendRoutes } from './../../../../app-routing.module';
+import { map, take } from 'rxjs/operators';
 import { ItemDisplayDto } from 'AutomatApi'
 import { ThemeDataService } from 'AutomatShared';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { Component, ElementRef, Input, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ItemCardComponent } from './item-card/item-card.component';
 import { MatDialog } from '@angular/material/dialog';
 import { DetItemDialogData, ItemDetailedDialogComponent } from '../../../Dialogs/item-detailed-dialog/item-detailed.dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'user-item-card-deck',
@@ -14,7 +16,8 @@ import { DetItemDialogData, ItemDetailedDialogComponent } from '../../../Dialogs
 })
 export class ItemCardDeckComponent implements OnInit {
 
-  @Input()Items?:ItemDisplayDto[] 
+  @Input()Items:ItemDisplayDto[] = undefined!
+  @Input()ChangeSubStatei:(state:boolean)=>void = (b)=>{}  
 
   @ViewChildren('ItemCards') ItemCards!: QueryList<ItemCardComponent>;
   
@@ -25,11 +28,10 @@ export class ItemCardDeckComponent implements OnInit {
 
   contWidth = 0
 
-  constructor(private ElementRef:ElementRef, public ThemeDataService:ThemeDataService, public dialog: MatDialog) {
+  constructor(private ElementRef:ElementRef, public ThemeDataService:ThemeDataService, public dialog: MatDialog, private router:Router) {
    }
 
   ngOnInit(): void {
-   
   }
 
   calcStuff(scroll:boolean = false){
@@ -59,10 +61,10 @@ export class ItemCardDeckComponent implements OnInit {
   }
 
   clickItemCard(i:number){
-    this.dialog.open(ItemDetailedDialogComponent, {
-      data:{index:i,allIds:this.Items?.map(i=>i.id)} as DetItemDialogData,
-      width:"80rem",
-      height:"45rem"
+    this.ChangeSubStatei(false)
+    this.router.navigate([UserFrontendRoutes.Home,this?.Items[i].id??""])
+    ItemDetailedDialogComponent.openDialog(this.dialog,i,this.Items?.map(x=>x.id??0)??[]).afterClosed().pipe(take(1)).subscribe(()=>{
+      this.router.navigate([UserFrontendRoutes.Home,""]);
     });
   }
 }
