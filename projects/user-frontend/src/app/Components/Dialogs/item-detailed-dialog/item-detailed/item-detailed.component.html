@@ -1,5 +1,5 @@
-<div class="flex hover:" *ngIf="Item">
-  <div class="w-1/2">
+<div class="flex flex-col xl:flex-row" *ngIf="Item">
+  <div class="w-full max-w-2xl xl:w-1/2 ml-auto mr-auto block">
     <user-item-image
       [src]="Item.image"
       [available]="Item?.available ?? false"
@@ -12,8 +12,8 @@
       einmal!
     </mat-error>
   </div>
-  <div class="w-1/2">
-    <div class="ml-4">
+  <div class ="w-full xl:w-1/2 xl:mt-0 mt-4 xl:mb-0 mb-4">
+    <div class="ml-0  xl:ml-4">
       <div class="h-24 mb-2">
         <p class="ml-1 font-medium text-4xl">{{ Item?.name }}</p>
         <div class="ml-1 font-normal text-2xl text-gray-800">
@@ -30,7 +30,10 @@
         <div class="ml-3 text-3xl">
           <p class="font-light">{{ Item?.price | currency }}</p>
         </div>
+        <lib-icon IconName="Questioncircle" class="text-gray-500 ml-2 text-xl" matTooltip="Dies ist nur der Rückerstattungswert" matTooltipPosition="right"></lib-icon>
       </div>
+
+      
 
       <div class="ml-1 font-light text-xl text-justify h-14">
         {{ Item?.description }}

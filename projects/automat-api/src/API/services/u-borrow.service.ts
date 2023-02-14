@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 
 import { BorrowDataDto } from '../models/borrow-data-dto';
-import { BorrowResponse } from '../models/borrow-response';
+import { QrCodeDto } from '../models/qr-code-dto';
 
 @Injectable({
   providedIn: 'root',
@@ -38,7 +38,7 @@ export class UBorrowService extends BaseService {
     context?: HttpContext
     body?: BorrowDataDto
   }
-): Observable<StrictHttpResponse<BorrowResponse>> {
+): Observable<StrictHttpResponse<QrCodeDto>> {
 
     const rb = new RequestBuilder(this.rootUrl, UBorrowService.UBorrowBorrowPostPath, 'post');
     if (params) {
@@ -52,7 +52,7 @@ export class UBorrowService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<BorrowResponse>;
+        return r as StrictHttpResponse<QrCodeDto>;
       })
     );
   }
@@ -67,10 +67,10 @@ export class UBorrowService extends BaseService {
     context?: HttpContext
     body?: BorrowDataDto
   }
-): Observable<BorrowResponse> {
+): Observable<QrCodeDto> {
 
     return this.uBorrowBorrowPost$Plain$Response(params).pipe(
-      map((r: StrictHttpResponse<BorrowResponse>) => r.body as BorrowResponse)
+      map((r: StrictHttpResponse<QrCodeDto>) => r.body as QrCodeDto)
     );
   }
 
@@ -84,7 +84,7 @@ export class UBorrowService extends BaseService {
     context?: HttpContext
     body?: BorrowDataDto
   }
-): Observable<StrictHttpResponse<BorrowResponse>> {
+): Observable<StrictHttpResponse<QrCodeDto>> {
 
     const rb = new RequestBuilder(this.rootUrl, UBorrowService.UBorrowBorrowPostPath, 'post');
     if (params) {
@@ -98,7 +98,7 @@ export class UBorrowService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<BorrowResponse>;
+        return r as StrictHttpResponse<QrCodeDto>;
       })
     );
   }
@@ -113,10 +113,10 @@ export class UBorrowService extends BaseService {
     context?: HttpContext
     body?: BorrowDataDto
   }
-): Observable<BorrowResponse> {
+): Observable<QrCodeDto> {
 
     return this.uBorrowBorrowPost$Json$Response(params).pipe(
-      map((r: StrictHttpResponse<BorrowResponse>) => r.body as BorrowResponse)
+      map((r: StrictHttpResponse<QrCodeDto>) => r.body as QrCodeDto)
     );
   }
 

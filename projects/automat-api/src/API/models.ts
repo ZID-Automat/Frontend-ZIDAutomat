@@ -1,5 +1,9 @@
 export { BorrowDataDto } from './models/borrow-data-dto';
-export { BorrowResponse } from './models/borrow-response';
+export { BorrowDto } from './models/borrow-dto';
+export { ControllerLoginDto } from './models/controller-login-dto';
+export { InvalidateQrCodeDto } from './models/invalidate-qr-code-dto';
 export { ItemDetailedDto } from './models/item-detailed-dto';
 export { ItemDisplayDto } from './models/item-display-dto';
+export { QrCodeDto } from './models/qr-code-dto';
 export { UserLoginDto } from './models/user-login-dto';
+export { ValidQrCodeDto } from './models/valid-qr-code-dto';

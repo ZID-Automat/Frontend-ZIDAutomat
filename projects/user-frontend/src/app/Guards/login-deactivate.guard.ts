@@ -12,7 +12,7 @@ import { UserFrontendRoutes } from '../app-routing.module';
 @Injectable({
   providedIn: 'root',
 })
-export class LoginActivateGuard implements CanActivate {
+export class LoginDeactivateGuard implements CanActivate {
   constructor(private jwtHelperService: JwtHelperService, private router: Router) {}
 
   canActivate(
@@ -20,10 +20,9 @@ export class LoginActivateGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
     const tokenValid = !this.jwtHelperService.isTokenExpired();
-    if(!tokenValid){
-      // Navigate to login page and adds the current url as a query parameter
-      this.router.navigate([UserFrontendRoutes.Login], { queryParams: { returnUrl: state.url } });
+    if(tokenValid){
+      this.router.navigate([UserFrontendRoutes.Home]);
     }
-    return tokenValid;
+    return !tokenValid;
   }
 }
