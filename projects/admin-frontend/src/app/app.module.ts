@@ -8,17 +8,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldControl, MatFormFieldModule } from '@angular/material/form-field';
+import { LoginPageComponent } from './Components/Pages/Login/login-page/login-page.component';
+import { NavBarComponent } from './Components/Dummy/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginPageComponent,
+    NavBarComponent
   ],
   imports: [
     AutomatSharedModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
