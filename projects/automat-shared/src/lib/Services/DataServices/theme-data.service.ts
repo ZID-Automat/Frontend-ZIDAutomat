@@ -33,4 +33,12 @@ export class ThemeDataService {
   get dissabledColor():string{
     return "#e8e4e4"
   }
+
+  get PrimaryColorAdmin():string{
+    return "#0ea5e9"
+  }
+
+  get AccentColorAdmin():string{
+    return "#1d4ed8"
+  }
 }
