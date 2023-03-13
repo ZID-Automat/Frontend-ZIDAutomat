@@ -1,0 +1,8 @@
+<div class="bg-gray-200 hei w-auto rounded-lg  shadow-xl p-1 ">
+    <div *ngFor="let a of h" cdkDropList cdkDropListConnectedTo="Itemsi">
+        <img [draggable]="true" class = "p-1 w-1/4 aspi rounded-lg float-left shadow-xl" src="https://www.zooroyal.de/magazin/wp-content/uploads/2022/09/katze-im-herbst-760x570-1-760x570.jpg">
+    </div>
+    <div cdkDrag  class="p-1 hover:scale-100 scale-95 ease-in duration-200  w-1/4 aspi  justify-center text-gray-500 rounded-lg float-left shadow-2xl border-gray-200 border-solid border-2 flex items-center">
+        <lib-icon IconName="Plus" class=" text-4xl "></lib-icon>
+    </div>
+</div>
