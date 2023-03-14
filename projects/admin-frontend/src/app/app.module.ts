@@ -14,6 +14,7 @@ import { StatusPageComponent } from './Components/Pages/Status/status-page/statu
 import { ItemPageComponent } from './Components/Pages/Item/item-page/item-page.component';
 import { AutomatViewComponent } from './Components/Dummy/automat-view/automat-view.component';
 import { ItemManComponent } from './Components/Dummy/item-man/item-man.component';
+import { DndModule } from 'ngx-drag-drop';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ItemManComponent } from './Components/Dummy/item-man/item-man.component
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    DragDropModule
+    DragDropModule,
+    DndModule
   ],
   providers: [],
   bootstrap: [AppComponent]

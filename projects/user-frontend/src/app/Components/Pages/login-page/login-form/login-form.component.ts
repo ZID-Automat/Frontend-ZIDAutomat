@@ -3,8 +3,8 @@ import { BehaviorSubject, take, takeWhile } from 'rxjs';
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import {
   AbstractControl,
-  FormControl,
-  FormGroup,
+  UntypedFormControl,
+  UntypedFormGroup,
   FormGroupName,
   ValidatorFn,
   Validators,
@@ -37,18 +37,18 @@ export class LoginFormComponent implements OnInit,OnDestroy {
   hide:boolean=true;
 
 
-  public LoginInfoForm: FormGroup = new FormGroup({
-    username: new FormControl('', [
+  public LoginInfoForm: UntypedFormGroup = new UntypedFormGroup({
+    username: new UntypedFormControl('', [
       Validators.required,
       Validators.maxLength(50),
       Validators.minLength(4),
     ]),
-    password: new FormControl('', [
+    password: new UntypedFormControl('', [
       Validators.required,
       Validators.maxLength(50),
       Validators.minLength(4),
     ]),
-    AGB: new FormControl(false, [Validators.requiredTrue]),
+    AGB: new UntypedFormControl(false, [Validators.requiredTrue]),
   });
 
   alive = true;
