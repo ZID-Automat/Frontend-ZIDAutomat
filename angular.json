@@ -276,5 +276,6 @@
     "@schematics/angular:component": {
       "style": "scss"
     }
-  }
+  },
+  "defaultProject": "AutomatShared"
 }
