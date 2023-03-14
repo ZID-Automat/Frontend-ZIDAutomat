@@ -3,7 +3,7 @@ import { FormButtonComponent } from 'AutomatShared';
 import { BorrowOperationService } from './../../../../../Services/OperationServices/borrow-operation.service';
 import { BorrowDataDto, ItemDetailedDto, UBorrowService } from 'AutomatApi';
 import { Component, OnInit, Input, ViewChild, Inject } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { take } from 'rxjs';
 import { QrcodeDialogComponent } from '../../../qrcode-dialog/qrcode-dialog.component';
 
@@ -19,11 +19,11 @@ export class ItemDetailedFormComponent implements OnInit {
 
   @ViewChild('SubmitButton') SubmitButton!:FormButtonComponent;
 
-  public BorrowForm: FormGroup = new FormGroup({
-    dueTime: new FormControl('', [
+  public BorrowForm: UntypedFormGroup = new UntypedFormGroup({
+    dueTime: new UntypedFormControl('', [
       Validators.required,
     ]),
-    Zustimmung: new FormControl(false, [Validators.requiredTrue]),
+    Zustimmung: new UntypedFormControl(false, [Validators.requiredTrue]),
   });
 
   constructor(private BorrowService: BorrowOperationService, private matDialog: MatDialog) { }
