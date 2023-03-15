@@ -1,6 +1,6 @@
 <form [formGroup]="BorrowForm" class="mt-1 shadow-1xl br w-full rounded" (ngSubmit)="Borrow()">
   <mat-form-field class="w-full p-0" appearance="fill">
-    <mat-label>Bis wann möchtest du den Artikel ausborgen</mat-label>
+    <mat-label>Bis wann möchteen Sie den Artikel ausborgen</mat-label>
     <input matInput  formControlName="dueTime" [min]="today | addNDays:1" [max]="today | addNDays:7" [matDatepicker]="picker"  />
     <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
@@ -9,7 +9,7 @@
 
   <mat-form-field class="input mat-form-field--no-underline w-full bw mb-4">
     <input matInput formControlName="Zustimmung" class="hidden" />
-    <mat-error class="ml-3"> BItte bestätige, dass Sie sich bewusst sind, was sie im Begriff sind zu tun </mat-error>
+    <mat-error class="ml-3"> Bitte bestätigen Sie, dass Sie sich bewusst sind, was sie im Begriff sind zu tun </mat-error>
     <div class="flex mt-0 pt-0">
       <mat-checkbox
         matInput
