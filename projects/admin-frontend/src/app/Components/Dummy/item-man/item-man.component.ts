@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'admin-item-man',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemManComponent implements OnInit {
 
-public h = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,16,18]
+  public h = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,16,18]
+  @Input()public GrapToPointsId:string[] = [];
 
   constructor() { }
 
