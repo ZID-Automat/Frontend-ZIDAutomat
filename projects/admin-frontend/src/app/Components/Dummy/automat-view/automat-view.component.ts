@@ -1,38 +1,28 @@
-import { Component, OnInit, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { CdkDragDrop, DragDropModule } from '@angular/cdk/drag-drop';
+import { Component, OnInit, ViewChildren, QueryList, AfterViewInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'admin-automat-view',
   templateUrl: './automat-view.component.html',
   styleUrls: ['./automat-view.component.scss']
 })
-export class AutomatViewComponent implements OnInit, AfterViewInit {
+export class AutomatViewComponent implements AfterViewInit {
 
   @ViewChildren("DragablePoint") DragablePoints: QueryList<HTMLElement> = null!;
+  @Output() OnDragPointIdsLoad:EventEmitter<string[]> = new EventEmitter();
 
-  constructor() { }
   ngAfterViewInit(): void {
-    this.DragablePoints.forEach((rect) => {
-      // Registrieren Sie den Dragstart-Listener
-    rect.addEventListener("dragstart", event => {
-      event.dataTransfer?.setData("text/plain", "Dies ist ein Test");
+    let ids:string[] = []
+    this.DragablePoints.forEach((element,i) => {
+      element.id = "DragablePoint"+i;
+      ids.push(element.id);
     });
-    
-    // Registrieren Sie den Dragover-Listener
-    rect.addEventListener("dragover", event => {
-      event.preventDefault();
-    });
-    
-    // Registrieren Sie den Drop-Listener
-    rect.addEventListener("drop", event => {
-      event.preventDefault();
-      const data = event.dataTransfer?.getData("text/plain");
-      console.log(data);
-    });
-    });
+    this.OnDragPointIdsLoad.emit(ids);
   }
 
-  ngOnInit(): void {
-
+  public drop(event:any) {
+    console.log(event);
+    console.log("hallo");
   }
 }
 

@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemPageComponent implements OnInit {
 
+  public DragableIds:string[] = [];
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+  OnDragPointIdsLoad(ids:string[]){
+    setTimeout(()=>this.DragableIds = ids,100)
+  }
 }
