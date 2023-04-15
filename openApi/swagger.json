@@ -149,7 +149,7 @@
         }
       }
     },
-    "/CBorrow/LoadItemData": {
+    "/CBorrow/LoadItemData/{item}": {
       "get": {
         "tags": [
           "CBorrow"
@@ -157,7 +157,8 @@
         "parameters": [
           {
             "name": "item",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -189,7 +190,7 @@
       }
     },
     "/CBorrow/InvalidateQrCode": {
-      "put": {
+      "patch": {
         "tags": [
           "CBorrow"
         ],
@@ -212,6 +213,29 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/CBorrow/ItemLocation/{itemId}": {
+      "get": {
+        "tags": [
+          "CBorrow"
+        ],
+        "parameters": [
+          {
+            "name": "itemId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -552,9 +576,9 @@
             "type": "string",
             "nullable": true
           },
-          "uuid": {
+          "guid": {
             "type": "string",
-            "nullable": true
+            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -574,11 +598,7 @@
         "properties": {
           "qrCode": {
             "type": "string",
-            "nullable": true
-          },
-          "itemInstanceId": {
-            "type": "integer",
-            "format": "int32"
+            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -635,10 +655,6 @@
             "type": "string",
             "nullable": true
           },
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
           "image": {
             "type": "string",
             "nullable": true
@@ -654,7 +670,7 @@
         "properties": {
           "qrCode": {
             "type": "string",
-            "nullable": true
+            "format": "uuid"
           }
         },
         "additionalProperties": false

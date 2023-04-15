@@ -51,6 +51,7 @@ export class ItemDetailedFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 
 }
