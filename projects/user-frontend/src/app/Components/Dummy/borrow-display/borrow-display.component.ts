@@ -20,7 +20,7 @@ export class BorrowDisplayComponent implements OnInit {
   }
 
   openQrCodeDialog(){
-    QrcodeDialogComponent.openDialog({qrcode:this.borrow.uuid??""},this.matDialog);
+    QrcodeDialogComponent.openDialog({qrcode:this.borrow.guid??""},this.matDialog);
   }
 
   openZumArtikel(){

@@ -123,25 +123,25 @@ export class CBorrowService extends BaseService {
   }
 
   /**
-   * Path part for operation cBorrowLoadItemDataGet
+   * Path part for operation cBorrowLoadItemDataItemGet
    */
-  static readonly CBorrowLoadItemDataGetPath = '/CBorrow/LoadItemData';
+  static readonly CBorrowLoadItemDataItemGetPath = '/CBorrow/LoadItemData/{item}';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `cBorrowLoadItemDataGet$Plain()` instead.
+   * To access only the response body, use `cBorrowLoadItemDataItemGet$Plain()` instead.
    *
    * This method doesn't expect any request body.
    */
-  cBorrowLoadItemDataGet$Plain$Response(params?: {
-    item?: number;
+  cBorrowLoadItemDataItemGet$Plain$Response(params: {
+    item: number;
     context?: HttpContext
   }
 ): Observable<StrictHttpResponse<ItemDetailedDto>> {
 
-    const rb = new RequestBuilder(this.rootUrl, CBorrowService.CBorrowLoadItemDataGetPath, 'get');
+    const rb = new RequestBuilder(this.rootUrl, CBorrowService.CBorrowLoadItemDataItemGetPath, 'get');
     if (params) {
-      rb.query('item', params.item, {});
+      rb.path('item', params.item, {});
     }
 
     return this.http.request(rb.build({
@@ -158,36 +158,36 @@ export class CBorrowService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `cBorrowLoadItemDataGet$Plain$Response()` instead.
+   * To access the full response (for headers, for example), `cBorrowLoadItemDataItemGet$Plain$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  cBorrowLoadItemDataGet$Plain(params?: {
-    item?: number;
+  cBorrowLoadItemDataItemGet$Plain(params: {
+    item: number;
     context?: HttpContext
   }
 ): Observable<ItemDetailedDto> {
 
-    return this.cBorrowLoadItemDataGet$Plain$Response(params).pipe(
+    return this.cBorrowLoadItemDataItemGet$Plain$Response(params).pipe(
       map((r: StrictHttpResponse<ItemDetailedDto>) => r.body as ItemDetailedDto)
     );
   }
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `cBorrowLoadItemDataGet$Json()` instead.
+   * To access only the response body, use `cBorrowLoadItemDataItemGet$Json()` instead.
    *
    * This method doesn't expect any request body.
    */
-  cBorrowLoadItemDataGet$Json$Response(params?: {
-    item?: number;
+  cBorrowLoadItemDataItemGet$Json$Response(params: {
+    item: number;
     context?: HttpContext
   }
 ): Observable<StrictHttpResponse<ItemDetailedDto>> {
 
-    const rb = new RequestBuilder(this.rootUrl, CBorrowService.CBorrowLoadItemDataGetPath, 'get');
+    const rb = new RequestBuilder(this.rootUrl, CBorrowService.CBorrowLoadItemDataItemGetPath, 'get');
     if (params) {
-      rb.query('item', params.item, {});
+      rb.path('item', params.item, {});
     }
 
     return this.http.request(rb.build({
@@ -204,39 +204,39 @@ export class CBorrowService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `cBorrowLoadItemDataGet$Json$Response()` instead.
+   * To access the full response (for headers, for example), `cBorrowLoadItemDataItemGet$Json$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  cBorrowLoadItemDataGet$Json(params?: {
-    item?: number;
+  cBorrowLoadItemDataItemGet$Json(params: {
+    item: number;
     context?: HttpContext
   }
 ): Observable<ItemDetailedDto> {
 
-    return this.cBorrowLoadItemDataGet$Json$Response(params).pipe(
+    return this.cBorrowLoadItemDataItemGet$Json$Response(params).pipe(
       map((r: StrictHttpResponse<ItemDetailedDto>) => r.body as ItemDetailedDto)
     );
   }
 
   /**
-   * Path part for operation cBorrowInvalidateQrCodePut
+   * Path part for operation cBorrowInvalidateQrCodePatch
    */
-  static readonly CBorrowInvalidateQrCodePutPath = '/CBorrow/InvalidateQrCode';
+  static readonly CBorrowInvalidateQrCodePatchPath = '/CBorrow/InvalidateQrCode';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `cBorrowInvalidateQrCodePut()` instead.
+   * To access only the response body, use `cBorrowInvalidateQrCodePatch()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
-  cBorrowInvalidateQrCodePut$Response(params?: {
+  cBorrowInvalidateQrCodePatch$Response(params?: {
     context?: HttpContext
     body?: InvalidateQrCodeDto
   }
 ): Observable<StrictHttpResponse<void>> {
 
-    const rb = new RequestBuilder(this.rootUrl, CBorrowService.CBorrowInvalidateQrCodePutPath, 'put');
+    const rb = new RequestBuilder(this.rootUrl, CBorrowService.CBorrowInvalidateQrCodePatchPath, 'patch');
     if (params) {
       rb.body(params.body, 'application/*+json');
     }
@@ -255,17 +255,68 @@ export class CBorrowService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `cBorrowInvalidateQrCodePut$Response()` instead.
+   * To access the full response (for headers, for example), `cBorrowInvalidateQrCodePatch$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
-  cBorrowInvalidateQrCodePut(params?: {
+  cBorrowInvalidateQrCodePatch(params?: {
     context?: HttpContext
     body?: InvalidateQrCodeDto
   }
 ): Observable<void> {
 
-    return this.cBorrowInvalidateQrCodePut$Response(params).pipe(
+    return this.cBorrowInvalidateQrCodePatch$Response(params).pipe(
+      map((r: StrictHttpResponse<void>) => r.body as void)
+    );
+  }
+
+  /**
+   * Path part for operation cBorrowItemLocationItemIdGet
+   */
+  static readonly CBorrowItemLocationItemIdGetPath = '/CBorrow/ItemLocation/{itemId}';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `cBorrowItemLocationItemIdGet()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  cBorrowItemLocationItemIdGet$Response(params: {
+    itemId: number;
+    context?: HttpContext
+  }
+): Observable<StrictHttpResponse<void>> {
+
+    const rb = new RequestBuilder(this.rootUrl, CBorrowService.CBorrowItemLocationItemIdGetPath, 'get');
+    if (params) {
+      rb.path('itemId', params.itemId, {});
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'text',
+      accept: '*/*',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return (r as HttpResponse<any>).clone({ body: undefined }) as StrictHttpResponse<void>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `cBorrowItemLocationItemIdGet$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  cBorrowItemLocationItemIdGet(params: {
+    itemId: number;
+    context?: HttpContext
+  }
+): Observable<void> {
+
+    return this.cBorrowItemLocationItemIdGet$Response(params).pipe(
       map((r: StrictHttpResponse<void>) => r.body as void)
     );
   }
