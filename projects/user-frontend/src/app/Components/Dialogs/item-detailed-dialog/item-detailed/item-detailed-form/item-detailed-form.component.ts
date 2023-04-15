@@ -38,7 +38,10 @@ export class ItemDetailedFormComponent implements OnInit {
         .pipe(take(1))
         .subscribe((res) => {
           this.SubmitButton.finsihFetch();
-          setTimeout(()=>this.openQRCodeDialog(res.qrCode??""),1100)
+          setTimeout(()=>{
+            this.openQRCodeDialog(res.qrCode??"")
+            this.BorrowForm.reset();
+          },1100)
         });
     }
   }
