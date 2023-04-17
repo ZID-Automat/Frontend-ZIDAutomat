@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddItemDialogComponent } from '../../Dialogs/add-item-dialog/add-item-dialog.component';
+import { ViewItemDialogComponent } from '../../Dialogs/view-item-dialog/view-item-dialog.component';
 
 @Component({
   selector: 'admin-item-man',
@@ -17,5 +18,10 @@ export class ItemManComponent implements OnInit {
 
   openAddItemDialog() {
     AddItemDialogComponent.openDialog(this.matDialog);
+  }
+
+  openViewItemDialog(item: any) {
+    console.log(item);
+    ViewItemDialogComponent.openDialog(this.matDialog);
   }
 }
