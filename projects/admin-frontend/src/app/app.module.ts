@@ -18,6 +18,7 @@ import { ItemPageComponent } from './Components/Pages/Item/item-page/item-page.c
 import { AutomatViewComponent } from './Components/Dummy/automat-view/automat-view.component';
 import { ItemManComponent } from './Components/Dummy/item-man/item-man.component';
 import { AddItemDialogComponent } from './Components/Dialogs/add-item-dialog/add-item-dialog.component';
+import { ViewItemDialogComponent } from './Components/Dialogs/view-item-dialog/view-item-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AddItemDialogComponent } from './Components/Dialogs/add-item-dialog/add
     AutomatViewComponent,
     ItemManComponent,
     AddItemDialogComponent,
+    ViewItemDialogComponent,
   ],
   imports: [
     AutomatSharedModule,

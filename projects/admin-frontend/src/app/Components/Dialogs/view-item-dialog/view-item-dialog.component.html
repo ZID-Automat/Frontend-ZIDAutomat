@@ -1,5 +1,5 @@
 <div class="text-lg">
-  <div class="text-2xl text-center">Add New Item to Catalog</div>
+  <div class="text-2xl text-center">Edit/View Item from Catalog</div>
   <label for="name">Name of Item <span class="text-red-500">*</span></label>
 
   <input
@@ -26,9 +26,16 @@
   />
 
   <button
-    class="w-full bg-green-500 text-white rounded-lg p-2 my-2 text-lg"
-    (click)="addItem()"
+    class="w-full bg-blue-500 text-white rounded-lg p-2 my-2 text-lg"
+    (click)="updateItem()"
   >
-    Add Item
+    Update Item
+  </button>
+
+  <button
+    class="w-full bg-red-500 text-white rounded-lg p-2 my-2 text-lg"
+    (click)="deleteItem()"
+  >
+    Delete Item
   </button>
 </div>
