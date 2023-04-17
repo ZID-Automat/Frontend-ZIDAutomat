@@ -22,8 +22,12 @@ export class AddItemDialogComponent implements OnInit {
       // data: { qrcode: qrcode.qrcode },
       width: '80%',
       height: 'fit-content',
-      maxWidth: '400px',
+      maxWidth: '600px',
     });
+  }
+
+  public addItem() {
+    alert('Item added');
   }
 }
 
