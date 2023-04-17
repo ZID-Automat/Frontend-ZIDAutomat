@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './Components/Pages/Login/login-page/login-page.component';
 import { ItemPageComponent } from './Components/Pages/Item/item-page/item-page.component';
+import { LoginActivateGuard } from './Guards/login-activate.guard';
+import { LoginDeactivateGuard } from './Guards/login-deactivate.guard';
+
 
 export enum AdminFrontendRoutes {
   Login = 'login',
@@ -11,9 +14,9 @@ export enum AdminFrontendRoutes {
 }
 const routes: Routes = [
 //  { path: '', redirectTo: AdminFrontendRoutes.Login, pathMatch: 'full' },
-  { path: AdminFrontendRoutes.Login, component:LoginPageComponent},
-  {path:AdminFrontendRoutes.Status, component:StatusPageComponent},
-  {path:AdminFrontendRoutes.Item, component:ItemPageComponent}
+  { path: AdminFrontendRoutes.Login, component: LoginPageComponent, canActivate:[LoginDeactivateGuard] },
+  {path:AdminFrontendRoutes.Status, component:StatusPageComponent, canActivate:[LoginActivateGuard]},
+  {path:AdminFrontendRoutes.Item, component:ItemPageComponent,canActivate:[LoginActivateGuard]}
 ];
 
 @NgModule({
