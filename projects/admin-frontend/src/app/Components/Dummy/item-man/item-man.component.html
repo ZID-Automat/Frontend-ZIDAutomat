@@ -4,7 +4,7 @@
   id="ItemList"
   [cdkDropListConnectedTo]="GrapToPointsId"
 >
-  <div *ngFor="let a of h">
+  <div *ngFor="let a of h" (click)="openViewItemDialog(a)">
     <img
       cdkDrag
       class="p-1 w-1/4 aspi rounded-lg float-left shadow-xl"
