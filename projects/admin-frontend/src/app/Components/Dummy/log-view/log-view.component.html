@@ -1,1 +1,30 @@
-<p>log-view works!</p>
+<!--Filter-->
+<div class="p-5 texl-xl">
+  <label for="filter_type" class="p-2 my-2">Type</label>
+  <select id="filter_type" class="border-2 border-gray-200 rounded-lg p-2 my-2">
+    <option value="all">All</option>
+    <option value="info">Info</option>
+    <option value="warning">Warning</option>
+    <option value="error">Error</option>
+  </select>
+
+  <label for="filter_from" class="p-2 my-2">Show From</label>
+  <input
+    id="filter_from"
+    type="date"
+    class="border-2 border-gray-200 rounded-lg p-2 my-2"
+  />
+  <input
+    id="filter_from"
+    type="time"
+    class="border-2 border-gray-200 rounded-lg p-2 my-2"
+  />
+</div>
+
+<!--Loop over log_items-->
+<div class="p-5 border-black">
+  <div *ngFor="let item of log_items" class="w-full">
+    <span>{{ item.timestamp.toLocaleString() }}: </span>
+    <span>{{ item.message }}</span>
+  </div>
+</div>
