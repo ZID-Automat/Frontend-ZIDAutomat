@@ -1,12 +1,12 @@
 {{calcStuff()}}
 <div class="cont"  (window:resize)="calcStuff(true)">
-        <lib-icon (click)="click(-1)" matRipple [style.color]="ThemeDataService.primaryColor" [matRippleUnbounded]="true" [matRippleRadius]="30" [matRippleCentered]="true" class="text-6xl text-gray-600" IconName="ArrowLeft"></lib-icon>
+        <lib-icon (click)="click(-1)" matRipple [style.color]="ThemeDataService.primaryColor" [matRippleUnbounded]="true" [matRippleRadius]="30" [matRippleCentered]="true" class="text-6xl text-gray-600 item-card-deck-icon" IconName="ArrowLeft"></lib-icon>
         <div [style.width.px]="contWidth"  class="flex ele">
-            <div *ngFor="let item of Items; index as i;">
+            <div *ngFor="let item of Items; index as i;" class="max-w-sm">
                 <user-item-card #ItemCards (click)="clickItemCard(i)" [Item]="item" class=""></user-item-card>
                 <div *ngIf="!((i+1) % PageSize)" class="m-96"></div>
             </div>
-            <div *ngFor="let it of FakeItems" class="m-80"></div>
+            <div *ngFor="let it of FakeItems" class="sm:block sm:m-80 m-0 hidden"></div>
         </div>  
-        <lib-icon (click)="click(1)" matRipple [style.color]="ThemeDataService.primaryColor" [matRippleUnbounded]="true" [matRippleRadius]="30" [matRippleCentered]="true" class="text-6xl font-thin text-gray-600" IconName="ArrowRight"></lib-icon>
+        <lib-icon (click)="click(1)" matRipple [style.color]="ThemeDataService.primaryColor" [matRippleUnbounded]="true" [matRippleRadius]="30" [matRippleCentered]="true" class="text-6xl font-thin text-gray-600 item-card-deck-icon" IconName="ArrowRight"></lib-icon>
 </div>

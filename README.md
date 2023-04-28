@@ -4,31 +4,42 @@ This Repository ist split into four parts. The UserFrontend, AdminFrontend, APIA
 
 The APIAutomat project is used to communicate with the backend. The the API Client is generated via the ng-openapi-gen package. Anything written in this project is overwritten when the API Client is regenerated.
 at
+
 ## Setup
 
 Installs all node packages
-#### `npm install`
-#### `npm install -g ng-openapi-gen`
-#### `npm run generate-api-client-File`
+
+```bash
+npm install
+npm install -g ng-openapi-gen
+npm run generate-api-client-File
+```
 
 ## Start Developing
 
 If you want to develop in the UserFrontend project, you have to run the following command:
-#### `ng serve UserFrontend`
+
+```bash
+ng serve UserFrontend
+```
 
 If you want to develop in the AdminFrontend project, you have to run the following command:
-#### `ng serve AdminFrontend`
+
+```bash
+ng serve AdminFrontend
+```
 
 If you want to develop in the shared project, you have to run the following command:
 
-#### `ng build AutomatShared --watch`
-<br>
-If you want to develop in two or more projects at the same time, you have to run the commands in different terminal sessions
+```bash
+ng build AutomatShared --watch
+```
 
+If you want to develop in two or more projects at the same time, you have to run the commands in different terminal sessions
 
 ## Generate API Client
 
-If you want to generate the API Client, you have to run one of the two following commands. The difference of each is the datasource. 
+If you want to generate the API Client, you have to run one of the two following commands. The difference of each is the datasource.
 
 The first one uses the local Swagger.json file
 #### `npm run generate-api-client-File`
