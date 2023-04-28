@@ -24,7 +24,7 @@ import { ItemDetailedDialogComponent } from './Components/Dialogs/item-detailed-
 import { BorrowDisplayComponent } from './Components/Dummy/borrow-display/borrow-display.component';
 import { QrcodeDialogComponent } from './Components/Dialogs/qrcode-dialog/qrcode-dialog.component';
 import { QrcodeComponent } from './Components/Dialogs/qrcode-dialog/qrcode/qrcode.component';
-
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +48,7 @@ import { QrcodeComponent } from './Components/Dialogs/qrcode-dialog/qrcode/qrcod
   ],
   imports: [
     AutomatSharedModule,
-    ApiModule.forRoot({ rootUrl: "https://localhost:7141" }),
+    ApiModule.forRoot({ rootUrl: environment.backendUrl }),
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
@@ -56,8 +56,8 @@ import { QrcodeComponent } from './Components/Dialogs/qrcode-dialog/qrcode/qrcod
     JwtModule.forRoot({
       config: {
         tokenGetter:()=>localStorage.getItem("jwt"),
-        allowedDomains: ["localhost:7141"],
-        disallowedRoutes: ["https://localhost:7141/Authentification/"],
+      //  allowedDomains: [environment.backendUrl.split(/\/\//)[1]],
+      //  disallowedRoutes: [environment.backendUrl+"/Authentification/"],
         throwNoTokenError: false,
 
         skipWhenExpired: true
@@ -71,3 +71,5 @@ import { QrcodeComponent } from './Components/Dialogs/qrcode-dialog/qrcode/qrcod
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
