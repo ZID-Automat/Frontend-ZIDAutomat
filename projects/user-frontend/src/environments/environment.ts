@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   backendUrl: "https://10.36.1.202:7141",
+  mobileSchwelle:1000,
 };
 
 /*

@@ -27,10 +27,9 @@ export class ItemDetailedFormComponent implements OnInit, AfterViewInit {
     Zustimmung: new FormControl(false, [Validators.requiredTrue]),
   });
 
-  constructor(private BorrowService: BorrowOperationService, private matDialog: MatDialog) { }
+  constructor(private BorrowService: BorrowOperationService, private matDialog: MatDialog, private ref:ElementRef) { }
   ngAfterViewInit(): void {
-    console.log(this.picker)
-    setTimeout(()=>this.picker.nativeElement.blur(),100);
+    this.BorrowForm.markAsDirty();
   }
 
   Borrow() {

@@ -5,6 +5,7 @@ import { Component, Inject, OnInit, EventEmitter } from '@angular/core';
 import { switchMap, take } from 'rxjs/operators';
 import { ThemeDataService } from 'AutomatShared';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { environment } from 'projects/user-frontend/src/environments/environment';
 
 @Component({
   selector: 'user-item-detailed-dialog',
@@ -13,6 +14,7 @@ import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dial
 })
 export class ItemDetailedDialogComponent implements OnInit {
   item: ItemDetailedDto | undefined;
+
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: DetItemDialogData,
@@ -46,12 +48,14 @@ export class ItemDetailedDialogComponent implements OnInit {
         });
     }
   }
-
   public static openDialog(MatDialog: MatDialog, indi: number, Items:number[]):MatDialogRef<ItemDetailedDialogComponent>{
-    let ref = MatDialog.open(ItemDetailedDialogComponent, {
+    let mobile = window.innerWidth <= environment.mobileSchwelle;
+
+    const ref = MatDialog.open(ItemDetailedDialogComponent, {
       data:{index:indi,allIds:Items},
-      width:"80rem",
-      height: "80vh",
+      width:mobile?"100%":"80rem",
+      height: mobile?"100vh":"80vh",
+      maxWidth: mobile?'100%' : '80rem',
     });
     return ref;
   }

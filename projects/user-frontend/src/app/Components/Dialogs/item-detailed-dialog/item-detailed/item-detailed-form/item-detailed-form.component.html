@@ -1,7 +1,7 @@
-<form [formGroup]="BorrowForm" class="mt-1 shadow-1xl br w-full rounded" (ngSubmit)="Borrow()">
+<form id="inputii" [formGroup]="BorrowForm" class="mt-1 shadow-1xl br w-full rounded" (ngSubmit)="Borrow()">
   <mat-form-field class="w-full p-0" appearance="fill">
     <mat-label>Bis wann möchteen Sie den Artikel ausborgen</mat-label>
-    <input matInput  formControlName="dueTime" [min]="today | addNDays:1" [max]="today | addNDays:7" [matDatepicker]="picker"  />
+    <input  matInput  formControlName="dueTime" [min]="today | addNDays:1" [max]="today | addNDays:7" [matDatepicker]="picker"  />
     <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker #DatePicker></mat-datepicker>
     <mat-error> Rückgabedatum ist ungültig</mat-error>

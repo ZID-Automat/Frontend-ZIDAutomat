@@ -6,6 +6,7 @@ import {ItemDisplayDto} from 'AutomatApi'
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { DetItemDialogData, ItemDetailedDialogComponent } from '../../Dialogs/item-detailed-dialog/item-detailed.dialog';
+import { environment } from 'projects/user-frontend/src/environments/environment';
 
 @Component({
   selector: 'user-home-page',
@@ -18,15 +19,15 @@ export class HomePageComponent implements OnInit {
 
   alive = true;
 
-  private SubState = true;
+  private static SubState = true;
 
   constructor(private itemDataService: ItemDataService,private route: ActivatedRoute, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       let id = params['id']
-      if(id && this.SubState){
-        ItemDetailedDialogComponent.openSingleDialog(this.dialog,id)
+      if(id && HomePageComponent.SubState){
+         ItemDetailedDialogComponent.openSingleDialog(this.dialog,id)
       }
      this.changeSubState(false)
     });
@@ -53,11 +54,11 @@ export class HomePageComponent implements OnInit {
   }
   mobile = false
   public calcWhichView() {
-    this.mobile = window.innerWidth <= 1000;
+    this.mobile = window.innerWidth <= environment.mobileSchwelle;
   }
 
   public changeSubState(state: boolean) {
-    this.SubState = state;
+    HomePageComponent.SubState = state;
   }
 
 
