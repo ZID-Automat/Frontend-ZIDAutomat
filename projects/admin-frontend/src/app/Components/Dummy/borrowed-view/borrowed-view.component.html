@@ -18,5 +18,10 @@ Filter:
 </mat-button-toggle-group>
 
 <div class="p-5 border-black">
-  <div *ngFor="let item of borrowed_items" class="w-full">TEST</div>
+  <div
+    *ngFor="let borrowed of borrowed_items"
+    class="w-full border-black bg-gray-400"
+  >
+    <span class="font-bold">{{ borrowed.username }}</span>
+  </div>
 </div>
