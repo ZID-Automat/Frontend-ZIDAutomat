@@ -35,7 +35,7 @@
             </p>
             <p class="my-2">
               {{
-                (borrow.collectDate | date: "short") ?? "Noch nicht ausgeborgt"
+                (borrow.collectDate | date: "short") ?? "nicht Abgeholt"
               }}
             </p>
             <p class="my-2">
@@ -44,7 +44,7 @@
             <p class="my-2">
               {{
                 (borrow.returnDate | date: "short") ??
-                  "Artikel nicht Zurückgegeben"
+                  "nicht Zurückgegeben"
               }}
             </p>
           </div>
