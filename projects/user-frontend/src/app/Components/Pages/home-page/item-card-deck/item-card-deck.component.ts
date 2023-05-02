@@ -39,6 +39,9 @@ export class ItemCardDeckComponent implements OnInit {
     let abzug = convertRemToPixels(3.75*2);
 
     this.PageSize = Math.floor((this.ElementRef.nativeElement.offsetWidth-abzug)/cardWidth);
+    if(this.PageSize < 1){
+      this.PageSize = 1;
+    }
     this.contWidth = this.PageSize*cardWidth;
     this.FakeItems = new Array(this.PageSize); 
     

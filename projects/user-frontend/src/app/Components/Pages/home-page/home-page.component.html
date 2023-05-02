@@ -1,13 +1,35 @@
-<h1 class="text-center block  font-light text-3xl m-10 mt-5">Artikel</h1>
+<h1 class="text-center block font-light text-3xl m-10 mt-5">Artikel</h1>
 
 <div class="w-11/12 ml-auto mr-auto">
-    <div *ngIf="AllPrevItems.length > 0">
-        <h2 class="font-light text-2xl">Letztens Ausgeborgt</h2>
-        <user-item-card-deck  [ChangeSubStatei]="changeSubState"  [Items]="AllPrevItems"></user-item-card-deck>
+  <div *ngIf="AllPrevItems.length > 0">
+    <h2 class="font-light text-2xl">Letztens Ausgeborgt</h2>
+    <div *ngIf="!mobile">
+      <user-item-card-deck
+        [ChangeSubStatei]="changeSubState"
+        [Items]="AllPrevItems"
+      ></user-item-card-deck>
     </div>
+    <div *ngIf="mobile">
+      <user-item-card-deck-mobile
+        [ChangeSubStatei]="changeSubState"
+        [Items]="AllPrevItems"
+      ></user-item-card-deck-mobile>
+    </div>
+  </div>
 
-    <div>
-        <h2 class="font-light text-2xl">Alle Artikel</h2>
-        <user-item-card-deck [ChangeSubStatei]="changeSubState" [Items]="AllItems"></user-item-card-deck>
+  <div>
+    <h2 class="font-light text-2xl">Alle Artikel</h2>
+    <div *ngIf="!mobile">
+      <user-item-card-deck
+        [ChangeSubStatei]="changeSubState"
+        [Items]="AllItems"
+      ></user-item-card-deck>
     </div>
+    <div *ngIf="mobile">
+      <user-item-card-deck-mobile
+        [ChangeSubStatei]="changeSubState"
+        [Items]="AllItems"
+      ></user-item-card-deck-mobile>
+    </div>
+  </div>
 </div>

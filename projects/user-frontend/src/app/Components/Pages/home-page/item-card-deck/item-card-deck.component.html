@@ -3,7 +3,7 @@
         <lib-icon (click)="click(-1)" matRipple [style.color]="ThemeDataService.primaryColor" [matRippleUnbounded]="true" [matRippleRadius]="30" [matRippleCentered]="true" class="text-6xl text-gray-600" IconName="ArrowLeft"></lib-icon>
         <div [style.width.px]="contWidth"  class="flex ele">
             <div *ngFor="let item of Items; index as i;">
-                <user-item-card #ItemCards (click)="clickItemCard(i)" [Item]="item" class=""></user-item-card>
+                <user-item-card #ItemCards (click)="clickItemCard(i)" [Item]="item" class="p-10"></user-item-card>
                 <div *ngIf="!((i+1) % PageSize)" class="m-96"></div>
             </div>
             <div *ngFor="let it of FakeItems" class="m-80"></div>

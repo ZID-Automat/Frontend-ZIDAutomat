@@ -1,0 +1,23 @@
+.ele {
+    overflow-x: hidden;
+    overflow-y: hidden  ;
+    -ms-overflow-style: none; /* Edge, Internet Explorer */
+    scrollbar-width: none; /* Firefox */
+    height: 34rem;
+    padding-top: 1.5rem;
+  }
+  
+  div::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+  .cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .margin10{
+    margin: 0px !important;
+  }

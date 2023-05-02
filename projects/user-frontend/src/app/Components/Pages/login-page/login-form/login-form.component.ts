@@ -1,5 +1,5 @@
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { BehaviorSubject, take, takeWhile } from 'rxjs';
+import { BehaviorSubject, catchError, of, take, takeWhile } from 'rxjs';
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import {
   AbstractControl,
@@ -12,6 +12,7 @@ import {
 import { UserLoginDto } from 'AutomatApi';
 import { UserService } from 'projects/user-frontend/src/app/Services/user.service';
 import { state, style, transition, trigger } from '@angular/animations';
+import { faGalacticSenate } from '@fortawesome/free-brands-svg-icons';
 
 export enum LoginErrors{
   PassUserWrong="Das Passwort oder der Username ist falsch"
@@ -22,7 +23,6 @@ export enum LoginErrors{
   styleUrls: ['./login-form.component.scss'],
   animations: [
     trigger('transitionMessages', [
-        
         state('enter', style({ opacity: 1, transform: 'translateY(0%)' })),
         transition('void => enter', [
             style({ opacity: 0, transform: 'translateY(-100%)' }),
@@ -35,7 +35,7 @@ export class LoginFormComponent implements OnInit,OnDestroy {
   @Output() LoginEvent:EventEmitter<string>= new EventEmitter();
 
   hide:boolean=true;
-
+  public buttondis = false;
 
   public LoginInfoForm: FormGroup = new FormGroup({
     username: new FormControl('', [
@@ -63,6 +63,7 @@ export class LoginFormComponent implements OnInit,OnDestroy {
 
   ngOnInit(): void {
     this.LoginEvent.pipe(takeWhile(()=>this.alive)).subscribe((res)=>{
+      this.buttondis = false;
       this.LoginInfoForm.reset();
       if(res){
         localStorage.setItem("jwt",res);
@@ -74,14 +75,27 @@ export class LoginFormComponent implements OnInit,OnDestroy {
   }
 
   Login() {
+    this.buttondis = true;
     if (this.LoginInfoForm.valid) {
+      
       const loginData: UserLoginDto = this.LoginInfoForm.getRawValue();
-      this.userService
+      let ob =this.userService
         .login(loginData)
-        .pipe(take(1))
+        .pipe(
+          take(1),
+        )
         .subscribe((res) => {
           this.LoginEvent.emit(res);
+        },(err)=>{
+          this.LoginError.next(LoginErrors.PassUserWrong);
+          this.buttondis = false;
         });
+        
+    }
+    else{
+      setTimeout(() => {
+        this.buttondis = false;
+      },250);
     }
   }
 

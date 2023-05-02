@@ -25,6 +25,7 @@ import { BorrowDisplayComponent } from './Components/Dummy/borrow-display/borrow
 import { QrcodeDialogComponent } from './Components/Dialogs/qrcode-dialog/qrcode-dialog.component';
 import { QrcodeComponent } from './Components/Dialogs/qrcode-dialog/qrcode/qrcode.component';
 import { environment } from '../environments/environment';
+import { ItemCardDeckMobileComponent } from './Components/Pages/home-page/item-card-deck-mobile/item-card-deck-mobile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { environment } from '../environments/environment';
     ItemImageComponent,
     BorrowDisplayComponent,
     QrcodeDialogComponent,
-    QrcodeComponent
+    QrcodeComponent,
+    ItemCardDeckMobileComponent
   ],
   imports: [
     AutomatSharedModule,
@@ -56,8 +58,8 @@ import { environment } from '../environments/environment';
     JwtModule.forRoot({
       config: {
         tokenGetter:()=>localStorage.getItem("jwt"),
-      //  allowedDomains: [environment.backendUrl.split(/\/\//)[1]],
-      //  disallowedRoutes: [environment.backendUrl+"/Authentification/"],
+        allowedDomains: [environment.backendUrl.split(/\/\//)[1]],
+        disallowedRoutes: [environment.backendUrl+"/Authentification/"],
         throwNoTokenError: false,
 
         skipWhenExpired: true

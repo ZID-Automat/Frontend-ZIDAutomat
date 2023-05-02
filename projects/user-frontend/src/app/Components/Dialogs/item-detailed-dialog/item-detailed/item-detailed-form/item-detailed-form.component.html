@@ -3,7 +3,7 @@
     <mat-label>Bis wann möchteen Sie den Artikel ausborgen</mat-label>
     <input matInput  formControlName="dueTime" [min]="today | addNDays:1" [max]="today | addNDays:7" [matDatepicker]="picker"  />
     <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
+    <mat-datepicker #picker #DatePicker></mat-datepicker>
     <mat-error> Rückgabedatum ist ungültig</mat-error>
   </mat-form-field>
 

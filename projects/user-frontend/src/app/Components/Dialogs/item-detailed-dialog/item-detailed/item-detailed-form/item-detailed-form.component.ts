@@ -2,7 +2,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { FormButtonComponent } from 'AutomatShared';
 import { BorrowOperationService } from './../../../../../Services/OperationServices/borrow-operation.service';
 import { BorrowDataDto, ItemDetailedDto, UBorrowService } from 'AutomatApi';
-import { Component, OnInit, Input, ViewChild, Inject } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Inject, AfterViewInit, ElementRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { take } from 'rxjs';
 import { QrcodeDialogComponent } from '../../../qrcode-dialog/qrcode-dialog.component';
@@ -12,12 +12,13 @@ import { QrcodeDialogComponent } from '../../../qrcode-dialog/qrcode-dialog.comp
   templateUrl: './item-detailed-form.component.html',
   styleUrls: ['./item-detailed-form.component.scss']
 })
-export class ItemDetailedFormComponent implements OnInit {
+export class ItemDetailedFormComponent implements OnInit, AfterViewInit {
 
   @Input()ItemDetailed:ItemDetailedDto = {}
   @Input()today:Date = new Date()
 
   @ViewChild('SubmitButton') SubmitButton!:FormButtonComponent;
+  @ViewChild('DatePicker') picker!:any;
 
   public BorrowForm: FormGroup = new FormGroup({
     dueTime: new FormControl('', [
@@ -27,6 +28,10 @@ export class ItemDetailedFormComponent implements OnInit {
   });
 
   constructor(private BorrowService: BorrowOperationService, private matDialog: MatDialog) { }
+  ngAfterViewInit(): void {
+    console.log(this.picker)
+    setTimeout(()=>this.picker.nativeElement.blur(),100);
+  }
 
   Borrow() {
     if (this.BorrowForm.valid) {
@@ -51,7 +56,6 @@ export class ItemDetailedFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
   }
 
 }
