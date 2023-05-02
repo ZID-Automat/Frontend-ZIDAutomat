@@ -21,6 +21,8 @@ import { AddItemDialogComponent } from './Components/Dialogs/add-item-dialog/add
 import { ViewItemDialogComponent } from './Components/Dialogs/view-item-dialog/view-item-dialog.component';
 import { LogPageComponent } from './Components/Pages/Log/log-page/log-page.component';
 import { LogViewComponent } from './Components/Dummy/log-view/log-view.component';
+import { BorrowedPageComponent } from './Components/Pages/Borrowed/borrowed-page/borrowed-page.component';
+import { BorrowedViewComponent } from './Components/Dummy/borrowed-view/borrowed-view.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { LogViewComponent } from './Components/Dummy/log-view/log-view.component
     ViewItemDialogComponent,
     LogPageComponent,
     LogViewComponent,
+    BorrowedPageComponent,
+    BorrowedViewComponent,
   ],
   imports: [
     AutomatSharedModule,
