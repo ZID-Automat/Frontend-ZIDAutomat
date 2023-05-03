@@ -23,6 +23,7 @@ import { LogPageComponent } from './Components/Pages/Log/log-page/log-page.compo
 import { LogViewComponent } from './Components/Dummy/log-view/log-view.component';
 import { BorrowedPageComponent } from './Components/Pages/Borrowed/borrowed-page/borrowed-page.component';
 import { BorrowedViewComponent } from './Components/Dummy/borrowed-view/borrowed-view.component';
+import { ViewBorrowedDialogComponent } from './Components/Dialogs/view-borrowed-dialog/view-borrowed-dialog.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { BorrowedViewComponent } from './Components/Dummy/borrowed-view/borrowed
     LogViewComponent,
     BorrowedPageComponent,
     BorrowedViewComponent,
+    ViewBorrowedDialogComponent,
   ],
   imports: [
     AutomatSharedModule,
