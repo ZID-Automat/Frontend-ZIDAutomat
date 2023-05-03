@@ -1,27 +1,26 @@
-<p>borrowed-view works!</p>
+<div class="p-5">
+  <!-- <span class="text-lg">Filter:</span> -->
+  <div class="flex">
+    <div>
+      <!-- <label for="username" class="block">Username:</label> -->
+      <input id="username" type="text" placeholder="Username" class="border-2 border-gray-200 rounded-lg p-2 my-2" />
+    </div>
 
-Filter:
+    <span class="flex-1"></span>
 
-<label for="username">Username:</label>
-<input
-  type="text"
-  placeholder="Username"
-  class="border-2 border-gray-200 rounded-lg p-2 my-2"
-/>
-
-<br />
-
-<mat-button-toggle-group name="status" aria-label="Status">
-  <mat-button-toggle value="borrowed">Borrowed</mat-button-toggle>
-  <mat-button-toggle value="returned">Returned</mat-button-toggle>
-  <mat-button-toggle value="all">All</mat-button-toggle>
-</mat-button-toggle-group>
-
-<div class="p-5 border-black">
-  <div
-    *ngFor="let borrowed of borrowed_items"
-    class="w-full border-black bg-gray-400"
-  >
-    <span class="font-bold">{{ borrowed.username }}</span>
+    <mat-button-toggle-group name="status" aria-label="Status" value="all">
+      <mat-button-toggle value="borrowed">Borrowed</mat-button-toggle>
+      <mat-button-toggle value="returned">Returned</mat-button-toggle>
+      <mat-button-toggle value="all">All</mat-button-toggle>
+    </mat-button-toggle-group>
   </div>
+
+  <div class="p-5 mt-5 border-2 border-black rounded flex flex-col space-y-5">
+    <div *ngFor="let borrowed of borrowed_items" class="w-full p-5 border border-black rounded bg-gray-400">
+      <span class="font-bold">{{ borrowed.username }}</span>
+      <br>
+      <span class="text-sm">{{ borrowed.item_name }}</span>
+    </div>
+  </div>
+
 </div>

@@ -9,7 +9,7 @@ export class BorrowedViewComponent implements OnInit {
   public borrowed_items: BorrowedItem[] = [
     {
       id: 1,
-      username: 'John Doe',
+      username: 'SCH20369',
       item_name: 'Item 1',
       status: 'Borrowed',
       date_borrowed: '2021-01-01',
@@ -18,7 +18,7 @@ export class BorrowedViewComponent implements OnInit {
     },
     {
       id: 2,
-      username: 'John Doe',
+      username: 'SCH20369',
       item_name: 'Item 2',
       status: 'Borrowed',
       date_borrowed: '2021-01-01',
