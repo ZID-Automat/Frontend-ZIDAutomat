@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ViewBorrowedDialogComponent } from '../../Dialogs/view-borrowed-dialog/view-borrowed-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'admin-borrowed-view',
@@ -27,9 +29,14 @@ export class BorrowedViewComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(private matDialog: MatDialog) {}
 
   ngOnInit(): void {}
+
+  openViewBorrowedDialog(borrow: BorrowedItem) {
+    console.log(borrow);
+    ViewBorrowedDialogComponent.openDialog(this.matDialog, borrow);
+  }
 }
 
 export interface BorrowedItem {

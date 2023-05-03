@@ -16,7 +16,8 @@
   </div>
 
   <div class="p-5 mt-5 border-2 border-black rounded flex flex-col space-y-5">
-    <div *ngFor="let borrowed of borrowed_items" class="w-full p-5 border border-black rounded bg-gray-400">
+    <div (click)="openViewBorrowedDialog(borrowed)" *ngFor="let borrowed of borrowed_items"
+      class="w-full p-5 border border-black rounded bg-gray-400">
       <span class="font-bold">{{ borrowed.username }}</span>
       <br>
       <span class="text-sm">{{ borrowed.item_name }}</span>
