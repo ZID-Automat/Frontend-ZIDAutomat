@@ -8,6 +8,7 @@ import { IconComponent } from './Components/Other/icon/icon.component';
 import { IconButtonComponent } from './Components/Form/icon-button/icon-button.component';
 import { MaterialModule } from './MaterialModule/material.module';
 import { FormButtonComponent } from './Components/Form/form-button/form-button.component';
+import { MonthlyBorrowedLineGraphComponent } from './monthly-borrowed-line-graph/monthly-borrowed-line-graph.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FormButtonComponent } from './Components/Form/form-button/form-button.c
     FormButtonComponent,
     IsExpiredPipe,
     AddNDaysPipe,
+    MonthlyBorrowedLineGraphComponent,
   ],
   imports: [
     HttpClientModule,

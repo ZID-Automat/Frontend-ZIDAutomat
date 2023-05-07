@@ -21,6 +21,7 @@ import { AddItemDialogComponent } from './Components/Dialogs/add-item-dialog/add
 import { ViewItemDialogComponent } from './Components/Dialogs/view-item-dialog/view-item-dialog.component';
 import { LogPageComponent } from './Components/Pages/Log/log-page/log-page.component';
 import { LogViewComponent } from './Components/Dummy/log-view/log-view.component';
+import { MonthlyBorrowedGraphComponent } from './Components/Graphs/monthly-borrowed-graph/monthly-borrowed-graph/monthly-borrowed-graph.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { LogViewComponent } from './Components/Dummy/log-view/log-view.component
     ViewItemDialogComponent,
     LogPageComponent,
     LogViewComponent,
+    MonthlyBorrowedGraphComponent,
   ],
   imports: [
     AutomatSharedModule,
