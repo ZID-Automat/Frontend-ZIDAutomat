@@ -24,4 +24,7 @@ export class ItemManComponent implements OnInit {
     console.log(item);
     ViewItemDialogComponent.openDialog(this.matDialog);
   }
+
+  dragi(ev:DragEvent) {
+  }
 }
