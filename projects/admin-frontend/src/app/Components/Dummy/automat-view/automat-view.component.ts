@@ -14,8 +14,7 @@ export class AutomatViewComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     let ids:string[] = []
     this.DragablePoints.forEach((element,i) => {
-      element.id = "DragablePoint"+i;
-      ids.push(element.id);
+      console.log(element);
     });
     this.OnDragPointIdsLoad.emit(ids);
   }
@@ -24,6 +23,22 @@ export class AutomatViewComponent implements AfterViewInit {
     console.log(event);
     console.log("hallo");
   }
-}
 
+  public allowDrop(event:any){
+    event.preventDefault();
+  }
+
+  public dropedItem(event:any){
+    const imageSrc = 'https://www.zooroyal.de/magazin/wp-content/uploads/2022/09/katze-im-herbst-760x570-1-760x570.jpg'; // Bild-URL
+
+  // Erstelle das <image>-Element und setze die erforderlichen Attribute
+  const imageElement = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+  imageElement.setAttributeNS(null, 'width', event.target.getAttribute('width'));
+  imageElement.setAttributeNS(null, 'height', event.target.getAttribute('height'));
+  imageElement.setAttributeNS(null,'href', imageSrc);
+
+  // Füge das <image>-Element dem Ziel-Element hinzu
+  event.target.appendChild(imageElement);
+  }
+}
 //5*8
