@@ -1,5 +1,5 @@
 import { CdkDragDrop, DragDropModule } from '@angular/cdk/drag-drop';
-import { Component, OnInit, ViewChildren, QueryList, AfterViewInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, AfterViewInit, Output, EventEmitter, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'admin-automat-view',
@@ -9,6 +9,8 @@ import { Component, OnInit, ViewChildren, QueryList, AfterViewInit, Output, Even
 export class AutomatViewComponent implements AfterViewInit {
 
   @ViewChildren("DragablePoint") DragablePoints: QueryList<HTMLElement> = null!;
+  @ViewChildren("DragImages") DragImgs: QueryList<ElementRef<any>> = null!;
+
   @Output() OnDragPointIdsLoad:EventEmitter<string[]> = new EventEmitter();
 
   ngAfterViewInit(): void {
@@ -29,16 +31,9 @@ export class AutomatViewComponent implements AfterViewInit {
   }
 
   public dropedItem(event:any){
-    const imageSrc = 'https://www.zooroyal.de/magazin/wp-content/uploads/2022/09/katze-im-herbst-760x570-1-760x570.jpg'; // Bild-URL
-
-  // Erstelle das <image>-Element und setze die erforderlichen Attribute
-  const imageElement = document.createElementNS('http://www.w3.org/2000/svg', 'image');
-  imageElement.setAttributeNS(null, 'width', event.target.getAttribute('width'));
-  imageElement.setAttributeNS(null, 'height', event.target.getAttribute('height'));
-  imageElement.setAttributeNS(null,'href', imageSrc);
-
-  // Füge das <image>-Element dem Ziel-Element hinzu
-  event.target.appendChild(imageElement);
+    let ele = this.DragImgs.get(0)?.nativeElement.href;
+    ele.baseVal = "assets/Test.png"
+    console.log(ele)
   }
 }
 //5*8
