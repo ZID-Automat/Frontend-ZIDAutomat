@@ -28,7 +28,7 @@ export class UsersPageComponent implements OnInit {
     })
   }
 
-  onRowClick(event:any) {
+  onRowClicki(event:any) {
     if(event.type == "click") {
       console.log(event.row.id)
       UserDetailedDialogComponent.openDialog(this.MatDialog,event.row.id);

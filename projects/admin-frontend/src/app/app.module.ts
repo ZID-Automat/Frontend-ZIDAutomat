@@ -30,6 +30,7 @@ import { environment } from '../environments/environment';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { UserDetailedDialogComponent } from './Components/Dialogs/user-detailed-dialog/user-detailed-dialog.component';
+import { BorrowDetailedDialogComponent } from './Components/Dialogs/borrow-detailed-dialog/borrow-detailed-dialog.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { UserDetailedDialogComponent } from './Components/Dialogs/user-detailed-
     LogAutomat2Component,
     UsersPageComponent,
     UserDetailedDialogComponent,
+    BorrowDetailedDialogComponent,
   ],
   imports: [
     AutomatSharedModule,

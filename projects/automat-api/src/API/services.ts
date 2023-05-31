@@ -1,4 +1,5 @@
 export { AAnalyticsService } from './services/a-analytics.service';
+export { ABorrowInfoService } from './services/a-borrow-info.service';
 export { AUserInforService } from './services/a-user-infor.service';
 export { AuthentificationService } from './services/authentification.service';
 export { CBorrowService } from './services/c-borrow.service';

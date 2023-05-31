@@ -17,6 +17,45 @@
         }
       }
     },
+    "/BorrowDetailed": {
+      "get": {
+        "tags": [
+          "ABorrowInfo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BorrowAdminDetailedDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BorrowAdminDetailedDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BorrowAdminDetailedDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/AUserInfor/GetAllUsers": {
       "get": {
         "tags": [
@@ -711,6 +750,64 @@
   },
   "components": {
     "schemas": {
+      "BorrowAdminDetailedDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "borrowDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "predictedReturnDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "returnDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "collectDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "guid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "itemInstanceId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "itemId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "subName": {
+            "type": "string",
+            "nullable": true
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "BorrowDataDto": {
         "type": "object",
         "properties": {

@@ -28,7 +28,8 @@
         [footerHeight]="50"
         rowHeight="auto"
         [rowClass]="getRowClass"
-        [limit]="6"
+        [limit]="8"
+        (activate)="onRowClick($event)"
       >
       </ngx-datatable>
     </div>
