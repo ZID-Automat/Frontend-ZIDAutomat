@@ -1,3 +1,5 @@
+import { MatDialog } from '@angular/material/dialog';
+import { UserDetailedDialogComponent } from './../../Dialogs/user-detailed-dialog/user-detailed-dialog.component';
 import { Component, OnInit } from '@angular/core';
 import { ColumnMode } from '@swimlane/ngx-datatable';
 import {AUserInforService} from 'AutomatApi';
@@ -16,14 +18,20 @@ export class UsersPageComponent implements OnInit {
 
   ColumnMode = ColumnMode
 
-  constructor(private AUserInforService:AUserInforService) {
+  constructor(private AUserInforService:AUserInforService, private MatDialog:MatDialog) {
     this.loadingIndicator = false;
 
   }
   ngOnInit(): void {
-    this.AUserInforService.aUserInforUserGet$Json().subscribe(x=>{
-      console.log(x);
-      this.rows = x;
-    });
+    this.AUserInforService.aUserInforGetAllUsersGet$Json().subscribe((data:any) => {
+      this.rows = data;
+    })
+  }
+
+  onRowClick(event:any) {
+    if(event.type == "click") {
+      console.log(event.row.id)
+      UserDetailedDialogComponent.openDialog(this.MatDialog,event.row.id);
+    }
   }
 }
