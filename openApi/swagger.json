@@ -17,7 +17,7 @@
         }
       }
     },
-    "/AUserInfor/User": {
+    "/AUserInfor/GetAllUsers": {
       "get": {
         "tags": [
           "AUserInfor"
@@ -48,6 +48,45 @@
                   "items": {
                     "$ref": "#/components/schemas/UserAdminGetAll"
                   }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AUserInfor/DetailedUser": {
+      "get": {
+        "tags": [
+          "AUserInfor"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserAdminDetailedDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserAdminDetailedDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserAdminDetailedDto"
                 }
               }
             }
@@ -824,6 +863,60 @@
           "qrCode": {
             "type": "string",
             "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserAdmiBorrowDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "borrowDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "returned": {
+            "type": "boolean"
+          },
+          "itemname": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserAdminDetailedDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "joined": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "borrow": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UserAdmiBorrowDto"
+            },
+            "nullable": true
+          },
+          "vorname": {
+            "type": "string",
+            "nullable": true
+          },
+          "nachname": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -29,6 +29,7 @@ import { ApiModule } from 'AutomatApi';
 import { environment } from '../environments/environment';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
+import { UserDetailedDialogComponent } from './Components/Dialogs/user-detailed-dialog/user-detailed-dialog.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { JwtModule } from '@auth0/angular-jwt';
     AutomatScannLogsComponent,
     LogAutomat2Component,
     UsersPageComponent,
+    UserDetailedDialogComponent,
   ],
   imports: [
     AutomatSharedModule,
