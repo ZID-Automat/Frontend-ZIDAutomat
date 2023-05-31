@@ -1,3 +1,4 @@
+export { BlockiertStateDto } from './models/blockiert-state-dto';
 export { BorrowAdminDetailedDto } from './models/borrow-admin-detailed-dto';
 export { BorrowDataDto } from './models/borrow-data-dto';
 export { BorrowDto } from './models/borrow-dto';
