@@ -23,6 +23,10 @@ export class UsersPageComponent implements OnInit {
 
   }
   ngOnInit(): void {
+    this.load();
+  }
+
+  load(){
     this.AUserInforService.aUserInforGetAllUsersGet$Json().subscribe((data:any) => {
       this.rows = data;
     })
@@ -31,7 +35,9 @@ export class UsersPageComponent implements OnInit {
   onRowClicki(event:any) {
     if(event.type == "click") {
       console.log(event.row)
-      UserDetailedDialogComponent.openDialog(this.MatDialog,event.row.id);
+      UserDetailedDialogComponent.openDialog(this.MatDialog,event.row.id).afterClosed().subscribe((data:any) => {
+        this.load();
+      });
     }
   }
 }

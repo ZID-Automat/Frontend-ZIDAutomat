@@ -18,7 +18,7 @@
           <h3>{{ user?.joined | date : "short" }}</h3>
         </div>
       </div>
-      <button mat-button color="primary" class="w-full" (click)="Blockieren()">
+      <button mat-raised-button color="primary" class="w-full" (click)="Blockieren()">
         {{user?.blockiert ? "Entblockieren" : "Blockieren"}}
       </button>
     </div>
