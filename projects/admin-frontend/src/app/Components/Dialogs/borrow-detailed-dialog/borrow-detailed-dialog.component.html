@@ -1,0 +1,44 @@
+<div class="flex">
+  <p class="text-3xl font-extralight">Borrow Detailed</p>
+  <p class="text-lg font-extralight">({{BorrowData?.id}})</p>
+</div>
+
+
+<div class="flex mt-3">
+  <p class="text-xl font-light ">Username:</p>
+  <p class="text-xl font-light">{{BorrowData?.userName}}</p>
+  <p class="text-sm font-extralight">({{BorrowData?.userId}})</p>
+</div>
+
+
+<div class="w-full mt-2">
+  <p class="text-lg mb-5 font-extralight">Item information:</p>
+  <ngx-datatable
+    *ngIf="ItemRows"
+    class="material w-full mt-2"
+    [rows]="ItemRows"
+    [columns]="DateCollums"
+    [columnMode]="ColumnMode.force"
+    [headerHeight]="0"
+    [footerHeight]="0"
+    rowHeight="auto"
+    [limit]="8"
+  >
+  </ngx-datatable>
+
+  <div class="w-full mt-5">
+    <p class="text-lg mb-5 font-extralight">Dates:</p>
+    <ngx-datatable
+      *ngIf="DateRows"
+      class="material w-full  mt-2"
+      [rows]="DateRows"
+      [columns]="DateCollums"
+      [columnMode]="ColumnMode.force"
+      [headerHeight]="0"
+      [footerHeight]="0"
+      rowHeight="auto"
+      [limit]="8"
+    >
+    </ngx-datatable>
+  </div>
+</div>

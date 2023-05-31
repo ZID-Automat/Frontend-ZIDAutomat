@@ -1,3 +1,4 @@
+export { BorrowAdminDetailedDto } from './models/borrow-admin-detailed-dto';
 export { BorrowDataDto } from './models/borrow-data-dto';
 export { BorrowDto } from './models/borrow-dto';
 export { ControllerLoginDto } from './models/controller-login-dto';
