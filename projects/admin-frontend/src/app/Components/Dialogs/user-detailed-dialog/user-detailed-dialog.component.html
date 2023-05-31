@@ -6,7 +6,7 @@
         <h3>id:</h3>
         <h3>Vorname:</h3>
         <h3>Nachname:</h3>
-        <h3>Name:</h3>
+        <h3>Username:</h3>
         <h3>Joined:</h3>
       </div>
       <div class="ml-2">
@@ -19,7 +19,7 @@
     </div>
 
     <div class="w-9/12">
-      <ngx-datatable
+      <ngx-datatable *ngIf="user?.borrow"
         class="material "
         [rows]="user?.borrow"
         [columns]="columns"
@@ -27,6 +27,7 @@
         [headerHeight]="50"
         [footerHeight]="50"
         rowHeight="auto"
+        [rowClass]="getRowClass"
         [limit]="6"
       >
       </ngx-datatable>
