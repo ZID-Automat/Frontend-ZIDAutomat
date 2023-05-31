@@ -9,6 +9,7 @@ import { RequestBuilder } from '../request-builder';
 import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 
+import { BlockiertStateDto } from '../models/blockiert-state-dto';
 import { UserAdminDetailedDto } from '../models/user-admin-detailed-dto';
 import { UserAdminGetAll } from '../models/user-admin-get-all';
 
@@ -208,6 +209,57 @@ export class AUserInforService extends BaseService {
 
     return this.aUserInforDetailedUserGet$Json$Response(params).pipe(
       map((r: StrictHttpResponse<UserAdminDetailedDto>) => r.body as UserAdminDetailedDto)
+    );
+  }
+
+  /**
+   * Path part for operation aUserInforSetBlockiertPost
+   */
+  static readonly AUserInforSetBlockiertPostPath = '/AUserInfor/SetBlockiert';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `aUserInforSetBlockiertPost()` instead.
+   *
+   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   */
+  aUserInforSetBlockiertPost$Response(params?: {
+    context?: HttpContext
+    body?: BlockiertStateDto
+  }
+): Observable<StrictHttpResponse<void>> {
+
+    const rb = new RequestBuilder(this.rootUrl, AUserInforService.AUserInforSetBlockiertPostPath, 'post');
+    if (params) {
+      rb.body(params.body, 'application/*+json');
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'text',
+      accept: '*/*',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return (r as HttpResponse<any>).clone({ body: undefined }) as StrictHttpResponse<void>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `aUserInforSetBlockiertPost$Response()` instead.
+   *
+   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   */
+  aUserInforSetBlockiertPost(params?: {
+    context?: HttpContext
+    body?: BlockiertStateDto
+  }
+): Observable<void> {
+
+    return this.aUserInforSetBlockiertPost$Response(params).pipe(
+      map((r: StrictHttpResponse<void>) => r.body as void)
     );
   }
 

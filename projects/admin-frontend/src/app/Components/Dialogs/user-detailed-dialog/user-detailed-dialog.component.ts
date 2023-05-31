@@ -6,7 +6,7 @@ import {
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
 import { ColumnMode } from '@swimlane/ngx-datatable';
-import { AUserInforService, UserAdminDetailedDto } from 'AutomatApi';
+import { AUserInforService, BlockiertStateDto, UserAdminDetailedDto } from 'AutomatApi';
 @Component({
   selector: 'admin-user-detailed-dialog',
   templateUrl: './user-detailed-dialog.component.html',
@@ -61,4 +61,18 @@ export class UserDetailedDialogComponent implements OnInit {
     { name: 'Itemname' },
     { name: 'BorrowDate' },
   ];
+
+  public Blockieren() {
+    let should = !this.user.blockiert;
+
+    let body:BlockiertStateDto = {
+      id: this.user.id,
+      blockiert: should
+    }
+
+    this.AUserInforService.aUserInforSetBlockiertPost(
+      {body: body}).subscribe(() => {
+      this.user .blockiert = should;
+    });
+  }
 }

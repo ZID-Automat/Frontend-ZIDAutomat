@@ -133,6 +133,37 @@
         }
       }
     },
+    "/AUserInfor/SetBlockiert": {
+      "post": {
+        "tags": [
+          "AUserInfor"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BlockiertStateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BlockiertStateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BlockiertStateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/Authentification/UserLogin": {
       "post": {
         "tags": [
@@ -750,6 +781,19 @@
   },
   "components": {
     "schemas": {
+      "BlockiertStateDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "blockiert": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
       "BorrowAdminDetailedDto": {
         "type": "object",
         "properties": {
@@ -1015,6 +1059,9 @@
           "nachname": {
             "type": "string",
             "nullable": true
+          },
+          "blockiert": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -1045,6 +1092,9 @@
           "nachname": {
             "type": "string",
             "nullable": true
+          },
+          "blockiert": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false

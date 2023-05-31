@@ -14,7 +14,7 @@ export class UsersPageComponent implements OnInit {
   loadingIndicator = true;
   reorderable = true;
 
-  columns = [{ name: 'Id' }, { name: 'Name' },{ name: 'Vorname' },{ name: 'Nachname' }, { name: 'Joined'},{name:"BorrowCount"}];
+  columns = [{ name: 'Id' }, { name: 'Name' },{ name: 'Vorname' },{ name: 'Nachname' }, { name: 'Joined'},{name:"BorrowCount"},{name:"Blockiert"}];
 
   ColumnMode = ColumnMode
 
@@ -30,7 +30,7 @@ export class UsersPageComponent implements OnInit {
 
   onRowClicki(event:any) {
     if(event.type == "click") {
-      console.log(event.row.id)
+      console.log(event.row)
       UserDetailedDialogComponent.openDialog(this.MatDialog,event.row.id);
     }
   }
