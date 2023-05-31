@@ -61,7 +61,6 @@ import { ItemCardDeckMobileComponent } from './Components/Pages/home-page/item-c
         allowedDomains: [environment.backendUrl.split(/\/\//)[1]],
         disallowedRoutes: [environment.backendUrl+"/Authentification/"],
         throwNoTokenError: false,
-
         skipWhenExpired: true
       },
     }),

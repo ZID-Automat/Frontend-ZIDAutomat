@@ -1,0 +1,15 @@
+<div class="w-10/12 m-auto mt-7 ">
+  <p class="font-extralight text-3xl text-center mb-4">User Infos</p>
+    <ngx-datatable
+      class="material mt-10 mb-10"
+      [rows]="rows"
+      [loadingIndicator]="loadingIndicator"
+      [columns]="columns"
+      [columnMode]="ColumnMode.force"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      rowHeight="auto"
+      [reorderable]="reorderable"
+    >
+    </ngx-datatable>
+  </div>

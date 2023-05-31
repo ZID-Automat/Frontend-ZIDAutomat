@@ -8,16 +8,12 @@ import { Component, OnInit, ViewChildren, QueryList, AfterViewInit, Output, Even
 })
 export class AutomatViewComponent implements AfterViewInit {
 
-  @ViewChildren("DragablePoint") DragablePoints: QueryList<HTMLElement> = null!;
-  @ViewChildren("DragImages") DragImgs: QueryList<ElementRef<any>> = null!;
+  @ViewChildren("Boxi") DragImgs: QueryList<ElementRef<any>> = null!;
 
   @Output() OnDragPointIdsLoad:EventEmitter<string[]> = new EventEmitter();
 
   ngAfterViewInit(): void {
     let ids:string[] = []
-    this.DragablePoints.forEach((element,i) => {
-      console.log(element);
-    });
     this.OnDragPointIdsLoad.emit(ids);
   }
 
@@ -30,10 +26,12 @@ export class AutomatViewComponent implements AfterViewInit {
     event.preventDefault();
   }
 
-  public dropedItem(event:any){
-    let ele = this.DragImgs.get(0)?.nativeElement.href;
-    ele.baseVal = "assets/Test.png"
-    console.log(ele)
+  public dropedItem(event:DragEvent){
+    const el = ((event.target as HTMLElement).parentElement)?.children
+    const array = Array.from(el!);
+    let imagei = array.find(e=>e.tagName == "image");
+    (imagei as any).href.baseVal = "assets/Test.png"
+
   }
 }
 //5*8
