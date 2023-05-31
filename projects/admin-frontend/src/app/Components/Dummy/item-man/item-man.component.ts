@@ -26,5 +26,6 @@ export class ItemManComponent implements OnInit {
   }
 
   dragi(ev:DragEvent) {
+    ev.dataTransfer?.setData("text", (ev.target as any).id);
   }
 }

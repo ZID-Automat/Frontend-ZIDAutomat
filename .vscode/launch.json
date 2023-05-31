@@ -13,7 +13,7 @@
       "name": "ng serve AdminFrontend",
       "type": "pwa-chrome",
       "request": "launch",
-      "preLaunchTask": "npm: start",
+      "preLaunchTask": "ng serve AdminFrontend",
       "url": "http://localhost:4200/"
     }
   ]

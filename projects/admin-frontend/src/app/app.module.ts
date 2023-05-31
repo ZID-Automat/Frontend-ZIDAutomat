@@ -21,6 +21,14 @@ import { AddItemDialogComponent } from './Components/Dialogs/add-item-dialog/add
 import { ViewItemDialogComponent } from './Components/Dialogs/view-item-dialog/view-item-dialog.component';
 import { LogPageComponent } from './Components/Pages/Log/log-page/log-page.component';
 import { LogViewComponent } from './Components/Dummy/log-view/log-view.component';
+import { AutomatScannLogsComponent } from './Components/Pages/automat-scann-logs/automat-scann-logs.component';
+import { LogAutomat2Component } from './Components/Dummy/log-automat2/log-automat2.component';
+import { UsersPageComponent } from './Components/Pages/users-page/users-page.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { ApiModule } from 'AutomatApi';
+import { environment } from '../environments/environment';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -35,14 +43,27 @@ import { LogViewComponent } from './Components/Dummy/log-view/log-view.component
     ViewItemDialogComponent,
     LogPageComponent,
     LogViewComponent,
+    AutomatScannLogsComponent,
+    LogAutomat2Component,
+    UsersPageComponent,
   ],
   imports: [
     AutomatSharedModule,
+    ApiModule.forRoot({ rootUrl: environment.backendUrl }),
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
     MaterialModule,
-    DragDropModule,
+
+    JwtModule.forRoot({
+      config: {
+        tokenGetter:()=>localStorage.getItem("jwt"),
+        allowedDomains: [environment.backendUrl.split(/\/\//)[1]],
+        disallowedRoutes: [environment.backendUrl+"/Authentification/"],
+        throwNoTokenError: false,
+        skipWhenExpired: true
+      },
+    }),
+    NgxDatatableModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,3 +1,5 @@
+import { UsersPageComponent } from './Components/Pages/users-page/users-page.component';
+import { AutomatScannLogsComponent } from './Components/Pages/automat-scann-logs/automat-scann-logs.component';
 import { StatusPageComponent } from './Components/Pages/Status/status-page/status-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -12,6 +14,12 @@ export enum AdminFrontendRoutes {
   Status = 'status',
   Item = 'items',
   Log = 'log',
+  AutomatLog = 'AutomatLog',
+  UserPage = 'UserPage',
+
+
+  
+
 }
 const routes: Routes = [
   { path: '', redirectTo: AdminFrontendRoutes.Login, pathMatch: 'full' },
@@ -35,6 +43,14 @@ const routes: Routes = [
     component: LogPageComponent,
     // canActivate: [LoginActivateGuard],
   },
+  {
+    path: AdminFrontendRoutes.AutomatLog,
+    component: AutomatScannLogsComponent,
+  },
+  {
+    path: AdminFrontendRoutes.UserPage,
+    component: UsersPageComponent,
+  }
 ];
 
 @NgModule({
