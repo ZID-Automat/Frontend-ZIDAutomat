@@ -260,3 +260,21 @@ $altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
 }
 @import '~@swimlane/ngx-datatable/index.css';
 @import '~@swimlane/ngx-datatable/themes/material.css';
+
+.borrowNotReturned {
+  background-color: #e74d3c7f;
+}
+
+.borrowNotReturned:hover {
+  background-color: #c03a2b7b !important;
+}
+
+.borrowReturned {
+  background-color: #2ecc7087;
+}
+
+.borrowReturned:hover {
+  background-color: #27ae5f83;
+}
+
+

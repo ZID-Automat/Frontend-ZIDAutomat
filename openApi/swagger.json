@@ -878,8 +878,9 @@
             "type": "string",
             "format": "date-time"
           },
-          "returned": {
-            "type": "boolean"
+          "stati": {
+            "type": "integer",
+            "format": "int32"
           },
           "itemname": {
             "type": "string",
