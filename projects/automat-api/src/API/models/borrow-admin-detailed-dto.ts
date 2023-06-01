@@ -3,10 +3,12 @@
 export interface BorrowAdminDetailedDto {
   borrowDate?: string;
   collectDate?: null | string;
+  entschuldigt?: boolean;
   guid?: string;
   id?: number;
   itemId?: null | number;
   itemInstanceId?: null | number;
+  late?: boolean;
   name?: null | string;
   predictedReturnDate?: string;
   returnDate?: null | string;

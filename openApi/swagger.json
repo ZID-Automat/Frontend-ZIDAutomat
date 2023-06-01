@@ -120,6 +120,84 @@
         }
       }
     },
+    "/Entschuldigt": {
+      "post": {
+        "tags": [
+          "ABorrowInfo"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Value",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Zurueckgeben": {
+      "post": {
+        "tags": [
+          "ABorrowInfo"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Value",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/AUserInfor/GetAllUsers": {
       "get": {
         "tags": [
@@ -943,6 +1021,12 @@
           "userName": {
             "type": "string",
             "nullable": true
+          },
+          "entschuldigt": {
+            "type": "boolean"
+          },
+          "late": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
