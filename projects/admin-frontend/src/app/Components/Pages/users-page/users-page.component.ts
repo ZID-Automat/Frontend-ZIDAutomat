@@ -3,6 +3,7 @@ import { UserDetailedDialogComponent } from './../../Dialogs/user-detailed-dialo
 import { Component, OnInit } from '@angular/core';
 import { ColumnMode } from '@swimlane/ngx-datatable';
 import {AUserInforService} from 'AutomatApi';
+import { take } from 'rxjs';
 @Component({
   selector: 'admin-users-page',
   templateUrl: './users-page.component.html',
@@ -35,7 +36,7 @@ export class UsersPageComponent implements OnInit {
   onRowClicki(event:any) {
     if(event.type == "click") {
       console.log(event.row)
-      UserDetailedDialogComponent.openDialog(this.MatDialog,event.row.id).afterClosed().subscribe((data:any) => {
+      UserDetailedDialogComponent.openDialog(this.MatDialog,event.row.id).afterClosed().pipe(take(1)).subscribe((data:any) => {
         this.load();
       });
     }

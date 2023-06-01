@@ -11,6 +11,7 @@ import {
   MatFormFieldControl,
   MatFormFieldModule,
 } from '@angular/material/form-field';
+import { ChartjsModule } from '@ctrl/ngx-chartjs';
 import { LoginPageComponent } from './Components/Pages/Login/login-page/login-page.component';
 import { NavBarComponent } from './Components/Dummy/nav-bar/nav-bar.component';
 import { StatusPageComponent } from './Components/Pages/Status/status-page/status-page.component';
@@ -32,6 +33,23 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { UserDetailedDialogComponent } from './Components/Dialogs/user-detailed-dialog/user-detailed-dialog.component';
 import { BorrowDetailedDialogComponent } from './Components/Dialogs/borrow-detailed-dialog/borrow-detailed-dialog.component';
 
+import {
+  Chart,
+  LineController,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  BarElement,
+  BarController
+} from 'chart.js';
+import { ArtikelVerkauftGraphComponent } from './Components/Dummy/Graphs/artikel-verkauft-graph/artikel-verkauft-graph.component';
+import { GesamtBorrowComponent } from './Components/Dummy/Graphs/gesamt-borrow/gesamt-borrow.component';
+  Chart.register(LineController, CategoryScale,LinearScale,PointElement,LineElement, Title, Tooltip, Legend ,BarElement,BarController);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +68,8 @@ import { BorrowDetailedDialogComponent } from './Components/Dialogs/borrow-detai
     UsersPageComponent,
     UserDetailedDialogComponent,
     BorrowDetailedDialogComponent,
+    ArtikelVerkauftGraphComponent,
+    GesamtBorrowComponent,
   ],
   imports: [
     AutomatSharedModule,
@@ -57,7 +77,6 @@ import { BorrowDetailedDialogComponent } from './Components/Dialogs/borrow-detai
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-
     JwtModule.forRoot({
       config: {
         tokenGetter:()=>localStorage.getItem("jwt"),
@@ -67,7 +86,8 @@ import { BorrowDetailedDialogComponent } from './Components/Dialogs/borrow-detai
         skipWhenExpired: true
       },
     }),
-    NgxDatatableModule
+    NgxDatatableModule,
+    ChartjsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
