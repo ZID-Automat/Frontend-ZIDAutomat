@@ -3,6 +3,7 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ColumnMode } from '@swimlane/ngx-datatable';
 
 import { ABorrowInfoService } from 'AutomatApi';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'admin-borrow-detailed-dialog',
@@ -33,7 +34,7 @@ export class BorrowDetailedDialogComponent implements OnInit {
   ngOnInit(): void {
     this.ABorrowInfoService.borrowDetailedGet$Json({
       id: this.data.id,
-    }).subscribe((data) => {
+    }).pipe(take(1)).subscribe((data) => {
       this.DateRows = [
         {
           date: 'BorrowDate',

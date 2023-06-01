@@ -7,6 +7,7 @@ import {
 } from '@angular/material/dialog';
 import { ColumnMode } from '@swimlane/ngx-datatable';
 import { AUserInforService, BlockiertStateDto, UserAdminDetailedDto } from 'AutomatApi';
+import { take } from 'rxjs';
 @Component({
   selector: 'admin-user-detailed-dialog',
   templateUrl: './user-detailed-dialog.component.html',
@@ -25,7 +26,7 @@ export class UserDetailedDialogComponent implements OnInit {
   ngOnInit(): void {
     this.AUserInforService.aUserInforDetailedUserGet$Json({
       id: this.data.id,
-    }).subscribe((data) => {
+    }).pipe(take(1)).subscribe((data) => {
       this.user = data;
     });
   }
@@ -71,7 +72,7 @@ export class UserDetailedDialogComponent implements OnInit {
     }
 
     this.AUserInforService.aUserInforSetBlockiertPost(
-      {body: body}).subscribe(() => {
+      {body: body}).pipe(take(1)).subscribe(() => {
       this.user .blockiert = should;
     });
   }

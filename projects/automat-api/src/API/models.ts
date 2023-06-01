@@ -1,8 +1,11 @@
+export { AnalyticItemDto } from './models/analytic-item-dto';
+export { AnalyticItemMonth } from './models/analytic-item-month';
 export { BlockiertStateDto } from './models/blockiert-state-dto';
 export { BorrowAdminDetailedDto } from './models/borrow-admin-detailed-dto';
 export { BorrowDataDto } from './models/borrow-data-dto';
 export { BorrowDto } from './models/borrow-dto';
 export { ControllerLoginDto } from './models/controller-login-dto';
+export { GesammtBorrowsDto } from './models/gesammt-borrows-dto';
 export { InvalidateQrCodeDto } from './models/invalidate-qr-code-dto';
 export { ItemDetailedDto } from './models/item-detailed-dto';
 export { ItemDisplayDto } from './models/item-display-dto';

@@ -13,7 +13,7 @@ export enum AdminFrontendRoutes {
   Login = 'login',
   Status = 'status',
   Item = 'items',
-  Log = 'log',
+  Log = 'analytics',
   AutomatLog = 'AutomatLog',
   UserPage = 'UserPage',
 
