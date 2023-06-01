@@ -52,7 +52,7 @@ export class UserDetailedDialogComponent implements OnInit {
 
   public onRowClick(event: any) {
     if (event.type == 'click') {
-      BorrowDetailedDialogComponent.openDialog(this.dialog, event.row.id).afterClosed().subscribe(() => {
+      BorrowDetailedDialogComponent.openDialog(this.dialog, event.row.id, false).afterClosed().subscribe(() => {
         this.ngOnInit();
       });
     }
