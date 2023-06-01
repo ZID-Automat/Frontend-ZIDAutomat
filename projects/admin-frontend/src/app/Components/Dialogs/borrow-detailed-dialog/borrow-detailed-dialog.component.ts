@@ -78,9 +78,9 @@ export class BorrowDetailedDialogComponent implements OnInit {
     });
   }
 
-  public static openDialog(dialog: MatDialog, id: number): MatDialogRef<BorrowDetailedDialogComponent> {
+  public static openDialog(dialog: MatDialog, id: number,ShowToUser:boolean = true,): MatDialogRef<BorrowDetailedDialogComponent> {
     return dialog.open(BorrowDetailedDialogComponent, {
-      data: { id: id },
+      data: { id: id , ShowToUser:ShowToUser},
       width: '40%',
       height: '78vh',
     });
