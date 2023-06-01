@@ -41,4 +41,38 @@
     >
     </ngx-datatable>
   </div>
+
+  
+  <div class="m-3 mt-10">
+    <button mat-raised-button color="primary" (click)="Zurueckgeben()" class="w-full m-5 ">
+      <p class="p-4 text-xl font-extralight">
+         {{BorrowData?.returnDate == null ? 'Zurückgeben' : 'Zurückgeben revidieren'}}
+      </p>
+    </button>
+  </div>
+
+  <div class="m-3 mt-4" *ngIf="BorrowData?.returnDate != null && BorrowData?.late">
+    <button mat-raised-button color="primary" class="w-full m-5 " (click)="Entschuldigen()">
+      <p class="p-4 text-xl font-extralight">
+        {{BorrowData?.entschuldigt ? 'Entschuldigung zurücknehmen' : 'Entschuldigen'}}
+      </p>
+    </button>
+  </div>
+
+  <div class="m-3 mt-4">
+    <button mat-raised-button color="primary" class="w-full m-5 ">
+      <p class="p-4 text-xl font-extralight">
+        Show QrCode
+      </p>
+    </button>
+  </div>
+
+
+  <div class="m-3 mt-4">
+    <button mat-raised-button color="primary" class="w-full m-5" (click)="ZumUser($event)">
+      <p class="p-4 text-xl font-extralight">
+        Zum User
+      </p>
+    </button>
+  </div>
 </div>
