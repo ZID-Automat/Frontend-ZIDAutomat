@@ -3,7 +3,7 @@
     <p class="text-4xl font-extralight text-center">OpenBorrows</p>
   </div>
   <div class="w-10/12 m-auto mt-7">
-    <admin-borrows-table [BorrowRows]="OpenBorrows"></admin-borrows-table>
+    <admin-borrows-table [BorrowRows]="OpenBorrows" [ShowToUser] = "true"></admin-borrows-table>
   </div>
 </div>
 
@@ -12,7 +12,7 @@
     <p class="text-4xl font-extralight text-center">ToDealWithBorrows</p>
   </div>
   <div class="w-10/12 m-auto mt-7">
-    <admin-borrows-table [BorrowRows]="ToDealWithBorrows"></admin-borrows-table>
+    <admin-borrows-table [BorrowRows]="ToDealWithBorrows" [ShowToUser] = "true"></admin-borrows-table>
   </div>
 </div>
 
@@ -21,7 +21,7 @@
     <p class="text-4xl font-extralight text-center">FinishedBorrows</p>
   </div>
   <div class="w-10/12 m-auto mt-7">
-    <admin-borrows-table [BorrowRows]="FinishedBorrows"></admin-borrows-table>
+    <admin-borrows-table [BorrowRows]="FinishedBorrows" [ShowToUser] = "true"></admin-borrows-table>
   </div>
 </div>
 
@@ -30,6 +30,6 @@
     <p class="text-4xl font-extralight text-center">All Borrows</p>
   </div>
   <div class="w-10/12 m-auto mt-7">
-    <admin-borrows-table [BorrowRows]="AllBorrows"></admin-borrows-table>
+    <admin-borrows-table [BorrowRows]="AllBorrows" [ShowToUser] = "true"></admin-borrows-table>
   </div>
 </div>
