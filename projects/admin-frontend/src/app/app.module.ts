@@ -50,8 +50,8 @@ import { ArtikelVerkauftGraphComponent } from './Components/Dummy/Graphs/artikel
 import { GesamtBorrowComponent } from './Components/Dummy/Graphs/gesamt-borrow/gesamt-borrow.component';
 import { BorrowsTableComponent } from './Components/Dummy/borrows-table/borrows-table.component';
 import { BorrowsComponent } from './Components/Pages/borrows/borrows.component';
-import AdminQrCodeDialogComponent from './Components/Dialogs/admin-qr-code-dialog/admin-qr-code-dialog.component';
 import { QRCodeModule } from 'angularx-qrcode';
+import { AdminQrCodeDialogComponent } from './Components/Dialogs/admin-qr-code-dialog/admin-qr-code-dialog.component';
   Chart.register(LineController, CategoryScale,LinearScale,PointElement,LineElement, Title, Tooltip, Legend ,BarElement,BarController);
 
 @NgModule({

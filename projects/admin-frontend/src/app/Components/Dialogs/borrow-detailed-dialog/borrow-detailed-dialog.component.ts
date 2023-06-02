@@ -5,7 +5,7 @@ import { ColumnMode } from '@swimlane/ngx-datatable';
 
 import { ABorrowInfoService, BorrowAdminDetailedDto } from 'AutomatApi';
 import { take } from 'rxjs';
-import AdminQrCodeDialogComponent from '../admin-qr-code-dialog/admin-qr-code-dialog.component';
+import { AdminQrCodeDialogComponent } from '../admin-qr-code-dialog/admin-qr-code-dialog.component';
 
 @Component({
   selector: 'admin-borrow-detailed-dialog',
@@ -92,13 +92,10 @@ export class BorrowDetailedDialogComponent implements OnInit {
   }
 
   public Zurueckgeben(){
-    console.log("jajajs ")
-
     this.ABorrowInfoService.zurueckgebenPost$Json({
       Id: this.BorrowData.id,
       Value: this.BorrowData.returnDate == null
     }).pipe(take(1)).subscribe((data: any) => {
-      console.log("fertig")
       this.BorrowData.returnDate = data
     })
   }
