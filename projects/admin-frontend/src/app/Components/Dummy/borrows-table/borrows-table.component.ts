@@ -10,8 +10,9 @@ import { BorrowDetailedDialogComponent } from '../../Dialogs/borrow-detailed-dia
   styleUrls: ['./borrows-table.component.scss'],
 })
 export class BorrowsTableComponent implements OnInit {
-  
+
   @Input() public BorrowRows: null | Array<UserAdmiBorrowDto> = null!;
+  @Input() public ShowToUser:boolean = false;
 
   public ColumnMode = ColumnMode;
 
@@ -33,7 +34,7 @@ export class BorrowsTableComponent implements OnInit {
 
   public onRowClick(event: any) {
     if (event.type == 'click') {
-      BorrowDetailedDialogComponent.openDialog(this.dialog, event.row.id, false)
+      BorrowDetailedDialogComponent.openDialog(this.dialog, event.row.id, this.ShowToUser)
         .afterClosed()
         .subscribe(() => {
           this.ngOnInit();
