@@ -9,6 +9,7 @@ export { GesammtBorrowsDto } from './models/gesammt-borrows-dto';
 export { InvalidateQrCodeDto } from './models/invalidate-qr-code-dto';
 export { ItemDetailedDto } from './models/item-detailed-dto';
 export { ItemDisplayDto } from './models/item-display-dto';
+export { ItemGetAllDto } from './models/item-get-all-dto';
 export { LogQrCodeDto } from './models/log-qr-code-dto';
 export { QrCodeDto } from './models/qr-code-dto';
 export { TaeglicheUserDto } from './models/taegliche-user-dto';

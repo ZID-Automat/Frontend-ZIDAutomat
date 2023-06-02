@@ -1,7 +1,9 @@
+import { AItemService,ItemGetAllDto } from 'AutomatApi';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddItemDialogComponent } from '../../Dialogs/add-item-dialog/add-item-dialog.component';
 import { ViewItemDialogComponent } from '../../Dialogs/view-item-dialog/view-item-dialog.component';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'admin-item-man',
@@ -9,12 +11,18 @@ import { ViewItemDialogComponent } from '../../Dialogs/view-item-dialog/view-ite
   styleUrls: ['./item-man.component.scss'],
 })
 export class ItemManComponent implements OnInit {
-  public h = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 16, 18];
   @Input() public GrapToPointsId: string[] = [];
 
-  constructor(private matDialog: MatDialog) {}
+  constructor(private matDialog: MatDialog, private AItemService:AItemService) {}
 
-  ngOnInit(): void {}
+  data:ItemGetAllDto[] = []
+
+  ngOnInit(): void {
+    this.AItemService.aItemGetAllGet$Json().pipe(take(1)).subscribe((data) => {
+      this.data = data;
+      console.log(data)
+    })
+  }
 
   openAddItemDialog() {
     AddItemDialogComponent.openDialog(this.matDialog);

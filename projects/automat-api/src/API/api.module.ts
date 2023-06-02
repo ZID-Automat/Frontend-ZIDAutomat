@@ -6,6 +6,7 @@ import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
 import { AAnalyticsService } from './services/a-analytics.service';
 import { ABorrowInfoService } from './services/a-borrow-info.service';
+import { AItemService } from './services/a-item.service';
 import { AUserInforService } from './services/a-user-infor.service';
 import { AuthentificationService } from './services/authentification.service';
 import { CBorrowService } from './services/c-borrow.service';
@@ -25,6 +26,7 @@ import { UQrCodeService } from './services/u-qr-code.service';
   providers: [
     AAnalyticsService,
     ABorrowInfoService,
+    AItemService,
     AUserInforService,
     AuthentificationService,
     CBorrowService,
