@@ -1,10 +1,9 @@
+import { ColorServiceService } from './../../../../../../Services/Helper/color-service.service';
 import { AnalyticItemMonth } from './../../../../../../../automat-api/src/API/models/analytic-item-month';
 import { Component, Input, OnInit } from '@angular/core';
 import type { ChartData, ChartOptions } from 'chart.js';
 import { take } from 'rxjs';
 import { AAnalyticsService } from 'AutomatApi';
-
-const FlatColors = require('flat-colors');
 
 @Component({
   selector: 'admin-artikel-verkauft-graph',
@@ -16,7 +15,7 @@ export class ArtikelVerkauftGraphComponent implements OnInit {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top',
+        position: 'bottom',
       },
       title: {
         display: true,
@@ -29,7 +28,7 @@ export class ArtikelVerkauftGraphComponent implements OnInit {
 
   @Input() ngxChartClass: string = '';
 
-  constructor(private AAnalyticsService: AAnalyticsService) {}
+  constructor(private AAnalyticsService: AAnalyticsService, private ColorServiceService:ColorServiceService) {}
 
   ngOnInit(): void {
     this.AAnalyticsService.aAnalyticsGetAnalyticsItemsGet$Json()
@@ -44,19 +43,18 @@ export class ArtikelVerkauftGraphComponent implements OnInit {
           datasets: [],
         };
 
+
         data.forEach((item: any, index: number) => {
-          let color = FlatColors()[3];
-          console.log(color);
-          let dataSet = item.monate!.map((mo: any) => {
-            return mo.value;
-          }) as number[];
+          const colors = this.ColorServiceService.getColors(1);
+
+          let dataSet = item.monate!.map((mo: any) =>mo.value)as number[];
           this.data.datasets.push({
             label: '#' + (index + 1) + ' ' + item.name,
             data: dataSet,
             fill: true,
-            backgroundColor: color,
-            hoverBackgroundColor: color,
-            borderColor: color,
+            backgroundColor: colors.backgroundColors[0],
+            hoverBackgroundColor: colors.hoverBackgroundColors[0],
+            borderColor: colors.borderColors[0],
             borderWidth: 3,
             cubicInterpolationMode: 'monotone',
           });

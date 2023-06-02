@@ -11,6 +11,8 @@ import { map, filter } from 'rxjs/operators';
 
 import { AnalyticItemDto } from '../models/analytic-item-dto';
 import { GesammtBorrowsDto } from '../models/gesammt-borrows-dto';
+import { TaeglicheUserDto } from '../models/taegliche-user-dto';
+import { WieVielZuspaetDto } from '../models/wie-viel-zuspaet-dto';
 
 @Injectable({
   providedIn: 'root',
@@ -202,6 +204,188 @@ export class AAnalyticsService extends BaseService {
 
     return this.aAnalyticsGesamtBorrowsGet$Json$Response(params).pipe(
       map((r: StrictHttpResponse<Array<GesammtBorrowsDto>>) => r.body as Array<GesammtBorrowsDto>)
+    );
+  }
+
+  /**
+   * Path part for operation aAnalyticsWievielZuspatGet
+   */
+  static readonly AAnalyticsWievielZuspatGetPath = '/AAnalytics/WievielZuspat';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `aAnalyticsWievielZuspatGet$Plain()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  aAnalyticsWievielZuspatGet$Plain$Response(params?: {
+    context?: HttpContext
+  }
+): Observable<StrictHttpResponse<Array<WieVielZuspaetDto>>> {
+
+    const rb = new RequestBuilder(this.rootUrl, AAnalyticsService.AAnalyticsWievielZuspatGetPath, 'get');
+    if (params) {
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'text',
+      accept: 'text/plain',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return r as StrictHttpResponse<Array<WieVielZuspaetDto>>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `aAnalyticsWievielZuspatGet$Plain$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  aAnalyticsWievielZuspatGet$Plain(params?: {
+    context?: HttpContext
+  }
+): Observable<Array<WieVielZuspaetDto>> {
+
+    return this.aAnalyticsWievielZuspatGet$Plain$Response(params).pipe(
+      map((r: StrictHttpResponse<Array<WieVielZuspaetDto>>) => r.body as Array<WieVielZuspaetDto>)
+    );
+  }
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `aAnalyticsWievielZuspatGet$Json()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  aAnalyticsWievielZuspatGet$Json$Response(params?: {
+    context?: HttpContext
+  }
+): Observable<StrictHttpResponse<Array<WieVielZuspaetDto>>> {
+
+    const rb = new RequestBuilder(this.rootUrl, AAnalyticsService.AAnalyticsWievielZuspatGetPath, 'get');
+    if (params) {
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'json',
+      accept: 'text/json',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return r as StrictHttpResponse<Array<WieVielZuspaetDto>>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `aAnalyticsWievielZuspatGet$Json$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  aAnalyticsWievielZuspatGet$Json(params?: {
+    context?: HttpContext
+  }
+): Observable<Array<WieVielZuspaetDto>> {
+
+    return this.aAnalyticsWievielZuspatGet$Json$Response(params).pipe(
+      map((r: StrictHttpResponse<Array<WieVielZuspaetDto>>) => r.body as Array<WieVielZuspaetDto>)
+    );
+  }
+
+  /**
+   * Path part for operation aAnalyticsTaeglicheUserGet
+   */
+  static readonly AAnalyticsTaeglicheUserGetPath = '/AAnalytics/TaeglicheUser';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `aAnalyticsTaeglicheUserGet$Plain()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  aAnalyticsTaeglicheUserGet$Plain$Response(params?: {
+    context?: HttpContext
+  }
+): Observable<StrictHttpResponse<Array<TaeglicheUserDto>>> {
+
+    const rb = new RequestBuilder(this.rootUrl, AAnalyticsService.AAnalyticsTaeglicheUserGetPath, 'get');
+    if (params) {
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'text',
+      accept: 'text/plain',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return r as StrictHttpResponse<Array<TaeglicheUserDto>>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `aAnalyticsTaeglicheUserGet$Plain$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  aAnalyticsTaeglicheUserGet$Plain(params?: {
+    context?: HttpContext
+  }
+): Observable<Array<TaeglicheUserDto>> {
+
+    return this.aAnalyticsTaeglicheUserGet$Plain$Response(params).pipe(
+      map((r: StrictHttpResponse<Array<TaeglicheUserDto>>) => r.body as Array<TaeglicheUserDto>)
+    );
+  }
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `aAnalyticsTaeglicheUserGet$Json()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  aAnalyticsTaeglicheUserGet$Json$Response(params?: {
+    context?: HttpContext
+  }
+): Observable<StrictHttpResponse<Array<TaeglicheUserDto>>> {
+
+    const rb = new RequestBuilder(this.rootUrl, AAnalyticsService.AAnalyticsTaeglicheUserGetPath, 'get');
+    if (params) {
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'json',
+      accept: 'text/json',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return r as StrictHttpResponse<Array<TaeglicheUserDto>>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `aAnalyticsTaeglicheUserGet$Json$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  aAnalyticsTaeglicheUserGet$Json(params?: {
+    context?: HttpContext
+  }
+): Observable<Array<TaeglicheUserDto>> {
+
+    return this.aAnalyticsTaeglicheUserGet$Json$Response(params).pipe(
+      map((r: StrictHttpResponse<Array<TaeglicheUserDto>>) => r.body as Array<TaeglicheUserDto>)
     );
   }
 
