@@ -6,6 +6,7 @@ import { LoginActivateGuard } from './Guards/login-activate.guard';
 import { ActiveQrCodePageComponent } from './Components/Pages/active-qr-code-page/active-qr-code-page.component';
 import { HistoryPageComponent } from './Components/Pages/history-page/history-page.component';
 import { LoginDeactivateGuard } from './Guards/login-deactivate.guard';
+import { HelpPageComponent } from './Components/Pages/help-page/help-page.component';
 
 export enum UserFrontendRoutes {
   Login = 'login',
@@ -23,7 +24,9 @@ const routes: Routes = [
   { path: UserFrontendRoutes.Home, component: HomePageComponent, canActivate:[LoginActivateGuard] },
   { path: UserFrontendRoutes.ActiveQrCodes, component: ActiveQrCodePageComponent, canActivate:[LoginActivateGuard] },
   { path: UserFrontendRoutes.History, component: HistoryPageComponent, canActivate:[LoginActivateGuard] },
+  { path: UserFrontendRoutes.Help, component: HelpPageComponent, canActivate:[LoginActivateGuard] },
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
