@@ -3,13 +3,25 @@
   [style.background-color]="themeDataService.PrimaryColorAdmin"
 >
   <div class="p-1 m-auto w-11/12 flex">
-    <a class="bg-gray-50d0 pl-2 rounded-xl">
+    <a class="bg-gray-50d0 pl-2 rounded-xl  hover:scale-105 ease-in duration-200"  [routerLink]="adminFrontendRoutes.Item" >
       <div class="flex">
         <div class="text-xl block my-auto ">ZID Automat</div>
         <div class="float-left ml-2 bg-gray-600 p-1 rounded-lg block my-auto text-xl">Console</div>
       </div>
     </a>
 
-    <div class="flex ml-auto"></div>
+    <a class="text-xl p-1.5  block ml-auto hover:scale-105 ease-in duration-200" [routerLink]="adminFrontendRoutes.BorrowPage">
+      Borrows
+    </a>
+    <a class="text-xl p-1.5  block  hover:scale-105 ease-in duration-200" [routerLink]="adminFrontendRoutes.UserPage">
+      Users
+    </a>
+    <a class="text-xl p-1.5  block  hover:scale-105 ease-in duration-200" [routerLink]="adminFrontendRoutes.Item">
+      AutomatView
+    </a>
+    <a class="text-xl p-1.5  block  hover:scale-105 ease-in duration-200" [routerLink]="adminFrontendRoutes.Log">
+      Analytics
+    </a>
+    
   </div>
 </div>
