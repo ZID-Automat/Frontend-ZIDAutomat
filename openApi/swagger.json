@@ -426,6 +426,44 @@
         }
       }
     },
+    "/AItem/GetAll": {
+      "get": {
+        "tags": [
+          "AItem"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemGetAllDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemGetAllDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemGetAllDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/AUserInfor/GetAllUsers": {
       "get": {
         "tags": [
@@ -1405,6 +1443,28 @@
           },
           "available": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ItemGetAllDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "image": {
+            "type": "string",
+            "nullable": true
+          },
+          "locationImAutomat": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

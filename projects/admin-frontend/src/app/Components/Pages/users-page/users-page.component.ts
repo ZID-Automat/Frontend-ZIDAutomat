@@ -28,7 +28,7 @@ export class UsersPageComponent implements OnInit {
   }
 
   load(){
-    this.AUserInforService.aUserInforGetAllUsersGet$Json().subscribe((data:any) => {
+    this.AUserInforService.aUserInforGetAllUsersGet$Json().pipe(take(1)).subscribe((data:any) => {
       this.rows = data;
     })
   }
