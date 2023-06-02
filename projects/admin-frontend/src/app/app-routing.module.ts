@@ -8,6 +8,7 @@ import { ItemPageComponent } from './Components/Pages/Item/item-page/item-page.c
 import { LogPageComponent } from './Components/Pages/Log/log-page/log-page.component';
 import { LoginActivateGuard } from './Guards/login-activate.guard';
 import { LoginDeactivateGuard } from './Guards/login-deactivate.guard';
+import { BorrowsComponent } from './Components/Pages/borrows/borrows.component';
 
 export enum AdminFrontendRoutes {
   Login = 'login',
@@ -16,6 +17,7 @@ export enum AdminFrontendRoutes {
   Log = 'analytics',
   AutomatLog = 'AutomatLog',
   UserPage = 'UserPage',
+  BorrowPage = 'BorrowPage',
 
 
   
@@ -50,6 +52,10 @@ const routes: Routes = [
   {
     path: AdminFrontendRoutes.UserPage,
     component: UsersPageComponent,
+  },
+  {
+    path: AdminFrontendRoutes.BorrowPage,
+    component: BorrowsComponent
   }
 ];
 

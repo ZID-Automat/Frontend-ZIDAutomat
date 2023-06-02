@@ -25,20 +25,7 @@
 
     
     <div class="w-9/12 ml-10 block">
-      <ngx-datatable
-        *ngIf="user?.borrow"
-        class="material"
-        [rows]="user?.borrow"
-        [columns]="columns"
-        [columnMode]="ColumnMode.force"
-        [headerHeight]="50"
-        [footerHeight]="50"
-        rowHeight="auto"
-        [rowClass]="getRowClass"
-        [limit]="8"
-        (activate)="onRowClick($event)"
-      >
-      </ngx-datatable>
+      <admin-borrows-table [BorrowRows]="user.borrow!"></admin-borrows-table>
     </div>
   </div>
 </div>

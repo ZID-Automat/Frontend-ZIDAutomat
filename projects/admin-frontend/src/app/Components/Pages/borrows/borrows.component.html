@@ -1,0 +1,35 @@
+<div>
+  <div class="mt-12">
+    <p class="text-4xl font-extralight text-center">OpenBorrows</p>
+  </div>
+  <div class="w-10/12 m-auto mt-7">
+    <admin-borrows-table [BorrowRows]="OpenBorrows"></admin-borrows-table>
+  </div>
+</div>
+
+<div>
+  <div class="mt-12">
+    <p class="text-4xl font-extralight text-center">ToDealWithBorrows</p>
+  </div>
+  <div class="w-10/12 m-auto mt-7">
+    <admin-borrows-table [BorrowRows]="ToDealWithBorrows"></admin-borrows-table>
+  </div>
+</div>
+
+<div>
+  <div class="mt-12">
+    <p class="text-4xl font-extralight text-center">FinishedBorrows</p>
+  </div>
+  <div class="w-10/12 m-auto mt-7">
+    <admin-borrows-table [BorrowRows]="FinishedBorrows"></admin-borrows-table>
+  </div>
+</div>
+
+<div class="pb-12">
+  <div class="mt-12 mb-12">
+    <p class="text-4xl font-extralight text-center">All Borrows</p>
+  </div>
+  <div class="w-10/12 m-auto mt-7">
+    <admin-borrows-table [BorrowRows]="AllBorrows"></admin-borrows-table>
+  </div>
+</div>

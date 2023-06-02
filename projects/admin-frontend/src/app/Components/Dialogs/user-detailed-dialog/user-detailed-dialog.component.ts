@@ -15,7 +15,6 @@ import { take } from 'rxjs';
 })
 export class UserDetailedDialogComponent implements OnInit {
   public user: UserAdminDetailedDto = null!;
-  public ColumnMode = ColumnMode;
   constructor(
     private AUserInforService: AUserInforService,
     public dialogRef: MatDialogRef<UserDetailedDialogComponent>,
@@ -38,31 +37,6 @@ export class UserDetailedDialogComponent implements OnInit {
       height: '85vh',
     })
   }
-
-  public getRowClass(row: any) {
-    let stat =row.stati
-    if(stat == 0){
-      return 'borrowNotReturned';
-    }
-    if(stat == 2){
-      return 'borrowReturned';
-    }
-    return "";
-  }
-
-  public onRowClick(event: any) {
-    if (event.type == 'click') {
-      BorrowDetailedDialogComponent.openDialog(this.dialog, event.row.id, false).afterClosed().subscribe(() => {
-        this.ngOnInit();
-      });
-    }
-  }
-
-  columns = [
-    { name: 'Id' },
-    { name: 'Itemname' },
-    { name: 'BorrowDate' },
-  ];
 
   public Blockieren() {
     let should = !this.user.blockiert;

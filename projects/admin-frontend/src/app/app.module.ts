@@ -48,6 +48,8 @@ import {
 } from 'chart.js';
 import { ArtikelVerkauftGraphComponent } from './Components/Dummy/Graphs/artikel-verkauft-graph/artikel-verkauft-graph.component';
 import { GesamtBorrowComponent } from './Components/Dummy/Graphs/gesamt-borrow/gesamt-borrow.component';
+import { BorrowsTableComponent } from './Components/Dummy/borrows-table/borrows-table.component';
+import { BorrowsComponent } from './Components/Pages/borrows/borrows.component';
   Chart.register(LineController, CategoryScale,LinearScale,PointElement,LineElement, Title, Tooltip, Legend ,BarElement,BarController);
 
 @NgModule({
@@ -66,10 +68,14 @@ import { GesamtBorrowComponent } from './Components/Dummy/Graphs/gesamt-borrow/g
     AutomatScannLogsComponent,
     LogAutomat2Component,
     UsersPageComponent,
+    BorrowsTableComponent,
+
+    
     UserDetailedDialogComponent,
     BorrowDetailedDialogComponent,
     ArtikelVerkauftGraphComponent,
     GesamtBorrowComponent,
+    BorrowsComponent,
   ],
   imports: [
     AutomatSharedModule,
