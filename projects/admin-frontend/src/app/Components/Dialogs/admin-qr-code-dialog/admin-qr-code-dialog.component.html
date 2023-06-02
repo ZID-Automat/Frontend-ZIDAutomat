@@ -1,9 +1,9 @@
-<div class="flex flex-col justify-center align-middle w-full" (re)>
-    <qrcode
-        #qrCode
-      class="flex justify-center w-full"
-      [qrdata]="qrcode"
-      [style.width]="qrcodeWidth"
-      [errorCorrectionLevel]="'M'"
-    ></qrcode>
-  </div>
+<div class="flex flex-col justify-center align-middle w-full" #QrCode>
+  <qrcode
+  *ngIf="qrcodeWidth"
+    class="flex justify-center w-full scale-110"
+    [qrdata]="qrcode"
+    [width]="qrcodeWidth"
+    [errorCorrectionLevel]="'M'"
+  ></qrcode>
+</div>

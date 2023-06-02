@@ -10,16 +10,18 @@ import { fromEvent } from 'rxjs';
 export class AdminQrCodeDialogComponent implements OnInit , AfterViewInit{
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  qrcode:string = this.data.qrcode;
+  qrcodeWidth:number|null = null
+  @ViewChild('QrCode') qrCodeElement: ElementRef<HTMLDivElement> = null!
+
   ngAfterViewInit(): void {
+    this.qrcodeWidth = this.qrCodeElement.nativeElement.offsetWidth;
     fromEvent(window, 'resize').subscribe((el) => {
-      console.log(this.qrCodeElement.nativeElement.innerWidth)
+        this.qrcodeWidth = this.qrCodeElement.nativeElement.offsetWidth;
     });
   }
 
-  qrcode:string = this.data.qrcode;
-
-  qrCodeWidth = 0;
-  @ViewChild('qrCode') qrCodeElement: ElementRef = null!
 
   ngOnInit(): void {
     
