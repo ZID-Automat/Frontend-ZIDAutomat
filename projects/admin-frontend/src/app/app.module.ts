@@ -44,7 +44,9 @@ import {
   Tooltip,
   Legend,
   BarElement,
-  BarController
+  BarController,
+  DoughnutController,
+  ArcElement
 } from 'chart.js';
 import { ArtikelVerkauftGraphComponent } from './Components/Dummy/Graphs/artikel-verkauft-graph/artikel-verkauft-graph.component';
 import { GesamtBorrowComponent } from './Components/Dummy/Graphs/gesamt-borrow/gesamt-borrow.component';
@@ -52,7 +54,9 @@ import { BorrowsTableComponent } from './Components/Dummy/borrows-table/borrows-
 import { BorrowsComponent } from './Components/Pages/borrows/borrows.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { AdminQrCodeDialogComponent } from './Components/Dialogs/admin-qr-code-dialog/admin-qr-code-dialog.component';
-  Chart.register(LineController, CategoryScale,LinearScale,PointElement,LineElement, Title, Tooltip, Legend ,BarElement,BarController);
+import { TaeglicheUserGraphComponent } from './Components/Dummy/Graphs/taegliche-user-graph/taegliche-user-graph.component';
+import { WieVielZuSpaetGraphComponent } from './Components/Dummy/Graphs/wie-viel-zu-spaet-graph/wie-viel-zu-spaet-graph.component';
+  Chart.register(LineController, CategoryScale,LinearScale,PointElement,LineElement, Title, Tooltip, Legend ,BarElement,BarController, DoughnutController, ArcElement);
 
 @NgModule({
   declarations: [
@@ -79,6 +83,8 @@ import { AdminQrCodeDialogComponent } from './Components/Dialogs/admin-qr-code-d
     GesamtBorrowComponent,
     BorrowsComponent,
     AdminQrCodeDialogComponent,
+    TaeglicheUserGraphComponent,
+    WieVielZuSpaetGraphComponent,
   ],
   imports: [
     AutomatSharedModule,

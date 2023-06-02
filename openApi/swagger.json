@@ -81,6 +81,82 @@
         }
       }
     },
+    "/AAnalytics/WievielZuspat": {
+      "get": {
+        "tags": [
+          "AAnalytics"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WieVielZuspaetDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WieVielZuspaetDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WieVielZuspaetDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AAnalytics/TaeglicheUser": {
+      "get": {
+        "tags": [
+          "AAnalytics"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TaeglicheUserDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TaeglicheUserDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TaeglicheUserDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/BorrowDetailed": {
       "get": {
         "tags": [
@@ -1353,6 +1429,20 @@
         },
         "additionalProperties": false
       },
+      "TaeglicheUserDto": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "UserAdmiBorrowDto": {
         "type": "object",
         "properties": {
@@ -1465,6 +1555,20 @@
             "type": "boolean"
           },
           "itemId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WieVielZuspaetDto": {
+        "type": "object",
+        "properties": {
+          "num": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "label": {
             "type": "integer",
             "format": "int32"
           }

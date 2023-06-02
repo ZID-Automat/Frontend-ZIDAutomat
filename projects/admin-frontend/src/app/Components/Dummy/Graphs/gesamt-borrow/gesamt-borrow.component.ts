@@ -1,10 +1,9 @@
+import { ColorServiceService } from './../../../../../../Services/Helper/color-service.service';
 import { take } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { ChartData, ChartOptions } from 'chart.js';
 import { AAnalyticsService } from 'AutomatApi';
 
-const FlatColors = require('flat-colors');
-const convert = require('color-convert');
 
 @Component({
   selector: 'admin-gesamt-borrow',
@@ -28,25 +27,14 @@ export class GesamtBorrowComponent implements OnInit {
   };
   data: ChartData = undefined!;
 
-  constructor(private AAnalyticsService: AAnalyticsService) {}
+  constructor(private AAnalyticsService: AAnalyticsService, private ColorServiceService:ColorServiceService) {}
 
   ngOnInit(): void {
     this.AAnalyticsService.aAnalyticsGesamtBorrowsGet$Json()
       .pipe(take(1))
       .subscribe((data) => {
-        let backgroundColors:string[] = []
-        let hoverBackgroundColors:string[] = []
-        let borderColors:string[]= []
-        data.forEach(d=>{
-          let color 
-          do {
-          color = FlatColors()[3]
-          } while(convert.hex.hsl(color)[1] <30)
-
-          backgroundColors.push(color+"80")
-          hoverBackgroundColors.push(color+"d0")
-          borderColors.push(color+"CA")
-        })
+       
+        const colors = this.ColorServiceService.getColors(data.length);
 
         this.data = {
           labels: data.map(item=>item.label),
@@ -54,9 +42,9 @@ export class GesamtBorrowComponent implements OnInit {
             {
               data: data.map(item=>item.value) as any,
               fill: true,
-              backgroundColor: backgroundColors,
-              hoverBackgroundColor:  hoverBackgroundColors,
-              borderColor:  borderColors,
+              backgroundColor: colors.backgroundColors,
+              hoverBackgroundColor:  colors.hoverBackgroundColors,
+              borderColor:  colors.borderColors,
               borderWidth: 3,
               borderRadius:10,
               cubicInterpolationMode: 'monotone',
@@ -66,3 +54,5 @@ export class GesamtBorrowComponent implements OnInit {
       });
   }
 }
+
+
