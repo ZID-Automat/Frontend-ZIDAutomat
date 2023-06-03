@@ -18,8 +18,7 @@ import { StatusPageComponent } from './Components/Pages/Status/status-page/statu
 import { ItemPageComponent } from './Components/Pages/Item/item-page/item-page.component';
 import { AutomatViewComponent } from './Components/Dummy/automat-view/automat-view.component';
 import { ItemManComponent } from './Components/Dummy/item-man/item-man.component';
-import { AddItemDialogComponent } from './Components/Dialogs/add-item-dialog/add-item-dialog.component';
-import { ViewItemDialogComponent } from './Components/Dialogs/view-item-dialog/view-item-dialog.component';
+  import { ViewItemDialogComponent } from './Components/Dialogs/view-item-dialog/view-item-dialog.component';
 import { LogPageComponent } from './Components/Pages/Log/log-page/log-page.component';
 import { LogViewComponent } from './Components/Dummy/log-view/log-view.component';
 import { AutomatScannLogsComponent } from './Components/Pages/automat-scann-logs/automat-scann-logs.component';
@@ -32,6 +31,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { UserDetailedDialogComponent } from './Components/Dialogs/user-detailed-dialog/user-detailed-dialog.component';
 import { BorrowDetailedDialogComponent } from './Components/Dialogs/borrow-detailed-dialog/borrow-detailed-dialog.component';
+import { NgxMatFileInputModule } from '@angular-material-components/file-input';
+
 
 import {
   Chart,
@@ -56,6 +57,8 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { AdminQrCodeDialogComponent } from './Components/Dialogs/admin-qr-code-dialog/admin-qr-code-dialog.component';
 import { TaeglicheUserGraphComponent } from './Components/Dummy/Graphs/taegliche-user-graph/taegliche-user-graph.component';
 import { WieVielZuSpaetGraphComponent } from './Components/Dummy/Graphs/wie-viel-zu-spaet-graph/wie-viel-zu-spaet-graph.component';
+import { SelectStockImageDialogComponent } from './Components/Dialogs/select-stock-image-dialog/select-stock-image-dialog.component';
+import { MatInputModule } from '@angular/material/input';
   Chart.register(LineController, CategoryScale,LinearScale,PointElement,LineElement, Title, Tooltip, Legend ,BarElement,BarController, DoughnutController, ArcElement);
 
 @NgModule({
@@ -67,7 +70,6 @@ import { WieVielZuSpaetGraphComponent } from './Components/Dummy/Graphs/wie-viel
     ItemPageComponent,
     AutomatViewComponent,
     ItemManComponent,
-    AddItemDialogComponent,
     ViewItemDialogComponent,
     LogPageComponent,
     LogViewComponent,
@@ -75,8 +77,6 @@ import { WieVielZuSpaetGraphComponent } from './Components/Dummy/Graphs/wie-viel
     LogAutomat2Component,
     UsersPageComponent,
     BorrowsTableComponent,
-
-    
     UserDetailedDialogComponent,
     BorrowDetailedDialogComponent,
     ArtikelVerkauftGraphComponent,
@@ -85,6 +85,7 @@ import { WieVielZuSpaetGraphComponent } from './Components/Dummy/Graphs/wie-viel
     AdminQrCodeDialogComponent,
     TaeglicheUserGraphComponent,
     WieVielZuSpaetGraphComponent,
+    SelectStockImageDialogComponent,
   ],
   imports: [
     AutomatSharedModule,
@@ -92,6 +93,7 @@ import { WieVielZuSpaetGraphComponent } from './Components/Dummy/Graphs/wie-viel
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
+    MatInputModule,
     JwtModule.forRoot({
       config: {
         tokenGetter:()=>localStorage.getItem("jwt"),
@@ -103,7 +105,8 @@ import { WieVielZuSpaetGraphComponent } from './Components/Dummy/Graphs/wie-viel
     }),
     NgxDatatableModule,
     ChartjsModule,
-    QRCodeModule
+    QRCodeModule,
+    NgxMatFileInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],

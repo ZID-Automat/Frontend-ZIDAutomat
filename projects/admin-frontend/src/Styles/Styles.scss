@@ -278,3 +278,11 @@ $altTheme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
 }
 
 
+
+
+.ngx-mat-file-input{
+  height: auto !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  padding-left: 0.3rem !important;
+}

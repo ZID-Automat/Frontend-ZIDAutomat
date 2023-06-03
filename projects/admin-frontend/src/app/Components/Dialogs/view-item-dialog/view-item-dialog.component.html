@@ -1,41 +1,119 @@
-<div class="text-lg">
+<div class="text-lg" *ngIf="data || isAdd">
+  <div class="flex">
+    <div class=" p-1" [ngClass]=" {'w-2/5':!isAdd, 'w-full':isAdd}">
   <div class="text-2xl text-center">Edit/View Item from Catalog</div>
-  <label for="name">Name of Item <span class="text-red-500">*</span></label>
 
-  <input
-    id="name"
-    type="text"
-    placeholder="Name of Item"
-    class="w-full border-2 border-gray-200 rounded-lg p-2 my-2"
-  />
+      <input
+        id="name"
+        type="text"
+        #Name
+        [value]="data?.name??''"
+        placeholder="Name of Item"
+        class="w-full border-2 border-gray-200 rounded-lg p-2 my-2"
+      />
 
-  <label for="price">Price of Item <span class="text-red-500">*</span></label>
+      <input
+        id="name"
+        type="text"
+        #Subname
+        [value]="data?.subName??''"
+        placeholder="Subname of Item"
+        class="w-full border-2 border-gray-200 rounded-lg p-2 my-2"
+      />
 
-  <input
-    type="number"
-    placeholder="Price of Item"
-    class="w-full border-2 border-gray-200 rounded-lg p-2 my-2"
-  />
+      <input
+        id="name"
+        type="text"
+        #Description
+        placeholder="Description of Item"
+        [value]="data?.description??''"
+        class="w-full border-2 border-gray-200 rounded-lg p-2 my-2"
+      />
+      <input
+        type="number"
+        placeholder="Price of Item"
+        #Price
+        [value]="data?.price??0"
+        class="w-full border-2 border-gray-200 rounded-lg p-2 my-2"
+      />
 
-  <label for="image">Image of Item</label>
+      <mat-form-field class="w-full">
+        <mat-label>Category</mat-label>
+        <mat-select
+          matNativeControl
+          required
+          *ngIf="cat"
+          #Selectiii
+          [value]="defVal??0"
+        >
+          <mat-option *ngFor="let cate of cat" [value]="cate.id">{{
+            cate.name
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="border-2 rounded-lg h-56">
+        <div>
+          <img [src]="currentImage" class="h-44 block m-auto overflow-hidden" />
+        </div>
+        <div class="">
+          <div class="flex border-t-2 rounded-b-lg h-12">
+            <input
+              type="file"
+              placeholder="Image of Item"
+              class="w-full border-2 border-gray-200 rounded-lg p-2 my-2 hidden"
+              id="fileUpload"
+              (change)="onFileSelected($event)"
+            />
 
-  <input
-    type="file"
-    placeholder="Image of Item"
-    class="w-full border-2 border-gray-200 rounded-lg p-2 my-2"
-  />
+            <label
+              mat-button
+              for="fileUpload"
+              class="px-2 py1 my-auto block bg-gray-100 h-full w-full text-center pt-3 font-light"
+              >Upoad image</label
+            >
+            <div class="px-2 py-1 block my-auto">
+              <button
+                mat-button
+                color="accent"
+                class="text-center overflow-auto text-lg"
+                (click)="useStockImage()"
+              >
+                Use Stockimage
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <button
-    class="w-full bg-blue-500 text-white rounded-lg p-2 my-2 text-lg"
-    (click)="updateItem()"
-  >
-    Update Item
-  </button>
+      <div class="mt-2">
+        <button 
+          *ngIf="!isAdd"
+          class="w-full rounded-lg p-2 my-2 text-lg"
+          mat-raised-button
+          color="accent"
+          (click)="updateItem()"
+        >
+          <p class="text-white font-light text-lg p-2">Update Item</p>
+        </button>
+      </div>
 
-  <button
-    class="w-full bg-red-500 text-white rounded-lg p-2 my-2 text-lg"
-    (click)="deleteItem()"
-  >
-    Delete Item
-  </button>
+      <button
+        mat-raised-button
+        color="accent"
+        class="w-full rounded-lg p-2 my-2 text-lg"
+        *ngIf="isAdd"
+        (click)="addItem()"
+      >
+        <p class="text-white font-light text-lg p-2">Add Item</p>
+      </button>
+    </div>
+    <div class="w-3/5 p-1 pl-10" *ngIf="!isAdd">
+      <div class="text-2xl text-center">Borrows of Item</div>
+      <div class="pt-5">
+        <admin-borrows-table [ShowToUser]="true" [BorrowRows] = "$any(data.borrows)"></admin-borrows-table>
+      </div>
+    </div>
+  
+  </div>
+
 </div>

@@ -1,3 +1,5 @@
+import { MatDialog } from '@angular/material/dialog';
+import { SelectStockImageDialogComponent } from './../../Dialogs/select-stock-image-dialog/select-stock-image-dialog.component';
 import { Subject, take, takeWhile } from 'rxjs';
 import {
   ItemChangeLocationDto,
@@ -18,6 +20,7 @@ import {
   Input,
   OnDestroy,
 } from '@angular/core';
+import { createClient } from 'pexels';
 
 @Component({
   selector: 'admin-automat-view',
@@ -39,7 +42,7 @@ export class AutomatViewComponent implements OnInit, OnDestroy, AfterViewInit {
 
   disabledButton = true;
 
-  constructor(private AItemService: AItemService) {}
+  constructor(private AItemService: AItemService, private dialog:MatDialog) {}
   ngAfterViewInit(): void {
     this.itemGetAllDto.pipe(takeWhile(() => this.alive)).subscribe((data) => {
       this.Clear();
@@ -58,6 +61,8 @@ export class AutomatViewComponent implements OnInit, OnDestroy, AfterViewInit {
       this.disabledButton = true;
 
     });
+
+
   }
 
   data: any = [];

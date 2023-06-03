@@ -1,0 +1,16 @@
+<img class="w-full min-h-30" [src]="currentimage" />
+
+<mat-form-field class="w-full mt-3">
+  <mat-label class="font-thin text-black">Suchbegriff(Englisch)</mat-label>
+  <input matInput #inputf class="font-thin" placeholder="" [value]="data.startSuch" />
+</mat-form-field>
+
+<button class="w-full" mat-raised-button color="primary" (click)="loadImage()">
+  <p class="font-thin text-white p-1">Next Image</p>
+</button>
+
+<div class="mt-3">
+    <button class="w-full" (click)="UseThisImage()" mat-raised-button color="accent">
+        <p class="font-thin text-white p-1">Use Image</p>
+      </button>
+</div>

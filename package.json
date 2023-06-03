@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-material-components/file-input": "^7.0.1",
     "@angular/animations": "~13.3.0",
     "@angular/cdk": "^13.3.9",
     "@angular/common": "~13.3.0",
@@ -36,6 +37,7 @@
     "flat-colors": "^3.3.12",
     "font-awesome": "^4.7.0",
     "ngx-chartjs": "^0.0.1",
+    "pexels": "^1.4.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

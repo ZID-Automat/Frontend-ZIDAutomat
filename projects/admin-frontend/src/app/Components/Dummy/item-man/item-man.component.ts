@@ -2,7 +2,6 @@ import { ItemChangeLocationDto, ItemLocationDto } from 'AutomatApi';
 import { AItemService,ItemGetAllDto } from 'AutomatApi';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AddItemDialogComponent } from '../../Dialogs/add-item-dialog/add-item-dialog.component';
 import { ViewItemDialogComponent } from '../../Dialogs/view-item-dialog/view-item-dialog.component';
 import { take, Subject } from 'rxjs';
 
@@ -31,12 +30,17 @@ export class ItemManComponent implements OnInit {
   }
 
   openAddItemDialog() {
-    AddItemDialogComponent.openDialog(this.matDialog);
+   // AddItemDialogComponent.openDialog(this.matDialog);
+   ViewItemDialogComponent.openDialog(this.matDialog, 0, true).afterClosed().pipe(take(1)).subscribe((data)=>{
+      this.reload()
+   });
+    
   }
 
   openViewItemDialog(item: any) {
-    console.log(item);
-    ViewItemDialogComponent.openDialog(this.matDialog);
+      ViewItemDialogComponent.openDialog(this.matDialog, item.id, false).afterClosed().pipe(take(1)).subscribe((data)=>{
+        this.reload()
+      })
   }
 
   dragi(ev:DragEvent) {
