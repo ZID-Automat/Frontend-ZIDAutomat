@@ -9,7 +9,7 @@
         <div class="w-5/6 mr-auto">
                 <p class="font-extralight text-2xl text-center m-6">Automat Preview</p>
               <div class="mt-5">
-                <admin-automat-view [itemGetAllDto]="Datas" (onDrop)="onDropAutomatView($event)"></admin-automat-view>
+                <admin-automat-view [itemGetAllDto]="Datas" (onDrop)="onDropAutomatView($event)" (reLoad)="reaLoad()"></admin-automat-view>
               </div>
         </div>
     </div>

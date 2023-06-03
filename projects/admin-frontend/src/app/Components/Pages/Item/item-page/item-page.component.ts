@@ -26,4 +26,7 @@ export class ItemPageComponent implements OnInit {
     this.Datas.next(data);
   }
 
+  reaLoad(){
+    this.automatView.reload();
+  }
 }

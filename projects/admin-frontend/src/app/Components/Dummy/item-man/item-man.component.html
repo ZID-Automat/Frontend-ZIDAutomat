@@ -1,4 +1,4 @@
-<div class="bg-gray-100 hei w-auto rounded-sm shadow-lg p-1 imwi" id="ItemList">
+<div class="bg-gray-100 hei w-auto rounded-sm shadow-lg p-1 imwi overflow-y-auto" id="ItemList">
     <div *ngFor="let a of data" (click)="openViewItemDialog(a)">
         <img [draggable]="true" [id]="a.id" (dragstart)="dragi($event)" class="p-1 w-1/4 aspi rounded-lg float-left shadow-sm border-black" [src]="a.image" [alt]="a.name" />
     </div>

@@ -464,6 +464,37 @@
         }
       }
     },
+    "/AItem/SetItemPosition": {
+      "post": {
+        "tags": [
+          "AItem"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ItemChangeLocationDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ItemChangeLocationDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ItemChangeLocationDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/AUserInfor/GetAllUsers": {
       "get": {
         "tags": [
@@ -1385,6 +1416,19 @@
         },
         "additionalProperties": false
       },
+      "ItemChangeLocationDto": {
+        "type": "object",
+        "properties": {
+          "itemLocations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ItemLocationDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ItemDetailedDto": {
         "type": "object",
         "properties": {
@@ -1465,6 +1509,20 @@
           "locationImAutomat": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ItemLocationDto": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

@@ -2132,16 +2132,16 @@
 </svg>
 
 <div class="w-full flex mt-3 justify-between">
-  <button class="w-1/5" mat-raised-button color="accent">
-    <p class="m-2 py-2 text-white  text-xl font-extralight">Save</p>
+  <button class="w-1/4" mat-raised-button color="basic">
+    <p class="m-2 py-2   text-xl font-extralight" (click)="Clear()">Clear</p>
   </button>
-  <button class="w-1/4" mat-raised-button color="accent">
-    <p class="m-2 py-2 text-white  text-xl font-extralight">Reload</p>
+  <button class="w-1/4" mat-raised-button color="basic">
+    <p class="m-2 py-2  text-xl font-extralight" (click)="reload()">Reload</p>
   </button>
-  <button class="w-1/4" mat-raised-button color="accent">
-    <p class="m-2 py-2 text-white  text-xl font-extralight">Autofill</p>
+  <button class="w-1/4" mat-raised-button color="basic">
+    <p class="m-2 py-2 text-xl font-extralight" (click)="AutoFill()">Autofill</p>
   </button>
-  <button class="w-1/4" mat-raised-button color="accent">
-    <p class="m-2 py-2 text-white  text-xl font-extralight">Clear</p>
+  <button class="w-1/5" mat-raised-button color="warn" [disabled]="disabledButton">
+    <p class="m-2 py-2 text-white  text-xl font-extralight" (click)="Save()">Save</p>
   </button>
 </div>
