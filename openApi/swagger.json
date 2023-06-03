@@ -427,7 +427,6 @@
       }
     },
     "/AConfCategories/GetConfCategories": {
-      "get": {
         "tags": [
           "AConfCategories"
         ],
@@ -528,8 +527,6 @@
     },
     "/AItem/GetAll": {
       "get": {
-        "tags": [
-          "AItem"
         ],
         "responses": {
           "200": {
@@ -539,7 +536,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/ItemGetAllDto"
+                    "$ref": "#/components/schemas/CategoryUpdateDto"
                   }
                 }
               },
@@ -547,7 +544,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/ItemGetAllDto"
+                    "$ref": "#/components/schemas/CategoryUpdateDto"
                   }
                 }
               },
@@ -555,7 +552,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/ItemGetAllDto"
+                    "$ref": "#/components/schemas/CategoryUpdateDto"
                   }
                 }
               }
@@ -564,26 +561,57 @@
         }
       }
     },
-    "/AItem/SetItemPosition": {
-      "post": {
+    "/AConfCategories/UpdateConfCategory": {
+      "patch": {
         "tags": [
-          "AItem"
+          "AConfCategories"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ItemChangeLocationDto"
+                "$ref": "#/components/schemas/CategoryUpdateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ItemChangeLocationDto"
+                "$ref": "#/components/schemas/CategoryUpdateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ItemChangeLocationDto"
+                "$ref": "#/components/schemas/CategoryUpdateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/AConfCategories/AddCategory": {
+      "post": {
+        "tags": [
+          "AConfCategories"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryAddDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryAddDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryAddDto"
               }
             }
           }
@@ -1795,42 +1823,6 @@
           },
           "available": {
             "type": "boolean"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ItemGetAllDto": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "image": {
-            "type": "string",
-            "nullable": true
-          },
-          "locationImAutomat": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ItemLocationDto": {
-        "type": "object",
-        "properties": {
-          "location": {
-            "type": "string",
-            "nullable": true
-          },
-          "id": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false

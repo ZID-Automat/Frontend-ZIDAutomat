@@ -35,9 +35,10 @@ export class UBorrowService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   uBorrowBorrowPost$Plain$Response(params?: {
-    context?: HttpContext
     body?: BorrowDataDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<StrictHttpResponse<QrCodeDto>> {
 
     const rb = new RequestBuilder(this.rootUrl, UBorrowService.UBorrowBorrowPostPath, 'post');
@@ -48,7 +49,7 @@ export class UBorrowService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: 'text/plain',
-      context: params?.context
+      context: context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -58,18 +59,19 @@ export class UBorrowService extends BaseService {
   }
 
   /**
-   * This method provides access to only to the response body.
+   * This method provides access only to the response body.
    * To access the full response (for headers, for example), `uBorrowBorrowPost$Plain$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   uBorrowBorrowPost$Plain(params?: {
-    context?: HttpContext
     body?: BorrowDataDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<QrCodeDto> {
 
-    return this.uBorrowBorrowPost$Plain$Response(params).pipe(
+    return this.uBorrowBorrowPost$Plain$Response(params,context).pipe(
       map((r: StrictHttpResponse<QrCodeDto>) => r.body as QrCodeDto)
     );
   }
@@ -81,9 +83,10 @@ export class UBorrowService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   uBorrowBorrowPost$Json$Response(params?: {
-    context?: HttpContext
     body?: BorrowDataDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<StrictHttpResponse<QrCodeDto>> {
 
     const rb = new RequestBuilder(this.rootUrl, UBorrowService.UBorrowBorrowPostPath, 'post');
@@ -94,7 +97,7 @@ export class UBorrowService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'json',
       accept: 'text/json',
-      context: params?.context
+      context: context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -104,18 +107,19 @@ export class UBorrowService extends BaseService {
   }
 
   /**
-   * This method provides access to only to the response body.
+   * This method provides access only to the response body.
    * To access the full response (for headers, for example), `uBorrowBorrowPost$Json$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   uBorrowBorrowPost$Json(params?: {
-    context?: HttpContext
     body?: BorrowDataDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<QrCodeDto> {
 
-    return this.uBorrowBorrowPost$Json$Response(params).pipe(
+    return this.uBorrowBorrowPost$Json$Response(params,context).pipe(
       map((r: StrictHttpResponse<QrCodeDto>) => r.body as QrCodeDto)
     );
   }

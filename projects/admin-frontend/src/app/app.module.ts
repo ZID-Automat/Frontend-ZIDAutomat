@@ -59,6 +59,7 @@ import { TaeglicheUserGraphComponent } from './Components/Dummy/Graphs/taegliche
 import { WieVielZuSpaetGraphComponent } from './Components/Dummy/Graphs/wie-viel-zu-spaet-graph/wie-viel-zu-spaet-graph.component';
 import { SelectStockImageDialogComponent } from './Components/Dialogs/select-stock-image-dialog/select-stock-image-dialog.component';
 import { MatInputModule } from '@angular/material/input';
+import { CategoriesComponent } from './components/Pages/categories/categories.component';
   Chart.register(LineController, CategoryScale,LinearScale,PointElement,LineElement, Title, Tooltip, Legend ,BarElement,BarController, DoughnutController, ArcElement);
 
 @NgModule({
@@ -86,6 +87,7 @@ import { MatInputModule } from '@angular/material/input';
     TaeglicheUserGraphComponent,
     WieVielZuSpaetGraphComponent,
     SelectStockImageDialogComponent,
+    CategoriesComponent,
   ],
   imports: [
     AutomatSharedModule,

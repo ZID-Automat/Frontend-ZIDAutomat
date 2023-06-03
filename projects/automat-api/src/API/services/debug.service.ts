@@ -33,8 +33,9 @@ export class DebugService extends BaseService {
    * This method doesn't expect any request body.
    */
   debugSeedPost$Response(params?: {
-    context?: HttpContext
-  }
+  },
+  context?: HttpContext
+
 ): Observable<StrictHttpResponse<void>> {
 
     const rb = new RequestBuilder(this.rootUrl, DebugService.DebugSeedPostPath, 'post');
@@ -44,7 +45,7 @@ export class DebugService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: '*/*',
-      context: params?.context
+      context: context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -54,17 +55,18 @@ export class DebugService extends BaseService {
   }
 
   /**
-   * This method provides access to only to the response body.
+   * This method provides access only to the response body.
    * To access the full response (for headers, for example), `debugSeedPost$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
   debugSeedPost(params?: {
-    context?: HttpContext
-  }
+  },
+  context?: HttpContext
+
 ): Observable<void> {
 
-    return this.debugSeedPost$Response(params).pipe(
+    return this.debugSeedPost$Response(params,context).pipe(
       map((r: StrictHttpResponse<void>) => r.body as void)
     );
   }
