@@ -426,7 +426,7 @@
         }
       }
     },
-    "/AItem/GetAll": {
+    "/AConfCategories/GetConfCategories": {
       "get": {
         "tags": [
           "AConfCategories"
@@ -526,20 +526,10 @@
         }
       }
     },
-    "/AItem/ItemAdminDetailed": {
+    "/AItem/GetAll": {
       "get": {
         "tags": [
           "AItem"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
         ],
         "responses": {
           "200": {
@@ -547,17 +537,26 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ItemAdminDetailedDto"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemGetAllDto"
+                  }
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ItemAdminDetailedDto"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemGetAllDto"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ItemAdminDetailedDto"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ItemGetAllDto"
+                  }
                 }
               }
             }
@@ -565,7 +564,7 @@
         }
       }
     },
-    "/AItem/ItemDetailedAdminAdd": {
+    "/AItem/SetItemPosition": {
       "post": {
         "tags": [
           "AItem"
@@ -574,48 +573,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ItemAdminUpdateAdd"
+                "$ref": "#/components/schemas/ItemChangeLocationDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ItemAdminUpdateAdd"
+                "$ref": "#/components/schemas/ItemChangeLocationDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ItemAdminUpdateAdd"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/AItem/ItemDetailedAdminUpdate": {
-      "patch": {
-        "tags": [
-          "AItem"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ItemAdminUpdateAdd"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ItemAdminUpdateAdd"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ItemAdminUpdateAdd"
+                "$ref": "#/components/schemas/ItemChangeLocationDto"
               }
             }
           }
@@ -1514,6 +1482,38 @@
         },
         "additionalProperties": false
       },
+      "CategoryAddDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CategoryUpdateDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ControllerLoginDto": {
         "type": "object",
         "properties": {
@@ -1619,6 +1619,42 @@
           },
           "available": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ItemGetAllDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "image": {
+            "type": "string",
+            "nullable": true
+          },
+          "locationImAutomat": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ItemLocationDto": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
