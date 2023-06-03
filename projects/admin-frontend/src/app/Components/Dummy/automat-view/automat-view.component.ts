@@ -27,11 +27,15 @@ export class AutomatViewComponent implements AfterViewInit {
   }
 
   public dropedItem(event:DragEvent){
+
+    const data = JSON.parse(event.dataTransfer?.getData("text") as string);
+
     const el = ((event.target as HTMLElement).parentElement)?.children
     const array = Array.from(el!);
+
     let imagei = array.find(e=>e.tagName == "image");
-    (imagei as any).href.baseVal = "assets/Test.png"
+    (imagei as any).href.baseVal = data.image;
 
   }
 }
-//5*8
+//5*8x

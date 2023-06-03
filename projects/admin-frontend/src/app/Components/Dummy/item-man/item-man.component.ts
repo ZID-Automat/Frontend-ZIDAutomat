@@ -34,6 +34,8 @@ export class ItemManComponent implements OnInit {
   }
 
   dragi(ev:DragEvent) {
-    ev.dataTransfer?.setData("text", (ev.target as any).id);
+    const id = (ev.target as any).id;
+    const data = this.data.find(e=>e.id == id);
+    ev.dataTransfer?.setData("text", JSON.stringify(data));
   }
 }
