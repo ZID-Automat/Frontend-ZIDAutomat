@@ -35,9 +35,10 @@ export class AuthentificationService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   authentificationUserLoginPost$Plain$Response(params?: {
-    context?: HttpContext
     body?: UserLoginDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<StrictHttpResponse<string>> {
 
     const rb = new RequestBuilder(this.rootUrl, AuthentificationService.AuthentificationUserLoginPostPath, 'post');
@@ -48,7 +49,7 @@ export class AuthentificationService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: 'text/plain',
-      context: params?.context
+      context: context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -58,18 +59,19 @@ export class AuthentificationService extends BaseService {
   }
 
   /**
-   * This method provides access to only to the response body.
+   * This method provides access only to the response body.
    * To access the full response (for headers, for example), `authentificationUserLoginPost$Plain$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   authentificationUserLoginPost$Plain(params?: {
-    context?: HttpContext
     body?: UserLoginDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<string> {
 
-    return this.authentificationUserLoginPost$Plain$Response(params).pipe(
+    return this.authentificationUserLoginPost$Plain$Response(params,context).pipe(
       map((r: StrictHttpResponse<string>) => r.body as string)
     );
   }
@@ -81,9 +83,10 @@ export class AuthentificationService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   authentificationUserLoginPost$Json$Response(params?: {
-    context?: HttpContext
     body?: UserLoginDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<StrictHttpResponse<string>> {
 
     const rb = new RequestBuilder(this.rootUrl, AuthentificationService.AuthentificationUserLoginPostPath, 'post');
@@ -94,7 +97,7 @@ export class AuthentificationService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'json',
       accept: 'text/json',
-      context: params?.context
+      context: context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -104,18 +107,19 @@ export class AuthentificationService extends BaseService {
   }
 
   /**
-   * This method provides access to only to the response body.
+   * This method provides access only to the response body.
    * To access the full response (for headers, for example), `authentificationUserLoginPost$Json$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   authentificationUserLoginPost$Json(params?: {
-    context?: HttpContext
     body?: UserLoginDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<string> {
 
-    return this.authentificationUserLoginPost$Json$Response(params).pipe(
+    return this.authentificationUserLoginPost$Json$Response(params,context).pipe(
       map((r: StrictHttpResponse<string>) => r.body as string)
     );
   }
@@ -132,9 +136,10 @@ export class AuthentificationService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   authentificationAutomatLoginPost$Plain$Response(params?: {
-    context?: HttpContext
     body?: ControllerLoginDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<StrictHttpResponse<string>> {
 
     const rb = new RequestBuilder(this.rootUrl, AuthentificationService.AuthentificationAutomatLoginPostPath, 'post');
@@ -145,7 +150,7 @@ export class AuthentificationService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: 'text/plain',
-      context: params?.context
+      context: context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -155,18 +160,19 @@ export class AuthentificationService extends BaseService {
   }
 
   /**
-   * This method provides access to only to the response body.
+   * This method provides access only to the response body.
    * To access the full response (for headers, for example), `authentificationAutomatLoginPost$Plain$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   authentificationAutomatLoginPost$Plain(params?: {
-    context?: HttpContext
     body?: ControllerLoginDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<string> {
 
-    return this.authentificationAutomatLoginPost$Plain$Response(params).pipe(
+    return this.authentificationAutomatLoginPost$Plain$Response(params,context).pipe(
       map((r: StrictHttpResponse<string>) => r.body as string)
     );
   }
@@ -178,9 +184,10 @@ export class AuthentificationService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   authentificationAutomatLoginPost$Json$Response(params?: {
-    context?: HttpContext
     body?: ControllerLoginDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<StrictHttpResponse<string>> {
 
     const rb = new RequestBuilder(this.rootUrl, AuthentificationService.AuthentificationAutomatLoginPostPath, 'post');
@@ -191,7 +198,7 @@ export class AuthentificationService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'json',
       accept: 'text/json',
-      context: params?.context
+      context: context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -201,18 +208,19 @@ export class AuthentificationService extends BaseService {
   }
 
   /**
-   * This method provides access to only to the response body.
+   * This method provides access only to the response body.
    * To access the full response (for headers, for example), `authentificationAutomatLoginPost$Json$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   authentificationAutomatLoginPost$Json(params?: {
-    context?: HttpContext
     body?: ControllerLoginDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<string> {
 
-    return this.authentificationAutomatLoginPost$Json$Response(params).pipe(
+    return this.authentificationAutomatLoginPost$Json$Response(params,context).pipe(
       map((r: StrictHttpResponse<string>) => r.body as string)
     );
   }

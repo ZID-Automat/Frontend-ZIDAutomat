@@ -37,9 +37,10 @@ export class CBorrowService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   cBorrowValidateQrCodePost$Plain$Response(params?: {
-    context?: HttpContext
     body?: QrCodeDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<StrictHttpResponse<ValidQrCodeDto>> {
 
     const rb = new RequestBuilder(this.rootUrl, CBorrowService.CBorrowValidateQrCodePostPath, 'post');
@@ -50,7 +51,7 @@ export class CBorrowService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: 'text/plain',
-      context: params?.context
+      context: context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -60,18 +61,19 @@ export class CBorrowService extends BaseService {
   }
 
   /**
-   * This method provides access to only to the response body.
+   * This method provides access only to the response body.
    * To access the full response (for headers, for example), `cBorrowValidateQrCodePost$Plain$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   cBorrowValidateQrCodePost$Plain(params?: {
-    context?: HttpContext
     body?: QrCodeDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<ValidQrCodeDto> {
 
-    return this.cBorrowValidateQrCodePost$Plain$Response(params).pipe(
+    return this.cBorrowValidateQrCodePost$Plain$Response(params,context).pipe(
       map((r: StrictHttpResponse<ValidQrCodeDto>) => r.body as ValidQrCodeDto)
     );
   }
@@ -83,9 +85,10 @@ export class CBorrowService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   cBorrowValidateQrCodePost$Json$Response(params?: {
-    context?: HttpContext
     body?: QrCodeDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<StrictHttpResponse<ValidQrCodeDto>> {
 
     const rb = new RequestBuilder(this.rootUrl, CBorrowService.CBorrowValidateQrCodePostPath, 'post');
@@ -96,7 +99,7 @@ export class CBorrowService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'json',
       accept: 'text/json',
-      context: params?.context
+      context: context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -106,18 +109,19 @@ export class CBorrowService extends BaseService {
   }
 
   /**
-   * This method provides access to only to the response body.
+   * This method provides access only to the response body.
    * To access the full response (for headers, for example), `cBorrowValidateQrCodePost$Json$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   cBorrowValidateQrCodePost$Json(params?: {
-    context?: HttpContext
     body?: QrCodeDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<ValidQrCodeDto> {
 
-    return this.cBorrowValidateQrCodePost$Json$Response(params).pipe(
+    return this.cBorrowValidateQrCodePost$Json$Response(params,context).pipe(
       map((r: StrictHttpResponse<ValidQrCodeDto>) => r.body as ValidQrCodeDto)
     );
   }
@@ -135,8 +139,9 @@ export class CBorrowService extends BaseService {
    */
   cBorrowLoadItemDataItemGet$Plain$Response(params: {
     item: number;
-    context?: HttpContext
-  }
+  },
+  context?: HttpContext
+
 ): Observable<StrictHttpResponse<ItemDetailedDto>> {
 
     const rb = new RequestBuilder(this.rootUrl, CBorrowService.CBorrowLoadItemDataItemGetPath, 'get');
@@ -147,7 +152,7 @@ export class CBorrowService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: 'text/plain',
-      context: params?.context
+      context: context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -157,18 +162,19 @@ export class CBorrowService extends BaseService {
   }
 
   /**
-   * This method provides access to only to the response body.
+   * This method provides access only to the response body.
    * To access the full response (for headers, for example), `cBorrowLoadItemDataItemGet$Plain$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
   cBorrowLoadItemDataItemGet$Plain(params: {
     item: number;
-    context?: HttpContext
-  }
+  },
+  context?: HttpContext
+
 ): Observable<ItemDetailedDto> {
 
-    return this.cBorrowLoadItemDataItemGet$Plain$Response(params).pipe(
+    return this.cBorrowLoadItemDataItemGet$Plain$Response(params,context).pipe(
       map((r: StrictHttpResponse<ItemDetailedDto>) => r.body as ItemDetailedDto)
     );
   }
@@ -181,8 +187,9 @@ export class CBorrowService extends BaseService {
    */
   cBorrowLoadItemDataItemGet$Json$Response(params: {
     item: number;
-    context?: HttpContext
-  }
+  },
+  context?: HttpContext
+
 ): Observable<StrictHttpResponse<ItemDetailedDto>> {
 
     const rb = new RequestBuilder(this.rootUrl, CBorrowService.CBorrowLoadItemDataItemGetPath, 'get');
@@ -193,7 +200,7 @@ export class CBorrowService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'json',
       accept: 'text/json',
-      context: params?.context
+      context: context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -203,18 +210,19 @@ export class CBorrowService extends BaseService {
   }
 
   /**
-   * This method provides access to only to the response body.
+   * This method provides access only to the response body.
    * To access the full response (for headers, for example), `cBorrowLoadItemDataItemGet$Json$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
   cBorrowLoadItemDataItemGet$Json(params: {
     item: number;
-    context?: HttpContext
-  }
+  },
+  context?: HttpContext
+
 ): Observable<ItemDetailedDto> {
 
-    return this.cBorrowLoadItemDataItemGet$Json$Response(params).pipe(
+    return this.cBorrowLoadItemDataItemGet$Json$Response(params,context).pipe(
       map((r: StrictHttpResponse<ItemDetailedDto>) => r.body as ItemDetailedDto)
     );
   }
@@ -231,9 +239,10 @@ export class CBorrowService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   cBorrowInvalidateQrCodePatch$Response(params?: {
-    context?: HttpContext
     body?: InvalidateQrCodeDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<StrictHttpResponse<void>> {
 
     const rb = new RequestBuilder(this.rootUrl, CBorrowService.CBorrowInvalidateQrCodePatchPath, 'patch');
@@ -244,7 +253,7 @@ export class CBorrowService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: '*/*',
-      context: params?.context
+      context: context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -254,18 +263,19 @@ export class CBorrowService extends BaseService {
   }
 
   /**
-   * This method provides access to only to the response body.
+   * This method provides access only to the response body.
    * To access the full response (for headers, for example), `cBorrowInvalidateQrCodePatch$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   cBorrowInvalidateQrCodePatch(params?: {
-    context?: HttpContext
     body?: InvalidateQrCodeDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<void> {
 
-    return this.cBorrowInvalidateQrCodePatch$Response(params).pipe(
+    return this.cBorrowInvalidateQrCodePatch$Response(params,context).pipe(
       map((r: StrictHttpResponse<void>) => r.body as void)
     );
   }
@@ -283,8 +293,9 @@ export class CBorrowService extends BaseService {
    */
   cBorrowItemLocationItemIdGet$Response(params: {
     itemId: number;
-    context?: HttpContext
-  }
+  },
+  context?: HttpContext
+
 ): Observable<StrictHttpResponse<void>> {
 
     const rb = new RequestBuilder(this.rootUrl, CBorrowService.CBorrowItemLocationItemIdGetPath, 'get');
@@ -295,7 +306,7 @@ export class CBorrowService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: '*/*',
-      context: params?.context
+      context: context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -305,18 +316,19 @@ export class CBorrowService extends BaseService {
   }
 
   /**
-   * This method provides access to only to the response body.
+   * This method provides access only to the response body.
    * To access the full response (for headers, for example), `cBorrowItemLocationItemIdGet$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
   cBorrowItemLocationItemIdGet(params: {
     itemId: number;
-    context?: HttpContext
-  }
+  },
+  context?: HttpContext
+
 ): Observable<void> {
 
-    return this.cBorrowItemLocationItemIdGet$Response(params).pipe(
+    return this.cBorrowItemLocationItemIdGet$Response(params,context).pipe(
       map((r: StrictHttpResponse<void>) => r.body as void)
     );
   }
