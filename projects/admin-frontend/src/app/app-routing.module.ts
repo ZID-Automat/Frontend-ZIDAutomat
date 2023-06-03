@@ -9,7 +9,6 @@ import { LoginDeactivateGuard } from './Guards/login-deactivate.guard';
 import { BorrowsComponent } from './Components/Pages/borrows/borrows.component';
 import { AutomatScannLogsComponent } from './Components/Pages/automat-scann-logs/automat-scann-logs.component';
 import { UsersPageComponent } from './Components/Pages/users-page/users-page.component';
-import { CategoriesComponent } from './Components/Pages/categories/categories.component';
 
 export enum AdminFrontendRoutes {
   Login = 'login',

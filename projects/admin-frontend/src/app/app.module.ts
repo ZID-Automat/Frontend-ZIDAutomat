@@ -57,13 +57,8 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { AdminQrCodeDialogComponent } from './Components/Dialogs/admin-qr-code-dialog/admin-qr-code-dialog.component';
 import { TaeglicheUserGraphComponent } from './Components/Dummy/Graphs/taegliche-user-graph/taegliche-user-graph.component';
 import { WieVielZuSpaetGraphComponent } from './Components/Dummy/Graphs/wie-viel-zu-spaet-graph/wie-viel-zu-spaet-graph.component';
-<<<<<<< HEAD
 import { SelectStockImageDialogComponent } from './Components/Dialogs/select-stock-image-dialog/select-stock-image-dialog.component';
 import { MatInputModule } from '@angular/material/input';
-import { CategoriesComponent } from './components/Pages/categories/categories.component';
-=======
-import { CategoriesComponent } from './Components/Pages/categories/categories.component';
->>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
   Chart.register(LineController, CategoryScale,LinearScale,PointElement,LineElement, Title, Tooltip, Legend ,BarElement,BarController, DoughnutController, ArcElement);
 
 @NgModule({
@@ -91,7 +86,6 @@ import { CategoriesComponent } from './Components/Pages/categories/categories.co
     TaeglicheUserGraphComponent,
     WieVielZuSpaetGraphComponent,
     SelectStockImageDialogComponent,
-    CategoriesComponent,
   ],
   imports: [
     AutomatSharedModule,
