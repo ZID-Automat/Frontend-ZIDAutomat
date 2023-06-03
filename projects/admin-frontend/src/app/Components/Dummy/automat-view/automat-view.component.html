@@ -199,8 +199,19 @@
     style="display: inline; opacity: 0.993917"
     inkscape:groupmode="layer"
   >
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi3">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      style="cursor: move"
+      (dragstart)="dragi($event)"
+      id="Boxi3"
+    >
       <image
+        [draggable]="true"
+        style="cursor: move"
+        (dragstart)="dragi($event)"
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
         inkscape:label="image30"
@@ -239,7 +250,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi6">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi6"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -281,7 +299,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi1">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      draggable="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi1"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -322,7 +347,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi4">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi4"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -363,7 +395,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi7">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi7"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -404,7 +443,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi2">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi2"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -445,7 +491,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi5">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi5"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -488,7 +541,10 @@
     </g>
     <g
       (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
       (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
       id="Boxi8"
       inkscape:label="g1384"
     >
@@ -534,7 +590,10 @@
     </g>
     <g
       (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
       (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
       id="Boxi11"
       inkscape:label="Box"
     >
@@ -580,7 +639,10 @@
     </g>
     <g
       (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
       (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
       id="Boxi0"
       inkscape:label="Box"
     >
@@ -624,7 +686,14 @@
         width="8.0344067"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi14">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi14"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -665,7 +734,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi9">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi9"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -706,7 +782,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi12">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi12"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -747,7 +830,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi15">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi15"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -788,7 +878,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi10">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi10"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -831,7 +928,10 @@
     </g>
     <g
       (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
       (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
       id="Boxi13"
       inkscape:groupmode="layer"
       sodipodi:insensitive="true"
@@ -876,7 +976,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi16">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi16"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -917,7 +1024,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi19">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi19"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -958,7 +1072,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi22">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi22"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -999,7 +1120,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi17">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi17"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1040,7 +1168,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi20">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi20"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1081,7 +1216,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi23">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi23"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1122,7 +1264,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi18">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi18"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1163,7 +1312,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi21">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi21"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1204,7 +1360,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi24">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi24"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1245,7 +1408,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi27">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi27"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1286,7 +1456,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi30">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi30"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1327,7 +1504,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi25">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi25"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1368,7 +1552,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi28">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi28"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1409,7 +1600,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi31">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi31"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1450,7 +1648,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi26">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi26"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1491,7 +1696,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi29">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi29"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1532,7 +1744,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi32">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi32"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1573,7 +1792,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi35">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi35"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1614,7 +1840,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi38">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi38"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1655,7 +1888,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi33">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi33"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1696,7 +1936,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi36">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi36"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1737,7 +1984,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi39">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi39"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1778,7 +2032,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi34">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi34"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1819,7 +2080,14 @@
         inkscape:label="Box"
       />
     </g>
-    <g (dragover)="allowDrop($event)" (drop)="dropedItem($event)" id="Boxi37">
+    <g
+      (dragover)="allowDrop($event)"
+      #DragBox
+      [draggable]="true"
+      (drop)="dropedItem($event)"
+      (dragstart)="dragi($event)"
+      id="Boxi37"
+    >
       <image
         sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
         xlink:href=""
@@ -1862,3 +2130,18 @@
     </g>
   </g>
 </svg>
+
+<div class="w-full flex mt-3 justify-between">
+  <button class="w-1/5" mat-raised-button color="accent">
+    <p class="m-2 py-2 text-white  text-xl font-extralight">Save</p>
+  </button>
+  <button class="w-1/4" mat-raised-button color="accent">
+    <p class="m-2 py-2 text-white  text-xl font-extralight">Reload</p>
+  </button>
+  <button class="w-1/4" mat-raised-button color="accent">
+    <p class="m-2 py-2 text-white  text-xl font-extralight">Autofill</p>
+  </button>
+  <button class="w-1/4" mat-raised-button color="accent">
+    <p class="m-2 py-2 text-white  text-xl font-extralight">Clear</p>
+  </button>
+</div>

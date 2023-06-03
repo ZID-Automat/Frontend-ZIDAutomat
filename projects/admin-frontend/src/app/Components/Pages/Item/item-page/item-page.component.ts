@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { ItemManComponent } from './../../../Dummy/item-man/item-man.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ItemGetAllDto } from 'AutomatApi';
 
 @Component({
   selector: 'admin-item-page',
@@ -7,16 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemPageComponent implements OnInit {
 
-  public DragableIds:string[] = [];
+  @ViewChild("ItemMan") automatView:ItemManComponent = null!;
 
-
+  public Datas:Subject<ItemGetAllDto[]> = new Subject<ItemGetAllDto[]>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
-
-  OnDragPointIdsLoad(ids:string[]){
-    setTimeout(()=>this.DragableIds = ids,100)
+  onDropAutomatView(data:{Location:string,ItemId:number}){
+    this.automatView.data.find(e=>e.id == data.ItemId)!.locationImAutomat = data.Location;
   }
+
+  onDataLoad(data:ItemGetAllDto[]){
+    this.Datas.next(data);
+  }
+
 }

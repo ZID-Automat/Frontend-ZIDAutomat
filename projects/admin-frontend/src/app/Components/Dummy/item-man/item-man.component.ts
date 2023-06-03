@@ -1,9 +1,9 @@
 import { AItemService,ItemGetAllDto } from 'AutomatApi';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddItemDialogComponent } from '../../Dialogs/add-item-dialog/add-item-dialog.component';
 import { ViewItemDialogComponent } from '../../Dialogs/view-item-dialog/view-item-dialog.component';
-import { take } from 'rxjs';
+import { take, Subject } from 'rxjs';
 
 @Component({
   selector: 'admin-item-man',
@@ -16,11 +16,12 @@ export class ItemManComponent implements OnInit {
   constructor(private matDialog: MatDialog, private AItemService:AItemService) {}
 
   data:ItemGetAllDto[] = []
+  @Output() public dataChange: EventEmitter<ItemGetAllDto[]> = new EventEmitter<ItemGetAllDto[]>();
 
   ngOnInit(): void {
     this.AItemService.aItemGetAllGet$Json().pipe(take(1)).subscribe((data) => {
       this.data = data;
-      console.log(data)
+      this.dataChange.emit(this.data);
     })
   }
 
