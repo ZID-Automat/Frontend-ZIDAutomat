@@ -43,18 +43,12 @@ export class CategoriesComponent implements OnInit {
         this.load();
       }
     }
-  }
-   
-   
 
-   
-   
-    
-
-  
-
-  
-
-  
-
-
+    addNewCategory(){
+         let name = (<HTMLInputElement>document.getElementById("categoryName")).value;
+        let description = (<HTMLInputElement>document.getElementById("categoryDescription")).value;
+        this.AConfCategoriesService.aConfCategoriesAddCategoryPost({body:{name:name,description:description}}).subscribe((data:any) => {
+         this.load();
+        })
+       }
+      }
