@@ -1,3 +1,4 @@
+import { ItemChangeLocationDto, ItemLocationDto } from 'AutomatApi';
 import { AItemService,ItemGetAllDto } from 'AutomatApi';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -19,6 +20,10 @@ export class ItemManComponent implements OnInit {
   @Output() public dataChange: EventEmitter<ItemGetAllDto[]> = new EventEmitter<ItemGetAllDto[]>();
 
   ngOnInit(): void {
+   this.reload()
+  }
+
+  reload(){
     this.AItemService.aItemGetAllGet$Json().pipe(take(1)).subscribe((data) => {
       this.data = data;
       this.dataChange.emit(this.data);
@@ -39,4 +44,7 @@ export class ItemManComponent implements OnInit {
     const data = this.data.find(e=>e.id == id);
     ev.dataTransfer?.setData("text", JSON.stringify(data));
   }
+
+
+
 }
