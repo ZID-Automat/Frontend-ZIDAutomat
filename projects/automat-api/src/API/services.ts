@@ -1,5 +1,6 @@
 export { AAnalyticsService } from './services/a-analytics.service';
 export { ABorrowInfoService } from './services/a-borrow-info.service';
+export { AConfCategoriesService } from './services/a-conf-categories.service';
 export { AItemService } from './services/a-item.service';
 export { AUserInforService } from './services/a-user-infor.service';
 export { AuthentificationService } from './services/authentification.service';
