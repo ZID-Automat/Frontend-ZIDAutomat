@@ -37,8 +37,9 @@ export class AItemService extends BaseService {
    * This method doesn't expect any request body.
    */
   aItemGetAllGet$Plain$Response(params?: {
-    context?: HttpContext
-  }
+  },
+  context?: HttpContext
+
 ): Observable<StrictHttpResponse<Array<ItemGetAllDto>>> {
 
     const rb = new RequestBuilder(this.rootUrl, AItemService.AItemGetAllGetPath, 'get');
@@ -48,7 +49,7 @@ export class AItemService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: 'text/plain',
-      context: params?.context
+      context: context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -58,17 +59,18 @@ export class AItemService extends BaseService {
   }
 
   /**
-   * This method provides access to only to the response body.
+   * This method provides access only to the response body.
    * To access the full response (for headers, for example), `aItemGetAllGet$Plain$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
   aItemGetAllGet$Plain(params?: {
-    context?: HttpContext
-  }
+  },
+  context?: HttpContext
+
 ): Observable<Array<ItemGetAllDto>> {
 
-    return this.aItemGetAllGet$Plain$Response(params).pipe(
+    return this.aItemGetAllGet$Plain$Response(params,context).pipe(
       map((r: StrictHttpResponse<Array<ItemGetAllDto>>) => r.body as Array<ItemGetAllDto>)
     );
   }
@@ -80,8 +82,9 @@ export class AItemService extends BaseService {
    * This method doesn't expect any request body.
    */
   aItemGetAllGet$Json$Response(params?: {
-    context?: HttpContext
-  }
+  },
+  context?: HttpContext
+
 ): Observable<StrictHttpResponse<Array<ItemGetAllDto>>> {
 
     const rb = new RequestBuilder(this.rootUrl, AItemService.AItemGetAllGetPath, 'get');
@@ -91,7 +94,7 @@ export class AItemService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'json',
       accept: 'text/json',
-      context: params?.context
+      context: context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -101,17 +104,18 @@ export class AItemService extends BaseService {
   }
 
   /**
-   * This method provides access to only to the response body.
+   * This method provides access only to the response body.
    * To access the full response (for headers, for example), `aItemGetAllGet$Json$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
   aItemGetAllGet$Json(params?: {
-    context?: HttpContext
-  }
+  },
+  context?: HttpContext
+
 ): Observable<Array<ItemGetAllDto>> {
 
-    return this.aItemGetAllGet$Json$Response(params).pipe(
+    return this.aItemGetAllGet$Json$Response(params,context).pipe(
       map((r: StrictHttpResponse<Array<ItemGetAllDto>>) => r.body as Array<ItemGetAllDto>)
     );
   }
@@ -128,9 +132,10 @@ export class AItemService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   aItemSetItemPositionPost$Response(params?: {
-    context?: HttpContext
     body?: ItemChangeLocationDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<StrictHttpResponse<void>> {
 
     const rb = new RequestBuilder(this.rootUrl, AItemService.AItemSetItemPositionPostPath, 'post');
@@ -141,7 +146,7 @@ export class AItemService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: '*/*',
-      context: params?.context
+      context: context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -151,18 +156,19 @@ export class AItemService extends BaseService {
   }
 
   /**
-   * This method provides access to only to the response body.
+   * This method provides access only to the response body.
    * To access the full response (for headers, for example), `aItemSetItemPositionPost$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   aItemSetItemPositionPost(params?: {
-    context?: HttpContext
     body?: ItemChangeLocationDto
-  }
+  },
+  context?: HttpContext
+
 ): Observable<void> {
 
-    return this.aItemSetItemPositionPost$Response(params).pipe(
+    return this.aItemSetItemPositionPost$Response(params,context).pipe(
       map((r: StrictHttpResponse<void>) => r.body as void)
     );
   }
