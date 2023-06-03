@@ -527,6 +527,11 @@
     },
     "/AItem/GetAll": {
       "get": {
+<<<<<<< HEAD
+=======
+        "tags": [
+          "AItem"
+>>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
         ],
         "responses": {
           "200": {
@@ -536,7 +541,11 @@
                 "schema": {
                   "type": "array",
                   "items": {
+<<<<<<< HEAD
                     "$ref": "#/components/schemas/CategoryUpdateDto"
+=======
+                    "$ref": "#/components/schemas/ItemGetAllDto"
+>>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
                   }
                 }
               },
@@ -544,7 +553,11 @@
                 "schema": {
                   "type": "array",
                   "items": {
+<<<<<<< HEAD
                     "$ref": "#/components/schemas/CategoryUpdateDto"
+=======
+                    "$ref": "#/components/schemas/ItemGetAllDto"
+>>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
                   }
                 }
               },
@@ -552,7 +565,11 @@
                 "schema": {
                   "type": "array",
                   "items": {
+<<<<<<< HEAD
                     "$ref": "#/components/schemas/CategoryUpdateDto"
+=======
+                    "$ref": "#/components/schemas/ItemGetAllDto"
+>>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
                   }
                 }
               }
@@ -561,6 +578,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "/AConfCategories/UpdateConfCategory": {
       "patch": {
         "tags": [
@@ -663,6 +681,9 @@
       }
     },
     "/AItem/ItemDetailedAdminAdd": {
+=======
+    "/AItem/SetItemPosition": {
+>>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
       "post": {
         "tags": [
           "AItem"
@@ -671,16 +692,25 @@
           "content": {
             "application/json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/ItemAdminUpdateAdd"
+=======
+                "$ref": "#/components/schemas/ItemChangeLocationDto"
+>>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
               }
             },
             "text/json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/ItemAdminUpdateAdd"
+=======
+                "$ref": "#/components/schemas/ItemChangeLocationDto"
+>>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
               }
             },
             "application/*+json": {
               "schema": {
+<<<<<<< HEAD
                 "$ref": "#/components/schemas/ItemAdminUpdateAdd"
               }
             }
@@ -713,6 +743,9 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/ItemAdminUpdateAdd"
+=======
+                "$ref": "#/components/schemas/ItemChangeLocationDto"
+>>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
               }
             }
           }
@@ -1677,6 +1710,7 @@
         },
         "additionalProperties": false
       },
+<<<<<<< HEAD
       "ItemAdminDetailedDto": {
         "type": "object",
         "properties": {
@@ -1752,6 +1786,8 @@
         },
         "additionalProperties": false
       },
+=======
+>>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
       "ItemChangeLocationDto": {
         "type": "object",
         "properties": {
@@ -1823,6 +1859,42 @@
           },
           "available": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ItemGetAllDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "image": {
+            "type": "string",
+            "nullable": true
+          },
+          "locationImAutomat": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ItemLocationDto": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

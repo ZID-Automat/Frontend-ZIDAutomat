@@ -31,8 +31,30 @@ export class CategoriesComponent implements OnInit {
     })
   }
 
+   saveChanges(event:any) {
+    let data = event.newValue as CategoryUpdateDto;
+    this.AConfCategoriesService.aConfCategoriesUpdateConfCategoryPatch({body:data}).subscribe((data:any) => {
+      this.load();
+    })
+   }
+   onRowClicki(event:any) {
+    if(event.type == "click") {
+      console.log(event.row) 
+        this.load();
+      }
+    }
+  }
+   
+   
+
+   
+   
+    
+
+  
+
   
 
   
 
-}
+
