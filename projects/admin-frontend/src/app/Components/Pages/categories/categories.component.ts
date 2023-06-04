@@ -13,7 +13,7 @@ export class CategoriesComponent implements OnInit {
   loadingIndicator = true;
   reorderable = true;
 
-  columns = [{ name: 'Id' }, { name: 'Name' },{ name: 'Beschreibung' }];
+  columns = [{ name: 'Id' }, { name: 'Name' },{ name: 'Description' }];
 
   ColumnMode = ColumnMode
 
