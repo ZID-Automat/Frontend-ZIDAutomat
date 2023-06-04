@@ -60,6 +60,7 @@ import { WieVielZuSpaetGraphComponent } from './Components/Dummy/Graphs/wie-viel
 import { SelectStockImageDialogComponent } from './Components/Dialogs/select-stock-image-dialog/select-stock-image-dialog.component';
 import { MatInputModule } from '@angular/material/input';
 import { CategoriesComponent } from './Components/Pages/categories/categories.component';
+import { ManageCatsComponent } from './Components/Dialogs/manage-cats/manage-cats.component';
   Chart.register(LineController, CategoryScale,LinearScale,PointElement,LineElement, Title, Tooltip, Legend ,BarElement,BarController, DoughnutController, ArcElement);
 
 @NgModule({
@@ -88,6 +89,7 @@ import { CategoriesComponent } from './Components/Pages/categories/categories.co
     WieVielZuSpaetGraphComponent,
     SelectStockImageDialogComponent,
     CategoriesComponent,
+    ManageCatsComponent,
   ],
   imports: [
     AutomatSharedModule,
