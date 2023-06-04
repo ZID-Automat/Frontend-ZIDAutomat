@@ -37,6 +37,7 @@
         class="w-full border-2 border-gray-200 rounded-lg p-2 my-2"
       />
 
+    <div class="flex">
       <mat-form-field class="w-full">
         <mat-label>Category</mat-label>
         <mat-select
@@ -50,7 +51,11 @@
             cate.name
           }}</mat-option>
         </mat-select>
+
       </mat-form-field>
+      <button mat-button class="w-3/12 border-2 rounded-lg" (click)="ManageCats()" color="accent"> Settings</button>
+    </div>
+
       <div class="border-2 rounded-lg h-56">
         <div>
           <img [src]="currentImage" class="h-44 block m-auto overflow-hidden" />

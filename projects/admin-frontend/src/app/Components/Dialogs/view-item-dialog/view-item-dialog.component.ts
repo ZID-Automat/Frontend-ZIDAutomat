@@ -19,6 +19,7 @@ import {
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
 import { take } from 'rxjs';
+import { ManageCatsComponent } from '../manage-cats/manage-cats.component';
 
 @Component({
   selector: 'admin-view-item-dialog',
@@ -51,6 +52,10 @@ export class ViewItemDialogComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.isAdd = this.DialogData.isAdd;
+    this.loadcats()
+  }
+
+  loadcats(){
     this.AConfCategoriesService.aConfCategoriesGetConfCategoriesGet$Json()
       .pipe(take(1))
       .subscribe((data) => {
@@ -114,7 +119,11 @@ export class ViewItemDialogComponent implements OnInit, AfterViewInit {
       });
   }
 
-
+  public ManageCats(){
+    ManageCatsComponent.openDialog(this.dialog, this.Name.nativeElement.value).afterClosed().subscribe((res) => {
+      this.loadcats();
+    });
+  }
 
 
   public onFileSelected(event: any) {
