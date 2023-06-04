@@ -366,4 +366,152 @@ export class AItemService extends BaseService {
     );
   }
 
+  /**
+   * Path part for operation aItemAddItemInstacePost
+   */
+  static readonly AItemAddItemInstacePostPath = '/AItem/AddItemInstace';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `aItemAddItemInstacePost()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  aItemAddItemInstacePost$Response(params?: {
+    id?: number;
+    context?: HttpContext
+  }
+): Observable<StrictHttpResponse<void>> {
+
+    const rb = new RequestBuilder(this.rootUrl, AItemService.AItemAddItemInstacePostPath, 'post');
+    if (params) {
+      rb.query('id', params.id, {});
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'text',
+      accept: '*/*',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return (r as HttpResponse<any>).clone({ body: undefined }) as StrictHttpResponse<void>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `aItemAddItemInstacePost$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  aItemAddItemInstacePost(params?: {
+    id?: number;
+    context?: HttpContext
+  }
+): Observable<void> {
+
+    return this.aItemAddItemInstacePost$Response(params).pipe(
+      map((r: StrictHttpResponse<void>) => r.body as void)
+    );
+  }
+
+  /**
+   * Path part for operation aItemGetItemInstancesGet
+   */
+  static readonly AItemGetItemInstancesGetPath = '/AItem/GetItemInstances';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `aItemGetItemInstancesGet$Plain()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  aItemGetItemInstancesGet$Plain$Response(params?: {
+    id?: number;
+    context?: HttpContext
+  }
+): Observable<StrictHttpResponse<number>> {
+
+    const rb = new RequestBuilder(this.rootUrl, AItemService.AItemGetItemInstancesGetPath, 'get');
+    if (params) {
+      rb.query('id', params.id, {});
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'text',
+      accept: 'text/plain',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return (r as HttpResponse<any>).clone({ body: parseFloat(String((r as HttpResponse<any>).body)) }) as StrictHttpResponse<number>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `aItemGetItemInstancesGet$Plain$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  aItemGetItemInstancesGet$Plain(params?: {
+    id?: number;
+    context?: HttpContext
+  }
+): Observable<number> {
+
+    return this.aItemGetItemInstancesGet$Plain$Response(params).pipe(
+      map((r: StrictHttpResponse<number>) => r.body as number)
+    );
+  }
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `aItemGetItemInstancesGet$Json()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  aItemGetItemInstancesGet$Json$Response(params?: {
+    id?: number;
+    context?: HttpContext
+  }
+): Observable<StrictHttpResponse<number>> {
+
+    const rb = new RequestBuilder(this.rootUrl, AItemService.AItemGetItemInstancesGetPath, 'get');
+    if (params) {
+      rb.query('id', params.id, {});
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'json',
+      accept: 'text/json',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return (r as HttpResponse<any>).clone({ body: parseFloat(String((r as HttpResponse<any>).body)) }) as StrictHttpResponse<number>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `aItemGetItemInstancesGet$Json$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  aItemGetItemInstancesGet$Json(params?: {
+    id?: number;
+    context?: HttpContext
+  }
+): Observable<number> {
+
+    return this.aItemGetItemInstancesGet$Json$Response(params).pipe(
+      map((r: StrictHttpResponse<number>) => r.body as number)
+    );
+  }
+
 }

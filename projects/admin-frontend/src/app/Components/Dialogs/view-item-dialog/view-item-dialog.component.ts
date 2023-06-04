@@ -53,6 +53,13 @@ export class ViewItemDialogComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.isAdd = this.DialogData.isAdd;
     this.loadcats()
+
+    this.AItemService.aItemGetItemInstancesGet$Json({
+      id: this.DialogData.id!,
+    }).pipe(take(1)).subscribe((res:number)=>{
+      this.iteminstanceCount = res;
+    })
+
   }
 
   loadcats(){
@@ -162,6 +169,19 @@ export class ViewItemDialogComponent implements OnInit, AfterViewInit {
           this.currentImage = data;
         }
       });
+  }
+
+  iteminstanceCount = 0;
+
+  iteminstaddde = true;
+  public IncII(){
+    this.iteminstaddde = false;
+    this.AItemService.aItemAddItemInstacePost({
+      id: this.DialogData.id!
+    }).pipe(take(1)).subscribe((res) => {
+      this.iteminstaddde = true;
+      this.iteminstanceCount++;
+    })
   }
 }
 
