@@ -1,14 +1,39 @@
+<div class="flex w-full m-auto">
+  <mat-form-field class=" mt-3 w-3/12 mx-2">
+    <mat-label class="font-thin text-black">Id</mat-label>
+    <input
+      matInput
+      #Idiii
+      class="font-thin"
+      placeholder="0"
+    />
+  </mat-form-field>
+
+  <mat-form-field class=" mt-3 w-3/12 mx-2">
+    <mat-label class="font-thin text-black">Name</mat-label>
+    <input
+      matInput
+      #Nameiii
+      class="font-thin"
+      placeholder=""
+    />
+  </mat-form-field>
+  <div class="mt-3 w-2/12 py-3 mx-2 block ml-auto float-right">
+    <button class="w-full" (click)="filtering()"mat-button color="primary" >Filter</button>
+  </div>
+</div>
+
 <ngx-datatable
-*ngIf="BorrowRows"
-class="material"
-[rows]="BorrowRows"
-[columns]="columns"
-[columnMode]="ColumnMode.force"
-[headerHeight]="50"
-[footerHeight]="50"
-rowHeight="auto"
-[rowClass]="getRowClass"
-[limit]="8"
-(activate)="onRowClick($event)"
+  *ngIf="BorrowRows"
+  class="material"
+  [rows]="BorrowRows"
+  [columns]="columns"
+  [columnMode]="ColumnMode.force"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  rowHeight="auto"
+  [rowClass]="getRowClass"
+  [limit]="8"
+  (activate)="onRowClick($event)"
 >
 </ngx-datatable>
