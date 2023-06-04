@@ -137,7 +137,7 @@ export class AutomatViewComponent implements OnInit, OnDestroy, AfterViewInit {
     };
   }
 
-  private BoxNumberToLocation(boxNumber: string) {
+  public BoxNumberToLocation(boxNumber: string) {
     const number = parseInt(boxNumber.substring(4));
     const row = Math.floor(number / 8);
     const col = number % 8;
@@ -217,6 +217,22 @@ export class AutomatViewComponent implements OnInit, OnDestroy, AfterViewInit {
         }
     });
 
+  }
+
+  remove(event:any){
+    var target = event.target
+    const info  = this.extractImportantInformation(target,0)
+    if(info.ImageElement.id != ''){
+      const item = this.data.find((e:any)=>e.id == parseInt(info.ImageElement.id.substring(7)))
+
+
+      info.ImageElement.href.baseVal = '';
+      info.ImageElement.id = '';
+      item.locationImAutomat = '';
+    }
+  }
+
+  tooltip(event:any){
   }
 }
 //5*8x

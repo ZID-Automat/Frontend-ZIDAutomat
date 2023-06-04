@@ -113,4 +113,8 @@ export class BorrowDetailedDialogComponent implements OnInit {
       this.BorrowData.entschuldigt = state
     })
   }
+
+  public ShowUser(){
+    UserDetailedDialogComponent.openDialog(this.MatDialog, this.BorrowData.userId!, false)
+  }
 }

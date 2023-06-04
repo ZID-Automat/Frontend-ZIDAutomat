@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { faChevronLeft,faChevronRight, faXmark, IconDefinition,faQrcode, faHistory, faBarsStaggered, faQuestion, faEye, faEyeSlash, faCircleQuestion, faQuestionCircle, faCirclePlus, faPlusCircle, faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft,faChevronRight, faXmark, IconDefinition,faQrcode, faHistory, faBarsStaggered, faQuestion, faEye, faEyeSlash, faCircleQuestion, faQuestionCircle, faCirclePlus, faPlusCircle, faHouse, faBook } from '@fortawesome/free-solid-svg-icons';
 import { ReplaySubject, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
