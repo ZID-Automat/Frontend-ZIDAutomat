@@ -52,6 +52,10 @@ export class ViewItemDialogComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.isAdd = this.DialogData.isAdd;
+    this.loadcats()
+  }
+
+  loadcats(){
     this.AConfCategoriesService.aConfCategoriesGetConfCategoriesGet$Json()
       .pipe(take(1))
       .subscribe((data) => {
@@ -116,7 +120,9 @@ export class ViewItemDialogComponent implements OnInit, AfterViewInit {
   }
 
   public ManageCats(){
-    ManageCatsComponent.openDialog(this.dialog, this.Name.nativeElement.value)
+    ManageCatsComponent.openDialog(this.dialog, this.Name.nativeElement.value).afterClosed().subscribe((res) => {
+      this.loadcats();
+    });
   }
 
 

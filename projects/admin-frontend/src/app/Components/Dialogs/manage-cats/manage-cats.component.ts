@@ -97,7 +97,6 @@ export class ManageCatsComponent implements OnInit, AfterViewInit {
   }
   onRowClicki(event: any) {
     if (event.type == 'click') {
-      console.log(event.row);
       this.load();
     }
   }
@@ -112,6 +111,7 @@ export class ManageCatsComponent implements OnInit, AfterViewInit {
       body: { name: name, description: description },
     }).subscribe(() => {
       this.load();
+      alert("Category added!")
     });
 
     this.Name.nativeElement.value = '';
