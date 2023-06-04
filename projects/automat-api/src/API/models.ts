@@ -9,6 +9,8 @@ export { CategoryUpdateDto } from './models/category-update-dto';
 export { ControllerLoginDto } from './models/controller-login-dto';
 export { GesammtBorrowsDto } from './models/gesammt-borrows-dto';
 export { InvalidateQrCodeDto } from './models/invalidate-qr-code-dto';
+export { ItemAdminDetailedDto } from './models/item-admin-detailed-dto';
+export { ItemAdminUpdateAdd } from './models/item-admin-update-add';
 export { ItemChangeLocationDto } from './models/item-change-location-dto';
 export { ItemDetailedDto } from './models/item-detailed-dto';
 export { ItemDisplayDto } from './models/item-display-dto';
