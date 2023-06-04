@@ -82,7 +82,7 @@ export class ViewItemDialogComponent implements OnInit, AfterViewInit {
   public static openDialog(
     dialog: MatDialog,
     id: number,
-    isAdd: boolean = false
+    isAdd: boolean = false,
   ) :MatDialogRef<ViewItemDialogComponent>{
     return dialog.open(ViewItemDialogComponent, {
       data: { id: id, isAdd: isAdd },

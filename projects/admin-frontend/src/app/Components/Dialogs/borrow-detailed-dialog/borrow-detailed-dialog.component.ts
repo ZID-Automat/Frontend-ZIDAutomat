@@ -1,3 +1,4 @@
+import { ViewItemDialogComponent } from './../view-item-dialog/view-item-dialog.component';
 import { UserDetailedDialogComponent } from './../user-detailed-dialog/user-detailed-dialog.component';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -19,10 +20,12 @@ export class BorrowDetailedDialogComponent implements OnInit {
     private MatDialog:MatDialog
   ) {}
 
+  public ShowToUser:boolean = true;
   public ColumnMode = ColumnMode;
 
   public DateRows: any;
   public ItemRows: any;
+  public ShowToItem:boolean = true;
   public BorrowData:BorrowAdminDetailedDto = undefined!;
 
   public DateCollums: any = [
@@ -35,6 +38,9 @@ export class BorrowDetailedDialogComponent implements OnInit {
   ]
 
   ngOnInit(): void {
+
+    this.ShowToUser = this.data.ShowToUser;
+    this.ShowToItem = this.data.ShowToItem;
     this.ABorrowInfoService.borrowDetailedGet$Json({
       id: this.data.id,
     }).pipe(take(1)).subscribe((data) => {
@@ -79,9 +85,9 @@ export class BorrowDetailedDialogComponent implements OnInit {
     });
   }
 
-  public static openDialog(dialog: MatDialog, id: number,ShowToUser:boolean = true,): MatDialogRef<BorrowDetailedDialogComponent> {
+  public static openDialog(dialog: MatDialog, id: number,ShowToUser:boolean = true,ShowToItem:boolean = true): MatDialogRef<BorrowDetailedDialogComponent> {
     return dialog.open(BorrowDetailedDialogComponent, {
-      data: { id: id , ShowToUser:ShowToUser},
+      data: { id: id , ShowToUser:ShowToUser, ShowToItem:ShowToItem},
       width: '40%',
       height: '78vh',
     });
@@ -114,7 +120,7 @@ export class BorrowDetailedDialogComponent implements OnInit {
     })
   }
 
-  public ShowUser(){
-    UserDetailedDialogComponent.openDialog(this.MatDialog, this.BorrowData.userId!, false)
+  public ShowItemDia(){
+    ViewItemDialogComponent.openDialog(this.MatDialog, this.BorrowData.itemId!,false)
   }
 }

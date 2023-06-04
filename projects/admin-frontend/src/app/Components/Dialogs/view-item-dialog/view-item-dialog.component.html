@@ -115,7 +115,7 @@
     <div class="w-3/5 p-1 pl-10" *ngIf="!isAdd">
       <div class="text-2xl text-center">Borrows of Item</div>
       <div class="pt-5">
-        <admin-borrows-table [ShowToUser]="true" [BorrowRows] = "$any(data.borrows)"></admin-borrows-table>
+        <admin-borrows-table [ShowToItem]="false" [ShowToUser]="true" [BorrowRows] = "$any(data.borrows)"></admin-borrows-table>
       </div>
     </div>
   

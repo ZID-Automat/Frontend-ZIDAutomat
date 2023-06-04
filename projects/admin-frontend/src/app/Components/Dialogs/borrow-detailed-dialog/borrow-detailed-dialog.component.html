@@ -68,15 +68,15 @@
   </div>
 
   
-  <div class="m-3 mt-4">
-    <button mat-raised-button color="primary" class="w-full m-5 " (click)="ShowUser">
+  <div class="m-3 mt-4" *ngIf="ShowToItem">
+    <button mat-raised-button color="primary" class="w-full m-5 " (click)="ShowItemDia()">
       <p class="p-4 text-xl font-extralight">
-        Show User
+        Show Item
       </p>
     </button>
   </div>
 
-  <div class="m-3 mt-4" *ngIf="data.ShowToUser??true">
+  <div class="m-3 mt-4" *ngIf="ShowToUser">
     <button mat-raised-button color="primary" class="w-full m-5" (click)="ZumUser($event)">
       <p class="p-4 text-xl font-extralight">
         Zum User
