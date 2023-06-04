@@ -36,9 +36,8 @@ export class AUserInforService extends BaseService {
    * This method doesn't expect any request body.
    */
   aUserInforGetAllUsersGet$Plain$Response(params?: {
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<StrictHttpResponse<Array<UserAdminGetAll>>> {
 
     const rb = new RequestBuilder(this.rootUrl, AUserInforService.AUserInforGetAllUsersGetPath, 'get');
@@ -48,7 +47,7 @@ export class AUserInforService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: 'text/plain',
-      context: context
+      context: params?.context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -58,18 +57,17 @@ export class AUserInforService extends BaseService {
   }
 
   /**
-   * This method provides access only to the response body.
+   * This method provides access to only to the response body.
    * To access the full response (for headers, for example), `aUserInforGetAllUsersGet$Plain$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
   aUserInforGetAllUsersGet$Plain(params?: {
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<Array<UserAdminGetAll>> {
 
-    return this.aUserInforGetAllUsersGet$Plain$Response(params,context).pipe(
+    return this.aUserInforGetAllUsersGet$Plain$Response(params).pipe(
       map((r: StrictHttpResponse<Array<UserAdminGetAll>>) => r.body as Array<UserAdminGetAll>)
     );
   }
@@ -81,9 +79,8 @@ export class AUserInforService extends BaseService {
    * This method doesn't expect any request body.
    */
   aUserInforGetAllUsersGet$Json$Response(params?: {
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<StrictHttpResponse<Array<UserAdminGetAll>>> {
 
     const rb = new RequestBuilder(this.rootUrl, AUserInforService.AUserInforGetAllUsersGetPath, 'get');
@@ -93,7 +90,7 @@ export class AUserInforService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'json',
       accept: 'text/json',
-      context: context
+      context: params?.context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -103,18 +100,17 @@ export class AUserInforService extends BaseService {
   }
 
   /**
-   * This method provides access only to the response body.
+   * This method provides access to only to the response body.
    * To access the full response (for headers, for example), `aUserInforGetAllUsersGet$Json$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
   aUserInforGetAllUsersGet$Json(params?: {
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<Array<UserAdminGetAll>> {
 
-    return this.aUserInforGetAllUsersGet$Json$Response(params,context).pipe(
+    return this.aUserInforGetAllUsersGet$Json$Response(params).pipe(
       map((r: StrictHttpResponse<Array<UserAdminGetAll>>) => r.body as Array<UserAdminGetAll>)
     );
   }
@@ -132,9 +128,8 @@ export class AUserInforService extends BaseService {
    */
   aUserInforDetailedUserGet$Plain$Response(params?: {
     id?: number;
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<StrictHttpResponse<UserAdminDetailedDto>> {
 
     const rb = new RequestBuilder(this.rootUrl, AUserInforService.AUserInforDetailedUserGetPath, 'get');
@@ -145,7 +140,7 @@ export class AUserInforService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: 'text/plain',
-      context: context
+      context: params?.context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -155,19 +150,18 @@ export class AUserInforService extends BaseService {
   }
 
   /**
-   * This method provides access only to the response body.
+   * This method provides access to only to the response body.
    * To access the full response (for headers, for example), `aUserInforDetailedUserGet$Plain$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
   aUserInforDetailedUserGet$Plain(params?: {
     id?: number;
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<UserAdminDetailedDto> {
 
-    return this.aUserInforDetailedUserGet$Plain$Response(params,context).pipe(
+    return this.aUserInforDetailedUserGet$Plain$Response(params).pipe(
       map((r: StrictHttpResponse<UserAdminDetailedDto>) => r.body as UserAdminDetailedDto)
     );
   }
@@ -180,9 +174,8 @@ export class AUserInforService extends BaseService {
    */
   aUserInforDetailedUserGet$Json$Response(params?: {
     id?: number;
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<StrictHttpResponse<UserAdminDetailedDto>> {
 
     const rb = new RequestBuilder(this.rootUrl, AUserInforService.AUserInforDetailedUserGetPath, 'get');
@@ -193,7 +186,7 @@ export class AUserInforService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'json',
       accept: 'text/json',
-      context: context
+      context: params?.context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -203,19 +196,18 @@ export class AUserInforService extends BaseService {
   }
 
   /**
-   * This method provides access only to the response body.
+   * This method provides access to only to the response body.
    * To access the full response (for headers, for example), `aUserInforDetailedUserGet$Json$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
   aUserInforDetailedUserGet$Json(params?: {
     id?: number;
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<UserAdminDetailedDto> {
 
-    return this.aUserInforDetailedUserGet$Json$Response(params,context).pipe(
+    return this.aUserInforDetailedUserGet$Json$Response(params).pipe(
       map((r: StrictHttpResponse<UserAdminDetailedDto>) => r.body as UserAdminDetailedDto)
     );
   }
@@ -232,10 +224,9 @@ export class AUserInforService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   aUserInforSetBlockiertPost$Response(params?: {
+    context?: HttpContext
     body?: BlockiertStateDto
-  },
-  context?: HttpContext
-
+  }
 ): Observable<StrictHttpResponse<void>> {
 
     const rb = new RequestBuilder(this.rootUrl, AUserInforService.AUserInforSetBlockiertPostPath, 'post');
@@ -246,7 +237,7 @@ export class AUserInforService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: '*/*',
-      context: context
+      context: params?.context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -256,19 +247,18 @@ export class AUserInforService extends BaseService {
   }
 
   /**
-   * This method provides access only to the response body.
+   * This method provides access to only to the response body.
    * To access the full response (for headers, for example), `aUserInforSetBlockiertPost$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   aUserInforSetBlockiertPost(params?: {
+    context?: HttpContext
     body?: BlockiertStateDto
-  },
-  context?: HttpContext
-
+  }
 ): Observable<void> {
 
-    return this.aUserInforSetBlockiertPost$Response(params,context).pipe(
+    return this.aUserInforSetBlockiertPost$Response(params).pipe(
       map((r: StrictHttpResponse<void>) => r.body as void)
     );
   }

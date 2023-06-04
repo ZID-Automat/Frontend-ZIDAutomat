@@ -35,9 +35,8 @@ export class UItemService extends BaseService {
    * This method doesn't expect any request body.
    */
   uItemGetAllItemsGet$Plain$Response(params?: {
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<StrictHttpResponse<Array<ItemDisplayDto>>> {
 
     const rb = new RequestBuilder(this.rootUrl, UItemService.UItemGetAllItemsGetPath, 'get');
@@ -47,7 +46,7 @@ export class UItemService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: 'text/plain',
-      context: context
+      context: params?.context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -57,18 +56,17 @@ export class UItemService extends BaseService {
   }
 
   /**
-   * This method provides access only to the response body.
+   * This method provides access to only to the response body.
    * To access the full response (for headers, for example), `uItemGetAllItemsGet$Plain$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
   uItemGetAllItemsGet$Plain(params?: {
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<Array<ItemDisplayDto>> {
 
-    return this.uItemGetAllItemsGet$Plain$Response(params,context).pipe(
+    return this.uItemGetAllItemsGet$Plain$Response(params).pipe(
       map((r: StrictHttpResponse<Array<ItemDisplayDto>>) => r.body as Array<ItemDisplayDto>)
     );
   }
@@ -80,9 +78,8 @@ export class UItemService extends BaseService {
    * This method doesn't expect any request body.
    */
   uItemGetAllItemsGet$Json$Response(params?: {
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<StrictHttpResponse<Array<ItemDisplayDto>>> {
 
     const rb = new RequestBuilder(this.rootUrl, UItemService.UItemGetAllItemsGetPath, 'get');
@@ -92,7 +89,7 @@ export class UItemService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'json',
       accept: 'text/json',
-      context: context
+      context: params?.context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -102,18 +99,17 @@ export class UItemService extends BaseService {
   }
 
   /**
-   * This method provides access only to the response body.
+   * This method provides access to only to the response body.
    * To access the full response (for headers, for example), `uItemGetAllItemsGet$Json$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
   uItemGetAllItemsGet$Json(params?: {
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<Array<ItemDisplayDto>> {
 
-    return this.uItemGetAllItemsGet$Json$Response(params,context).pipe(
+    return this.uItemGetAllItemsGet$Json$Response(params).pipe(
       map((r: StrictHttpResponse<Array<ItemDisplayDto>>) => r.body as Array<ItemDisplayDto>)
     );
   }
@@ -130,9 +126,8 @@ export class UItemService extends BaseService {
    * This method doesn't expect any request body.
    */
   uItemGetPrevBorrowedGet$Plain$Response(params?: {
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<StrictHttpResponse<Array<ItemDisplayDto>>> {
 
     const rb = new RequestBuilder(this.rootUrl, UItemService.UItemGetPrevBorrowedGetPath, 'get');
@@ -142,7 +137,7 @@ export class UItemService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: 'text/plain',
-      context: context
+      context: params?.context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -152,18 +147,17 @@ export class UItemService extends BaseService {
   }
 
   /**
-   * This method provides access only to the response body.
+   * This method provides access to only to the response body.
    * To access the full response (for headers, for example), `uItemGetPrevBorrowedGet$Plain$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
   uItemGetPrevBorrowedGet$Plain(params?: {
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<Array<ItemDisplayDto>> {
 
-    return this.uItemGetPrevBorrowedGet$Plain$Response(params,context).pipe(
+    return this.uItemGetPrevBorrowedGet$Plain$Response(params).pipe(
       map((r: StrictHttpResponse<Array<ItemDisplayDto>>) => r.body as Array<ItemDisplayDto>)
     );
   }
@@ -175,9 +169,8 @@ export class UItemService extends BaseService {
    * This method doesn't expect any request body.
    */
   uItemGetPrevBorrowedGet$Json$Response(params?: {
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<StrictHttpResponse<Array<ItemDisplayDto>>> {
 
     const rb = new RequestBuilder(this.rootUrl, UItemService.UItemGetPrevBorrowedGetPath, 'get');
@@ -187,7 +180,7 @@ export class UItemService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'json',
       accept: 'text/json',
-      context: context
+      context: params?.context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -197,18 +190,17 @@ export class UItemService extends BaseService {
   }
 
   /**
-   * This method provides access only to the response body.
+   * This method provides access to only to the response body.
    * To access the full response (for headers, for example), `uItemGetPrevBorrowedGet$Json$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
   uItemGetPrevBorrowedGet$Json(params?: {
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<Array<ItemDisplayDto>> {
 
-    return this.uItemGetPrevBorrowedGet$Json$Response(params,context).pipe(
+    return this.uItemGetPrevBorrowedGet$Json$Response(params).pipe(
       map((r: StrictHttpResponse<Array<ItemDisplayDto>>) => r.body as Array<ItemDisplayDto>)
     );
   }
@@ -226,9 +218,8 @@ export class UItemService extends BaseService {
    */
   uItemGetDetailedItemGet$Plain$Response(params?: {
     ItemId?: number;
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<StrictHttpResponse<ItemDetailedDto>> {
 
     const rb = new RequestBuilder(this.rootUrl, UItemService.UItemGetDetailedItemGetPath, 'get');
@@ -239,7 +230,7 @@ export class UItemService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: 'text/plain',
-      context: context
+      context: params?.context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -249,19 +240,18 @@ export class UItemService extends BaseService {
   }
 
   /**
-   * This method provides access only to the response body.
+   * This method provides access to only to the response body.
    * To access the full response (for headers, for example), `uItemGetDetailedItemGet$Plain$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
   uItemGetDetailedItemGet$Plain(params?: {
     ItemId?: number;
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<ItemDetailedDto> {
 
-    return this.uItemGetDetailedItemGet$Plain$Response(params,context).pipe(
+    return this.uItemGetDetailedItemGet$Plain$Response(params).pipe(
       map((r: StrictHttpResponse<ItemDetailedDto>) => r.body as ItemDetailedDto)
     );
   }
@@ -274,9 +264,8 @@ export class UItemService extends BaseService {
    */
   uItemGetDetailedItemGet$Json$Response(params?: {
     ItemId?: number;
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<StrictHttpResponse<ItemDetailedDto>> {
 
     const rb = new RequestBuilder(this.rootUrl, UItemService.UItemGetDetailedItemGetPath, 'get');
@@ -287,7 +276,7 @@ export class UItemService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'json',
       accept: 'text/json',
-      context: context
+      context: params?.context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -297,19 +286,18 @@ export class UItemService extends BaseService {
   }
 
   /**
-   * This method provides access only to the response body.
+   * This method provides access to only to the response body.
    * To access the full response (for headers, for example), `uItemGetDetailedItemGet$Json$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
   uItemGetDetailedItemGet$Json(params?: {
     ItemId?: number;
-  },
-  context?: HttpContext
-
+    context?: HttpContext
+  }
 ): Observable<ItemDetailedDto> {
 
-    return this.uItemGetDetailedItemGet$Json$Response(params,context).pipe(
+    return this.uItemGetDetailedItemGet$Json$Response(params).pipe(
       map((r: StrictHttpResponse<ItemDetailedDto>) => r.body as ItemDetailedDto)
     );
   }
