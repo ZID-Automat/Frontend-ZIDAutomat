@@ -427,6 +427,7 @@
       }
     },
     "/AConfCategories/GetConfCategories": {
+      "get": {
         "tags": [
           "AConfCategories"
         ],
@@ -527,11 +528,8 @@
     },
     "/AItem/GetAll": {
       "get": {
-<<<<<<< HEAD
-=======
         "tags": [
           "AItem"
->>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
         ],
         "responses": {
           "200": {
@@ -541,11 +539,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-<<<<<<< HEAD
-                    "$ref": "#/components/schemas/CategoryUpdateDto"
-=======
                     "$ref": "#/components/schemas/ItemGetAllDto"
->>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
                   }
                 }
               },
@@ -553,11 +547,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-<<<<<<< HEAD
-                    "$ref": "#/components/schemas/CategoryUpdateDto"
-=======
                     "$ref": "#/components/schemas/ItemGetAllDto"
->>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
                   }
                 }
               },
@@ -565,11 +555,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-<<<<<<< HEAD
-                    "$ref": "#/components/schemas/CategoryUpdateDto"
-=======
                     "$ref": "#/components/schemas/ItemGetAllDto"
->>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
                   }
                 }
               }
@@ -578,58 +564,26 @@
         }
       }
     },
-<<<<<<< HEAD
-    "/AConfCategories/UpdateConfCategory": {
-      "patch": {
-        "tags": [
-          "AConfCategories"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CategoryUpdateDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CategoryUpdateDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CategoryUpdateDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/AConfCategories/AddCategory": {
+    "/AItem/SetItemPosition": {
       "post": {
         "tags": [
-          "AConfCategories"
+          "AItem"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CategoryAddDto"
+                "$ref": "#/components/schemas/ItemChangeLocationDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CategoryAddDto"
+                "$ref": "#/components/schemas/ItemChangeLocationDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CategoryAddDto"
+                "$ref": "#/components/schemas/ItemChangeLocationDto"
               }
             }
           }
@@ -681,9 +635,6 @@
       }
     },
     "/AItem/ItemDetailedAdminAdd": {
-=======
-    "/AItem/SetItemPosition": {
->>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
       "post": {
         "tags": [
           "AItem"
@@ -692,25 +643,16 @@
           "content": {
             "application/json": {
               "schema": {
-<<<<<<< HEAD
                 "$ref": "#/components/schemas/ItemAdminUpdateAdd"
-=======
-                "$ref": "#/components/schemas/ItemChangeLocationDto"
->>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
               }
             },
             "text/json": {
               "schema": {
-<<<<<<< HEAD
                 "$ref": "#/components/schemas/ItemAdminUpdateAdd"
-=======
-                "$ref": "#/components/schemas/ItemChangeLocationDto"
->>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
               }
             },
             "application/*+json": {
               "schema": {
-<<<<<<< HEAD
                 "$ref": "#/components/schemas/ItemAdminUpdateAdd"
               }
             }
@@ -743,9 +685,6 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/ItemAdminUpdateAdd"
-=======
-                "$ref": "#/components/schemas/ItemChangeLocationDto"
->>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
               }
             }
           }
@@ -1710,7 +1649,6 @@
         },
         "additionalProperties": false
       },
-<<<<<<< HEAD
       "ItemAdminDetailedDto": {
         "type": "object",
         "properties": {
@@ -1786,8 +1724,6 @@
         },
         "additionalProperties": false
       },
-=======
->>>>>>> 58b57d0 (Categories coded tom the extend that iam capable)
       "ItemChangeLocationDto": {
         "type": "object",
         "properties": {
