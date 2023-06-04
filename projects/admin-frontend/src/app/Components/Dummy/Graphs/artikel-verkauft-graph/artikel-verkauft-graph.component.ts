@@ -45,16 +45,16 @@ export class ArtikelVerkauftGraphComponent implements OnInit {
 
 
         data.forEach((item: any, index: number) => {
-          const colors = this.ColorServiceService.getColors(1);
+          const colors = this.ColorServiceService.getColorFromArr(["#f1c40f","#8e44ad", "#34495e"]);
 
           let dataSet = item.monate!.map((mo: any) =>mo.value)as number[];
           this.data.datasets.push({
             label: '#' + (index + 1) + ' ' + item.name,
             data: dataSet,
             fill: true,
-            backgroundColor: colors.backgroundColors[0],
-            hoverBackgroundColor: colors.hoverBackgroundColors[0],
-            borderColor: colors.borderColors[0],
+            backgroundColor: colors.backgroundColors[index],
+            hoverBackgroundColor: colors.hoverBackgroundColors[index],
+            borderColor: colors.borderColors[index],
             borderWidth: 3,
             cubicInterpolationMode: 'monotone',
           });
