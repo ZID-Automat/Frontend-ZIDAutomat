@@ -9,7 +9,6 @@ import { LoginDeactivateGuard } from './Guards/login-deactivate.guard';
 import { BorrowsComponent } from './Components/Pages/borrows/borrows.component';
 import { AutomatScannLogsComponent } from './Components/Pages/automat-scann-logs/automat-scann-logs.component';
 import { UsersPageComponent } from './Components/Pages/users-page/users-page.component';
-import { CategoriesComponent } from './Components/Pages/categories/categories.component';
 
 export enum AdminFrontendRoutes {
   Login = 'login',
@@ -19,10 +18,6 @@ export enum AdminFrontendRoutes {
   AutomatLog = 'AutomatLog',
   UserPage = 'UserPage',
   BorrowPage = 'BorrowPage',
-  CategoryPage = 'CategoryPage',
-
-  
-
 }
 const routes: Routes = [
   { path: '', redirectTo: AdminFrontendRoutes.Login, pathMatch: 'full' },
@@ -58,11 +53,6 @@ const routes: Routes = [
     path: AdminFrontendRoutes.BorrowPage,
     component: BorrowsComponent
   },
-  {
-    path: AdminFrontendRoutes.CategoryPage,
-    component: CategoriesComponent
-  }
-
 ];
 
 @NgModule({
