@@ -34,10 +34,9 @@ export class CLoggingService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   cLoggingLogEjectedItemPost$Response(params?: {
+    context?: HttpContext
     body?: LogQrCodeDto
-  },
-  context?: HttpContext
-
+  }
 ): Observable<StrictHttpResponse<void>> {
 
     const rb = new RequestBuilder(this.rootUrl, CLoggingService.CLoggingLogEjectedItemPostPath, 'post');
@@ -48,7 +47,7 @@ export class CLoggingService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: '*/*',
-      context: context
+      context: params?.context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -58,19 +57,18 @@ export class CLoggingService extends BaseService {
   }
 
   /**
-   * This method provides access only to the response body.
+   * This method provides access to only to the response body.
    * To access the full response (for headers, for example), `cLoggingLogEjectedItemPost$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   cLoggingLogEjectedItemPost(params?: {
+    context?: HttpContext
     body?: LogQrCodeDto
-  },
-  context?: HttpContext
-
+  }
 ): Observable<void> {
 
-    return this.cLoggingLogEjectedItemPost$Response(params,context).pipe(
+    return this.cLoggingLogEjectedItemPost$Response(params).pipe(
       map((r: StrictHttpResponse<void>) => r.body as void)
     );
   }
@@ -87,10 +85,9 @@ export class CLoggingService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   cLoggingLogInvaldScannedQrCodePost$Response(params?: {
+    context?: HttpContext
     body?: LogQrCodeDto
-  },
-  context?: HttpContext
-
+  }
 ): Observable<StrictHttpResponse<void>> {
 
     const rb = new RequestBuilder(this.rootUrl, CLoggingService.CLoggingLogInvaldScannedQrCodePostPath, 'post');
@@ -101,7 +98,7 @@ export class CLoggingService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: '*/*',
-      context: context
+      context: params?.context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -111,19 +108,18 @@ export class CLoggingService extends BaseService {
   }
 
   /**
-   * This method provides access only to the response body.
+   * This method provides access to only to the response body.
    * To access the full response (for headers, for example), `cLoggingLogInvaldScannedQrCodePost$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   cLoggingLogInvaldScannedQrCodePost(params?: {
+    context?: HttpContext
     body?: LogQrCodeDto
-  },
-  context?: HttpContext
-
+  }
 ): Observable<void> {
 
-    return this.cLoggingLogInvaldScannedQrCodePost$Response(params,context).pipe(
+    return this.cLoggingLogInvaldScannedQrCodePost$Response(params).pipe(
       map((r: StrictHttpResponse<void>) => r.body as void)
     );
   }
@@ -140,10 +136,9 @@ export class CLoggingService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   cLoggingLogScannedQrCodePost$Response(params?: {
+    context?: HttpContext
     body?: LogQrCodeDto
-  },
-  context?: HttpContext
-
+  }
 ): Observable<StrictHttpResponse<void>> {
 
     const rb = new RequestBuilder(this.rootUrl, CLoggingService.CLoggingLogScannedQrCodePostPath, 'post');
@@ -154,7 +149,7 @@ export class CLoggingService extends BaseService {
     return this.http.request(rb.build({
       responseType: 'text',
       accept: '*/*',
-      context: context
+      context: params?.context
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
@@ -164,19 +159,18 @@ export class CLoggingService extends BaseService {
   }
 
   /**
-   * This method provides access only to the response body.
+   * This method provides access to only to the response body.
    * To access the full response (for headers, for example), `cLoggingLogScannedQrCodePost$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   cLoggingLogScannedQrCodePost(params?: {
+    context?: HttpContext
     body?: LogQrCodeDto
-  },
-  context?: HttpContext
-
+  }
 ): Observable<void> {
 
-    return this.cLoggingLogScannedQrCodePost$Response(params,context).pipe(
+    return this.cLoggingLogScannedQrCodePost$Response(params).pipe(
       map((r: StrictHttpResponse<void>) => r.body as void)
     );
   }
