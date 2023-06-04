@@ -3,42 +3,49 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { ThemeDataService } from 'AutomatShared';
 import { UserFrontendRoutes } from '../../app-routing.module';
-import { take } from 'rxjs';
+import { take, takeWhile } from 'rxjs';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit, OnDestroy {
+  public UserFrontendRoutes: any = UserFrontendRoutes;
 
-  public UserFrontendRoutes:any = UserFrontendRoutes
+  count = 0;
+  alive: any = true;
 
-  count = 0
-  alive = true
+  showNav = false;
 
-  constructor(public themeDataService:ThemeDataService,private router:Router, private qrCodeDataService:QrCodeDataService) { }
+  constructor(
+    public themeDataService: ThemeDataService,
+    private router: Router,
+    private qrCodeDataService: QrCodeDataService
+  ) {}
   ngOnDestroy(): void {
-    this.alive = false
+    this.alive = false;
+  }
 
-    this.router.events.subscribe(event => {
-      console.log(event)
+  ngOnInit(): void {
+    this.qrCodeDataService
+      .activeQrCodesCount()
+      .pipe(take(1))
+      .subscribe((res) => (this.count = res));
+
+    this.router.events.pipe(takeWhile(() => this.alive)).subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        console.log('URL changed:', event.url);
+        this.showNav = event.url !== '/' + UserFrontendRoutes.Login;
       }
     });
   }
 
-  ngOnInit(): void {
-    this.qrCodeDataService.activeQrCodesCount().pipe(take(1)).subscribe(res => this.count = res)
+  route(route: UserFrontendRoutes) {
+    this.router.navigate([route]);
   }
 
-  route(route:UserFrontendRoutes){
-    this.router.navigate([route])
-  }
-
-  logout(){
-    localStorage.removeItem('jwt')
-    this.router.navigate([UserFrontendRoutes.Login])
+  logout() {
+    localStorage.removeItem('jwt');
+    this.router.navigate([UserFrontendRoutes.Login]);
   }
 }

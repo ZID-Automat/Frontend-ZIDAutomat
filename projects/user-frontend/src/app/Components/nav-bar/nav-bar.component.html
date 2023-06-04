@@ -5,7 +5,7 @@
             <a class="text-xl ">ZID Automat</a>
           </a>
 
-        <div class="flex ml-auto">
+        <div class="flex ml-auto" *ngIf="showNav">
             <shared-icon-button *ngIf="count != 0" Tooltip="Active QRCodes" matBadgeSize="medium"  matBadgePosition="before" [matBadge]="count" matBadgeColor="accent" (Clicked)="route(UserFrontendRoutes.ActiveQrCodes)" IconName="QrCode"></shared-icon-button>
             <shared-icon-button *ngIf="count==0" Tooltip="Active QRCodes" (Clicked)="route(UserFrontendRoutes.ActiveQrCodes)" IconName="QrCode"></shared-icon-button>
            
