@@ -964,6 +964,54 @@
         }
       }
     },
+    "/Authentification/AdminLogin": {
+      "post": {
+        "tags": [
+          "Authentification"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminLoginDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminLoginDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminLoginDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/CBorrow/ValidateQrCode": {
       "post": {
         "tags": [
@@ -1485,6 +1533,16 @@
   },
   "components": {
     "schemas": {
+      "AdminLoginDto": {
+        "type": "object",
+        "properties": {
+          "hall": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "AnalyticItemDto": {
         "type": "object",
         "properties": {

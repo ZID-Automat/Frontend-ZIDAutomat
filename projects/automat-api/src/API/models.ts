@@ -1,3 +1,4 @@
+export { AdminLoginDto } from './models/admin-login-dto';
 export { AnalyticItemDto } from './models/analytic-item-dto';
 export { AnalyticItemMonth } from './models/analytic-item-month';
 export { BlockiertStateDto } from './models/blockiert-state-dto';
