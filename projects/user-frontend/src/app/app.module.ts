@@ -26,6 +26,7 @@ import { QrcodeDialogComponent } from './Components/Dialogs/qrcode-dialog/qrcode
 import { QrcodeComponent } from './Components/Dialogs/qrcode-dialog/qrcode/qrcode.component';
 import { environment } from '../environments/environment';
 import { ItemCardDeckMobileComponent } from './Components/Pages/home-page/item-card-deck-mobile/item-card-deck-mobile.component';
+import { AgbsPageComponent } from './Components/Pages/agbs-page/agbs-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,7 @@ import { ItemCardDeckMobileComponent } from './Components/Pages/home-page/item-c
     AdmonitionPageComponent,
     HistoryPageComponent,
     ActiveQrCodePageComponent,
-    HelpPageComponent,
+    HelpPageComponent, 
     ItemDetailedDialogComponent,
     ItemDetailedComponent,
     ItemDetailedFormComponent,
@@ -46,7 +47,8 @@ import { ItemCardDeckMobileComponent } from './Components/Pages/home-page/item-c
     BorrowDisplayComponent,
     QrcodeDialogComponent,
     QrcodeComponent,
-    ItemCardDeckMobileComponent
+    ItemCardDeckMobileComponent,
+    AgbsPageComponent
   ],
   imports: [
     AutomatSharedModule,
