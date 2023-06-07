@@ -83,14 +83,14 @@
      inkscape:label="Hintergrund"
      sodipodi:insensitive="true"
      transform="translate(-17.064819,-76.941054)"><rect
-       style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.15468;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+       style="opacity:1;fill:white;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
        id="rect111"
        width="96.167389"
        height="124.58018"
        x="17.642159"
        y="77.518394"
        ry="2.0619228" /><rect
-       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.16665;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+       style="fill:white;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
        id="rect111-5"
        width="72.827065"
        height="96.53376"
@@ -104,7 +104,7 @@
      style="display:inline"
      transform="translate(-17.064819,-76.941054)"
      sodipodi:insensitive="true"><rect
-       style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.05523;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+       style="fill:white;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
        id="rect4749-5-5-5-1-8-1"
        width="10.446869"
        height="9.8959303"
@@ -114,8 +114,8 @@
        transform="matrix(0.99999909,-0.0013485,0.00153419,0.99999882,0,0)" /><path
        d="m 101.33287,100.6595 c 0,-0.41481 0.33654,-0.751354 0.75136,-0.751354 h 1.50269 c 0.4148,0 0.75135,0.336544 0.75135,0.751354 v 1.5027 c 0,0.4148 -0.33655,0.75135 -0.75135,0.75135 h -1.50269 c -0.41482,0 -0.75136,-0.33655 -0.75136,-0.75135 z m 1.0018,0.25045 v 1.0018 h 1.0018 v -1.0018 z m -1.0018,3.75674 c 0,-0.4148 0.33654,-0.75135 0.75136,-0.75135 h 1.50269 c 0.4148,0 0.75135,0.33655 0.75135,0.75135 v 1.50269 c 0,0.41482 -0.33655,0.75136 -0.75135,0.75136 h -1.50269 c -0.41482,0 -0.75136,-0.33654 -0.75136,-0.75136 z m 1.0018,0.25045 v 1.0018 h 1.0018 v -1.0018 z m 3.75674,-5.008994 h 1.5027 c 0.41481,0 0.75135,0.336544 0.75135,0.751354 v 1.5027 c 0,0.4148 -0.33654,0.75135 -0.75135,0.75135 h -1.5027 c -0.4148,0 -0.75134,-0.33655 -0.75134,-0.75135 v -1.5027 c 0,-0.41481 0.33654,-0.751354 0.75134,-0.751354 z m 1.25225,1.001804 h -1.0018 v 1.0018 h 1.0018 z m -2.00359,3.25585 c 0,-0.13776 0.1127,-0.25046 0.25045,-0.25046 h 1.0018 c 0.13775,0 0.25045,0.1127 0.25045,0.25046 0,0.13774 0.1127,0.25045 0.25045,0.25045 h 0.50089 c 0.13775,0 0.25046,-0.11271 0.25046,-0.25045 0,-0.13776 0.11271,-0.25046 0.25045,-0.25046 0.13774,0 0.25044,0.1127 0.25044,0.25046 v 1.50269 c 0,0.13775 -0.1127,0.25045 -0.25044,0.25045 h -1.0018 c -0.13775,0 -0.25045,-0.1127 -0.25045,-0.25045 0,-0.13774 -0.1127,-0.25044 -0.25045,-0.25044 -0.13776,0 -0.25046,0.1127 -0.25046,0.25044 v 1.00181 c 0,0.13774 -0.1127,0.25044 -0.25045,0.25044 h -0.50089 c -0.13775,0 -0.25045,-0.1127 -0.25045,-0.25044 z m 1.75315,2.75494 a 0.25045022,0.25045022 0 1 1 0,-0.50089 0.25045022,0.25045022 0 1 1 0,0.50089 z m 1.0018,0 a 0.25045022,0.25045022 0 1 1 0,-0.50089 0.25045022,0.25045022 0 1 1 0,0.50089 z"
        id="path7689"
-       style="stroke-width:0.0156531" /></g><path
-     style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.767;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+       style="stroke-width:4" /></g><path
+     style="fill:white;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
      id="rect111-5-1"
      width="5.4969344"
      height="5.9815125"
@@ -126,7 +126,7 @@
      inkscape:path-effect="#path-effect8561"
      d="m 7.5163713,125.18062 h 5.4969347 v 5.98151 H 7.5163713 Z"
      sodipodi:type="rect" /><path
-     style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.767;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+     style="fill:white;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
      id="rect111-5-1-1"
      width="5.4969344"
      height="5.9815125"
@@ -137,7 +137,7 @@
      inkscape:path-effect="#path-effect8561-8"
      d="m 82.791809,125.25455 h 5.496934 v 5.98151 h -5.496934 z"
      sodipodi:type="rect" /><rect
-     style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.14878;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+     style="fill:white;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
      id="rect111-2"
      width="73.120621"
      height="12.69657"
@@ -154,7 +154,7 @@
      style="display:inline;opacity:0.993917"
      inkscape:groupmode="layer"><g
        id="g1054"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect4749-5"
          width="8.0344067"
          height="9.3059702"
@@ -162,7 +162,7 @@
          y="90.473618"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image30"
@@ -174,7 +174,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1394"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect4749-5-5-5-1"
          width="8.0344067"
          height="9.3059702"
@@ -182,7 +182,7 @@
          y="90.258537"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image60"
@@ -194,7 +194,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1044"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect111-5-3-7"
          width="8.0344067"
          height="9.3059702"
@@ -202,7 +202,7 @@
          y="90.604736"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image01"
@@ -214,7 +214,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1059"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect4749-5-5"
          width="8.0344067"
          height="9.3059702"
@@ -222,7 +222,7 @@
          y="90.408051"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image40"
@@ -234,7 +234,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1389"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect4749-5-5-5-1-8"
          width="8.0344067"
          height="9.3059702"
@@ -242,7 +242,7 @@
          y="90.272163"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image70"
@@ -254,7 +254,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1049"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect4749"
          width="8.0344067"
          height="9.3059702"
@@ -262,7 +262,7 @@
          y="90.539169"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image20"
@@ -274,7 +274,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1399"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect4749-5-5-5"
          width="8.0344067"
          height="9.3059702"
@@ -282,7 +282,7 @@
          y="90.435257"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image50"
@@ -295,7 +295,7 @@
          width="7.6862092" /></g><g
        id="g1384"
        inkscape:label="g1384"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect111-5-3-5"
          width="8.0344067"
          height="9.3059702"
@@ -303,7 +303,7 @@
          y="108.80784"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image01"
@@ -316,7 +316,7 @@
          width="7.6862092" /></g><g
        id="g1369"
        inkscape:label="Box"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect4749-5-1"
          width="8.0344067"
          height="9.3059702"
@@ -324,7 +324,7 @@
          y="108.6273"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image31"
@@ -337,7 +337,7 @@
          width="7.6862092" /></g><g
        id="g307"
        inkscape:label="Box"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect111-5-3"
          height="9.3059702"
          x="25.873543"
@@ -345,7 +345,7 @@
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
          inkscape:label="Box"
-         width="8.0344067" /><image
+         width="8.0344067" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image01"
@@ -357,7 +357,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1354"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect4749-5-5-5-1-7"
          width="8.0344067"
          height="9.3059702"
@@ -365,7 +365,7 @@
          y="108.41222"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image61"
@@ -377,7 +377,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1379"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect111-5-3-7-6"
          width="8.0344067"
          height="9.3059702"
@@ -385,7 +385,7 @@
          y="108.75842"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image11"
@@ -397,7 +397,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1364"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect4749-5-5-3"
          width="8.0344067"
          height="9.3059702"
@@ -405,7 +405,7 @@
          y="108.56173"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image41"
@@ -417,7 +417,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1349"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect4749-5-5-5-1-8-2"
          width="8.0344067"
          height="9.3059702"
@@ -425,7 +425,7 @@
          y="108.42584"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image71"
@@ -437,7 +437,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1374"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect4749-4"
          width="8.0344067"
          height="9.3059702"
@@ -445,7 +445,7 @@
          y="108.69285"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image21"
@@ -459,7 +459,7 @@
        id="g1359"
        inkscape:groupmode="layer"
        sodipodi:insensitive="true"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect4749-5-5-5-5"
          width="8.0344067"
          height="9.3059702"
@@ -467,7 +467,7 @@
          y="108.58894"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image51"
@@ -479,7 +479,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1344"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7611"
          width="8.0344067"
          height="9.3059702"
@@ -487,7 +487,7 @@
          y="126.9606"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image02"
@@ -499,7 +499,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1329"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7617"
          width="8.0344067"
          height="9.3059702"
@@ -507,7 +507,7 @@
          y="126.78006"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image32"
@@ -519,7 +519,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1314"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7623"
          width="8.0344067"
          height="9.3059702"
@@ -527,7 +527,7 @@
          y="126.56498"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image62"
@@ -539,7 +539,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1339"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7613"
          width="8.0344067"
          height="9.3059702"
@@ -547,7 +547,7 @@
          y="126.91118"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image12"
@@ -559,7 +559,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1324"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7619"
          width="8.0344067"
          height="9.3059702"
@@ -567,7 +567,7 @@
          y="126.71449"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image42"
@@ -579,7 +579,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1309"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7625"
          width="8.0344067"
          height="9.3059702"
@@ -587,7 +587,7 @@
          y="126.57861"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image72"
@@ -599,7 +599,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1334"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7615"
          width="8.0344067"
          height="9.3059702"
@@ -607,7 +607,7 @@
          y="126.84561"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image22"
@@ -619,7 +619,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1319"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7621"
          width="8.0344067"
          height="9.3059702"
@@ -627,7 +627,7 @@
          y="126.7417"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image52"
@@ -639,7 +639,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1269"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7629"
          width="8.0344067"
          height="9.3059702"
@@ -647,7 +647,7 @@
          y="145.11366"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image03"
@@ -659,7 +659,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1284"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7635"
          width="8.0344067"
          height="9.3059702"
@@ -667,7 +667,7 @@
          y="144.93312"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image33"
@@ -679,7 +679,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1299"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7641"
          width="8.0344067"
          height="9.3059702"
@@ -687,7 +687,7 @@
          y="144.71805"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image63"
@@ -699,7 +699,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1274"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7631"
          width="8.0344067"
          height="9.3059702"
@@ -707,7 +707,7 @@
          y="145.06424"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image13"
@@ -719,7 +719,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1289"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7637"
          width="8.0344067"
          height="9.3059702"
@@ -727,7 +727,7 @@
          y="144.86755"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image43"
@@ -739,7 +739,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1304"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7643"
          width="8.0344067"
          height="9.3059702"
@@ -747,7 +747,7 @@
          y="144.73167"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image73"
@@ -759,7 +759,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1279"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7633"
          width="8.0344067"
          height="9.3059702"
@@ -767,7 +767,7 @@
          y="144.99867"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image23"
@@ -779,7 +779,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1294"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7639"
          width="8.0344067"
          height="9.3059702"
@@ -787,7 +787,7 @@
          y="144.89476"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image53"
@@ -799,7 +799,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1264"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7647"
          width="8.0344067"
          height="9.3059702"
@@ -807,7 +807,7 @@
          y="163.26704"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image04"
@@ -819,7 +819,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1249"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7653"
          width="8.0344067"
          height="9.3059702"
@@ -827,7 +827,7 @@
          y="163.0865"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image34"
@@ -839,7 +839,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1234"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7659"
          width="8.0344067"
          height="9.3059702"
@@ -847,7 +847,7 @@
          y="162.87141"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image64"
@@ -859,7 +859,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1259"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7649"
          width="8.0344067"
          height="9.3059702"
@@ -867,7 +867,7 @@
          y="163.21762"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image14"
@@ -879,7 +879,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1244"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7655"
          width="8.0344067"
          height="9.3059702"
@@ -887,7 +887,7 @@
          y="163.02094"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image44"
@@ -899,7 +899,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1229"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7661"
          width="8.0344067"
          height="9.3059702"
@@ -907,7 +907,7 @@
          y="162.88504"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image74"
@@ -919,7 +919,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1254"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7651"
          width="8.0344067"
          height="9.3059702"
@@ -927,7 +927,7 @@
          y="163.15205"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image24"
@@ -939,7 +939,7 @@
          height="5.4550028"
          width="7.6862092" /></g><g
        id="g1239"><rect
-         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.895748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.3;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill"
          id="rect7657"
          width="8.0344067"
          height="9.3059702"
@@ -947,7 +947,7 @@
          y="163.04814"
          ry="1.7741675"
          transform="matrix(0.99999862,-0.00164887,0.0012547,0.99999919,-17.064819,-76.941053)"
-         inkscape:label="Box" /><image
+         inkscape:label="Box" /><g
          sodipodi:absref="C:\Users\maxie\Documents\GitHub\Frontend-ZIDAutomat\projects\admin-frontend\src\assets\Test.png"
          xlink:href="Test.png"
          inkscape:label="image54"

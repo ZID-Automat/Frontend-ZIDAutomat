@@ -1,6 +1,10 @@
 <div class="bg-gray-100 hei w-auto rounded-sm shadow-lg p-1 imwi overflow-y-auto" id="ItemList">
     <div *ngFor="let a of data" (click)="openViewItemDialog(a)">
-        <img [draggable]="true" [id]="a.id" (dragstart)="dragi($event)" class="p-1 w-1/4 aspect-auto aspi rounded-lg float-left shadow-sm border-black" [src]="a.image" [alt]="a.name" />
+        <div [draggable]="true" [id]="a.id" (dragstart)="dragi($event)" class="p-2 w-1/4 h-48 aspect-auto rounded-lg float-left shadow-sm border-black overflow-hidden flex "  >
+            <div class="w-full h-full bg-white overflow-hidden flex">
+                <img [src]="a.image" class="overflow-auto w-auto block m-auto" [alt]="a.name" />
+            </div>
+        </div>
     </div>
     <div (click)="openAddItemDialog()" class="p-1 hover:scale-100 scale-95 ease-in duration-200 w-1/4 aspi justify-center text-gray-500 rounded-lg float-left shadow-2xl border-gray-200 border-solid border-2 flex items-center">
         <lib-icon IconName="Plus" class="text-4xl"></lib-icon>

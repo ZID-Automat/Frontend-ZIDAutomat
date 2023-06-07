@@ -145,6 +145,16 @@ export class AutomatViewComponent implements OnInit, OnDestroy, AfterViewInit {
     return rowChar + colChar;
   }
 
+  public TooltipText(location: string) {
+    const locationVal = this.BoxNumberToLocation(location);
+    const item = this.data.find((e: any) => e.locationImAutomat == locationVal); 
+    let text= locationVal
+    if(item){
+      text += "   |   " + item.name;
+    }
+    return text;
+  }
+
   public LocationToBoxNumber(location: string) {
     if (!location) return null;
     const row = location.charCodeAt(0) - 65;

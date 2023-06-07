@@ -24,34 +24,37 @@ const routes: Routes = [
   {
     path: AdminFrontendRoutes.Login,
     component: LoginPageComponent,
-    // canActivate: [LoginDeactivateGuard],
+    canActivate: [LoginDeactivateGuard],
   },
   {
     path: AdminFrontendRoutes.Status,
     component: StatusPageComponent,
-    // canActivate: [LoginActivateGuard],
+    canActivate: [LoginActivateGuard],
   },
   {
     path: AdminFrontendRoutes.Item,
     component: ItemPageComponent,
-    // canActivate: [LoginActivateGuard],
+    canActivate: [LoginActivateGuard],
   },
   {
     path: AdminFrontendRoutes.Log,
     component: LogPageComponent,
-    // canActivate: [LoginActivateGuard],
+    canActivate: [LoginActivateGuard],
   },
   {
     path: AdminFrontendRoutes.AutomatLog,
     component: AutomatScannLogsComponent,
+    canActivate: [LoginActivateGuard],
   },
   {
     path: AdminFrontendRoutes.UserPage,
     component: UsersPageComponent,
+    canActivate: [LoginActivateGuard],
   },
   {
     path: AdminFrontendRoutes.BorrowPage,
-    component: BorrowsComponent
+    component: BorrowsComponent,
+    canActivate: [LoginActivateGuard]
   },
 ];
 

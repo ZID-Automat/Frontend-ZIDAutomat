@@ -35,7 +35,7 @@ export class NavBarComponent implements OnInit, OnDestroy {
 
     this.router.events.pipe(takeWhile(() => this.alive)).subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.showNav = event.url !== '/' + UserFrontendRoutes.Login;
+        this.showNav = event.url.split("?")[0] !== '/' + UserFrontendRoutes.Login;
       }
     });
   }

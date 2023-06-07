@@ -33,11 +33,6 @@ export class LoginPageComponent implements OnInit {
   public login() {
     console.log('Login');
 
-    if(this.loginForm.get('hall')?.value == 'admin'){
-      this.router.navigate([AdminFrontendRoutes.Item]);
-
-    }
-    return;
     this.authentificationService
       .authentificationAdminLoginPost$Json({
         body: { hall: this.loginForm.get('hall')?.value },

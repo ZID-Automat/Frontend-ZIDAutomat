@@ -14,7 +14,7 @@ import { environment } from 'projects/user-frontend/src/environments/environment
   styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
-  AllItems: ItemDisplayDto[] = [];
+  AllItems: ItemDisplayDto[] = null!;
   AllPrevItems: ItemDisplayDto[] = [];
 
   alive = true;
