@@ -1,9 +1,9 @@
 import { BehaviorSubject, catchError } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthentificationService } from 'AutomatApi';
 import { Router } from '@angular/router';
 import { AdminFrontendRoutes } from 'projects/admin-frontend/src/app/app-routing.module';
+import { AuthentificationService } from 'AutomatApi';
 
 @Component({
   selector: 'admin-login-page',

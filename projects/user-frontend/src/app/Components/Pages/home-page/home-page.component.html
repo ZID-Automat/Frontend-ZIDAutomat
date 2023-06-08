@@ -33,4 +33,20 @@
       ></user-item-card-deck-mobile>
     </div>
   </div>
+
+  <div>
+    <h2 class="font-light text-2xl ml-36">beliebte Artikel</h2>
+    <div *ngIf="!mobile">
+      <user-item-card-deck
+        [ChangeSubStatei]="changeSubState"
+        [Items]="PopItems"
+      ></user-item-card-deck>
+    </div>
+    <div *ngIf="mobile">
+      <user-item-card-deck-mobile
+        [ChangeSubStatei]="changeSubState"
+        [Items]="PopItems"
+      ></user-item-card-deck-mobile>
+    </div>
+  </div>
 </div>

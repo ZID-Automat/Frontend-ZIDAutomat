@@ -5,7 +5,6 @@ export { AItemService } from './services/a-item.service';
 export { AUserInforService } from './services/a-user-infor.service';
 export { AuthentificationService } from './services/authentification.service';
 export { CBorrowService } from './services/c-borrow.service';
-export { CLoggingService } from './services/c-logging.service';
 export { DebugService } from './services/debug.service';
 export { UBorrowService } from './services/u-borrow.service';
 export { UItemService } from './services/u-item.service';

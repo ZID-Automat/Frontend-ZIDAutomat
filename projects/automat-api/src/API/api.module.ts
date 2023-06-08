@@ -11,7 +11,6 @@ import { AItemService } from './services/a-item.service';
 import { AUserInforService } from './services/a-user-infor.service';
 import { AuthentificationService } from './services/authentification.service';
 import { CBorrowService } from './services/c-borrow.service';
-import { CLoggingService } from './services/c-logging.service';
 import { DebugService } from './services/debug.service';
 import { UBorrowService } from './services/u-borrow.service';
 import { UItemService } from './services/u-item.service';
@@ -32,7 +31,6 @@ import { UQrCodeService } from './services/u-qr-code.service';
     AUserInforService,
     AuthentificationService,
     CBorrowService,
-    CLoggingService,
     DebugService,
     UBorrowService,
     UItemService,

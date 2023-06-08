@@ -16,6 +16,8 @@ import { environment } from 'projects/user-frontend/src/environments/environment
 export class HomePageComponent implements OnInit {
   AllItems: ItemDisplayDto[] = null!;
   AllPrevItems: ItemDisplayDto[] = [];
+  PopItems: ItemDisplayDto[] = null!;
+
 
   alive = true;
 
@@ -44,6 +46,14 @@ export class HomePageComponent implements OnInit {
       .pipe(take(1))
       .subscribe((res) => {
         this.AllPrevItems = res;
+      });
+
+
+      this.itemDataService
+      .PropItems()
+      .pipe(take(1))
+      .subscribe((res) => {
+        this.PopItems = res;
       });
 
 
