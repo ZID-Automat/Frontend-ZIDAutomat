@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'user-agbs-page',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgbsPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public route: ActivatedRoute) { }
+
 
   ngOnInit(): void {
+   
   }
 
 }

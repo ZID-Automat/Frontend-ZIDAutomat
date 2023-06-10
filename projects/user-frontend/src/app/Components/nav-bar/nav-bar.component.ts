@@ -1,6 +1,6 @@
 import { QrCodeDataService } from './../../Services/DataServices/qrCodeData.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ThemeDataService } from 'AutomatShared';
 import { UserFrontendRoutes } from '../../app-routing.module';
 import { take, takeWhile } from 'rxjs';
@@ -21,13 +21,21 @@ export class NavBarComponent implements OnInit, OnDestroy {
   constructor(
     public themeDataService: ThemeDataService,
     private router: Router,
-    private qrCodeDataService: QrCodeDataService
+    private qrCodeDataService: QrCodeDataService,
+    private routeii: ActivatedRoute
   ) {}
   ngOnDestroy(): void {
     this.alive = false;
   }
+  dontshownavbar = false
 
   ngOnInit(): void {
+    this.routeii.queryParams.subscribe((params) => {
+      this.dontshownavbar = !params['dontshownavbar'];
+      console.log(this.dontshownavbar)
+    });
+
+
     this.qrCodeDataService
       .activeQrCodesCount()
       .pipe(take(1))

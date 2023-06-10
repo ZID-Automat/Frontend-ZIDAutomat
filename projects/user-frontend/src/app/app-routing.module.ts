@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: UserFrontendRoutes.ActiveQrCodes, component: ActiveQrCodePageComponent, canActivate:[LoginActivateGuard] },
   { path: UserFrontendRoutes.History, component: HistoryPageComponent, canActivate:[LoginActivateGuard] },
   { path: UserFrontendRoutes.Help, component: HelpPageComponent, canActivate:[LoginActivateGuard] },
-  { path: UserFrontendRoutes.Agbs, component: AgbsPageComponent, canActivate:[LoginActivateGuard] },
+  { path: UserFrontendRoutes.Agbs, component: AgbsPageComponent},
 ];
 
 
