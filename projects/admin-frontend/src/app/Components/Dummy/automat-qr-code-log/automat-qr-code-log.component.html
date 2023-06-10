@@ -1,0 +1,35 @@
+<ngx-datatable
+  class="material"
+  [rows]="AdmiLog"
+  [columnMode]="ColumnMode.force"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  rowHeight="auto"
+>
+
+<ngx-datatable-column name="Id"></ngx-datatable-column>
+<ngx-datatable-column name="Scanned"></ngx-datatable-column>
+<ngx-datatable-column name="DateTime">
+    <ng-template let-value="value" ngx-datatable-cell-template>
+        {{ value | date: "dd/MM/yyyy HH:mm:ss" }}
+    </ng-template>
+</ngx-datatable-column>
+<ngx-datatable-column name="BorrowId">
+    <ng-template let-value="value" class = "w-full" ngx-datatable-cell-template>
+        <button mat-raised-button class ="w-full" [disabled]="!value" (click)="showBorrow(value)" color="primary"  >
+           <div class="my-2 font-light text-lg">
+            <div *ngIf="value">
+                Show Borrow({{value}})
+            </div>
+            <div *ngIf="!value">
+                Kein Borrow Datensatz vorhanden
+            </div>
+           </div>
+        </button>
+
+    </ng-template>
+</ngx-datatable-column>
+
+</ngx-datatable>
+
+  

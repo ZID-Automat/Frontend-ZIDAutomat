@@ -45,7 +45,7 @@
           required
           *ngIf="cat"
           #Selectiii
-          [value]="defVal??0"
+          [value]="$any(defVal)??0"
         >
           <mat-option *ngFor="let cate of cat" [value]="cate.id">{{
             cate.name

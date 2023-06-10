@@ -17,6 +17,7 @@ export { ItemDetailedDto } from './models/item-detailed-dto';
 export { ItemDisplayDto } from './models/item-display-dto';
 export { ItemGetAllDto } from './models/item-get-all-dto';
 export { ItemLocationDto } from './models/item-location-dto';
+export { LogQrCodeAdminDto } from './models/log-qr-code-admin-dto';
 export { QrCodeDto } from './models/qr-code-dto';
 export { TaeglicheUserDto } from './models/taegliche-user-dto';
 export { UserAdmiBorrowDto } from './models/user-admi-borrow-dto';

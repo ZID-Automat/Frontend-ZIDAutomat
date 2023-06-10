@@ -530,6 +530,120 @@
         }
       }
     },
+    "/AdminLogShow/InvalidItems": {
+      "get": {
+        "tags": [
+          "AdminLogShow"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AdminLogShow/ScannedItems": {
+      "get": {
+        "tags": [
+          "AdminLogShow"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AdminLogShow/EjectedItems": {
+      "get": {
+        "tags": [
+          "AdminLogShow"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/AItem/GetAll": {
       "get": {
         "tags": [
@@ -1902,6 +2016,29 @@
           "id": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LogQrCodeAdminDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "scanned": {
+            "type": "string",
+            "nullable": true
+          },
+          "borrowId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "dateTime": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": false

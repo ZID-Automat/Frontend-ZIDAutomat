@@ -27,11 +27,6 @@ const routes: Routes = [
     canActivate: [LoginDeactivateGuard],
   },
   {
-    path: AdminFrontendRoutes.Status,
-    component: StatusPageComponent,
-    canActivate: [LoginActivateGuard],
-  },
-  {
     path: AdminFrontendRoutes.Item,
     component: ItemPageComponent,
     canActivate: [LoginActivateGuard],
