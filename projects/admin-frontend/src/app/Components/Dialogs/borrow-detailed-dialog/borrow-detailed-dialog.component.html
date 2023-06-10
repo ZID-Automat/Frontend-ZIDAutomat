@@ -39,6 +39,12 @@
       rowHeight="auto"
       [limit]="8"
     >
+    <ngx-datatable-column name="date"></ngx-datatable-column>
+    <ngx-datatable-column name="value">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        {{ value | date: "dd/MM/yyyy HH:mm" }}
+      </ng-template>
+    </ngx-datatable-column>
     </ngx-datatable>
   </div>
 

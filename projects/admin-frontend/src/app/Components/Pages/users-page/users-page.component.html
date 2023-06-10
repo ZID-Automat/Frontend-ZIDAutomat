@@ -12,5 +12,16 @@
       [reorderable]="reorderable"
       (activate)="onRowClicki($event)"
     >
+    <ngx-datatable-column name="Id"></ngx-datatable-column>
+    <ngx-datatable-column name="Name"></ngx-datatable-column>
+    <ngx-datatable-column name="Vorname"></ngx-datatable-column>
+    <ngx-datatable-column name="Nachname"></ngx-datatable-column>
+    <ngx-datatable-column name="Joined">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        {{ value | date: "dd/MM/yyyy HH:mm" }}
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="BorrowCount"></ngx-datatable-column>
+    <ngx-datatable-column name="Blockiert"></ngx-datatable-column>
     </ngx-datatable>
   </div>

@@ -36,5 +36,11 @@
   [limit]="8"
   (activate)="onRowClick($event)"
 >
-  
+  <ngx-datatable-column name="Id"></ngx-datatable-column>
+  <ngx-datatable-column name="Itemname"></ngx-datatable-column>
+  <ngx-datatable-column name="BorrowDate">
+    <ng-template let-value="value" ngx-datatable-cell-template>
+      {{ value | date: "dd/MM/yyyy HH:mm:ss" }}
+    </ng-template>
+  </ngx-datatable-column>
 </ngx-datatable>
