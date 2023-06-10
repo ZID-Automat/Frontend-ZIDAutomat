@@ -18,7 +18,6 @@ export class BorrowsTableComponent implements OnInit {
   private safe:any
 
   public ColumnMode = ColumnMode;
-
   columns = [{ name: 'Id' }, { name: 'Itemname' }, { name: 'BorrowDate' }];
 
   constructor(private dialog: MatDialog) {}

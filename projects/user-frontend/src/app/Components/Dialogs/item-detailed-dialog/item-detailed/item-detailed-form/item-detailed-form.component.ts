@@ -39,13 +39,15 @@ export class ItemDetailedFormComponent implements OnInit, AfterViewInit {
       this.SubmitButton.startFetch();
       const BorrowData: BorrowDataDto = this.BorrowForm.getRawValue();
       BorrowData.itemId = this.ItemDetailed.id;
+      const date = new Date();
+      date.setHours(date.getHours()+1)
       this.BorrowService
         .Borrow(BorrowData)
         .pipe(take(1))
         .subscribe((res) => {
           this.SubmitButton.finsihFetch();
           setTimeout(()=>{
-            this.openQRCodeDialog(res.qrCode??"")
+            this.openQRCodeDialog(res.qrCode??"",date)
             this.BorrowForm.reset();
           },1100)
         },
@@ -56,8 +58,8 @@ export class ItemDetailedFormComponent implements OnInit, AfterViewInit {
     }
   }
 
-  private openQRCodeDialog(qrCode:string){
-    QrcodeDialogComponent.openDialog({qrcode:qrCode},this.matDialog)
+  private openQRCodeDialog(qrCode:string, date:Date){
+    QrcodeDialogComponent.openDialog({qrcode:qrCode, duetime:date },this.matDialog)
   }
 
   ngOnInit(): void {
