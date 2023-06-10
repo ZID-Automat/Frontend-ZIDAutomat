@@ -1,8 +1,8 @@
 <div class="bg-gray-100 hei w-auto rounded-sm shadow-lg p-1 imwi overflow-y-auto" id="ItemList">
     <div *ngFor="let a of data" (click)="openViewItemDialog(a)">
         <div [draggable]="true" [id]="a.id" (dragstart)="dragi($event)" class="p-2 w-1/4 h-48 aspect-auto rounded-lg float-left shadow-sm border-black overflow-hidden flex "  >
-            <div class="w-full h-full bg-white overflow-hidden flex">
-                <img [src]="a.image" class="overflow-auto w-auto block m-auto" [alt]="a.name" />
+            <div [id]="a.id" class="w-full h-full bg-white overflow-hidden flex">
+                <img [src]="a.image"  [id]="a.id" class="overflow-auto w-auto block m-auto" [alt]="a.name" />
             </div>
         </div>
     </div>

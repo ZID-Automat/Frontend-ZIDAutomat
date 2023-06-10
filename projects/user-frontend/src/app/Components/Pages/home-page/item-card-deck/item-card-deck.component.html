@@ -2,7 +2,7 @@
 <div class="cont"  (window:resize)="calcStuff(true)">
         <lib-icon (click)="click(-1)" matRipple [style.color]="ThemeDataService.primaryColor" [matRippleUnbounded]="true" [matRippleRadius]="30" [matRippleCentered]="true" class="text-6xl text-gray-600" IconName="ArrowLeft"></lib-icon>
         <div *ngIf="true" [style.width.px]="contWidth"  class="flex ele">
-            <div class="flex ele" *ngIf="Items">
+            <div class="flex ele" *ngIf="Items && Items.length != 0">
                 <div *ngFor="let item of Items; index as i;">
                     <user-item-card #ItemCards (click)="clickItemCard(i)" [Item]="item" class="p-10"></user-item-card>
                     <div *ngIf="!((i+1) % PageSize)" class="m-96"></div>
@@ -11,6 +11,7 @@
             </div>
 
            <mat-spinner *ngIf="!Items" class="block m-auto"></mat-spinner>
+           <p *ngIf="Items?.length==0" class="text-3xl  w-full m-auto text-center font-extralight"> Keine Artikel verfügbar</p>
 
         </div>  
 

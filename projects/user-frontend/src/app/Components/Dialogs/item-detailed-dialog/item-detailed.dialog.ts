@@ -19,7 +19,8 @@ export class ItemDetailedDialogComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: DetItemDialogData,
     private itemDataService: ItemDataService,
-    public ThemeDataService: ThemeDataService
+    public ThemeDataService: ThemeDataService,
+    private MatDialogRef : MatDialogRef<ItemDetailedDialogComponent>
   ) {}
 
   ngOnInit(): void {
@@ -67,6 +68,10 @@ export class ItemDetailedDialogComponent implements OnInit {
   bActive(forward: boolean) :boolean{
     let dir = forward ? 1 : -1;
     return !(this.data.index +dir > (this.data.allIds.length-1) || this.data.index +dir < 0)
+  }
+
+  close(){
+    this.MatDialogRef.close();
   }
 }
 
