@@ -53,6 +53,9 @@ export class ItemDetailedFormComponent implements OnInit, AfterViewInit {
         },
         (res) =>{
           this.errormessage = res.error.message;
+          if(res.error.statusCode == 499){
+            this.ItemDetailed.available = false;  
+          }
           this.SubmitButton.finsihFetch();
         });
     }
