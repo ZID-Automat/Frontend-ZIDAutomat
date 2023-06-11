@@ -25,14 +25,14 @@
 </div>
 
 <ngx-datatable
-  *ngIf="BorrowRows"
   class="material"
-  [rows]="BorrowRows"
+  [rows]="BorrowRows??[]"
   [columns]="columns"
   [columnMode]="ColumnMode.force"
   [headerHeight]="50"
   [footerHeight]="50"
   rowHeight="auto"
+  [loadingIndicator]="!BorrowRows"
   [rowClass]="getRowClass"
   [limit]="8"
   (activate)="onRowClick($event)"

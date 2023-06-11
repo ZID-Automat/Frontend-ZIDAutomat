@@ -20,7 +20,6 @@ export class UsersPageComponent implements OnInit {
   ColumnMode = ColumnMode
 
   constructor(private AUserInforService:AUserInforService, private MatDialog:MatDialog) {
-    this.loadingIndicator = false;
 
   }
   ngOnInit(): void {
@@ -30,6 +29,7 @@ export class UsersPageComponent implements OnInit {
   load(){
     this.AUserInforService.aUserInforGetAllUsersGet$Json().pipe(take(1)).subscribe((data:any) => {
       this.rows = data;
+      this.loadingIndicator = false;
     })
   }
 

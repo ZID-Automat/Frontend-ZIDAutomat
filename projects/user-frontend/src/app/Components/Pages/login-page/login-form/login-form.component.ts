@@ -90,7 +90,8 @@ export class LoginFormComponent implements OnInit,OnDestroy {
         .subscribe((res) => {
           this.LoginEvent.emit(res);
         },(err)=>{
-          this.LoginError.next(LoginErrors.PassUserWrong);
+          console.log(err )
+          this.LoginError.next(err?.error?.message??"internal server error:(");
           this.buttondis = false;
         });
         

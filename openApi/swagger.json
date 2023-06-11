@@ -1764,6 +1764,10 @@
           "guid": {
             "type": "string",
             "format": "uuid"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
