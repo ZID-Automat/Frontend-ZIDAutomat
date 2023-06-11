@@ -1,27 +1,45 @@
-<div class="w-10/12 m-auto mt-7 ">
+<div class="w-10/12 m-auto mt-7">
   <p class="font-extralight text-3xl text-center mb-4">User Infos</p>
-    <ngx-datatable
-      class="material mt-10 mb-10"
-      [rows]="rows"
-      [loadingIndicator]="loadingIndicator"
-      [columns]="columns"
-      [columnMode]="ColumnMode.force"
-      [headerHeight]="50"
-      [footerHeight]="50"
-      rowHeight="auto"
-      [reorderable]="reorderable"
-      (activate)="onRowClicki($event)"
-    >
+
+
+  <div class="flex w-full m-auto mt-10 ">
+    <mat-form-field class="mt-3 w-3/12 mx-2">
+      <mat-label class="font-thin text-black">Id</mat-label>
+      <input matInput #Idiii2 type="number" class="font-thin" placeholder="0" />
+    </mat-form-field>
+
+    <mat-form-field class="mt-3 w-3/12 mx-2">
+      <mat-label class="font-thin text-black">Name</mat-label>
+      <input matInput #Nameiii2 class="font-thin" placeholder="" />
+    </mat-form-field>
+    <div class="mt-3 w-2/12 py-3 mx-2 block ml-auto float-right">
+      <button class="w-full" (click)="filtering()" mat-button color="primary">
+        Filter
+      </button>
+    </div>
+  </div>
+  <ngx-datatable
+    class="material mb-10"
+    [rows]="rows"
+    [loadingIndicator]="loadingIndicator"
+    [columns]="columns"
+    [columnMode]="ColumnMode.force"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    rowHeight="auto"
+    [reorderable]="reorderable"
+    (activate)="onRowClicki($event)"
+  >
     <ngx-datatable-column name="Id"></ngx-datatable-column>
     <ngx-datatable-column name="Name"></ngx-datatable-column>
     <ngx-datatable-column name="Vorname"></ngx-datatable-column>
     <ngx-datatable-column name="Nachname"></ngx-datatable-column>
     <ngx-datatable-column name="Joined">
       <ng-template let-value="value" ngx-datatable-cell-template>
-        {{ value | date: "dd/MM/yyyy HH:mm" }}
+        {{ value | date : "dd/MM/yyyy HH:mm" }}
       </ng-template>
     </ngx-datatable-column>
     <ngx-datatable-column name="BorrowCount"></ngx-datatable-column>
     <ngx-datatable-column name="Blockiert"></ngx-datatable-column>
-    </ngx-datatable>
-  </div>
+  </ngx-datatable>
+</div>

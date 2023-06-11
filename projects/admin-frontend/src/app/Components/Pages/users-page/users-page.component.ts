@@ -1,6 +1,6 @@
 import { MatDialog } from '@angular/material/dialog';
 import { UserDetailedDialogComponent } from './../../Dialogs/user-detailed-dialog/user-detailed-dialog.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ColumnMode } from '@swimlane/ngx-datatable';
 import {AUserInforService} from 'AutomatApi';
 import { take } from 'rxjs';
@@ -40,5 +40,32 @@ export class UsersPageComponent implements OnInit {
         this.load();
       });
     }
+  }
+
+  private safe:any
+  
+  @ViewChild('Idiii2') id: any;
+  @ViewChild('Nameiii2') name: any;
+
+  public filtering(){
+    const id = this.id.nativeElement.value;
+    const name = this.name.nativeElement.value;
+
+    if(!this.safe){
+      this.safe = this.rows;
+    } 
+    this.rows = this.safe.filter((x:any) => {
+      if(id && name){
+        return x.id == id && x.name.toLowerCase().includes(name.toLowerCase());
+      }
+      else if(id){
+        return x.id == id;
+      }
+      else if(name){
+        return x.name.toLowerCase().includes(name.toLowerCase());
+      }else{
+        return true;
+      }
+    })
   }
 }
