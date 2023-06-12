@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  backendUrl: "https://localhost:7141",
+  backendUrl: "https://localhost:5002",
   stockimagekey:""//https://www.pexels.com/
 };
 
