@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { faChevronLeft,faChevronRight, faXmark, IconDefinition,faQrcode, faHistory, faBarsStaggered, faQuestion, faEye, faEyeSlash, faCircleQuestion, faQuestionCircle, faCirclePlus, faPlusCircle, faHouse, faBook } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft,faChevronRight, faXmark, IconDefinition,faQrcode, faTriangleExclamation, faHistory, faBarsStaggered, faQuestion, faEye, faEyeSlash, faCircleQuestion, faQuestionCircle, faCirclePlus, faPlusCircle, faHouse } from '@fortawesome/free-solid-svg-icons';
 import { ReplaySubject, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,7 @@ export class IconDataService {
     this.Icons.set("ArrowRight",faChevronRight)
     this.Icons.set("XMark",faXmark)
     this.Icons.set("QrCode",faQrcode)
+    this.Icons.set("TriangleExclamation",faTriangleExclamation)
     this.Icons.set("History",faBarsStaggered)
     this.Icons.set("Help",faQuestion)
     this.Icons.set("Eye",faEye)
@@ -20,7 +21,7 @@ export class IconDataService {
     this.Icons.set("Questioncircle",faQuestionCircle)
     this.Icons.set("Plus",faPlusCircle)
     this.Icons.set("home", faHouse)
-    this.Icons.set("Book",faBook)
+    
   }
 
   getIcon(Icon:string):IconDefinition {

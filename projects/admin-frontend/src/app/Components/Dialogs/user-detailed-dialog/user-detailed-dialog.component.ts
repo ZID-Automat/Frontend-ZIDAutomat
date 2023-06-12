@@ -30,10 +30,10 @@ export class UserDetailedDialogComponent implements OnInit {
     });
   }
 
-  public static openDialog(dialog: MatDialog, id: number, showToUser:boolean = true) :MatDialogRef<UserDetailedDialogComponent>{
+  public static openDialog(dialog: MatDialog, id: number) :MatDialogRef<UserDetailedDialogComponent>{
     return dialog.open(UserDetailedDialogComponent, {
-      data: { id: id,showToUser:showToUser },
-      width: '70%',
+      data: { id: id },
+      width: '80%',
       height: '85vh',
     })
   }

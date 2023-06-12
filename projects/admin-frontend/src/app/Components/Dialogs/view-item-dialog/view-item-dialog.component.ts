@@ -19,7 +19,6 @@ import {
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
 import { take } from 'rxjs';
-import { ManageCatsComponent } from '../manage-cats/manage-cats.component';
 
 @Component({
   selector: 'admin-view-item-dialog',
@@ -52,20 +51,6 @@ export class ViewItemDialogComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.isAdd = this.DialogData.isAdd;
-    this.loadcats();
-
-    if (!this.isAdd) {
-      this.AItemService.aItemGetItemInstancesGet$Json({
-        id: this.DialogData.id!,
-      })
-        .pipe(take(1))
-        .subscribe((res: number) => {
-          this.iteminstanceCount = res;
-        });
-    }
-  }
-
-  loadcats() {
     this.AConfCategoriesService.aConfCategoriesGetConfCategoriesGet$Json()
       .pipe(take(1))
       .subscribe((data) => {
@@ -93,7 +78,7 @@ export class ViewItemDialogComponent implements OnInit, AfterViewInit {
     dialog: MatDialog,
     id: number,
     isAdd: boolean = false
-  ): MatDialogRef<ViewItemDialogComponent> {
+  ) :MatDialogRef<ViewItemDialogComponent>{
     return dialog.open(ViewItemDialogComponent, {
       data: { id: id, isAdd: isAdd },
       width: isAdd ? '30%' : '70%',
@@ -115,34 +100,22 @@ export class ViewItemDialogComponent implements OnInit, AfterViewInit {
   public addItem() {
     const data = this.GetData();
 
-    if (
-      data.categorieId == 0 ||
-      data.description == '' ||
-      data.name == '' ||
-      data.price == 0 ||
-      data.subname == '' ||
-      data.image == ''
-    ) {
-      alert('Bitte füllen Sie alle Felder aus!');
+    if(data.categorieId == 0 || data.description == "" || data.name == "" || data.price == 0 || data.subname == "" || data.image == ""){
+      alert("Bitte füllen Sie alle Felder aus!")
       return;
     }
 
     this.AItemService.aItemItemDetailedAdminAddPost({
       body: data,
     })
-      .pipe(take(1))
+    .pipe(take(1))
       .subscribe((res) => {
         this.dialogRef.close();
       });
   }
 
-  public ManageCats() {
-    ManageCatsComponent.openDialog(this.dialog, this.Name.nativeElement.value)
-      .afterClosed()
-      .subscribe((res) => {
-        this.loadcats();
-      });
-  }
+
+
 
   public onFileSelected(event: any) {
     this.readFileAsDataURL(event.target.files[0]);
@@ -173,30 +146,12 @@ export class ViewItemDialogComponent implements OnInit, AfterViewInit {
   }
 
   public useStockImage() {
-    SelectStockImageDialogComponent.openDialog(
-      this.dialog,
-      this.Name.nativeElement.value
-    )
+    SelectStockImageDialogComponent.openDialog(this.dialog, this.Name.nativeElement.value)
       .afterClosed()
       .subscribe((data) => {
         if (data) {
           this.currentImage = data;
         }
-      });
-  }
-
-  iteminstanceCount = 0;
-
-  iteminstaddde = true;
-  public IncII() {
-    this.iteminstaddde = false;
-    this.AItemService.aItemAddItemInstacePost({
-      id: this.DialogData.id!,
-    })
-      .pipe(take(1))
-      .subscribe((res) => {
-        this.iteminstaddde = true;
-        this.iteminstanceCount++;
       });
   }
 }

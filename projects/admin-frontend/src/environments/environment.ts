@@ -4,8 +4,12 @@
 
 export const environment = {
   production: false,
+<<<<<<< HEAD
   backendUrl: "https://localhost:5002",
   stockimagekey:""//https://www.pexels.com/
+=======
+  backendUrl: "https://localhost:7141",
+>>>>>>> 698f4a0b8c89b571c590602691ae70e6fcf3a55a
 };
 
 /*

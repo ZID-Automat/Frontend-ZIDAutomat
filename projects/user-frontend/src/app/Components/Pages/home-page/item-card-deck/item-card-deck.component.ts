@@ -60,7 +60,7 @@ export class ItemCardDeckComponent implements OnInit {
     if(this.PagePos < 0 || this.PagePos > Math.ceil(this.ItemCards.length/this.PageSize)){
       this.PagePos -= dir;
     }
-      this.scroll()
+    this.scroll()
   }
 
   clickItemCard(i:number){
