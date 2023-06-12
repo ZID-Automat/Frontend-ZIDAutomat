@@ -1,0 +1,102 @@
+<div class="overflow-hidden overflow-y-hidden">
+  <p class="text-2xl font-light text-center m-10">Categories</p>
+  <div class="mt-5">
+    <ngx-datatable
+      class="material"
+      [rows]="rows"
+      [loadingIndicator]="false"
+      [reorderable]="false"
+      [swapColumns]="false"
+      [columns]="columns"
+      [columnMode]="ColumnMode.force"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      rowHeight="auto"
+      (activate)="onRowClicki($event)"
+      [limit]="5"
+      id="catsIDii"
+    >
+      <ngx-datatable-column name="Id">
+        <ng-template
+          ngx-datatable-cell-template
+          let-rowIndex="rowIndex"
+          let-value="value"
+          let-row="row"
+        >
+          <span>
+            {{ value }}
+          </span>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="Name">
+        <ng-template
+          ngx-datatable-cell-template
+          let-rowIndex="rowIndex"
+          let-value="value"
+          let-row="row"
+        >
+          <span
+            title="Double click to edit"
+            (dblclick)="editing[rowIndex + '-name'] = true"
+            *ngIf="!editing[rowIndex + '-name']"
+          >
+            {{ value }}
+          </span>
+          <input
+            autofocus
+            (blur)="updateValue($event, 'name', rowIndex)"
+            (mouseout)="updateValue($event, 'name', rowIndex)"
+            *ngIf="editing[rowIndex + '-name']"
+            type="text"
+            [value]="value"
+            mat-input
+            class="h-full w-full"
+          />
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="Description">
+        <ng-template
+          ngx-datatable-cell-template
+          let-rowIndex="rowIndex"
+          let-value="value"
+          let-row="row"
+        >
+          <span
+            title="Double click to edit"
+            (dblclick)="editing[rowIndex + '-Description'] = true"
+            *ngIf="!editing[rowIndex + '-Description']"
+          >
+            {{ value }}
+          </span>
+          <textarea
+            autofocus
+            (blur)="updateValue($event, 'Description', rowIndex)"
+            (mouseout)="updateValue($event, 'Description', rowIndex)"
+            *ngIf="editing[rowIndex + '-Description']"
+            type="text"
+            [value]="value"
+            class="h-full w-full"
+          ></textarea>
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+
+  <div class="flex mt-4 justify-center">
+    <mat-form-field class="w-4/12 m-3">
+      <mat-label class="font-thin text-black">Name</mat-label>
+      <input matInput #Name class="font-thin" placeholder="" />
+    </mat-form-field>
+    <mat-form-field class="w-4/12 m-3">
+      <mat-label class="font-thin text-black">Beschreibung</mat-label>
+      <input matInput #Description class="font-thin" placeholder="" />
+    </mat-form-field>
+    <div class="m-3 py-2 w-3/12">
+      <button mat-raised-button class="   " color="accent" (click)="addNewCategory()">
+        <p class="text-white w-full font-light text-lg p-1">Add Category</p>
+      </button>
+    </div>
+  </div>
+</div>
