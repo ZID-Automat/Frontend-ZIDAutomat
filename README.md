@@ -8,7 +8,8 @@ at
 
 Installs all node packages
 #### `npm install`
-
+#### `ng build AutomatShared`
+#### `ng build AutomatApi`
 ## Start Developing
 
 If you want to develop in the UserFrontend project, you have to run the following command:
