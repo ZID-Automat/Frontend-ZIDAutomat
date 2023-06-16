@@ -37,6 +37,7 @@
         class="w-full border-2 border-gray-200 rounded-lg p-2 my-2"
       />
 
+    <div class="flex">
       <mat-form-field class="w-full">
         <mat-label>Category</mat-label>
         <mat-select
@@ -44,13 +45,17 @@
           required
           *ngIf="cat"
           #Selectiii
-          [value]="defVal??0"
+          [value]="$any(defVal)??0"
         >
           <mat-option *ngFor="let cate of cat" [value]="cate.id">{{
             cate.name
           }}</mat-option>
         </mat-select>
+
       </mat-form-field>
+      <button mat-button class="w-3/12 border-2 rounded-lg" (click)="ManageCats()" color="accent"> Settings</button>
+    </div>
+
       <div class="border-2 rounded-lg h-56">
         <div>
           <img [src]="currentImage" class="h-44 block m-auto overflow-hidden" />
@@ -96,7 +101,14 @@
           <p class="text-white font-light text-lg p-2">Update Item</p>
         </button>
       </div>
-
+      <div *ngIf="!isAdd" class="w-full flex mt-5">
+        <p class="w-2/12 text-xl border-2 rounded-lg rounded-r-none text-center p-1">
+          {{iteminstanceCount}}
+        </p>
+        <button (click)="IncII()" class="text-2xl font-light text-center w-10/12 border-2 rounded-lg rounded-l-none" mat-raised-button [disabled]="!iteminstaddde" color="primary">
+          <p class="text-xl font-light p-1 text-white"> Item Nachfüllen</p>
+        </button>
+      </div>
       <button
         mat-raised-button
         color="accent"
@@ -110,10 +122,9 @@
     <div class="w-3/5 p-1 pl-10" *ngIf="!isAdd">
       <div class="text-2xl text-center">Borrows of Item</div>
       <div class="pt-5">
-        <admin-borrows-table [ShowToUser]="true" [BorrowRows] = "$any(data.borrows)"></admin-borrows-table>
+        <admin-borrows-table [ShowToItem]="false" [ShowToUser]="true" [BorrowRows] = "$any(data.borrows)"></admin-borrows-table>
       </div>
+   
     </div>
-  
   </div>
-
 </div>

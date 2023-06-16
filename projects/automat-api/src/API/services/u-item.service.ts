@@ -206,6 +206,97 @@ export class UItemService extends BaseService {
   }
 
   /**
+   * Path part for operation uItemGetPopularItemsGet
+   */
+  static readonly UItemGetPopularItemsGetPath = '/UItem/getPopularItems';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `uItemGetPopularItemsGet$Plain()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  uItemGetPopularItemsGet$Plain$Response(params?: {
+    context?: HttpContext
+  }
+): Observable<StrictHttpResponse<Array<ItemDisplayDto>>> {
+
+    const rb = new RequestBuilder(this.rootUrl, UItemService.UItemGetPopularItemsGetPath, 'get');
+    if (params) {
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'text',
+      accept: 'text/plain',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return r as StrictHttpResponse<Array<ItemDisplayDto>>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `uItemGetPopularItemsGet$Plain$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  uItemGetPopularItemsGet$Plain(params?: {
+    context?: HttpContext
+  }
+): Observable<Array<ItemDisplayDto>> {
+
+    return this.uItemGetPopularItemsGet$Plain$Response(params).pipe(
+      map((r: StrictHttpResponse<Array<ItemDisplayDto>>) => r.body as Array<ItemDisplayDto>)
+    );
+  }
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `uItemGetPopularItemsGet$Json()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  uItemGetPopularItemsGet$Json$Response(params?: {
+    context?: HttpContext
+  }
+): Observable<StrictHttpResponse<Array<ItemDisplayDto>>> {
+
+    const rb = new RequestBuilder(this.rootUrl, UItemService.UItemGetPopularItemsGetPath, 'get');
+    if (params) {
+    }
+
+    return this.http.request(rb.build({
+      responseType: 'json',
+      accept: 'text/json',
+      context: params?.context
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return r as StrictHttpResponse<Array<ItemDisplayDto>>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `uItemGetPopularItemsGet$Json$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  uItemGetPopularItemsGet$Json(params?: {
+    context?: HttpContext
+  }
+): Observable<Array<ItemDisplayDto>> {
+
+    return this.uItemGetPopularItemsGet$Json$Response(params).pipe(
+      map((r: StrictHttpResponse<Array<ItemDisplayDto>>) => r.body as Array<ItemDisplayDto>)
+    );
+  }
+
+  /**
    * Path part for operation uItemGetDetailedItemGet
    */
   static readonly UItemGetDetailedItemGetPath = '/UItem/getDetailedItem';

@@ -33,7 +33,8 @@
             {{ getErrorMessage(LoginInfoForm.get("AGB"), "AGBs",true) }}
         </mat-error>
         <mat-checkbox matInput formControlName="AGB" class="font-thin text-xs w-full">
-            <p class="break-words w-80">Ich akzeptiere die <a href="hier"
+            <p class="break-words w-80">Ich akzeptiere die 
+                <a   target="_blank" [routerLink]="'/'+agbsLink+''" [queryParams]="{'dontshownavbar':true}"
                     class="bg-blue-200 rounded-sm p-.5"> AGBs</a></p>
         </mat-checkbox>
     </mat-form-field>

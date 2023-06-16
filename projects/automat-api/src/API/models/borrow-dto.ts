@@ -9,4 +9,5 @@ export interface BorrowDto {
   itemInstanceId?: number;
   itemName?: null | string;
   returnDate?: null | string;
+  status?: number;
 }

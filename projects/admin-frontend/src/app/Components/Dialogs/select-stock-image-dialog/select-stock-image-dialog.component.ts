@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { createClient } from 'pexels';
+import { environment } from 'projects/admin-frontend/src/environments/environment';
 import { from, take } from 'rxjs';
 
 @Component({
@@ -32,7 +33,7 @@ export class SelectStockImageDialogComponent implements OnInit {
   lastLoad = ""
   loadImage(){
     this.currentimage = "";
-    const client = createClient('7hEpP9me8j7NRXvU4wCEWuIYQ0iXBjUrdwSVdyRxcPxIxqtz3UcXZhzZ');
+    const client = createClient(environment.stockimagekey);
     const query = this.Inputf?.nativeElement?.value??this.data.startSuch;
 
     if(this.lastLoad != query){

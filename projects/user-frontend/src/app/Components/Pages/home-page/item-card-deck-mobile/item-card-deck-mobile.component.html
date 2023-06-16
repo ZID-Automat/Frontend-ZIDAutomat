@@ -3,5 +3,15 @@
             <div class="py-10 px-0" *ngFor="let item of Items; index as i;">
                 <user-item-card #ItemCards (click)="clickItemCard(i)" [Item]="item" class="p-10 mt-5"></user-item-card>
             </div>
+
+            <div class="block m-auto h-96"  *ngIf="!Items">
+                <mat-spinner class="block m-auto mt-32"></mat-spinner>
+            </div>
+
+            
+            <div class="block m-auto h-96"  *ngIf="Items?.length == 0">
+                <p class="text-3xl mt-32 text-center font-extralight"> Keine Artikel verfügbar</p>
+            </div>
+
         </div>  
 </div>
