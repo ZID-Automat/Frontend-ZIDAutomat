@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  backendUrl: "https://localhost:7141",
+  backendUrl: "https://localhost:801",
   stockimagekey:"" //https://www.pexels.com/
 };
