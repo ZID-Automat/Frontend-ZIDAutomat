@@ -1,8 +1,11 @@
-<div class="mt-16 xl:w-5/12 login text-justify pl-14 pr-14 ml-auto mr-auto block text-white">
-  <h1 class="text-center font-extralight asa text-3xl mt-10 ">Login</h1>
+<div
+  class="mt-16 xl:w-5/12 login text-justify pl-14 pr-14 ml-auto mr-auto block text-white"
+>
+  <h1 class="text-center font-extralight asa text-3xl mt-10 " >Login</h1>
 
-  <form (submit)="login()" [formGroup]="loginForm"
-    class="mt-8 bg-white rounded-lg pt-3 px-4 pb-3 text-black drop-shadow-2xl shadow-2xl">
+  <form
+    class="mt-8 bg-white rounded-lg pt-3 px-4 pb-3 text-black drop-shadow-2xl shadow-2xl"
+  >
     <p class="text-ms font-thin">
       Sie sind gerade im Inbegriff auf das Admin Interface des ZID Automat
       zuzugreifen. Wenn sie nicht dafür zuständig sind, verlassen sie bitte diese Seite
@@ -10,14 +13,11 @@
 
     <mat-form-field class="w-full">
       <mat-label class="font-thin text-black">Admin Passwort</mat-label>
-      <input formControlName="hall" matInput class="font-thin" placeholder="Hall" />
+      <input matInput class="font-thin" placeholder="Hall" />
     </mat-form-field>
     <button type="submit" class="w-full m0" mat-raised-button color="accent">
       <p class="font-thin text-white">Login</p>
     </button>
-    <mat-error *ngIf="(loginError | async) as Error">
-      {{Error}}
-    </mat-error>
   </form>
 </div>
 

@@ -11,7 +11,6 @@ import { map, filter } from 'rxjs/operators';
 
 import { BorrowAdminDetailedDto } from '../models/borrow-admin-detailed-dto';
 import { UserAdmiBorrowDto } from '../models/user-admi-borrow-dto';
-import { ValIdObjectDto } from '../models/val-id-object-dto';
 
 @Injectable({
   providedIn: 'root',
@@ -25,23 +24,23 @@ export class ABorrowInfoService extends BaseService {
   }
 
   /**
-   * Path part for operation aBorrowInfoBorrowDetailedGet
+   * Path part for operation borrowDetailedGet
    */
-  static readonly ABorrowInfoBorrowDetailedGetPath = '/ABorrowInfo/BorrowDetailed';
+  static readonly BorrowDetailedGetPath = '/BorrowDetailed';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `aBorrowInfoBorrowDetailedGet$Plain()` instead.
+   * To access only the response body, use `borrowDetailedGet$Plain()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoBorrowDetailedGet$Plain$Response(params?: {
+  borrowDetailedGet$Plain$Response(params?: {
     id?: number;
     context?: HttpContext
   }
 ): Observable<StrictHttpResponse<BorrowAdminDetailedDto>> {
 
-    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ABorrowInfoBorrowDetailedGetPath, 'get');
+    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.BorrowDetailedGetPath, 'get');
     if (params) {
       rb.query('id', params.id, {});
     }
@@ -60,34 +59,34 @@ export class ABorrowInfoService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `aBorrowInfoBorrowDetailedGet$Plain$Response()` instead.
+   * To access the full response (for headers, for example), `borrowDetailedGet$Plain$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoBorrowDetailedGet$Plain(params?: {
+  borrowDetailedGet$Plain(params?: {
     id?: number;
     context?: HttpContext
   }
 ): Observable<BorrowAdminDetailedDto> {
 
-    return this.aBorrowInfoBorrowDetailedGet$Plain$Response(params).pipe(
+    return this.borrowDetailedGet$Plain$Response(params).pipe(
       map((r: StrictHttpResponse<BorrowAdminDetailedDto>) => r.body as BorrowAdminDetailedDto)
     );
   }
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `aBorrowInfoBorrowDetailedGet$Json()` instead.
+   * To access only the response body, use `borrowDetailedGet$Json()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoBorrowDetailedGet$Json$Response(params?: {
+  borrowDetailedGet$Json$Response(params?: {
     id?: number;
     context?: HttpContext
   }
 ): Observable<StrictHttpResponse<BorrowAdminDetailedDto>> {
 
-    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ABorrowInfoBorrowDetailedGetPath, 'get');
+    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.BorrowDetailedGetPath, 'get');
     if (params) {
       rb.query('id', params.id, {});
     }
@@ -106,41 +105,43 @@ export class ABorrowInfoService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `aBorrowInfoBorrowDetailedGet$Json$Response()` instead.
+   * To access the full response (for headers, for example), `borrowDetailedGet$Json$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoBorrowDetailedGet$Json(params?: {
+  borrowDetailedGet$Json(params?: {
     id?: number;
     context?: HttpContext
   }
 ): Observable<BorrowAdminDetailedDto> {
 
-    return this.aBorrowInfoBorrowDetailedGet$Json$Response(params).pipe(
+    return this.borrowDetailedGet$Json$Response(params).pipe(
       map((r: StrictHttpResponse<BorrowAdminDetailedDto>) => r.body as BorrowAdminDetailedDto)
     );
   }
 
   /**
-   * Path part for operation aBorrowInfoEntschuldigtPost
+   * Path part for operation entschuldigtPost
    */
-  static readonly ABorrowInfoEntschuldigtPostPath = '/ABorrowInfo/Entschuldigt';
+  static readonly EntschuldigtPostPath = '/Entschuldigt';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `aBorrowInfoEntschuldigtPost()` instead.
+   * To access only the response body, use `entschuldigtPost()` instead.
    *
-   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   * This method doesn't expect any request body.
    */
-  aBorrowInfoEntschuldigtPost$Response(params?: {
+  entschuldigtPost$Response(params?: {
+    Id?: number;
+    Value?: boolean;
     context?: HttpContext
-    body?: ValIdObjectDto
   }
 ): Observable<StrictHttpResponse<void>> {
 
-    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ABorrowInfoEntschuldigtPostPath, 'post');
+    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.EntschuldigtPostPath, 'post');
     if (params) {
-      rb.body(params.body, 'application/*+json');
+      rb.query('Id', params.Id, {});
+      rb.query('Value', params.Value, {});
     }
 
     return this.http.request(rb.build({
@@ -157,41 +158,44 @@ export class ABorrowInfoService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `aBorrowInfoEntschuldigtPost$Response()` instead.
+   * To access the full response (for headers, for example), `entschuldigtPost$Response()` instead.
    *
-   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   * This method doesn't expect any request body.
    */
-  aBorrowInfoEntschuldigtPost(params?: {
+  entschuldigtPost(params?: {
+    Id?: number;
+    Value?: boolean;
     context?: HttpContext
-    body?: ValIdObjectDto
   }
 ): Observable<void> {
 
-    return this.aBorrowInfoEntschuldigtPost$Response(params).pipe(
+    return this.entschuldigtPost$Response(params).pipe(
       map((r: StrictHttpResponse<void>) => r.body as void)
     );
   }
 
   /**
-   * Path part for operation aBorrowInfoZurueckgebenPost
+   * Path part for operation zurueckgebenPost
    */
-  static readonly ABorrowInfoZurueckgebenPostPath = '/ABorrowInfo/Zurueckgeben';
+  static readonly ZurueckgebenPostPath = '/Zurueckgeben';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `aBorrowInfoZurueckgebenPost$Plain()` instead.
+   * To access only the response body, use `zurueckgebenPost$Plain()` instead.
    *
-   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   * This method doesn't expect any request body.
    */
-  aBorrowInfoZurueckgebenPost$Plain$Response(params?: {
+  zurueckgebenPost$Plain$Response(params?: {
+    Id?: number;
+    Value?: boolean;
     context?: HttpContext
-    body?: ValIdObjectDto
   }
 ): Observable<StrictHttpResponse<string>> {
 
-    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ABorrowInfoZurueckgebenPostPath, 'post');
+    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ZurueckgebenPostPath, 'post');
     if (params) {
-      rb.body(params.body, 'application/*+json');
+      rb.query('Id', params.Id, {});
+      rb.query('Value', params.Value, {});
     }
 
     return this.http.request(rb.build({
@@ -208,36 +212,39 @@ export class ABorrowInfoService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `aBorrowInfoZurueckgebenPost$Plain$Response()` instead.
+   * To access the full response (for headers, for example), `zurueckgebenPost$Plain$Response()` instead.
    *
-   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   * This method doesn't expect any request body.
    */
-  aBorrowInfoZurueckgebenPost$Plain(params?: {
+  zurueckgebenPost$Plain(params?: {
+    Id?: number;
+    Value?: boolean;
     context?: HttpContext
-    body?: ValIdObjectDto
   }
 ): Observable<string> {
 
-    return this.aBorrowInfoZurueckgebenPost$Plain$Response(params).pipe(
+    return this.zurueckgebenPost$Plain$Response(params).pipe(
       map((r: StrictHttpResponse<string>) => r.body as string)
     );
   }
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `aBorrowInfoZurueckgebenPost$Json()` instead.
+   * To access only the response body, use `zurueckgebenPost$Json()` instead.
    *
-   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   * This method doesn't expect any request body.
    */
-  aBorrowInfoZurueckgebenPost$Json$Response(params?: {
+  zurueckgebenPost$Json$Response(params?: {
+    Id?: number;
+    Value?: boolean;
     context?: HttpContext
-    body?: ValIdObjectDto
   }
 ): Observable<StrictHttpResponse<string>> {
 
-    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ABorrowInfoZurueckgebenPostPath, 'post');
+    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ZurueckgebenPostPath, 'post');
     if (params) {
-      rb.body(params.body, 'application/*+json');
+      rb.query('Id', params.Id, {});
+      rb.query('Value', params.Value, {});
     }
 
     return this.http.request(rb.build({
@@ -254,38 +261,39 @@ export class ABorrowInfoService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `aBorrowInfoZurueckgebenPost$Json$Response()` instead.
+   * To access the full response (for headers, for example), `zurueckgebenPost$Json$Response()` instead.
    *
-   * This method sends `application/*+json` and handles request body of type `application/*+json`.
+   * This method doesn't expect any request body.
    */
-  aBorrowInfoZurueckgebenPost$Json(params?: {
+  zurueckgebenPost$Json(params?: {
+    Id?: number;
+    Value?: boolean;
     context?: HttpContext
-    body?: ValIdObjectDto
   }
 ): Observable<string> {
 
-    return this.aBorrowInfoZurueckgebenPost$Json$Response(params).pipe(
+    return this.zurueckgebenPost$Json$Response(params).pipe(
       map((r: StrictHttpResponse<string>) => r.body as string)
     );
   }
 
   /**
-   * Path part for operation aBorrowInfoAllBorrowsGet
+   * Path part for operation allBorrowsGet
    */
-  static readonly ABorrowInfoAllBorrowsGetPath = '/ABorrowInfo/AllBorrows';
+  static readonly AllBorrowsGetPath = '/AllBorrows';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `aBorrowInfoAllBorrowsGet$Plain()` instead.
+   * To access only the response body, use `allBorrowsGet$Plain()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoAllBorrowsGet$Plain$Response(params?: {
+  allBorrowsGet$Plain$Response(params?: {
     context?: HttpContext
   }
 ): Observable<StrictHttpResponse<Array<UserAdmiBorrowDto>>> {
 
-    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ABorrowInfoAllBorrowsGetPath, 'get');
+    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.AllBorrowsGetPath, 'get');
     if (params) {
     }
 
@@ -303,32 +311,32 @@ export class ABorrowInfoService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `aBorrowInfoAllBorrowsGet$Plain$Response()` instead.
+   * To access the full response (for headers, for example), `allBorrowsGet$Plain$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoAllBorrowsGet$Plain(params?: {
+  allBorrowsGet$Plain(params?: {
     context?: HttpContext
   }
 ): Observable<Array<UserAdmiBorrowDto>> {
 
-    return this.aBorrowInfoAllBorrowsGet$Plain$Response(params).pipe(
+    return this.allBorrowsGet$Plain$Response(params).pipe(
       map((r: StrictHttpResponse<Array<UserAdmiBorrowDto>>) => r.body as Array<UserAdmiBorrowDto>)
     );
   }
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `aBorrowInfoAllBorrowsGet$Json()` instead.
+   * To access only the response body, use `allBorrowsGet$Json()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoAllBorrowsGet$Json$Response(params?: {
+  allBorrowsGet$Json$Response(params?: {
     context?: HttpContext
   }
 ): Observable<StrictHttpResponse<Array<UserAdmiBorrowDto>>> {
 
-    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ABorrowInfoAllBorrowsGetPath, 'get');
+    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.AllBorrowsGetPath, 'get');
     if (params) {
     }
 
@@ -346,37 +354,37 @@ export class ABorrowInfoService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `aBorrowInfoAllBorrowsGet$Json$Response()` instead.
+   * To access the full response (for headers, for example), `allBorrowsGet$Json$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoAllBorrowsGet$Json(params?: {
+  allBorrowsGet$Json(params?: {
     context?: HttpContext
   }
 ): Observable<Array<UserAdmiBorrowDto>> {
 
-    return this.aBorrowInfoAllBorrowsGet$Json$Response(params).pipe(
+    return this.allBorrowsGet$Json$Response(params).pipe(
       map((r: StrictHttpResponse<Array<UserAdmiBorrowDto>>) => r.body as Array<UserAdmiBorrowDto>)
     );
   }
 
   /**
-   * Path part for operation aBorrowInfoToDealWithBorrowsGet
+   * Path part for operation toDealWithBorrowsGet
    */
-  static readonly ABorrowInfoToDealWithBorrowsGetPath = '/ABorrowInfo/ToDealWithBorrows';
+  static readonly ToDealWithBorrowsGetPath = '/ToDealWithBorrows';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `aBorrowInfoToDealWithBorrowsGet$Plain()` instead.
+   * To access only the response body, use `toDealWithBorrowsGet$Plain()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoToDealWithBorrowsGet$Plain$Response(params?: {
+  toDealWithBorrowsGet$Plain$Response(params?: {
     context?: HttpContext
   }
 ): Observable<StrictHttpResponse<Array<UserAdmiBorrowDto>>> {
 
-    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ABorrowInfoToDealWithBorrowsGetPath, 'get');
+    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ToDealWithBorrowsGetPath, 'get');
     if (params) {
     }
 
@@ -394,32 +402,32 @@ export class ABorrowInfoService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `aBorrowInfoToDealWithBorrowsGet$Plain$Response()` instead.
+   * To access the full response (for headers, for example), `toDealWithBorrowsGet$Plain$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoToDealWithBorrowsGet$Plain(params?: {
+  toDealWithBorrowsGet$Plain(params?: {
     context?: HttpContext
   }
 ): Observable<Array<UserAdmiBorrowDto>> {
 
-    return this.aBorrowInfoToDealWithBorrowsGet$Plain$Response(params).pipe(
+    return this.toDealWithBorrowsGet$Plain$Response(params).pipe(
       map((r: StrictHttpResponse<Array<UserAdmiBorrowDto>>) => r.body as Array<UserAdmiBorrowDto>)
     );
   }
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `aBorrowInfoToDealWithBorrowsGet$Json()` instead.
+   * To access only the response body, use `toDealWithBorrowsGet$Json()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoToDealWithBorrowsGet$Json$Response(params?: {
+  toDealWithBorrowsGet$Json$Response(params?: {
     context?: HttpContext
   }
 ): Observable<StrictHttpResponse<Array<UserAdmiBorrowDto>>> {
 
-    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ABorrowInfoToDealWithBorrowsGetPath, 'get');
+    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ToDealWithBorrowsGetPath, 'get');
     if (params) {
     }
 
@@ -437,37 +445,37 @@ export class ABorrowInfoService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `aBorrowInfoToDealWithBorrowsGet$Json$Response()` instead.
+   * To access the full response (for headers, for example), `toDealWithBorrowsGet$Json$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoToDealWithBorrowsGet$Json(params?: {
+  toDealWithBorrowsGet$Json(params?: {
     context?: HttpContext
   }
 ): Observable<Array<UserAdmiBorrowDto>> {
 
-    return this.aBorrowInfoToDealWithBorrowsGet$Json$Response(params).pipe(
+    return this.toDealWithBorrowsGet$Json$Response(params).pipe(
       map((r: StrictHttpResponse<Array<UserAdmiBorrowDto>>) => r.body as Array<UserAdmiBorrowDto>)
     );
   }
 
   /**
-   * Path part for operation aBorrowInfoFinishedBorrowsGet
+   * Path part for operation finishedBorrowsGet
    */
-  static readonly ABorrowInfoFinishedBorrowsGetPath = '/ABorrowInfo/FinishedBorrows';
+  static readonly FinishedBorrowsGetPath = '/FinishedBorrows';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `aBorrowInfoFinishedBorrowsGet$Plain()` instead.
+   * To access only the response body, use `finishedBorrowsGet$Plain()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoFinishedBorrowsGet$Plain$Response(params?: {
+  finishedBorrowsGet$Plain$Response(params?: {
     context?: HttpContext
   }
 ): Observable<StrictHttpResponse<Array<UserAdmiBorrowDto>>> {
 
-    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ABorrowInfoFinishedBorrowsGetPath, 'get');
+    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.FinishedBorrowsGetPath, 'get');
     if (params) {
     }
 
@@ -485,32 +493,32 @@ export class ABorrowInfoService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `aBorrowInfoFinishedBorrowsGet$Plain$Response()` instead.
+   * To access the full response (for headers, for example), `finishedBorrowsGet$Plain$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoFinishedBorrowsGet$Plain(params?: {
+  finishedBorrowsGet$Plain(params?: {
     context?: HttpContext
   }
 ): Observable<Array<UserAdmiBorrowDto>> {
 
-    return this.aBorrowInfoFinishedBorrowsGet$Plain$Response(params).pipe(
+    return this.finishedBorrowsGet$Plain$Response(params).pipe(
       map((r: StrictHttpResponse<Array<UserAdmiBorrowDto>>) => r.body as Array<UserAdmiBorrowDto>)
     );
   }
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `aBorrowInfoFinishedBorrowsGet$Json()` instead.
+   * To access only the response body, use `finishedBorrowsGet$Json()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoFinishedBorrowsGet$Json$Response(params?: {
+  finishedBorrowsGet$Json$Response(params?: {
     context?: HttpContext
   }
 ): Observable<StrictHttpResponse<Array<UserAdmiBorrowDto>>> {
 
-    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ABorrowInfoFinishedBorrowsGetPath, 'get');
+    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.FinishedBorrowsGetPath, 'get');
     if (params) {
     }
 
@@ -528,37 +536,37 @@ export class ABorrowInfoService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `aBorrowInfoFinishedBorrowsGet$Json$Response()` instead.
+   * To access the full response (for headers, for example), `finishedBorrowsGet$Json$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoFinishedBorrowsGet$Json(params?: {
+  finishedBorrowsGet$Json(params?: {
     context?: HttpContext
   }
 ): Observable<Array<UserAdmiBorrowDto>> {
 
-    return this.aBorrowInfoFinishedBorrowsGet$Json$Response(params).pipe(
+    return this.finishedBorrowsGet$Json$Response(params).pipe(
       map((r: StrictHttpResponse<Array<UserAdmiBorrowDto>>) => r.body as Array<UserAdmiBorrowDto>)
     );
   }
 
   /**
-   * Path part for operation aBorrowInfoOpenBorrowsGet
+   * Path part for operation openBorrowsGet
    */
-  static readonly ABorrowInfoOpenBorrowsGetPath = '/ABorrowInfo/OpenBorrows';
+  static readonly OpenBorrowsGetPath = '/OpenBorrows';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `aBorrowInfoOpenBorrowsGet$Plain()` instead.
+   * To access only the response body, use `openBorrowsGet$Plain()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoOpenBorrowsGet$Plain$Response(params?: {
+  openBorrowsGet$Plain$Response(params?: {
     context?: HttpContext
   }
 ): Observable<StrictHttpResponse<Array<UserAdmiBorrowDto>>> {
 
-    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ABorrowInfoOpenBorrowsGetPath, 'get');
+    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.OpenBorrowsGetPath, 'get');
     if (params) {
     }
 
@@ -576,32 +584,32 @@ export class ABorrowInfoService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `aBorrowInfoOpenBorrowsGet$Plain$Response()` instead.
+   * To access the full response (for headers, for example), `openBorrowsGet$Plain$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoOpenBorrowsGet$Plain(params?: {
+  openBorrowsGet$Plain(params?: {
     context?: HttpContext
   }
 ): Observable<Array<UserAdmiBorrowDto>> {
 
-    return this.aBorrowInfoOpenBorrowsGet$Plain$Response(params).pipe(
+    return this.openBorrowsGet$Plain$Response(params).pipe(
       map((r: StrictHttpResponse<Array<UserAdmiBorrowDto>>) => r.body as Array<UserAdmiBorrowDto>)
     );
   }
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `aBorrowInfoOpenBorrowsGet$Json()` instead.
+   * To access only the response body, use `openBorrowsGet$Json()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoOpenBorrowsGet$Json$Response(params?: {
+  openBorrowsGet$Json$Response(params?: {
     context?: HttpContext
   }
 ): Observable<StrictHttpResponse<Array<UserAdmiBorrowDto>>> {
 
-    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.ABorrowInfoOpenBorrowsGetPath, 'get');
+    const rb = new RequestBuilder(this.rootUrl, ABorrowInfoService.OpenBorrowsGetPath, 'get');
     if (params) {
     }
 
@@ -619,16 +627,16 @@ export class ABorrowInfoService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `aBorrowInfoOpenBorrowsGet$Json$Response()` instead.
+   * To access the full response (for headers, for example), `openBorrowsGet$Json$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  aBorrowInfoOpenBorrowsGet$Json(params?: {
+  openBorrowsGet$Json(params?: {
     context?: HttpContext
   }
 ): Observable<Array<UserAdmiBorrowDto>> {
 
-    return this.aBorrowInfoOpenBorrowsGet$Json$Response(params).pipe(
+    return this.openBorrowsGet$Json$Response(params).pipe(
       map((r: StrictHttpResponse<Array<UserAdmiBorrowDto>>) => r.body as Array<UserAdmiBorrowDto>)
     );
   }

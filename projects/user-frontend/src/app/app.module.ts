@@ -13,6 +13,7 @@ import { ApiModule } from 'AutomatApi';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ItemCardComponent } from './Components/Pages/home-page/item-card-deck/item-card/item-card.component';
 import { ItemCardDeckComponent } from './Components/Pages/home-page/item-card-deck/item-card-deck.component';
+import { AdmonitionPageComponent } from './Components/Pages/admonition-page/admonition-page.component';
 import { HistoryPageComponent } from './Components/Pages/history-page/history-page.component';
 import { ActiveQrCodePageComponent } from './Components/Pages/active-qr-code-page/active-qr-code-page.component';
 import { HelpPageComponent } from './Components/Pages/help-page/help-page.component';
@@ -25,7 +26,6 @@ import { QrcodeDialogComponent } from './Components/Dialogs/qrcode-dialog/qrcode
 import { QrcodeComponent } from './Components/Dialogs/qrcode-dialog/qrcode/qrcode.component';
 import { environment } from '../environments/environment';
 import { ItemCardDeckMobileComponent } from './Components/Pages/home-page/item-card-deck-mobile/item-card-deck-mobile.component';
-import { AgbsPageComponent } from './Components/Pages/agbs-page/agbs-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,9 +35,10 @@ import { AgbsPageComponent } from './Components/Pages/agbs-page/agbs-page.compon
     HomePageComponent,
     ItemCardComponent,
     ItemCardDeckComponent,
+    AdmonitionPageComponent,
     HistoryPageComponent,
     ActiveQrCodePageComponent,
-    HelpPageComponent, 
+    HelpPageComponent,
     ItemDetailedDialogComponent,
     ItemDetailedComponent,
     ItemDetailedFormComponent,
@@ -45,8 +46,7 @@ import { AgbsPageComponent } from './Components/Pages/agbs-page/agbs-page.compon
     BorrowDisplayComponent,
     QrcodeDialogComponent,
     QrcodeComponent,
-    ItemCardDeckMobileComponent,
-    AgbsPageComponent
+    ItemCardDeckMobileComponent
   ],
   imports: [
     AutomatSharedModule,

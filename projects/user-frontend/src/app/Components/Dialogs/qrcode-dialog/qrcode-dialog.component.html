@@ -3,7 +3,6 @@
     Hier ist dein QR Code
   </h2>
   <user-qrcode [qrcode]="data.qrcode"></user-qrcode>
- 
   <div>
     <p class="text-center text-sm text-gray-600">
       Scanne den QR code am Automaten!
@@ -12,9 +11,5 @@
       Du kannst den QR code screenshoten und/oder später unter Historie noch
       einmal aufrufen.
     </p>
-  </div>
-
-  <div class="text-center text-6xl  mt-5 mb-2 " [ngClass]="{'text-red-600' : danger}">
-    {{countdown}}
   </div>
 </div>

@@ -20,9 +20,7 @@ export class BorrowDisplayComponent implements OnInit {
   }
 
   openQrCodeDialog(){
-    let date = new Date(this.borrow.borrowDate??"")
-    date.setHours(date.getHours()+1)
-    QrcodeDialogComponent.openDialog({qrcode:this.borrow.guid??"", duetime:date},this.matDialog);
+    QrcodeDialogComponent.openDialog({qrcode:this.borrow.guid??""},this.matDialog);
   }
 
   openZumArtikel(){
