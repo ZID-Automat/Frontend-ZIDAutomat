@@ -7,11 +7,11 @@ import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 import { AAnalyticsService } from './services/a-analytics.service';
 import { ABorrowInfoService } from './services/a-borrow-info.service';
 import { AConfCategoriesService } from './services/a-conf-categories.service';
-import { AdminLogShowService } from './services/admin-log-show.service';
 import { AItemService } from './services/a-item.service';
 import { AUserInforService } from './services/a-user-infor.service';
 import { AuthentificationService } from './services/authentification.service';
 import { CBorrowService } from './services/c-borrow.service';
+import { CLoggingService } from './services/c-logging.service';
 import { DebugService } from './services/debug.service';
 import { UBorrowService } from './services/u-borrow.service';
 import { UItemService } from './services/u-item.service';
@@ -28,11 +28,11 @@ import { UQrCodeService } from './services/u-qr-code.service';
     AAnalyticsService,
     ABorrowInfoService,
     AConfCategoriesService,
-    AdminLogShowService,
     AItemService,
     AUserInforService,
     AuthentificationService,
     CBorrowService,
+    CLoggingService,
     DebugService,
     UBorrowService,
     UItemService,
