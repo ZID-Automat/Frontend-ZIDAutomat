@@ -40,7 +40,7 @@ export class AutomatViewComponent implements OnInit, OnDestroy, AfterViewInit {
 
   alive = true;
 
-  disabledButton = true;
+  disabledButton = false;
 
   constructor(private AItemService: AItemService, private dialog:MatDialog) {}
   ngAfterViewInit(): void {
@@ -55,10 +55,11 @@ export class AutomatViewComponent implements OnInit, OnDestroy, AfterViewInit {
             e.id!
           );
           info.ImageElement.href.baseVal = e.image;
+          info.ImageElement.id = info.ImageId;
+
         }
       });
       this.data = data;
-      this.disabledButton = true;
 
     });
 
@@ -70,7 +71,6 @@ export class AutomatViewComponent implements OnInit, OnDestroy, AfterViewInit {
   @Output() public reLoad: EventEmitter<void> = new EventEmitter<void>();
 
   ngOnInit(): void {
-    this.disabledButton = true;
   }
 
   reload() {
@@ -114,7 +114,6 @@ export class AutomatViewComponent implements OnInit, OnDestroy, AfterViewInit {
     ElementData.ImageElement!.id = ElementData.ImageId;
     ElementData.ImageElement.href.baseVal = data.image;
 
-    this.disabledButton = true;
 
 
     this.onDrop.emit({
@@ -137,13 +136,23 @@ export class AutomatViewComponent implements OnInit, OnDestroy, AfterViewInit {
     };
   }
 
-  private BoxNumberToLocation(boxNumber: string) {
+  public BoxNumberToLocation(boxNumber: string) {
     const number = parseInt(boxNumber.substring(4));
     const row = Math.floor(number / 8);
     const col = number % 8;
     const rowChar = String.fromCharCode(65 + row);
     const colChar = String.fromCharCode(65 + col);
     return rowChar + colChar;
+  }
+
+  public TooltipText(location: string) {
+    const locationVal = this.BoxNumberToLocation(location);
+    const item = this.data.find((e: any) => e.locationImAutomat == locationVal); 
+    let text= locationVal
+    if(item){
+      text += "   |   " + item.name;
+    }
+    return text;
   }
 
   public LocationToBoxNumber(location: string) {
@@ -158,7 +167,7 @@ export class AutomatViewComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   Save() {
-    this.disabledButton = true;
+    this.disabledButton = true
     const ItemChangeLocations: ItemChangeLocationDto = {
       itemLocations: this.data.map((e: any) => {
         return { Id: e.id!, Location: e.locationImAutomat! };
@@ -169,12 +178,11 @@ export class AutomatViewComponent implements OnInit, OnDestroy, AfterViewInit {
     })
       .pipe(take(1))
       .subscribe((data) => {
-        console.log('Saved');
+        this.disabledButton = false
       });
   }
 
   Clear() {
-    this.disabledButton = false;
 
     this.boxes.forEach(b=>{
       this.extractImportantInformation(b.nativeElement.firstChild!, 0).ImageElement.id = "";
@@ -197,8 +205,6 @@ export class AutomatViewComponent implements OnInit, OnDestroy, AfterViewInit {
 
   //fills the automat with items from the top left corner
   AutoFill() {
-    this.disabledButton = false;
-
     let currentPos = -1;
     this.data.forEach((locAutomat:ItemGetAllDto ) => {
         if(!locAutomat.locationImAutomat){
@@ -217,6 +223,22 @@ export class AutomatViewComponent implements OnInit, OnDestroy, AfterViewInit {
         }
     });
 
+  }
+
+  remove(event:any){
+    var target = event.target
+    const info  = this.extractImportantInformation(target,0)
+    if(info.ImageElement.id != ''){
+      const item = this.data.find((e:any)=>e.id == parseInt(info.ImageElement.id.substring(7)))
+
+
+      info.ImageElement.href.baseVal = '';
+      info.ImageElement.id = '';
+      item.locationImAutomat = '';
+    }
+  }
+
+  tooltip(event:any){
   }
 }
 //5*8x

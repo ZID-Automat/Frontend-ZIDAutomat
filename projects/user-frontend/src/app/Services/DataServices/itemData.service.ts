@@ -15,6 +15,10 @@ export class ItemDataService {
   public LoadAllPrevItems():Observable<ItemDisplayDto[]>{
     return this.UItemService.uItemGetPrevBorrowedGet$Json();
   }
+
+  public PropItems():Observable<ItemDisplayDto[]>{
+    return this.UItemService.uItemGetPopularItemsGet$Json();
+  }
   public LoadItem(ItemId:number):Observable<ItemDetailedDto>{
     return this.UItemService.uItemGetDetailedItemGet$Json({ItemId:ItemId});
   }

@@ -1,31 +1,62 @@
-<div class="w-full text-white flex" [style.background-color]="themeDataService.PrimaryColorAdmin">
+<div
+  class="w-full text-white flex"
+  [style.background-color]="themeDataService.PrimaryColorAdmin"
+>
   <div class="p-1 m-auto w-11/12 flex">
-    <a class="bg-gray-50d0 pl-2 rounded-xl  hover:scale-105 ease-in duration-200"
-      [routerLink]="adminFrontendRoutes.Item">
+    <a
+      class="bg-gray-50d0 pl-2 rounded-xl hover:scale-105 ease-in duration-200"
+      [routerLink]="adminFrontendRoutes.Item"
+    >
       <div class="flex">
-        <div class="text-xl block my-auto ">ZID Automat</div>
-        <div class="float-left ml-2 bg-gray-600 p-1 rounded-lg block my-auto text-xl">Console</div>
+        <div class="text-xl block my-auto">ZID Automat</div>
+        <div
+          class="float-left ml-2 bg-gray-600 p-1 rounded-lg block my-auto text-xl"
+        >
+          Console
+        </div>
       </div>
     </a>
 
-    <a class="text-xl p-1.5 font-extralight  block ml-auto hover:scale-105 ease-in duration-200"
-      [routerLink]="adminFrontendRoutes.BorrowPage" *ngIf="router.url !== '/'+adminFrontendRoutes.Login">
+    <a
+      class="text-xl p-1.5 font-extralight block ml-auto hover:scale-105 ease-in duration-200"
+      [routerLink]="adminFrontendRoutes.AutomatLog"
+      *ngIf="router.url !== '/' + adminFrontendRoutes.Login.split('?')[0]"
+    >
+      Logs
+    </a>
+    <a
+      class="text-xl p-1.5 font-extralight block hover:scale-105 ease-in duration-200 "
+      [routerLink]="adminFrontendRoutes.BorrowPage"
+      *ngIf="router.url !== '/' + adminFrontendRoutes.Login.split('?')[0]"
+    >
       Borrows
     </a>
-    <a class="text-xl p-1.5 font-extralight block  hover:scale-105 ease-in duration-200"
-      [routerLink]="adminFrontendRoutes.UserPage" *ngIf="router.url !== '/'+adminFrontendRoutes.Login">
+    <a
+      class="text-xl p-1.5 font-extralight block hover:scale-105 ease-in duration-200"
+      [routerLink]="adminFrontendRoutes.UserPage"
+      *ngIf="router.url !== '/' + adminFrontendRoutes.Login.split('?')[0]"
+    >
       Users
     </a>
-    <a class="text-xl p-1.5 font-extralight  block  hover:scale-105 ease-in duration-200"
-      [routerLink]="adminFrontendRoutes.Item" *ngIf="router.url !== '/'+adminFrontendRoutes.Login">
+    <a
+      class="text-xl p-1.5 font-extralight block hover:scale-105 ease-in duration-200"
+      [routerLink]="adminFrontendRoutes.Item"
+      *ngIf="router.url !== '/' + adminFrontendRoutes.Login.split('?')[0]"
+    >
       AutomatView
     </a>
-    <a class="text-xl p-1.5 font-extralight  block  hover:scale-105 ease-in duration-200"
-      [routerLink]="adminFrontendRoutes.Log" *ngIf="router.url !== '/'+adminFrontendRoutes.Login">
+    <a
+      class="text-xl p-1.5 font-extralight block hover:scale-105 ease-in duration-200"
+      [routerLink]="adminFrontendRoutes.Log"
+      *ngIf="router.url !== '/' + adminFrontendRoutes.Login.split('?')[0]"
+    >
       Analytics
     </a>
-    <a class="text-xl p-1.5 font-extralight  block  hover:scale-105 ease-in duration-200" (click)="logout()"
-      *ngIf="router.url !== '/'+adminFrontendRoutes.Login">
+    <a
+      class="text-xl p-1.5 font-extralight block hover:scale-105 ease-in duration-200"
+      (click)="logout()"
+      *ngIf="router.url !== '/' + adminFrontendRoutes.Login.split('?')[0]"
+    >
       Logout
     </a>
   </div>
