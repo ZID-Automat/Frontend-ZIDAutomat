@@ -38,26 +38,4 @@ export class ColorServiceService {
       borderColors: borderColors,
     }
   }
-
-  public getColorFromArr(colors:string[]):{
-    backgroundColors: string[],
-    hoverBackgroundColors: string[],
-    borderColors: string[],
-  } {
-    let backgroundColors: string[] = [];
-    let hoverBackgroundColors: string[] = [];
-    let borderColors: string[] = [];
-
-    for (let i = 0; i < colors.length; i++) {
-      let color = colors[i];
-      backgroundColors.push(color + '80');
-      hoverBackgroundColors.push(color + 'C0');
-      borderColors.push(color + 'CA');
-    }
-    return {
-      backgroundColors: backgroundColors,
-      hoverBackgroundColors: hoverBackgroundColors,
-      borderColors: borderColors,
-    }
-  }
 }

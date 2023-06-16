@@ -157,7 +157,7 @@
         }
       }
     },
-    "/ABorrowInfo/BorrowDetailed": {
+    "/BorrowDetailed": {
       "get": {
         "tags": [
           "ABorrowInfo"
@@ -196,30 +196,28 @@
         }
       }
     },
-    "/ABorrowInfo/Entschuldigt": {
+    "/Entschuldigt": {
       "post": {
         "tags": [
           "ABorrowInfo"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ValIdObjectDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ValIdObjectDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ValIdObjectDto"
-              }
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Value",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -227,30 +225,28 @@
         }
       }
     },
-    "/ABorrowInfo/Zurueckgeben": {
+    "/Zurueckgeben": {
       "post": {
         "tags": [
           "ABorrowInfo"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ValIdObjectDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ValIdObjectDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ValIdObjectDto"
-              }
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Value",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -278,7 +274,7 @@
         }
       }
     },
-    "/ABorrowInfo/AllBorrows": {
+    "/AllBorrows": {
       "get": {
         "tags": [
           "ABorrowInfo"
@@ -316,7 +312,7 @@
         }
       }
     },
-    "/ABorrowInfo/ToDealWithBorrows": {
+    "/ToDealWithBorrows": {
       "get": {
         "tags": [
           "ABorrowInfo"
@@ -354,7 +350,7 @@
         }
       }
     },
-    "/ABorrowInfo/FinishedBorrows": {
+    "/FinishedBorrows": {
       "get": {
         "tags": [
           "ABorrowInfo"
@@ -392,7 +388,7 @@
         }
       }
     },
-    "/ABorrowInfo/OpenBorrows": {
+    "/OpenBorrows": {
       "get": {
         "tags": [
           "ABorrowInfo"
@@ -526,120 +522,6 @@
         "responses": {
           "200": {
             "description": "Success"
-          }
-        }
-      }
-    },
-    "/AdminLogShow/InvalidItems": {
-      "get": {
-        "tags": [
-          "AdminLogShow"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/AdminLogShow/ScannedItems": {
-      "get": {
-        "tags": [
-          "AdminLogShow"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/AdminLogShow/EjectedItems": {
-      "get": {
-        "tags": [
-          "AdminLogShow"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/LogQrCodeAdminDto"
-                  }
-                }
-              }
-            }
           }
         }
       }
@@ -810,70 +692,6 @@
         "responses": {
           "200": {
             "description": "Success"
-          }
-        }
-      }
-    },
-    "/AItem/AddItemInstace": {
-      "post": {
-        "tags": [
-          "AItem"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/AItem/GetItemInstances": {
-      "get": {
-        "tags": [
-          "AItem"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            }
           }
         }
       }
@@ -1082,54 +900,6 @@
         }
       }
     },
-    "/Authentification/AdminLogin": {
-      "post": {
-        "tags": [
-          "Authentification"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminLoginDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminLoginDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/AdminLoginDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/CBorrow/ValidateQrCode": {
       "post": {
         "tags": [
@@ -1272,6 +1042,99 @@
         }
       }
     },
+    "/CLogging/LogEjectedItem": {
+      "post": {
+        "tags": [
+          "CLogging"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogQrCodeDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogQrCodeDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogQrCodeDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/CLogging/LogInvaldScannedQrCode": {
+      "post": {
+        "tags": [
+          "CLogging"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogQrCodeDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogQrCodeDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogQrCodeDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/CLogging/LogScannedQrCode": {
+      "post": {
+        "tags": [
+          "CLogging"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogQrCodeDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogQrCodeDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogQrCodeDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/Debug/Seed": {
       "post": {
         "tags": [
@@ -1371,44 +1234,6 @@
       }
     },
     "/UItem/getPrevBorrowed": {
-      "get": {
-        "tags": [
-          "UItem"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ItemDisplayDto"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ItemDisplayDto"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ItemDisplayDto"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/UItem/getPopularItems": {
       "get": {
         "tags": [
           "UItem"
@@ -1596,16 +1421,6 @@
   },
   "components": {
     "schemas": {
-      "AdminLoginDto": {
-        "type": "object",
-        "properties": {
-          "hall": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "AnalyticItemDto": {
         "type": "object",
         "properties": {
@@ -1764,10 +1579,6 @@
           "guid": {
             "type": "string",
             "format": "uuid"
-          },
-          "status": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -1833,7 +1644,7 @@
         "properties": {
           "qrCode": {
             "type": "string",
-            "nullable": true
+            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -2024,25 +1835,12 @@
         },
         "additionalProperties": false
       },
-      "LogQrCodeAdminDto": {
+      "LogQrCodeDto": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "scanned": {
+          "guid": {
             "type": "string",
             "nullable": true
-          },
-          "borrowId": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "dateTime": {
-            "type": "string",
-            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -2052,7 +1850,7 @@
         "properties": {
           "qrCode": {
             "type": "string",
-            "nullable": true
+            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -2172,19 +1970,6 @@
           "password": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ValIdObjectDto": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "value": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false
