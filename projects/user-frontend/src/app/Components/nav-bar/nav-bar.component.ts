@@ -27,7 +27,7 @@ export class NavBarComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.alive = false;
   }
-  dontshownavbar = false
+  dontshownavbar = true
 
   ngOnInit(): void {
     this.routeii.queryParams.subscribe((params) => {
