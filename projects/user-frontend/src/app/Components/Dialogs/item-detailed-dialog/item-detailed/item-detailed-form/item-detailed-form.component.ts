@@ -1,11 +1,11 @@
 import { MatDialog } from '@angular/material/dialog';
-import { FormButtonComponent } from 'AutomatShared';
 import { BorrowOperationService } from './../../../../../Services/OperationServices/borrow-operation.service';
 import { BorrowDataDto, ItemDetailedDto, UBorrowService } from 'AutomatApi';
 import { Component, OnInit, Input, ViewChild, Inject, AfterViewInit, ElementRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { take } from 'rxjs';
 import { QrcodeDialogComponent } from '../../../qrcode-dialog/qrcode-dialog.component';
+import { FormButtonComponent } from 'AutomatShared';
 
 @Component({
   selector: 'user-item-detailed-form',
@@ -19,6 +19,8 @@ export class ItemDetailedFormComponent implements OnInit, AfterViewInit {
 
   @ViewChild('SubmitButton') SubmitButton!:FormButtonComponent;
   @ViewChild('DatePicker') picker!:any;
+
+  errormessage = ""
 
   public BorrowForm: FormGroup = new FormGroup({
     dueTime: new FormControl('', [
@@ -37,21 +39,30 @@ export class ItemDetailedFormComponent implements OnInit, AfterViewInit {
       this.SubmitButton.startFetch();
       const BorrowData: BorrowDataDto = this.BorrowForm.getRawValue();
       BorrowData.itemId = this.ItemDetailed.id;
+      const date = new Date();
+      date.setHours(date.getHours()+1)
       this.BorrowService
         .Borrow(BorrowData)
         .pipe(take(1))
         .subscribe((res) => {
           this.SubmitButton.finsihFetch();
           setTimeout(()=>{
-            this.openQRCodeDialog(res.qrCode??"")
+            this.openQRCodeDialog(res.qrCode??"",date)
             this.BorrowForm.reset();
           },1100)
+        },
+        (res) =>{
+          this.errormessage = res.error.message;
+          if(res.error.statusCode == 499){
+            this.ItemDetailed.available = false;  
+          }
+          this.SubmitButton.finsihFetch();
         });
     }
   }
 
-  private openQRCodeDialog(qrCode:string){
-    QrcodeDialogComponent.openDialog({qrcode:qrCode},this.matDialog)
+  private openQRCodeDialog(qrCode:string, date:Date){
+    QrcodeDialogComponent.openDialog({qrcode:qrCode, duetime:date },this.matDialog)
   }
 
   ngOnInit(): void {
