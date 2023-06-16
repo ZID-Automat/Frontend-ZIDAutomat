@@ -5,8 +5,7 @@
 export const environment = {
   production: false,
   backendUrl: "https://localhost:7141",
-  stockimagekey:"",//https://www.pexels.com/
-  backendUrl: "https://localhost:7141",
+  stockimagekey:""//https://www.pexels.com/
 };
 
 /*

@@ -1,2 +1,4 @@
 <h1 class="text-center block font-light text-3xl m-10">History</h1>
+<mat-spinner *ngIf="!Borrows" class="block mx-auto mt-32"></mat-spinner>
+<p class="text-4xl  mt-32 text-center font-light "  *ngIf="Borrows?.length == 0">Noch keine Artikel Ausgeborgt</p>
 <user-borrow-display *ngFor="let borrow of Borrows" [borrow]="borrow"></user-borrow-display>

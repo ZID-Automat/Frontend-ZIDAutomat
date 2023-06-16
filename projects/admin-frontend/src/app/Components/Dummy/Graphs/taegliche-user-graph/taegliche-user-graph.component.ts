@@ -37,7 +37,7 @@ export class TaeglicheUserGraphComponent implements OnInit {
         labels: data.map(d=>d.label!),
         datasets:[],
       }
-      const colors = this.ColorServiceService.getColors(data.length)
+      const colors = this.ColorServiceService.getColorFromArr(["#2ecc71","#3498db", "#9b59b6","#34495e","#c0392b","#e67e22"]);
       ChartData.datasets.push(
         {
           data:data.map(d=>d.value!),

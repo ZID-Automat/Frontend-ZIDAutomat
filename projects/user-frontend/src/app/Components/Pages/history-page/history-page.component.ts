@@ -10,7 +10,7 @@ import { take } from 'rxjs';
 })
 export class HistoryPageComponent implements OnInit {
 
-  Borrows:BorrowDto[] = undefined!
+  Borrows:BorrowDto[] = null!
 
   constructor(private QrCodeDataService:QrCodeDataService) { }
 

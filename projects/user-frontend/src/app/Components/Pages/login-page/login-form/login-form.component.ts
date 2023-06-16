@@ -1,3 +1,4 @@
+import { UserFrontendRoutes } from './../../../../app-routing.module';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BehaviorSubject, catchError, of, take, takeWhile } from 'rxjs';
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
@@ -36,6 +37,8 @@ export class LoginFormComponent implements OnInit,OnDestroy {
 
   hide:boolean=true;
   public buttondis = false;
+
+  public agbsLink = UserFrontendRoutes.Agbs;
 
   public LoginInfoForm: FormGroup = new FormGroup({
     username: new FormControl('', [
@@ -87,7 +90,8 @@ export class LoginFormComponent implements OnInit,OnDestroy {
         .subscribe((res) => {
           this.LoginEvent.emit(res);
         },(err)=>{
-          this.LoginError.next(LoginErrors.PassUserWrong);
+          console.log(err )
+          this.LoginError.next(err?.error?.message??"internal server error:(");
           this.buttondis = false;
         });
         
