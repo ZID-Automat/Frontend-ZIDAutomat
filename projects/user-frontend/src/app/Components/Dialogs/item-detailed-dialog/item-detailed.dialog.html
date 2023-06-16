@@ -1,7 +1,4 @@
 <div class="h1">
-    <div class="w-5 ml-auto block z-10">
-        <lib-icon (click) ="close()" class="text-lg"  IconName="XMark"></lib-icon>
-    </div>
     <div class="w-full h1 ml-auto mr-auto flex">
         <user-item-detailed class="w-full h1" *ngIf="item" [Item]="item"></user-item-detailed>
     </div>
@@ -16,5 +13,3 @@
         </div>
     
 </div>
-<mat-spinner *ngIf="!item" class="justify-center block m-auto mt-72"></mat-spinner>
-    

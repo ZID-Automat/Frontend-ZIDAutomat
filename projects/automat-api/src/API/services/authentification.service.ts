@@ -9,7 +9,6 @@ import { RequestBuilder } from '../request-builder';
 import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 
-import { AdminLoginDto } from '../models/admin-login-dto';
 import { ControllerLoginDto } from '../models/controller-login-dto';
 import { UserLoginDto } from '../models/user-login-dto';
 
@@ -214,103 +213,6 @@ export class AuthentificationService extends BaseService {
 ): Observable<string> {
 
     return this.authentificationAutomatLoginPost$Json$Response(params).pipe(
-      map((r: StrictHttpResponse<string>) => r.body as string)
-    );
-  }
-
-  /**
-   * Path part for operation authentificationAdminLoginPost
-   */
-  static readonly AuthentificationAdminLoginPostPath = '/Authentification/AdminLogin';
-
-  /**
-   * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `authentificationAdminLoginPost$Plain()` instead.
-   *
-   * This method sends `application/*+json` and handles request body of type `application/*+json`.
-   */
-  authentificationAdminLoginPost$Plain$Response(params?: {
-    context?: HttpContext
-    body?: AdminLoginDto
-  }
-): Observable<StrictHttpResponse<string>> {
-
-    const rb = new RequestBuilder(this.rootUrl, AuthentificationService.AuthentificationAdminLoginPostPath, 'post');
-    if (params) {
-      rb.body(params.body, 'application/*+json');
-    }
-
-    return this.http.request(rb.build({
-      responseType: 'text',
-      accept: 'text/plain',
-      context: params?.context
-    })).pipe(
-      filter((r: any) => r instanceof HttpResponse),
-      map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<string>;
-      })
-    );
-  }
-
-  /**
-   * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `authentificationAdminLoginPost$Plain$Response()` instead.
-   *
-   * This method sends `application/*+json` and handles request body of type `application/*+json`.
-   */
-  authentificationAdminLoginPost$Plain(params?: {
-    context?: HttpContext
-    body?: AdminLoginDto
-  }
-): Observable<string> {
-
-    return this.authentificationAdminLoginPost$Plain$Response(params).pipe(
-      map((r: StrictHttpResponse<string>) => r.body as string)
-    );
-  }
-
-  /**
-   * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `authentificationAdminLoginPost$Json()` instead.
-   *
-   * This method sends `application/*+json` and handles request body of type `application/*+json`.
-   */
-  authentificationAdminLoginPost$Json$Response(params?: {
-    context?: HttpContext
-    body?: AdminLoginDto
-  }
-): Observable<StrictHttpResponse<string>> {
-
-    const rb = new RequestBuilder(this.rootUrl, AuthentificationService.AuthentificationAdminLoginPostPath, 'post');
-    if (params) {
-      rb.body(params.body, 'application/*+json');
-    }
-
-    return this.http.request(rb.build({
-      responseType: 'json',
-      accept: 'text/json',
-      context: params?.context
-    })).pipe(
-      filter((r: any) => r instanceof HttpResponse),
-      map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<string>;
-      })
-    );
-  }
-
-  /**
-   * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `authentificationAdminLoginPost$Json$Response()` instead.
-   *
-   * This method sends `application/*+json` and handles request body of type `application/*+json`.
-   */
-  authentificationAdminLoginPost$Json(params?: {
-    context?: HttpContext
-    body?: AdminLoginDto
-  }
-): Observable<string> {
-
-    return this.authentificationAdminLoginPost$Json$Response(params).pipe(
       map((r: StrictHttpResponse<string>) => r.body as string)
     );
   }

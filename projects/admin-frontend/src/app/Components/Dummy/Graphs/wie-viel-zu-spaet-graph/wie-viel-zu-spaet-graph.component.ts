@@ -42,7 +42,7 @@ export class WieVielZuSpaetGraphComponent implements OnInit {
           labels: data.map((d) =>labi[d.label!??0]),
           datasets: [],
         };
-        const colors = this.ColorServiceService.getColorFromArr(["#e74c3c","#2ecc71", "#3498db"]);
+        const colors = this.ColorServiceService.getColors(data.length);
         ChartData.datasets.push({
           data: data.map((d) => d.num!),
           fill: true,
@@ -53,6 +53,7 @@ export class WieVielZuSpaetGraphComponent implements OnInit {
           borderRadius: 6,
           cubicInterpolationMode: 'monotone',
         });
+        console.log(ChartData);
         this.ChartData = ChartData;
       });
   }
