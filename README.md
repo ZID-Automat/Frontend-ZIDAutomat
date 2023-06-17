@@ -8,8 +8,8 @@ at
 
 Installs all node packages
 #### `npm install`
-#### `npm install -g ng-openapi-gen`
-#### `npm run generate-api-client-File`
+#### `ng build AutomatApi`
+#### `ng build AutomatShared`
 
 ## Start Developing
 
