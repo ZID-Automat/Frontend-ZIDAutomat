@@ -3,12 +3,19 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve UserFrontend",
+    "start": "npm-run-all --parallel start-user start-admin",
+    "start-user": "ng serve UserFrontend",
+    "start-admin": "ng serve AdminFrontend",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "generate-api-client-File": "ng-openapi-gen --input openapi/swagger.json -o projects/automat-api/src/API | ng build AutomatApi",
-    "generate-api-client-Swagger": "curl.exe --output openApi/swagger.json --url http://localhost:5141/swagger/v1/swagger.json | npm run generate-api-client-File"
+    "generate-api-client-Swagger": "curl.exe --output openApi/swagger.json --url http://localhost:5141/swagger/v1/swagger.json | npm run generate-api-client-File",
+    "build-all": "npm-run-all --sequential build-shared build-userfrontend build-adminfrontend",
+    "build-shared": "ng build AutomatShared",
+    "build-shared-watch": "ng build AutomatShared --watch",
+    "build-userfrontend": "ng build UserFrontend",
+    "build-adminfrontend": "ng build AdminFrontend"
   },
   "private": true,
   "dependencies": {
@@ -56,6 +63,7 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "ng-packagr": "^13.0.0",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.17",
     "tailwindcss": "^3.1.8",
     "typescript": "~4.6.2"
