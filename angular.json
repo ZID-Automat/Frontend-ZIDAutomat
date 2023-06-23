@@ -59,7 +59,11 @@
             "assets": [
               "projects/user-frontend/src/favicon.ico",
               "projects/user-frontend/src/assets",
-              "projects/user-frontend/src/static/.htaccess"
+              {
+                "glob": ".htaccess",
+                "input": "projects/user-frontend/src/static",
+                "output": "."
+              }
             ],
             "styles": [
               "projects/user-frontend/src/Styles/Styles.scss" 
@@ -162,7 +166,11 @@
             "assets": [
               "projects/admin-frontend/src/favicon.ico",
               "projects/admin-frontend/src/assets",
-              "projects/admin-frontend/src/static/.htaccess"
+              {
+                "glob": ".htaccess",
+                "input": "projects/admin-frontend/src/static",
+                "output": "."
+              }
             ],
             "styles": [
               "projects/admin-frontend/src/Styles/Styles.scss"
