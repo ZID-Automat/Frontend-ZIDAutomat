@@ -3,7 +3,7 @@ body{
     margin-bottom: 100px;
 }
 .faq-heading{
-    border-bottom: #777;
+    border-bottom: black;
     padding: 20px 60px;
 }
 .faq-container{
@@ -60,6 +60,7 @@ flex-direction: column;
     /* Unicode character for "plus" sign (+) */
     font-size: 13px;
     color: rgb(0, 0, 0);
+    border:black;
     float: right;
     margin-left: 5px;
 }
