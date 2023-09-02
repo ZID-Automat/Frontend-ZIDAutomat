@@ -17,9 +17,7 @@ export class QrcodeDialogComponent implements OnInit {
   ngOnInit(): void {
         const timer = () => {
           const date = new Date()
-          if(this.data.duetime && date > this.data.duetime){
-            this.dialogRef.close();
-          }
+         
           const diff = (this.data.duetime!.getTime() - date.getTime())/1000;
 
           const minutes = Math.floor(diff / 60);

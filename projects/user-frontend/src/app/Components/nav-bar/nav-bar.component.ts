@@ -18,6 +18,8 @@ export class NavBarComponent implements OnInit, OnDestroy {
 
   showNav = false;
 
+  ls = localStorage;
+
   constructor(
     public themeDataService: ThemeDataService,
     private router: Router,
@@ -32,7 +34,6 @@ export class NavBarComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.routeii.queryParams.subscribe((params) => {
       this.dontshownavbar = !params['dontshownavbar'];
-      console.log(this.dontshownavbar)
     });
 
 

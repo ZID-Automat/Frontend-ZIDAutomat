@@ -10,6 +10,8 @@ export class UserService {
 
   login(LoginData:UserLoginDto) :Observable<string>{
     const UserLognOb: UserLoginDto = { username: LoginData.username, password: LoginData.password };
+    //müsste eigentlich am Backend gemacht werden, hat aber keinen Einfluss. Diese Funktionalität ist nur bequemlichkeit.
+    UserLognOb.username = UserLognOb.username?.split('@')[0].toUpperCase()
     return this.authentificationService.authentificationUserLoginPost$Json({body:UserLognOb});
   }
 }

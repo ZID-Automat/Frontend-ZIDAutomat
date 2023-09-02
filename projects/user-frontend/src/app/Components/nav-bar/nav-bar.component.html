@@ -6,7 +6,7 @@
           </a>
 
           
-        <div class="flex ml-auto" *ngIf="dontshownavbar && showNav ">
+        <div class="flex ml-auto" *ngIf="ls.getItem('jwt') !== null && dontshownavbar && showNav ">
             <shared-icon-button *ngIf="count != 0" Tooltip="Active QRCodes" matBadgeSize="medium"  matBadgePosition="before" [matBadge]="count" matBadgeColor="accent" (Clicked)="route(UserFrontendRoutes.ActiveQrCodes)" IconName="QrCode"></shared-icon-button>
             <shared-icon-button *ngIf="count==0" Tooltip="Active QRCodes" (Clicked)="route(UserFrontendRoutes.ActiveQrCodes)" IconName="QrCode"></shared-icon-button>
            
