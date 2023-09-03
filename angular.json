@@ -58,7 +58,12 @@
             "tsConfig": "projects/user-frontend/tsconfig.app.json",
             "assets": [
               "projects/user-frontend/src/favicon.ico",
-              "projects/user-frontend/src/assets"
+              "projects/user-frontend/src/assets",
+              {
+                "glob": ".htaccess",
+                "input": "projects/user-frontend/src/static",
+                "output": "."
+              }
             ],
             "styles": [
               "projects/user-frontend/src/Styles/Styles.scss" 
@@ -160,7 +165,12 @@
             "tsConfig": "projects/admin-frontend/tsconfig.app.json",
             "assets": [
               "projects/admin-frontend/src/favicon.ico",
-              "projects/admin-frontend/src/assets"
+              "projects/admin-frontend/src/assets",
+              {
+                "glob": ".htaccess",
+                "input": "projects/admin-frontend/src/static",
+                "output": "."
+              }
             ],
             "styles": [
               "projects/admin-frontend/src/Styles/Styles.scss"

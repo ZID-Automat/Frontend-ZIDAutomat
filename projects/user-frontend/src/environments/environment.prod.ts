@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  backendUrl: "https://localhost:5001",
+  backendUrl: "https://innolab.spengergasse.at/automat/backend",
   mobileSchwelle:1000,
 };
